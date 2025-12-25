@@ -163,7 +163,7 @@
             this.txtUsername.Location = new System.Drawing.Point(462, 360);
             this.txtUsername.Margin = new System.Windows.Forms.Padding(0);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(594, 53);
+            this.txtUsername.Size = new System.Drawing.Size(594, 38);
             this.txtUsername.TabIndex = 3;
             // 
             // txtPassword
@@ -175,7 +175,7 @@
             this.txtPassword.Margin = new System.Windows.Forms.Padding(0);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(594, 53);
+            this.txtPassword.Size = new System.Drawing.Size(594, 38);
             this.txtPassword.TabIndex = 4;
             // 
             // Form1

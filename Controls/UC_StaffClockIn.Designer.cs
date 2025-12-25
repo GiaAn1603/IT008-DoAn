@@ -31,6 +31,13 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvWeeklySchedule = new System.Windows.Forms.DataGridView();
+            this.colNgay = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colThu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colGioVao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colGioRa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTongGio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colGhiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.lblScheduleTitle = new System.Windows.Forms.Label();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
@@ -54,13 +61,6 @@
             this.timerClock = new System.Windows.Forms.Timer(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.colNgay = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colThu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colGioVao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colGioRa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTongGio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colGhiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvWeeklySchedule)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
@@ -96,6 +96,43 @@
             this.dgvWeeklySchedule.Name = "dgvWeeklySchedule";
             this.dgvWeeklySchedule.Size = new System.Drawing.Size(709, 582);
             this.dgvWeeklySchedule.TabIndex = 1;
+            // 
+            // colNgay
+            // 
+            this.colNgay.Frozen = true;
+            this.colNgay.HeaderText = "Ngày";
+            this.colNgay.Name = "colNgay";
+            // 
+            // colThu
+            // 
+            this.colThu.Frozen = true;
+            this.colThu.HeaderText = "Thứ";
+            this.colThu.Name = "colThu";
+            // 
+            // colCa
+            // 
+            this.colCa.HeaderText = "Ca";
+            this.colCa.Name = "colCa";
+            // 
+            // colGioVao
+            // 
+            this.colGioVao.HeaderText = "Giờ vào";
+            this.colGioVao.Name = "colGioVao";
+            // 
+            // colGioRa
+            // 
+            this.colGioRa.HeaderText = "Giờ ra";
+            this.colGioRa.Name = "colGioRa";
+            // 
+            // colTongGio
+            // 
+            this.colTongGio.HeaderText = "Tổng giờ";
+            this.colTongGio.Name = "colTongGio";
+            // 
+            // colGhiChu
+            // 
+            this.colGhiChu.HeaderText = "Ghi chú";
+            this.colGhiChu.Name = "colGhiChu";
             // 
             // tableLayoutPanel3
             // 
@@ -140,7 +177,7 @@
             this.tableLayoutPanel4.ColumnCount = 3;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 59.68586F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40.31414F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 142F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 144F));
             this.tableLayoutPanel4.Controls.Add(this.label5, 1, 1);
             this.tableLayoutPanel4.Controls.Add(this.dgvWeeklySchedule, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.label6, 2, 1);
@@ -157,30 +194,32 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.White;
+            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(92)))), ((int)(((byte)(33)))));
             this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label5.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(350, 597);
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(349, 597);
             this.label5.Margin = new System.Windows.Forms.Padding(9);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(213, 36);
+            this.label5.Size = new System.Drawing.Size(212, 36);
             this.label5.TabIndex = 0;
             this.label5.Text = "Số giờ làm việc tuần này";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.White;
+            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(92)))), ((int)(((byte)(33)))));
             this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label6.Font = new System.Drawing.Font("Bahnschrift Light", 12F);
-            this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(581, 597);
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(579, 597);
             this.label6.Margin = new System.Windows.Forms.Padding(9);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(125, 36);
+            this.label6.Size = new System.Drawing.Size(127, 36);
             this.label6.TabIndex = 1;
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // button2
@@ -343,12 +382,13 @@
             this.tableLayoutPanel2.SetColumnSpan(this.btnClockIn, 5);
             this.btnClockIn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnClockIn.FlatAppearance.BorderSize = 0;
-            this.btnClockIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClockIn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnClockIn.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
-            this.btnClockIn.Location = new System.Drawing.Point(51, 353);
+            this.btnClockIn.Location = new System.Drawing.Point(48, 350);
+            this.btnClockIn.Margin = new System.Windows.Forms.Padding(0);
             this.btnClockIn.Name = "btnClockIn";
             this.tableLayoutPanel2.SetRowSpan(this.btnClockIn, 2);
-            this.btnClockIn.Size = new System.Drawing.Size(234, 64);
+            this.btnClockIn.Size = new System.Drawing.Size(240, 70);
             this.btnClockIn.TabIndex = 4;
             this.btnClockIn.Text = "CHẤM CÔNG";
             this.btnClockIn.UseVisualStyleBackColor = false;
@@ -360,13 +400,14 @@
             this.tableLayoutPanel2.SetColumnSpan(this.btnClockOut, 5);
             this.btnClockOut.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnClockOut.FlatAppearance.BorderSize = 0;
-            this.btnClockOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClockOut.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnClockOut.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
             this.btnClockOut.ForeColor = System.Drawing.Color.White;
-            this.btnClockOut.Location = new System.Drawing.Point(51, 458);
+            this.btnClockOut.Location = new System.Drawing.Point(48, 455);
+            this.btnClockOut.Margin = new System.Windows.Forms.Padding(0);
             this.btnClockOut.Name = "btnClockOut";
             this.tableLayoutPanel2.SetRowSpan(this.btnClockOut, 2);
-            this.btnClockOut.Size = new System.Drawing.Size(234, 64);
+            this.btnClockOut.Size = new System.Drawing.Size(240, 70);
             this.btnClockOut.TabIndex = 5;
             this.btnClockOut.Text = "KẾT THÚC CA";
             this.btnClockOut.UseVisualStyleBackColor = false;
@@ -459,43 +500,6 @@
             this.label4.Size = new System.Drawing.Size(27, 26);
             this.label4.TabIndex = 21;
             this.label4.Text = "label4";
-            // 
-            // colNgay
-            // 
-            this.colNgay.Frozen = true;
-            this.colNgay.HeaderText = "Ngày";
-            this.colNgay.Name = "colNgay";
-            // 
-            // colThu
-            // 
-            this.colThu.Frozen = true;
-            this.colThu.HeaderText = "Thứ";
-            this.colThu.Name = "colThu";
-            // 
-            // colCa
-            // 
-            this.colCa.HeaderText = "Ca";
-            this.colCa.Name = "colCa";
-            // 
-            // colGioVao
-            // 
-            this.colGioVao.HeaderText = "Giờ vào";
-            this.colGioVao.Name = "colGioVao";
-            // 
-            // colGioRa
-            // 
-            this.colGioRa.HeaderText = "Giờ ra";
-            this.colGioRa.Name = "colGioRa";
-            // 
-            // colTongGio
-            // 
-            this.colTongGio.HeaderText = "Tổng giờ";
-            this.colTongGio.Name = "colTongGio";
-            // 
-            // colGhiChu
-            // 
-            this.colGhiChu.HeaderText = "Ghi chú";
-            this.colGhiChu.Name = "colGhiChu";
             // 
             // UC_StaffClockIn
             // 

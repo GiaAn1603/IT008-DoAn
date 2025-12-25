@@ -44,6 +44,7 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
+            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.dgvInventory = new System.Windows.Forms.DataGridView();
@@ -58,6 +59,7 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.lblHeaderTitle = new System.Windows.Forms.Label();
             this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel6.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).BeginInit();
@@ -69,70 +71,61 @@
             // 
             this.tableLayoutPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(215)))), ((int)(((byte)(32)))));
             this.tableLayoutPanel2.ColumnCount = 10;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.118694F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.118694F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.246052F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.685684F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.118694F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.118694F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.118694F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.118694F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.118694F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.118694F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.118694F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5.555555F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5.555555F));
             this.tableLayoutPanel2.Controls.Add(this.btnSearch, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.txtSearch, 3, 1);
-            this.tableLayoutPanel2.Controls.Add(this.btnSave, 1, 22);
-            this.tableLayoutPanel2.Controls.Add(this.lblUser, 0, 3);
+            this.tableLayoutPanel2.Controls.Add(this.lblUser, 1, 3);
             this.tableLayoutPanel2.Controls.Add(this.cmbUser, 4, 3);
-            this.tableLayoutPanel2.Controls.Add(this.lblReceiptCode, 0, 5);
+            this.tableLayoutPanel2.Controls.Add(this.lblReceiptCode, 1, 5);
             this.tableLayoutPanel2.Controls.Add(this.txtReceiptCode, 4, 5);
-            this.tableLayoutPanel2.Controls.Add(this.lblReceiptDate, 0, 7);
+            this.tableLayoutPanel2.Controls.Add(this.lblReceiptDate, 1, 7);
             this.tableLayoutPanel2.Controls.Add(this.txtNote, 4, 9);
-            this.tableLayoutPanel2.Controls.Add(this.lblNote, 0, 9);
-            this.tableLayoutPanel2.Controls.Add(this.lblPrice, 0, 11);
+            this.tableLayoutPanel2.Controls.Add(this.lblNote, 1, 9);
+            this.tableLayoutPanel2.Controls.Add(this.lblPrice, 1, 11);
             this.tableLayoutPanel2.Controls.Add(this.txtPrice, 4, 11);
             this.tableLayoutPanel2.Controls.Add(this.dateTimePicker1, 4, 7);
-            this.tableLayoutPanel2.Controls.Add(this.btnDelete, 4, 22);
-            this.tableLayoutPanel2.Controls.Add(this.btnUpdate, 7, 22);
+            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel6, 1, 21);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(710, 0);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 25;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.610951F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 3.170029F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.899136F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.881844F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.755043F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 1.585014F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.763689F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 3.746398F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.023655F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.638219F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 3.188776F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.023655F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.023655F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.023655F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.023655F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.928108F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.898887F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.023655F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.023655F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.023655F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.023655F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.023655F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.023655F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.023655F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.023655F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.023655F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.023655F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.783163F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 1.594387F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.797774F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 3.768553F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.023655F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.023655F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(353, 676);
             this.tableLayoutPanel2.TabIndex = 8;
-            this.tableLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel2_Paint);
             // 
             // btnSearch
             // 
@@ -143,210 +136,219 @@
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSearch.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Bold);
             this.btnSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(92)))), ((int)(((byte)(33)))));
-            this.btnSearch.Location = new System.Drawing.Point(39, 31);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSearch.Location = new System.Drawing.Point(21, 29);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(95, 23);
+            this.btnSearch.Size = new System.Drawing.Size(113, 27);
             this.btnSearch.TabIndex = 0;
             this.btnSearch.Text = "Tìm kiếm";
             this.btnSearch.UseVisualStyleBackColor = false;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txtSearch
             // 
+            this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel2.SetColumnSpan(this.txtSearch, 5);
-            this.txtSearch.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtSearch.Font = new System.Drawing.Font("Bahnschrift Light", 12F);
-            this.txtSearch.Location = new System.Drawing.Point(138, 27);
+            this.txtSearch.Location = new System.Drawing.Point(136, 29);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(0);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(175, 27);
+            this.txtSearch.Size = new System.Drawing.Size(195, 27);
             this.txtSearch.TabIndex = 11;
-            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // btnSave
             // 
             this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(242)))), ((int)(((byte)(80)))));
-            this.tableLayoutPanel2.SetColumnSpan(this.btnSave, 2);
             this.btnSave.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnSave.FlatAppearance.BorderSize = 0;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSave.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Bold);
             this.btnSave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(92)))), ((int)(((byte)(33)))));
-            this.btnSave.Location = new System.Drawing.Point(38, 593);
+            this.btnSave.Location = new System.Drawing.Point(5, 5);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(5);
             this.btnSave.Name = "btnSave";
-            this.tableLayoutPanel2.SetRowSpan(this.btnSave, 2);
-            this.btnSave.Size = new System.Drawing.Size(64, 46);
+            this.btnSave.Size = new System.Drawing.Size(94, 54);
             this.btnSave.TabIndex = 8;
             this.btnSave.Text = "LƯU";
             this.btnSave.UseVisualStyleBackColor = false;
-            this.btnSave.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // lblUser
             // 
             this.lblUser.AutoSize = true;
-            this.tableLayoutPanel2.SetColumnSpan(this.lblUser, 4);
+            this.tableLayoutPanel2.SetColumnSpan(this.lblUser, 3);
             this.lblUser.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblUser.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
-            this.lblUser.Location = new System.Drawing.Point(3, 79);
+            this.lblUser.Location = new System.Drawing.Point(22, 79);
             this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(132, 27);
+            this.lblUser.Size = new System.Drawing.Size(111, 27);
             this.lblUser.TabIndex = 3;
             this.lblUser.Text = "Người tạo phiếu";
-            this.lblUser.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblUser.Click += new System.EventHandler(this.lblNVLCode_Click);
+            this.lblUser.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // cmbUser
             // 
+            this.cmbUser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel2.SetColumnSpan(this.cmbUser, 5);
-            this.cmbUser.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cmbUser.Font = new System.Drawing.Font("Bahnschrift Light", 12F);
             this.cmbUser.FormattingEnabled = true;
-            this.cmbUser.Location = new System.Drawing.Point(138, 79);
+            this.cmbUser.Location = new System.Drawing.Point(136, 79);
             this.cmbUser.Margin = new System.Windows.Forms.Padding(0);
             this.cmbUser.Name = "cmbUser";
-            this.cmbUser.Size = new System.Drawing.Size(175, 27);
+            this.cmbUser.Size = new System.Drawing.Size(195, 27);
             this.cmbUser.TabIndex = 15;
-            this.cmbUser.SelectedIndexChanged += new System.EventHandler(this.cmbUnit_SelectedIndexChanged);
             // 
             // lblReceiptCode
             // 
             this.lblReceiptCode.AutoSize = true;
-            this.tableLayoutPanel2.SetColumnSpan(this.lblReceiptCode, 4);
+            this.tableLayoutPanel2.SetColumnSpan(this.lblReceiptCode, 3);
             this.lblReceiptCode.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblReceiptCode.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
-            this.lblReceiptCode.Location = new System.Drawing.Point(3, 133);
+            this.lblReceiptCode.Location = new System.Drawing.Point(22, 133);
             this.lblReceiptCode.Name = "lblReceiptCode";
-            this.lblReceiptCode.Size = new System.Drawing.Size(132, 27);
+            this.lblReceiptCode.Size = new System.Drawing.Size(111, 27);
             this.lblReceiptCode.TabIndex = 4;
             this.lblReceiptCode.Text = "Mã phiếu";
-            this.lblReceiptCode.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblReceiptCode.Click += new System.EventHandler(this.lblNVLName_Click);
+            this.lblReceiptCode.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // txtReceiptCode
             // 
+            this.txtReceiptCode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel2.SetColumnSpan(this.txtReceiptCode, 5);
-            this.txtReceiptCode.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtReceiptCode.Font = new System.Drawing.Font("Bahnschrift Light", 12F);
-            this.txtReceiptCode.Location = new System.Drawing.Point(138, 133);
+            this.txtReceiptCode.Location = new System.Drawing.Point(136, 133);
             this.txtReceiptCode.Margin = new System.Windows.Forms.Padding(0);
             this.txtReceiptCode.Name = "txtReceiptCode";
-            this.txtReceiptCode.Size = new System.Drawing.Size(175, 27);
+            this.txtReceiptCode.Size = new System.Drawing.Size(195, 27);
             this.txtReceiptCode.TabIndex = 12;
-            this.txtReceiptCode.TextChanged += new System.EventHandler(this.txtNVLCode_TextChanged);
             // 
             // lblReceiptDate
             // 
             this.lblReceiptDate.AutoSize = true;
-            this.tableLayoutPanel2.SetColumnSpan(this.lblReceiptDate, 4);
+            this.tableLayoutPanel2.SetColumnSpan(this.lblReceiptDate, 3);
             this.lblReceiptDate.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblReceiptDate.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
-            this.lblReceiptDate.Location = new System.Drawing.Point(3, 187);
+            this.lblReceiptDate.Location = new System.Drawing.Point(22, 187);
             this.lblReceiptDate.Name = "lblReceiptDate";
-            this.lblReceiptDate.Size = new System.Drawing.Size(132, 33);
+            this.lblReceiptDate.Size = new System.Drawing.Size(111, 33);
             this.lblReceiptDate.TabIndex = 5;
             this.lblReceiptDate.Text = "Ngày tạo";
-            this.lblReceiptDate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblReceiptDate.Click += new System.EventHandler(this.lblUnit_Click);
+            this.lblReceiptDate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // txtNote
             // 
+            this.txtNote.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel2.SetColumnSpan(this.txtNote, 5);
-            this.txtNote.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtNote.Font = new System.Drawing.Font("Bahnschrift Light", 12F);
-            this.txtNote.Location = new System.Drawing.Point(138, 239);
+            this.txtNote.Location = new System.Drawing.Point(136, 239);
             this.txtNote.Margin = new System.Windows.Forms.Padding(0);
             this.txtNote.Multiline = true;
             this.txtNote.Name = "txtNote";
-            this.txtNote.Size = new System.Drawing.Size(175, 27);
+            this.txtNote.Size = new System.Drawing.Size(195, 27);
             this.txtNote.TabIndex = 13;
-            this.txtNote.TextChanged += new System.EventHandler(this.txtNVLName_TextChanged);
             // 
             // lblNote
             // 
             this.lblNote.AutoSize = true;
-            this.tableLayoutPanel2.SetColumnSpan(this.lblNote, 4);
+            this.tableLayoutPanel2.SetColumnSpan(this.lblNote, 3);
             this.lblNote.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblNote.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
-            this.lblNote.Location = new System.Drawing.Point(3, 239);
+            this.lblNote.Location = new System.Drawing.Point(22, 239);
             this.lblNote.Name = "lblNote";
-            this.lblNote.Size = new System.Drawing.Size(132, 27);
+            this.lblNote.Size = new System.Drawing.Size(111, 27);
             this.lblNote.TabIndex = 6;
             this.lblNote.Text = "Ghi chú";
-            this.lblNote.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblNote.Click += new System.EventHandler(this.lblPrice_Click);
+            this.lblNote.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblPrice
             // 
             this.lblPrice.AutoSize = true;
-            this.tableLayoutPanel2.SetColumnSpan(this.lblPrice, 4);
+            this.tableLayoutPanel2.SetColumnSpan(this.lblPrice, 3);
             this.lblPrice.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblPrice.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
-            this.lblPrice.Location = new System.Drawing.Point(3, 293);
+            this.lblPrice.Location = new System.Drawing.Point(22, 293);
             this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(132, 27);
+            this.lblPrice.Size = new System.Drawing.Size(111, 27);
             this.lblPrice.TabIndex = 17;
             this.lblPrice.Text = "Giá";
-            this.lblPrice.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblPrice.Click += new System.EventHandler(this.lblQuantity_Click);
+            this.lblPrice.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // txtPrice
             // 
+            this.txtPrice.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel2.SetColumnSpan(this.txtPrice, 5);
-            this.txtPrice.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtPrice.Font = new System.Drawing.Font("Bahnschrift Light", 12F);
-            this.txtPrice.Location = new System.Drawing.Point(138, 293);
+            this.txtPrice.Location = new System.Drawing.Point(136, 293);
             this.txtPrice.Margin = new System.Windows.Forms.Padding(0);
             this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(175, 27);
+            this.txtPrice.Size = new System.Drawing.Size(195, 27);
             this.txtPrice.TabIndex = 14;
-            this.txtPrice.TextChanged += new System.EventHandler(this.txtPrice_TextChanged);
             // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel2.SetColumnSpan(this.dateTimePicker1, 5);
-            this.dateTimePicker1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dateTimePicker1.Font = new System.Drawing.Font("Bahnschrift Light", 12F);
-            this.dateTimePicker1.Location = new System.Drawing.Point(141, 190);
+            this.dateTimePicker1.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
+            this.dateTimePicker1.Location = new System.Drawing.Point(139, 191);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(169, 27);
+            this.dateTimePicker1.Size = new System.Drawing.Size(189, 24);
             this.dateTimePicker1.TabIndex = 21;
             // 
             // btnDelete
             // 
             this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(242)))), ((int)(((byte)(80)))));
-            this.tableLayoutPanel2.SetColumnSpan(this.btnDelete, 2);
             this.btnDelete.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnDelete.FlatAppearance.BorderSize = 0;
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnDelete.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Bold);
             this.btnDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(92)))), ((int)(((byte)(33)))));
-            this.btnDelete.Location = new System.Drawing.Point(141, 593);
+            this.btnDelete.Location = new System.Drawing.Point(109, 5);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(5);
             this.btnDelete.Name = "btnDelete";
-            this.tableLayoutPanel2.SetRowSpan(this.btnDelete, 2);
-            this.btnDelete.Size = new System.Drawing.Size(64, 46);
+            this.btnDelete.Size = new System.Drawing.Size(94, 54);
             this.btnDelete.TabIndex = 10;
             this.btnDelete.Text = "XÓA";
             this.btnDelete.UseVisualStyleBackColor = false;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 
             this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.tableLayoutPanel2.SetColumnSpan(this.btnUpdate, 2);
             this.btnUpdate.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnUpdate.FlatAppearance.BorderSize = 0;
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnUpdate.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Bold);
             this.btnUpdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(92)))), ((int)(((byte)(33)))));
-            this.btnUpdate.Location = new System.Drawing.Point(246, 593);
+            this.btnUpdate.Location = new System.Drawing.Point(213, 5);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(5);
             this.btnUpdate.Name = "btnUpdate";
-            this.tableLayoutPanel2.SetRowSpan(this.btnUpdate, 2);
-            this.btnUpdate.Size = new System.Drawing.Size(64, 46);
+            this.btnUpdate.Size = new System.Drawing.Size(94, 54);
             this.btnUpdate.TabIndex = 20;
             this.btnUpdate.Text = "DUYỆT";
             this.btnUpdate.UseVisualStyleBackColor = false;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // tableLayoutPanel6
+            // 
+            this.tableLayoutPanel6.ColumnCount = 3;
+            this.tableLayoutPanel2.SetColumnSpan(this.tableLayoutPanel6, 8);
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel6.Controls.Add(this.btnSave, 0, 0);
+            this.tableLayoutPanel6.Controls.Add(this.btnDelete, 1, 0);
+            this.tableLayoutPanel6.Controls.Add(this.btnUpdate, 2, 0);
+            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(19, 551);
+            this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
+            this.tableLayoutPanel6.RowCount = 1;
+            this.tableLayoutPanel2.SetRowSpan(this.tableLayoutPanel6, 2);
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 54F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 54F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 54F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 54F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 54F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 54F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(312, 64);
+            this.tableLayoutPanel6.TabIndex = 25;
             // 
             // tableLayoutPanel1
             // 
@@ -362,7 +364,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1063, 676);
             this.tableLayoutPanel1.TabIndex = 4;
-            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // tableLayoutPanel3
             // 
@@ -381,7 +382,6 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(704, 670);
             this.tableLayoutPanel3.TabIndex = 5;
-            this.tableLayoutPanel3.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel3_Paint);
             // 
             // dgvInventory
             // 
@@ -400,7 +400,6 @@
             this.dgvInventory.Name = "dgvInventory";
             this.dgvInventory.Size = new System.Drawing.Size(698, 621);
             this.dgvInventory.TabIndex = 1;
-            this.dgvInventory.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInventory_CellContentClick);
             // 
             // colTenNVL
             // 
@@ -448,7 +447,6 @@
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(704, 43);
             this.tableLayoutPanel4.TabIndex = 2;
-            this.tableLayoutPanel4.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel4_Paint);
             // 
             // tableLayoutPanel5
             // 
@@ -505,6 +503,7 @@
             this.Size = new System.Drawing.Size(1063, 676);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
+            this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).EndInit();
@@ -546,5 +545,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colDonVi;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDonGia;
         private System.Windows.Forms.DataGridViewTextBoxColumn colThanhTien;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
     }
 }

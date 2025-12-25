@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_StaffList));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblPasswordTitle = new System.Windows.Forms.Label();
             this.lblRoleTitle = new System.Windows.Forms.Label();
             this.lblStatusTitle = new System.Windows.Forms.Label();
@@ -47,6 +47,8 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label5 = new System.Windows.Forms.Label();
+            this.lblFullnameTitle = new System.Windows.Forms.Label();
+            this.txtFullname = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.dgvStaffData = new System.Windows.Forms.DataGridView();
             this.staff_code = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -75,13 +77,12 @@
             this.tableLayoutPanel2.SetColumnSpan(this.lblPasswordTitle, 4);
             this.lblPasswordTitle.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
             this.lblPasswordTitle.ForeColor = System.Drawing.Color.Black;
-            this.lblPasswordTitle.Location = new System.Drawing.Point(4, 483);
-            this.lblPasswordTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPasswordTitle.Location = new System.Drawing.Point(19, 301);
             this.lblPasswordTitle.Name = "lblPasswordTitle";
-            this.lblPasswordTitle.Size = new System.Drawing.Size(197, 29);
+            this.lblPasswordTitle.Size = new System.Drawing.Size(126, 19);
             this.lblPasswordTitle.TabIndex = 4;
             this.lblPasswordTitle.Text = "Mật khẩu";
-            this.lblPasswordTitle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblPasswordTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblRoleTitle
             // 
@@ -90,13 +91,12 @@
             this.tableLayoutPanel2.SetColumnSpan(this.lblRoleTitle, 4);
             this.lblRoleTitle.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
             this.lblRoleTitle.ForeColor = System.Drawing.Color.Black;
-            this.lblRoleTitle.Location = new System.Drawing.Point(4, 554);
-            this.lblRoleTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblRoleTitle.Location = new System.Drawing.Point(19, 343);
             this.lblRoleTitle.Name = "lblRoleTitle";
-            this.lblRoleTitle.Size = new System.Drawing.Size(197, 29);
+            this.lblRoleTitle.Size = new System.Drawing.Size(126, 19);
             this.lblRoleTitle.TabIndex = 10;
             this.lblRoleTitle.Text = "Vai trò";
-            this.lblRoleTitle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblRoleTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblStatusTitle
             // 
@@ -105,28 +105,27 @@
             this.tableLayoutPanel2.SetColumnSpan(this.lblStatusTitle, 4);
             this.lblStatusTitle.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
             this.lblStatusTitle.ForeColor = System.Drawing.Color.Black;
-            this.lblStatusTitle.Location = new System.Drawing.Point(4, 625);
-            this.lblStatusTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblStatusTitle.Location = new System.Drawing.Point(19, 385);
             this.lblStatusTitle.Name = "lblStatusTitle";
-            this.lblStatusTitle.Size = new System.Drawing.Size(197, 29);
+            this.lblStatusTitle.Size = new System.Drawing.Size(126, 19);
             this.lblStatusTitle.TabIndex = 11;
             this.lblStatusTitle.Text = "Trạng thái";
-            this.lblStatusTitle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblStatusTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btnAdd
             // 
-            this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(242)))), ((int)(((byte)(80)))));
             this.tableLayoutPanel2.SetColumnSpan(this.btnAdd, 3);
+            this.btnAdd.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnAdd.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnAdd.FlatAppearance.BorderSize = 0;
-            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAdd.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Bold);
             this.btnAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(84)))), ((int)(((byte)(48)))));
-            this.btnAdd.Location = new System.Drawing.Point(70, 717);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnAdd.Location = new System.Drawing.Point(49, 458);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(0);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(131, 57);
+            this.btnAdd.Size = new System.Drawing.Size(99, 48);
             this.btnAdd.TabIndex = 12;
             this.btnAdd.Text = "THÊM";
             this.btnAdd.UseVisualStyleBackColor = false;
@@ -134,18 +133,18 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(242)))), ((int)(((byte)(80)))));
             this.tableLayoutPanel2.SetColumnSpan(this.btnDelete, 3);
+            this.btnDelete.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnDelete.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnDelete.FlatAppearance.BorderSize = 0;
-            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnDelete.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Bold);
             this.btnDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(84)))), ((int)(((byte)(48)))));
-            this.btnDelete.Location = new System.Drawing.Point(70, 821);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnDelete.Location = new System.Drawing.Point(49, 530);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(0);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(131, 56);
+            this.btnDelete.Size = new System.Drawing.Size(99, 48);
             this.btnDelete.TabIndex = 14;
             this.btnDelete.Text = "XÓA";
             this.btnDelete.UseVisualStyleBackColor = false;
@@ -158,23 +157,22 @@
             this.tableLayoutPanel2.SetColumnSpan(this.lblUsernameTitle, 4);
             this.lblUsernameTitle.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
             this.lblUsernameTitle.ForeColor = System.Drawing.Color.Black;
-            this.lblUsernameTitle.Location = new System.Drawing.Point(4, 412);
-            this.lblUsernameTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblUsernameTitle.Location = new System.Drawing.Point(19, 259);
             this.lblUsernameTitle.Name = "lblUsernameTitle";
-            this.lblUsernameTitle.Size = new System.Drawing.Size(197, 29);
+            this.lblUsernameTitle.Size = new System.Drawing.Size(126, 19);
             this.lblUsernameTitle.TabIndex = 2;
             this.lblUsernameTitle.Text = "Tên tài khoản";
-            this.lblUsernameTitle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblUsernameTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // txtUsername
             // 
             this.txtUsername.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel2.SetColumnSpan(this.txtUsername, 5);
             this.txtUsername.Font = new System.Drawing.Font("Bahnschrift Light", 12F);
-            this.txtUsername.Location = new System.Drawing.Point(205, 408);
+            this.txtUsername.Location = new System.Drawing.Point(148, 255);
             this.txtUsername.Margin = new System.Windows.Forms.Padding(0);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(274, 36);
+            this.txtUsername.Size = new System.Drawing.Size(165, 27);
             this.txtUsername.TabIndex = 17;
             // 
             // txtPassword
@@ -182,10 +180,10 @@
             this.txtPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel2.SetColumnSpan(this.txtPassword, 5);
             this.txtPassword.Font = new System.Drawing.Font("Bahnschrift Light", 12F);
-            this.txtPassword.Location = new System.Drawing.Point(205, 479);
+            this.txtPassword.Location = new System.Drawing.Point(148, 297);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(0);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(274, 36);
+            this.txtPassword.Size = new System.Drawing.Size(165, 27);
             this.txtPassword.TabIndex = 18;
             // 
             // cmbRole
@@ -194,10 +192,10 @@
             this.tableLayoutPanel2.SetColumnSpan(this.cmbRole, 5);
             this.cmbRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbRole.FormattingEnabled = true;
-            this.cmbRole.Location = new System.Drawing.Point(205, 550);
+            this.cmbRole.Location = new System.Drawing.Point(148, 339);
             this.cmbRole.Margin = new System.Windows.Forms.Padding(0);
             this.cmbRole.Name = "cmbRole";
-            this.cmbRole.Size = new System.Drawing.Size(274, 37);
+            this.cmbRole.Size = new System.Drawing.Size(165, 28);
             this.cmbRole.TabIndex = 21;
             // 
             // cmbStatus
@@ -206,26 +204,26 @@
             this.tableLayoutPanel2.SetColumnSpan(this.cmbStatus, 5);
             this.cmbStatus.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbStatus.FormattingEnabled = true;
-            this.cmbStatus.Location = new System.Drawing.Point(205, 621);
+            this.cmbStatus.Location = new System.Drawing.Point(148, 381);
             this.cmbStatus.Margin = new System.Windows.Forms.Padding(0);
             this.cmbStatus.Name = "cmbStatus";
-            this.cmbStatus.Size = new System.Drawing.Size(274, 37);
+            this.cmbStatus.Size = new System.Drawing.Size(165, 27);
             this.cmbStatus.TabIndex = 20;
             // 
             // btnClear
             // 
-            this.btnClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(242)))), ((int)(((byte)(80)))));
             this.tableLayoutPanel2.SetColumnSpan(this.btnClear, 3);
+            this.btnClear.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnClear.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnClear.FlatAppearance.BorderSize = 0;
-            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnClear.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Bold);
             this.btnClear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(84)))), ((int)(((byte)(48)))));
-            this.btnClear.Location = new System.Drawing.Point(280, 821);
-            this.btnClear.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnClear.Location = new System.Drawing.Point(181, 530);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(0);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(147, 56);
+            this.btnClear.Size = new System.Drawing.Size(99, 48);
             this.btnClear.TabIndex = 16;
             this.btnClear.Text = "XÓA TRỐNG";
             this.btnClear.UseVisualStyleBackColor = false;
@@ -233,18 +231,18 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(242)))), ((int)(((byte)(80)))));
             this.tableLayoutPanel2.SetColumnSpan(this.btnUpdate, 3);
+            this.btnUpdate.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnUpdate.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnUpdate.FlatAppearance.BorderSize = 0;
-            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnUpdate.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Bold);
             this.btnUpdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(84)))), ((int)(((byte)(48)))));
-            this.btnUpdate.Location = new System.Drawing.Point(280, 717);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnUpdate.Location = new System.Drawing.Point(181, 458);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(0);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(147, 57);
+            this.btnUpdate.Size = new System.Drawing.Size(99, 48);
             this.btnUpdate.TabIndex = 15;
             this.btnUpdate.Text = "CẬP NHẬT";
             this.btnUpdate.UseVisualStyleBackColor = false;
@@ -256,11 +254,11 @@
             this.tableLayoutPanel2.SetColumnSpan(this.pbStaffImage, 4);
             this.pbStaffImage.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pbStaffImage.Image = ((System.Drawing.Image)(resources.GetObject("pbStaffImage.Image")));
-            this.pbStaffImage.Location = new System.Drawing.Point(149, 71);
+            this.pbStaffImage.Location = new System.Drawing.Point(82, 42);
             this.pbStaffImage.Margin = new System.Windows.Forms.Padding(0);
             this.pbStaffImage.Name = "pbStaffImage";
             this.tableLayoutPanel2.SetRowSpan(this.pbStaffImage, 2);
-            this.pbStaffImage.Size = new System.Drawing.Size(199, 214);
+            this.pbStaffImage.Size = new System.Drawing.Size(132, 122);
             this.pbStaffImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbStaffImage.TabIndex = 0;
             this.pbStaffImage.TabStop = false;
@@ -272,13 +270,12 @@
             this.tableLayoutPanel2.SetColumnSpan(this.btnUploadImage, 2);
             this.btnUploadImage.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnUploadImage.FlatAppearance.BorderSize = 0;
-            this.btnUploadImage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUploadImage.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnUploadImage.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Bold);
             this.btnUploadImage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(84)))), ((int)(((byte)(48)))));
-            this.btnUploadImage.Location = new System.Drawing.Point(209, 299);
-            this.btnUploadImage.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnUploadImage.Location = new System.Drawing.Point(118, 171);
             this.btnUploadImage.Name = "btnUploadImage";
-            this.btnUploadImage.Size = new System.Drawing.Size(85, 43);
+            this.btnUploadImage.Size = new System.Drawing.Size(60, 28);
             this.btnUploadImage.TabIndex = 5;
             this.btnUploadImage.Text = "NHẬP";
             this.btnUploadImage.UseVisualStyleBackColor = false;
@@ -296,59 +293,62 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1594, 1040);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1063, 676);
             this.tableLayoutPanel1.TabIndex = 1;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(215)))), ((int)(((byte)(32)))));
-            this.tableLayoutPanel2.ColumnCount = 10;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.09524F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.547619F));
+            this.tableLayoutPanel2.ColumnCount = 11;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.0119F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.9881F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 4.464286F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.36905F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.523809F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 3.869048F));
-            this.tableLayoutPanel2.Controls.Add(this.lblPasswordTitle, 0, 6);
-            this.tableLayoutPanel2.Controls.Add(this.lblRoleTitle, 0, 7);
-            this.tableLayoutPanel2.Controls.Add(this.lblStatusTitle, 0, 8);
-            this.tableLayoutPanel2.Controls.Add(this.btnAdd, 1, 10);
-            this.tableLayoutPanel2.Controls.Add(this.btnDelete, 1, 12);
-            this.tableLayoutPanel2.Controls.Add(this.lblUsernameTitle, 0, 5);
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.tableLayoutPanel2.Controls.Add(this.lblPasswordTitle, 1, 6);
+            this.tableLayoutPanel2.Controls.Add(this.lblRoleTitle, 1, 7);
+            this.tableLayoutPanel2.Controls.Add(this.lblStatusTitle, 1, 8);
+            this.tableLayoutPanel2.Controls.Add(this.lblUsernameTitle, 1, 5);
             this.tableLayoutPanel2.Controls.Add(this.txtUsername, 4, 5);
             this.tableLayoutPanel2.Controls.Add(this.txtPassword, 4, 6);
             this.tableLayoutPanel2.Controls.Add(this.cmbRole, 4, 7);
             this.tableLayoutPanel2.Controls.Add(this.cmbStatus, 4, 8);
-            this.tableLayoutPanel2.Controls.Add(this.btnClear, 5, 12);
-            this.tableLayoutPanel2.Controls.Add(this.btnUpdate, 5, 10);
             this.tableLayoutPanel2.Controls.Add(this.pbStaffImage, 3, 1);
             this.tableLayoutPanel2.Controls.Add(this.btnUploadImage, 4, 3);
             this.tableLayoutPanel2.Controls.Add(this.label5, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.lblFullnameTitle, 1, 4);
+            this.tableLayoutPanel2.Controls.Add(this.txtFullname, 4, 4);
+            this.tableLayoutPanel2.Controls.Add(this.btnAdd, 2, 10);
+            this.tableLayoutPanel2.Controls.Add(this.btnDelete, 2, 12);
+            this.tableLayoutPanel2.Controls.Add(this.btnClear, 6, 12);
+            this.tableLayoutPanel2.Controls.Add(this.btnUpdate, 6, 10);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(1090, 0);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(727, 0);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 14;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.896552F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.34483F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.34483F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.896552F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 3.448276F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.896552F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.896552F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.896552F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.896552F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 3.448276F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.896552F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 3.448276F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.428571F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.71429F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(504, 1040);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.32258F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.032259F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.032259F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.32258F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.32258F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.32258F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.32258F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.32258F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.32258F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.32258F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.225806F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 3.612903F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.225806F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.29033F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(336, 676);
             this.tableLayoutPanel2.TabIndex = 3;
             // 
             // label5
@@ -356,13 +356,37 @@
             this.label5.AutoSize = true;
             this.tableLayoutPanel2.SetColumnSpan(this.label5, 3);
             this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label5.Location = new System.Drawing.Point(4, 71);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(3, 42);
             this.label5.Name = "label5";
             this.tableLayoutPanel2.SetRowSpan(this.label5, 2);
-            this.label5.Size = new System.Drawing.Size(141, 214);
+            this.label5.Size = new System.Drawing.Size(76, 122);
             this.label5.TabIndex = 22;
             this.label5.Text = "Combobox mặc định danh sách nv, mở combobox để xếp ca (tuần)  \r\n";
+            // 
+            // lblFullnameTitle
+            // 
+            this.lblFullnameTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblFullnameTitle.AutoSize = true;
+            this.tableLayoutPanel2.SetColumnSpan(this.lblFullnameTitle, 4);
+            this.lblFullnameTitle.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
+            this.lblFullnameTitle.ForeColor = System.Drawing.Color.Black;
+            this.lblFullnameTitle.Location = new System.Drawing.Point(19, 217);
+            this.lblFullnameTitle.Name = "lblFullnameTitle";
+            this.lblFullnameTitle.Size = new System.Drawing.Size(126, 19);
+            this.lblFullnameTitle.TabIndex = 23;
+            this.lblFullnameTitle.Text = "Họ và tên";
+            this.lblFullnameTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // txtFullname
+            // 
+            this.txtFullname.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel2.SetColumnSpan(this.txtFullname, 5);
+            this.txtFullname.Font = new System.Drawing.Font("Bahnschrift Light", 12F);
+            this.txtFullname.Location = new System.Drawing.Point(148, 213);
+            this.txtFullname.Margin = new System.Windows.Forms.Padding(0);
+            this.txtFullname.Name = "txtFullname";
+            this.txtFullname.Size = new System.Drawing.Size(165, 27);
+            this.txtFullname.TabIndex = 24;
             // 
             // tableLayoutPanel3
             // 
@@ -370,22 +394,21 @@
             this.tableLayoutPanel3.ColumnCount = 1;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel3.Controls.Add(this.dgvStaffData, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.ForeColor = System.Drawing.Color.Black;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(4, 5);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.628242F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 93.37176F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1082, 1030);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(721, 670);
             this.tableLayoutPanel3.TabIndex = 2;
             // 
             // dgvStaffData
@@ -402,21 +425,20 @@
             this.staff_password,
             this.date,
             this.status});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Bahnschrift Light", 12F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvStaffData.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Bahnschrift Light", 12F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvStaffData.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvStaffData.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvStaffData.GridColor = System.Drawing.Color.Beige;
-            this.dgvStaffData.Location = new System.Drawing.Point(4, 73);
-            this.dgvStaffData.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dgvStaffData.Location = new System.Drawing.Point(3, 47);
             this.dgvStaffData.Name = "dgvStaffData";
             this.dgvStaffData.RowHeadersWidth = 62;
-            this.dgvStaffData.Size = new System.Drawing.Size(1074, 952);
+            this.dgvStaffData.Size = new System.Drawing.Size(715, 620);
             this.dgvStaffData.TabIndex = 1;
             // 
             // staff_code
@@ -483,7 +505,7 @@
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(1082, 68);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(721, 44);
             this.tableLayoutPanel4.TabIndex = 2;
             // 
             // button2
@@ -494,10 +516,9 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button2.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Bold);
             this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(92)))), ((int)(((byte)(33)))));
-            this.button2.Location = new System.Drawing.Point(977, 5);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button2.Location = new System.Drawing.Point(651, 3);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(101, 58);
+            this.button2.Size = new System.Drawing.Size(67, 38);
             this.button2.TabIndex = 27;
             this.button2.Text = "LƯU";
             this.button2.UseVisualStyleBackColor = false;
@@ -510,10 +531,9 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Bold);
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(92)))), ((int)(((byte)(33)))));
-            this.button1.Location = new System.Drawing.Point(869, 5);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button1.Location = new System.Drawing.Point(579, 3);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 58);
+            this.button1.Size = new System.Drawing.Size(66, 38);
             this.button1.TabIndex = 26;
             this.button1.Text = "XUẤT FILE";
             this.button1.UseVisualStyleBackColor = false;
@@ -525,23 +545,21 @@
             this.lblHeaderTitle.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblHeaderTitle.Font = new System.Drawing.Font("Bahnschrift Light", 20F, System.Drawing.FontStyle.Bold);
             this.lblHeaderTitle.ForeColor = System.Drawing.Color.White;
-            this.lblHeaderTitle.Location = new System.Drawing.Point(4, 0);
-            this.lblHeaderTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblHeaderTitle.Location = new System.Drawing.Point(3, 0);
             this.lblHeaderTitle.Name = "lblHeaderTitle";
-            this.lblHeaderTitle.Size = new System.Drawing.Size(857, 68);
+            this.lblHeaderTitle.Size = new System.Drawing.Size(570, 44);
             this.lblHeaderTitle.TabIndex = 25;
             this.lblHeaderTitle.Text = "DANH SÁCH NHÂN VIÊN";
             this.lblHeaderTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // UC_StaffList
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(215)))), ((int)(((byte)(32)))));
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "UC_StaffList";
-            this.Size = new System.Drawing.Size(1594, 1040);
+            this.Size = new System.Drawing.Size(1063, 676);
             ((System.ComponentModel.ISupportInitialize)(this.pbStaffImage)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -586,5 +604,7 @@
         private System.Windows.Forms.Label lblHeaderTitle;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lblFullnameTitle;
+        private System.Windows.Forms.TextBox txtFullname;
     }
 }
