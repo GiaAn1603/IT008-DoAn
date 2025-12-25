@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{90E3CF5E-8B73-4A39-B181-63D39586880B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>OHIOCF</RootNamespace>
+    <AssemblyName>OHIOCF</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.119.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\lib\net46\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BUS\UserBUS.cs" />
+    <Compile Include="Controls\Inventory\UC_Inventory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Inventory\UC_Inventory.Designer.cs">
+      <DependentUpon>UC_Inventory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Inventory\UC_Inventory1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Inventory\UC_Inventory1.Designer.cs">
+      <DependentUpon>UC_Inventory1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Inventory\UC_ReceiptHistory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Inventory\UC_ReceiptHistory.Designer.cs">
+      <DependentUpon>UC_ReceiptHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Inventory\UC_StockReceipt.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Inventory\UC_StockReceipt.Designer.cs">
+      <DependentUpon>UC_StockReceipt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\paste.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\paste.Designer.cs">
+      <DependentUpon>paste.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Report\UC_Report.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Report\UC_Report.Designer.cs">
+      <DependentUpon>UC_Report.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Report\UC_RevenueReport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Report\UC_RevenueReport.Designer.cs">
+      <DependentUpon>UC_RevenueReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Report\UC_SalesReport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Report\UC_SalesReport.Designer.cs">
+      <DependentUpon>UC_SalesReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Staff\UC_Staff.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Staff\UC_Staff.Designer.cs">
+      <DependentUpon>UC_Staff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Staff\UC_StaffList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Staff\UC_StaffList.Designer.cs">
+      <DependentUpon>UC_StaffList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Staff\UC_Shift.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Staff\UC_Shift.Designer.cs">
+      <DependentUpon>UC_Shift.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Staff_Inventory\UC_StaffInventory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Staff_Inventory\UC_StaffInventory.Designer.cs">
+      <DependentUpon>UC_StaffInventory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Staff_Inventory\UC_StaffInventory1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Staff_Inventory\UC_StaffInventory1.Designer.cs">
+      <DependentUpon>UC_StaffInventory1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Staff_Inventory\UC_StaffStockReceipt.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Staff_Inventory\UC_StaffStockReceipt.Designer.cs">
+      <DependentUpon>UC_StaffStockReceipt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UC_Customers.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UC_Customers.Designer.cs">
+      <DependentUpon>UC_Customers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UC_Dashboard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UC_Dashboard.Designer.cs">
+      <DependentUpon>UC_Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UC_Discount.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UC_Discount.Designer.cs">
+      <DependentUpon>UC_Discount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UC_Products.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UC_Products.Designer.cs">
+      <DependentUpon>UC_Products.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UC_Sale.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UC_Sale.Designer.cs">
+      <DependentUpon>UC_Sale.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UC_Sale1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UC_Sale1.Designer.cs">
+      <DependentUpon>UC_Sale1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UC_SizeSelect.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UC_SizeSelect.Designer.cs">
+      <DependentUpon>UC_SizeSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UC_StaffClockIn.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UC_StaffClockIn.Designer.cs">
+      <DependentUpon>UC_StaffClockIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UC_StaffDiscount.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UC_StaffDiscount.Designer.cs">
+      <DependentUpon>UC_StaffDiscount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UC_Tables.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UC_Tables.Designer.cs">
+      <DependentUpon>UC_Tables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\DataSeeder.cs" />
+    <Compile Include="DAO\RoleDAO.cs" />
+    <Compile Include="DAO\UserDAO.cs" />
+    <Compile Include="Database.cs" />
+    <Compile Include="DTO\AuditLogDTO.cs" />
+    <Compile Include="DTO\CafeTableDTO.cs" />
+    <Compile Include="DTO\CategoryDTO.cs" />
+    <Compile Include="DTO\CustomerDTO.cs" />
+    <Compile Include="DTO\IngredientDTO.cs" />
+    <Compile Include="DTO\InventoryDTO.cs" />
+    <Compile Include="DTO\OrderDetailDTO.cs" />
+    <Compile Include="DTO\OrderDTO.cs" />
+    <Compile Include="DTO\PaymentDTO.cs" />
+    <Compile Include="DTO\ProductDTO.cs" />
+    <Compile Include="DTO\ProductIngredientDTO.cs" />
+    <Compile Include="DTO\ProductSizeDTO.cs" />
+    <Compile Include="DTO\PromotionDTO.cs" />
+    <Compile Include="DTO\ReservationDTO.cs" />
+    <Compile Include="DTO\RoleDTO.cs" />
+    <Compile Include="DTO\ScheduleDTO.cs" />
+    <Compile Include="DTO\UserDTO.cs" />
+    <Compile Include="Forms\formAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\formAdmin.Designer.cs">
+      <DependentUpon>formAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\formStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\formStaff.Designer.cs">
+      <DependentUpon>formStaff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Controls\Inventory\UC_Inventory1.resx">
+      <DependentUpon>UC_Inventory1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Inventory\UC_ReceiptHistory.resx">
+      <DependentUpon>UC_ReceiptHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Inventory\UC_StockReceipt.resx">
+      <DependentUpon>UC_StockReceipt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\paste.resx">
+      <DependentUpon>paste.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Report\UC_RevenueReport.resx">
+      <DependentUpon>UC_RevenueReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Report\UC_SalesReport.resx">
+      <DependentUpon>UC_SalesReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Staff\UC_StaffList.resx">
+      <DependentUpon>UC_StaffList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Staff\UC_Shift.resx">
+      <DependentUpon>UC_Shift.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Staff_Inventory\UC_StaffInventory1.resx">
+      <DependentUpon>UC_StaffInventory1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Staff_Inventory\UC_StaffStockReceipt.resx">
+      <DependentUpon>UC_StaffStockReceipt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UC_Customers.resx">
+      <DependentUpon>UC_Customers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UC_Dashboard.resx">
+      <DependentUpon>UC_Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UC_Discount.resx">
+      <DependentUpon>UC_Discount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UC_Products.resx">
+      <DependentUpon>UC_Products.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UC_Sale.resx">
+      <DependentUpon>UC_Sale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UC_Sale1.resx">
+      <DependentUpon>UC_Sale1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UC_SizeSelect.resx">
+      <DependentUpon>UC_SizeSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UC_StaffClockIn.resx">
+      <DependentUpon>UC_StaffClockIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UC_StaffDiscount.resx">
+      <DependentUpon>UC_StaffDiscount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UC_Tables.resx">
+      <DependentUpon>UC_Tables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\formAdmin.resx">
+      <DependentUpon>formAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\formStaff.resx">
+      <DependentUpon>formStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="obj\Debug\OHIOCF.Controls.Inventory.UC_Inventory1.resources" />
+    <EmbeddedResource Include="obj\Debug\OHIOCF.Controls.Inventory.UC_ReceiptHistory.resources" />
+    <EmbeddedResource Include="obj\Debug\OHIOCF.Controls.Inventory.UC_StockReceipt.resources" />
+    <EmbeddedResource Include="obj\Debug\OHIOCF.Controls.paste.resources" />
+    <EmbeddedResource Include="obj\Debug\OHIOCF.Controls.Report.UC_RevenueReport.resources" />
+    <EmbeddedResource Include="obj\Debug\OHIOCF.Controls.Report.UC_SalesReport.resources" />
+    <EmbeddedResource Include="obj\Debug\OHIOCF.Controls.Staff_Inventory.UC_Shift.resources" />
+    <EmbeddedResource Include="obj\Debug\OHIOCF.Controls.Staff_Inventory.UC_StaffInventory1.resources" />
+    <EmbeddedResource Include="obj\Debug\OHIOCF.Controls.Staff_Inventory.UC_StaffList.resources" />
+    <EmbeddedResource Include="obj\Debug\OHIOCF.Controls.Staff_Inventory.UC_StaffStockReceipt.resources" />
+    <EmbeddedResource Include="obj\Debug\OHIOCF.Controls.UC_Customers.resources" />
+    <EmbeddedResource Include="obj\Debug\OHIOCF.Controls.UC_Dashboard.resources" />
+    <EmbeddedResource Include="obj\Debug\OHIOCF.Controls.UC_Discount.resources" />
+    <EmbeddedResource Include="obj\Debug\OHIOCF.Controls.UC_Products.resources" />
+    <EmbeddedResource Include="obj\Debug\OHIOCF.Controls.UC_Sale.resources" />
+    <EmbeddedResource Include="obj\Debug\OHIOCF.Controls.UC_Sale1.resources" />
+    <EmbeddedResource Include="obj\Debug\OHIOCF.Controls.UC_SizeSelect.resources" />
+    <EmbeddedResource Include="obj\Debug\OHIOCF.Controls.UC_StaffClockIn.resources" />
+    <EmbeddedResource Include="obj\Debug\OHIOCF.Controls.UC_StaffDiscount.resources" />
+    <EmbeddedResource Include="obj\Debug\OHIOCF.Controls.UC_Tables.resources" />
+    <EmbeddedResource Include="obj\Debug\OHIOCF.Form1.resources" />
+    <EmbeddedResource Include="obj\Debug\OHIOCF.Forms.formAdmin.resources" />
+    <EmbeddedResource Include="obj\Debug\OHIOCF.Forms.formStaff.resources" />
+    <EmbeddedResource Include="obj\Debug\OHIOCF.Properties.Resources.resources" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="bin\Debug\OHIOCF.exe.config" />
+    <None Include="Data\ohiocf.db" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="obj\Debug\OHIOCF.csproj.AssemblyReference.cache" />
+    <None Include="obj\Debug\OHIOCF.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Debug\OHIOCF.csproj.GenerateResource.cache" />
+    <None Include="obj\Debug\OHIOCF.csproj.Up2Date" />
+    <None Include="obj\Debug\OHIOCF.exe.config" />
+    <None Include="packages.config" />
+    <None Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\.signature.p7s" />
+    <None Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\buildTransitive\net20\Stub.System.Data.SQLite.Core.NetFramework.targets" />
+    <None Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\buildTransitive\net40\Stub.System.Data.SQLite.Core.NetFramework.targets" />
+    <None Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\buildTransitive\net451\Stub.System.Data.SQLite.Core.NetFramework.targets" />
+    <None Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\buildTransitive\net45\Stub.System.Data.SQLite.Core.NetFramework.targets" />
+    <None Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\buildTransitive\net46\Stub.System.Data.SQLite.Core.NetFramework.targets" />
+    <None Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\build\net20\Stub.System.Data.SQLite.Core.NetFramework.targets" />
+    <None Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\build\net40\Stub.System.Data.SQLite.Core.NetFramework.targets" />
+    <None Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\build\net451\Stub.System.Data.SQLite.Core.NetFramework.targets" />
+    <None Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\build\net45\Stub.System.Data.SQLite.Core.NetFramework.targets" />
+    <None Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets" />
+    <None Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\lib\net20\System.Data.SQLite.dll.altconfig" />
+    <None Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\lib\net40\System.Data.SQLite.dll.altconfig" />
+    <None Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\lib\net451\System.Data.SQLite.dll.altconfig" />
+    <None Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\lib\net45\System.Data.SQLite.dll.altconfig" />
+    <None Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\lib\net46\System.Data.SQLite.dll.altconfig" />
+    <None Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0.nupkg" />
+    <None Include="packages\System.Data.SQLite.Core.1.0.119.0\.signature.p7s" />
+    <None Include="packages\System.Data.SQLite.Core.1.0.119.0\System.Data.SQLite.Core.1.0.119.0.nupkg" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="obj\Debug\TempPE\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include=".gitignore" />
+    <Content Include="bin\Debug\OHIOCF.exe" />
+    <Content Include="bin\Debug\OHIOCF.pdb" />
+    <Content Include="bin\Debug\System.Data.SQLite.dll" />
+    <Content Include="bin\Debug\System.Data.SQLite.xml" />
+    <Content Include="bin\Debug\x64\SQLite.Interop.dll" />
+    <Content Include="bin\Debug\x86\SQLite.Interop.dll" />
+    <Content Include="obj\Debug\OHIOCF.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\OHIOCF.exe" />
+    <Content Include="obj\Debug\OHIOCF.pdb" />
+    <Content Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\build\net20\x64\SQLite.Interop.dll" />
+    <Content Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\build\net20\x86\SQLite.Interop.dll" />
+    <Content Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\build\net40\x64\SQLite.Interop.dll" />
+    <Content Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\build\net40\x86\SQLite.Interop.dll" />
+    <Content Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\build\net451\x64\SQLite.Interop.dll" />
+    <Content Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\build\net451\x86\SQLite.Interop.dll" />
+    <Content Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\build\net45\x64\SQLite.Interop.dll" />
+    <Content Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\build\net45\x86\SQLite.Interop.dll" />
+    <Content Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\build\net46\x64\SQLite.Interop.dll" />
+    <Content Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\build\net46\x86\SQLite.Interop.dll" />
+    <Content Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\lib\net20\System.Data.SQLite.dll" />
+    <Content Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\lib\net20\System.Data.SQLite.xml" />
+    <Content Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\lib\net40\System.Data.SQLite.dll" />
+    <Content Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\lib\net40\System.Data.SQLite.xml" />
+    <Content Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\lib\net451\System.Data.SQLite.dll" />
+    <Content Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\lib\net451\System.Data.SQLite.xml" />
+    <Content Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\lib\net45\System.Data.SQLite.dll" />
+    <Content Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\lib\net45\System.Data.SQLite.xml" />
+    <Content Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\lib\net46\System.Data.SQLite.dll" />
+    <Content Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\lib\net46\System.Data.SQLite.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets" Condition="Exists('packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets'))" />
+  </Target>
+</Project>
