@@ -37,9 +37,7 @@ namespace OHIOCF.BUS
         public UserDTO Login(string username, string password)
         {
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
-            {
                 return null;
-            }
 
             string passwordHash = GetMD5(password);
             return UserDAO.Instance.Login(username, passwordHash);
@@ -56,7 +54,6 @@ namespace OHIOCF.BUS
             {
                 user.Password = GetMD5(user.Password);
             }
-
             return UserDAO.Instance.InsertUser(user);
         }
 
@@ -66,16 +63,12 @@ namespace OHIOCF.BUS
             {
                 user.Password = GetMD5(user.Password);
             }
-
             return UserDAO.Instance.UpdateUser(user);
         }
 
         public bool DeleteUser(string currentUserId, string targetUserId)
         {
-            if (currentUserId == targetUserId)
-            {
-                return false;
-            }
+            if (currentUserId == targetUserId) return false;
             return UserDAO.Instance.DeleteUser(targetUserId);
         }
     }

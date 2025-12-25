@@ -51,7 +51,7 @@ namespace OHIOCF.DAO
         public List<UserDTO> GetListUser()
         {
             List<UserDTO> list = new List<UserDTO>();
-            string query = "SELECT * FROM User";
+            string query = "SELECT * FROM User WHERE isActive = 1";
 
             using (SQLiteConnection conn = new SQLiteConnection(Database.ConnectionString))
             {
@@ -101,7 +101,15 @@ namespace OHIOCF.DAO
 
         public bool UpdateUser(UserDTO user)
         {
-            string query = "UPDATE User SET roleId = @roleId, fullName = @name, isActive = @active WHERE id = @id";
+            string query;
+            if (string.IsNullOrEmpty(user.Password))
+            {
+                query = "UPDATE User SET roleId = @roleId, fullName = @name, isActive = @active WHERE id = @id";
+            }
+            else
+            {
+                query = "UPDATE User SET roleId = @roleId, password = @pass, fullName = @name, isActive = @active WHERE id = @id";
+            }
 
             using (SQLiteConnection conn = new SQLiteConnection(Database.ConnectionString))
             {
@@ -112,6 +120,11 @@ namespace OHIOCF.DAO
                     cmd.Parameters.AddWithValue("@roleId", user.RoleId);
                     cmd.Parameters.AddWithValue("@name", user.FullName);
                     cmd.Parameters.AddWithValue("@active", user.IsActive ? 1 : 0);
+
+                    if (!string.IsNullOrEmpty(user.Password))
+                    {
+                        cmd.Parameters.AddWithValue("@pass", user.Password);
+                    }
 
                     return cmd.ExecuteNonQuery() > 0;
                 }
