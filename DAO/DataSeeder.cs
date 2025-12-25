@@ -29,17 +29,22 @@ namespace OHIOCF
         {
             string adminRoleId = "";
             var roles = RoleDAO.Instance.GetListRole();
-            var adminRole = roles.FirstOrDefault(r => r.RoleName == "Admin");
 
+            var adminRole = roles.FirstOrDefault(r => r.RoleName == "Admin");
             if (adminRole == null)
             {
                 RoleDAO.Instance.InsertRole("Admin");
-                adminRoleId = RoleDAO.Instance.GetListRole()
-                                .First(r => r.RoleName == "Admin").Id;
+                adminRoleId = RoleDAO.Instance.GetListRole().First(r => r.RoleName == "Admin").Id;
             }
             else
             {
                 adminRoleId = adminRole.Id;
+            }
+
+            var staffRole = roles.FirstOrDefault(r => r.RoleName == "Staff");
+            if (staffRole == null)
+            {
+                RoleDAO.Instance.InsertRole("Staff");
             }
 
             var users = UserDAO.Instance.GetListUser();

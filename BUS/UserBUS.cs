@@ -1,4 +1,5 @@
-﻿using System.Security.Cryptography;
+﻿using System.Collections.Generic;
+using System.Security.Cryptography;
 using System.Text;
 using OHIOCF.DAO;
 using OHIOCF.DTO;
@@ -8,6 +9,7 @@ namespace OHIOCF.BUS
     public class UserBUS
     {
         private static UserBUS instance;
+
         public static UserBUS Instance
         {
             get { if (instance == null) instance = new UserBUS(); return instance; }
@@ -41,6 +43,31 @@ namespace OHIOCF.BUS
 
             string passwordHash = GetMD5(password);
             return UserDAO.Instance.Login(username, passwordHash);
+        }
+
+        public List<UserDTO> GetListUser()
+        {
+            return UserDAO.Instance.GetListUser();
+        }
+
+        public bool InsertUser(UserDTO user)
+        {
+            if (!string.IsNullOrEmpty(user.Password))
+            {
+                user.Password = GetMD5(user.Password);
+            }
+
+            return UserDAO.Instance.InsertUser(user);
+        }
+
+        public bool UpdateUser(UserDTO user)
+        {
+            if (!string.IsNullOrEmpty(user.Password))
+            {
+                user.Password = GetMD5(user.Password);
+            }
+
+            return UserDAO.Instance.UpdateUser(user);
         }
 
         public bool DeleteUser(string currentUserId, string targetUserId)
