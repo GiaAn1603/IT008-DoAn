@@ -16,5 +16,10 @@ namespace OHIOCF.Controls.Inventory
         {
             InitializeComponent();
         }
+
+        private void lblNVLCode_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

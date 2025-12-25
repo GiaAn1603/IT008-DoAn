@@ -40,6 +40,17 @@
             this.btnFilter = new System.Windows.Forms.Button();
             this.btnExport = new System.Windows.Forms.Button();
             this.dgvDiscountList = new System.Windows.Forms.DataGridView();
+            this.colMaKM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTenKM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colLoaiKM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colGiaTri = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDieuKien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colApDung = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTuNgay = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDenNgay = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDadung = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTrangThaiKM = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.btnAddDiscount = new System.Windows.Forms.Button();
@@ -69,17 +80,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.colMaKM = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTenKM = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colLoaiKM = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colGiaTri = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDieuKien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colApDung = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTuNgay = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDenNgay = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDadung = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTrangThaiKM = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDiscountList)).BeginInit();
@@ -154,7 +154,7 @@
             this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(242)))), ((int)(((byte)(80)))));
             this.tableLayoutPanel3.SetColumnSpan(this.btnSearch, 2);
             this.btnSearch.FlatAppearance.BorderSize = 0;
-            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSearch.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
             this.btnSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(84)))), ((int)(((byte)(48)))));
             this.btnSearch.Location = new System.Drawing.Point(44, 53);
@@ -248,7 +248,7 @@
             this.btnFilter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(242)))), ((int)(((byte)(80)))));
             this.tableLayoutPanel3.SetColumnSpan(this.btnFilter, 2);
             this.btnFilter.FlatAppearance.BorderSize = 0;
-            this.btnFilter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFilter.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnFilter.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
             this.btnFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(84)))), ((int)(((byte)(48)))));
             this.btnFilter.Location = new System.Drawing.Point(575, 91);
@@ -264,7 +264,7 @@
             this.btnExport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(242)))), ((int)(((byte)(80)))));
             this.tableLayoutPanel3.SetColumnSpan(this.btnExport, 2);
             this.btnExport.FlatAppearance.BorderSize = 0;
-            this.btnExport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExport.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnExport.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
             this.btnExport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(84)))), ((int)(((byte)(48)))));
             this.btnExport.Location = new System.Drawing.Point(575, 52);
@@ -298,6 +298,64 @@
             this.dgvDiscountList.Size = new System.Drawing.Size(704, 558);
             this.dgvDiscountList.TabIndex = 1;
             this.dgvDiscountList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDiscountList_CellContentClick);
+            // 
+            // colMaKM
+            // 
+            this.colMaKM.Frozen = true;
+            this.colMaKM.HeaderText = "Mã KM";
+            this.colMaKM.Name = "colMaKM";
+            this.colMaKM.Width = 70;
+            // 
+            // colTenKM
+            // 
+            this.colTenKM.HeaderText = "Tên KM";
+            this.colTenKM.Name = "colTenKM";
+            // 
+            // colLoaiKM
+            // 
+            this.colLoaiKM.HeaderText = "Loại KM";
+            this.colLoaiKM.Name = "colLoaiKM";
+            this.colLoaiKM.Width = 70;
+            // 
+            // colGiaTri
+            // 
+            this.colGiaTri.HeaderText = "Giá trị";
+            this.colGiaTri.Name = "colGiaTri";
+            // 
+            // colDieuKien
+            // 
+            this.colDieuKien.HeaderText = "Điều kiện";
+            this.colDieuKien.Name = "colDieuKien";
+            // 
+            // colApDung
+            // 
+            this.colApDung.HeaderText = "Sản phẩm áp dụng";
+            this.colApDung.Name = "colApDung";
+            // 
+            // colTuNgay
+            // 
+            this.colTuNgay.HeaderText = "Từ ngày";
+            this.colTuNgay.Name = "colTuNgay";
+            // 
+            // colDenNgay
+            // 
+            this.colDenNgay.HeaderText = "Đến ngày";
+            this.colDenNgay.Name = "colDenNgay";
+            // 
+            // colSoLuong
+            // 
+            this.colSoLuong.HeaderText = "Số lượng";
+            this.colSoLuong.Name = "colSoLuong";
+            // 
+            // colDadung
+            // 
+            this.colDadung.HeaderText = "Đã dùng (Số lượng)";
+            this.colDadung.Name = "colDadung";
+            // 
+            // colTrangThaiKM
+            // 
+            this.colTrangThaiKM.HeaderText = "Trạng thái";
+            this.colTrangThaiKM.Name = "colTrangThaiKM";
             // 
             // tableLayoutPanel2
             // 
@@ -645,14 +703,16 @@
             // btnConfirmUpdate
             // 
             this.btnConfirmUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(242)))), ((int)(((byte)(80)))));
+            this.btnConfirmUpdate.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnConfirmUpdate.FlatAppearance.BorderSize = 0;
-            this.btnConfirmUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConfirmUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnConfirmUpdate.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
             this.btnConfirmUpdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(92)))), ((int)(((byte)(33)))));
-            this.btnConfirmUpdate.Location = new System.Drawing.Point(223, 555);
+            this.btnConfirmUpdate.Location = new System.Drawing.Point(220, 552);
+            this.btnConfirmUpdate.Margin = new System.Windows.Forms.Padding(0);
             this.btnConfirmUpdate.Name = "btnConfirmUpdate";
             this.tableLayoutPanel7.SetRowSpan(this.btnConfirmUpdate, 2);
-            this.btnConfirmUpdate.Size = new System.Drawing.Size(111, 38);
+            this.btnConfirmUpdate.Size = new System.Drawing.Size(117, 44);
             this.btnConfirmUpdate.TabIndex = 26;
             this.btnConfirmUpdate.Text = "XÁC NHẬN";
             this.btnConfirmUpdate.UseVisualStyleBackColor = false;
@@ -723,64 +783,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 700F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1063, 700);
             this.tableLayoutPanel1.TabIndex = 0;
-            // 
-            // colMaKM
-            // 
-            this.colMaKM.Frozen = true;
-            this.colMaKM.HeaderText = "Mã KM";
-            this.colMaKM.Name = "colMaKM";
-            this.colMaKM.Width = 70;
-            // 
-            // colTenKM
-            // 
-            this.colTenKM.HeaderText = "Tên KM";
-            this.colTenKM.Name = "colTenKM";
-            // 
-            // colLoaiKM
-            // 
-            this.colLoaiKM.HeaderText = "Loại KM";
-            this.colLoaiKM.Name = "colLoaiKM";
-            this.colLoaiKM.Width = 70;
-            // 
-            // colGiaTri
-            // 
-            this.colGiaTri.HeaderText = "Giá trị";
-            this.colGiaTri.Name = "colGiaTri";
-            // 
-            // colDieuKien
-            // 
-            this.colDieuKien.HeaderText = "Điều kiện";
-            this.colDieuKien.Name = "colDieuKien";
-            // 
-            // colApDung
-            // 
-            this.colApDung.HeaderText = "Sản phẩm áp dụng";
-            this.colApDung.Name = "colApDung";
-            // 
-            // colTuNgay
-            // 
-            this.colTuNgay.HeaderText = "Từ ngày";
-            this.colTuNgay.Name = "colTuNgay";
-            // 
-            // colDenNgay
-            // 
-            this.colDenNgay.HeaderText = "Đến ngày";
-            this.colDenNgay.Name = "colDenNgay";
-            // 
-            // colSoLuong
-            // 
-            this.colSoLuong.HeaderText = "Số lượng";
-            this.colSoLuong.Name = "colSoLuong";
-            // 
-            // colDadung
-            // 
-            this.colDadung.HeaderText = "Đã dùng (Số lượng)";
-            this.colDadung.Name = "colDadung";
-            // 
-            // colTrangThaiKM
-            // 
-            this.colTrangThaiKM.HeaderText = "Trạng thái";
-            this.colTrangThaiKM.Name = "colTrangThaiKM";
             // 
             // UC_Discount
             // 

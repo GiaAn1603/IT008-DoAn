@@ -39,10 +39,10 @@
             this.btnExport = new System.Windows.Forms.Button();
             this.txtSearchKeyword = new System.Windows.Forms.TextBox();
             this.dgvReportData = new System.Windows.Forms.DataGridView();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.colSTT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colKhoanMuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colGiaTri = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReportData)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
@@ -111,7 +111,7 @@
             this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(242)))), ((int)(((byte)(80)))));
             this.tableLayoutPanel2.SetColumnSpan(this.btnSearch, 2);
             this.btnSearch.FlatAppearance.BorderSize = 0;
-            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSearch.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
             this.btnSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(84)))), ((int)(((byte)(48)))));
             this.btnSearch.Location = new System.Drawing.Point(64, 53);
@@ -178,7 +178,7 @@
             this.btnGenerateReport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(242)))), ((int)(((byte)(80)))));
             this.tableLayoutPanel2.SetColumnSpan(this.btnGenerateReport, 2);
             this.btnGenerateReport.FlatAppearance.BorderSize = 0;
-            this.btnGenerateReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGenerateReport.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnGenerateReport.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
             this.btnGenerateReport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(84)))), ((int)(((byte)(48)))));
             this.btnGenerateReport.Location = new System.Drawing.Point(772, 90);
@@ -195,7 +195,7 @@
             this.btnExport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(242)))), ((int)(((byte)(80)))));
             this.tableLayoutPanel2.SetColumnSpan(this.btnExport, 2);
             this.btnExport.FlatAppearance.BorderSize = 0;
-            this.btnExport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExport.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnExport.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
             this.btnExport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(84)))), ((int)(((byte)(48)))));
             this.btnExport.Location = new System.Drawing.Point(890, 90);
@@ -233,22 +233,6 @@
             this.dgvReportData.Size = new System.Drawing.Size(1057, 537);
             this.dgvReportData.TabIndex = 1;
             // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40.92192F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 59.07808F));
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.dgvReportData, 0, 1);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 19.71428F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80.28571F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1063, 676);
-            this.tableLayoutPanel1.TabIndex = 6;
-            // 
             // colSTT
             // 
             this.colSTT.HeaderText = "STT";
@@ -265,6 +249,22 @@
             this.colGiaTri.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.colGiaTri.HeaderText = "Giá trị";
             this.colGiaTri.Name = "colGiaTri";
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40.92192F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 59.07808F));
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.dgvReportData, 0, 1);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 19.71428F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80.28571F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1063, 676);
+            this.tableLayoutPanel1.TabIndex = 6;
             // 
             // UC_RevenueReport
             // 

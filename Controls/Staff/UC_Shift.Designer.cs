@@ -45,6 +45,7 @@
             this.sunday = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.label5 = new System.Windows.Forms.Label();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -56,7 +57,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStaffData)).BeginInit();
@@ -157,7 +157,6 @@
             // 
             // dgvStaffData
             // 
-            this.dgvStaffData.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvStaffData.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dgvStaffData.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvStaffData.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
@@ -170,6 +169,7 @@
             this.friday,
             this.saturday,
             this.sunday});
+            this.dgvStaffData.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvStaffData.GridColor = System.Drawing.Color.Beige;
             this.dgvStaffData.Location = new System.Drawing.Point(3, 47);
             this.dgvStaffData.Name = "dgvStaffData";
@@ -267,6 +267,21 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(336, 676);
             this.tableLayoutPanel2.TabIndex = 3;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(215)))), ((int)(((byte)(32)))));
+            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label5.Font = new System.Drawing.Font("Bahnschrift Light", 16F, System.Drawing.FontStyle.Bold);
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(0, 0);
+            this.label5.Margin = new System.Windows.Forms.Padding(0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(336, 208);
+            this.label5.TabIndex = 27;
+            this.label5.Text = "tạm thời trống";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // tableLayoutPanel5
             // 
             this.tableLayoutPanel5.ColumnCount = 1;
@@ -312,7 +327,7 @@
             // 
             // tableLayoutPanel6
             // 
-            this.tableLayoutPanel6.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Inset;
+            this.tableLayoutPanel6.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel6.ColumnCount = 2;
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18.18182F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 81.81818F));
@@ -334,7 +349,7 @@
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(215)))), ((int)(((byte)(32)))));
             this.label2.Font = new System.Drawing.Font("Bahnschrift Light", 9F);
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(65, 32);
+            this.label2.Location = new System.Drawing.Point(64, 32);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(68, 14);
             this.label2.TabIndex = 28;
@@ -348,9 +363,9 @@
             this.lblStaffName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblStaffName.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
             this.lblStaffName.ForeColor = System.Drawing.Color.Black;
-            this.lblStaffName.Location = new System.Drawing.Point(65, 2);
+            this.lblStaffName.Location = new System.Drawing.Point(64, 1);
             this.lblStaffName.Name = "lblStaffName";
-            this.lblStaffName.Size = new System.Drawing.Size(260, 28);
+            this.lblStaffName.Size = new System.Drawing.Size(262, 30);
             this.lblStaffName.TabIndex = 27;
             this.lblStaffName.Text = "Uchiha Shisui";
             this.lblStaffName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -358,7 +373,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(2, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(1, 1);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox1.Name = "pictureBox1";
             this.tableLayoutPanel6.SetRowSpan(this.pictureBox1, 2);
@@ -369,7 +384,7 @@
             // 
             // tableLayoutPanel7
             // 
-            this.tableLayoutPanel7.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Inset;
+            this.tableLayoutPanel7.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel7.ColumnCount = 2;
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18.18182F));
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 81.81818F));
@@ -390,7 +405,7 @@
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(215)))), ((int)(((byte)(32)))));
             this.label3.Font = new System.Drawing.Font("Bahnschrift Light", 9F);
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(65, 32);
+            this.label3.Location = new System.Drawing.Point(64, 32);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(68, 14);
             this.label3.TabIndex = 28;
@@ -404,9 +419,9 @@
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label4.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(65, 2);
+            this.label4.Location = new System.Drawing.Point(64, 1);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(260, 28);
+            this.label4.Size = new System.Drawing.Size(262, 30);
             this.label4.TabIndex = 27;
             this.label4.Text = "Uchiha Shisui";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -414,7 +429,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(2, 2);
+            this.pictureBox2.Location = new System.Drawing.Point(1, 1);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox2.Name = "pictureBox2";
             this.tableLayoutPanel7.SetRowSpan(this.pictureBox2, 2);
@@ -422,21 +437,6 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(215)))), ((int)(((byte)(32)))));
-            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label5.Font = new System.Drawing.Font("Bahnschrift Light", 16F, System.Drawing.FontStyle.Bold);
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(0, 0);
-            this.label5.Margin = new System.Windows.Forms.Padding(0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(336, 208);
-            this.label5.TabIndex = 27;
-            this.label5.Text = "tạm thời trống";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // UC_Shift
             // 
