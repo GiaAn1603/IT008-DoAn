@@ -59,6 +59,7 @@
     <Compile Include="BUS\InventoryBUS.cs" />
     <Compile Include="BUS\OrderBUS.cs" />
     <Compile Include="BUS\OrderDetailBUS.cs" />
+    <Compile Include="BUS\PaymentBUS.cs" />
     <Compile Include="BUS\ProductBUS.cs" />
     <Compile Include="BUS\ProductIngredientBUS.cs" />
     <Compile Include="BUS\ProductSizeBUS.cs" />
@@ -213,6 +214,7 @@
     <Compile Include="DAO\InventoryDAO.cs" />
     <Compile Include="DAO\OrderDAO.cs" />
     <Compile Include="DAO\OrderDetailDAO.cs" />
+    <Compile Include="DAO\PaymentDAO.cs" />
     <Compile Include="DAO\ProductDAO.cs" />
     <Compile Include="DAO\ProductIngredientDAO.cs" />
     <Compile Include="DAO\ProductSizeDAO.cs" />
