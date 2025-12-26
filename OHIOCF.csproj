@@ -251,13 +251,13 @@
     <Compile Include="Forms\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormScaler.cs" />
     <Compile Include="Forms\formStaff.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\formStaff.Designer.cs">
       <DependentUpon>formStaff.cs</DependentUpon>
     </Compile>
-    <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Controls\Inventory\UC_Inventory1.resx">
@@ -326,29 +326,6 @@
     <EmbeddedResource Include="Forms\formStaff.resx">
       <DependentUpon>formStaff.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="obj\Debug\OHIOCF.Controls.Inventory.UC_Inventory1.resources" />
-    <EmbeddedResource Include="obj\Debug\OHIOCF.Controls.Inventory.UC_ReceiptHistory.resources" />
-    <EmbeddedResource Include="obj\Debug\OHIOCF.Controls.Inventory.UC_StockReceipt.resources" />
-    <EmbeddedResource Include="obj\Debug\OHIOCF.Controls.Report.UC_RevenueReport.resources" />
-    <EmbeddedResource Include="obj\Debug\OHIOCF.Controls.Report.UC_SalesReport.resources" />
-    <EmbeddedResource Include="obj\Debug\OHIOCF.Controls.Staff_Inventory.UC_Shift.resources" />
-    <EmbeddedResource Include="obj\Debug\OHIOCF.Controls.Staff_Inventory.UC_StaffInventory1.resources" />
-    <EmbeddedResource Include="obj\Debug\OHIOCF.Controls.Staff_Inventory.UC_StaffList.resources" />
-    <EmbeddedResource Include="obj\Debug\OHIOCF.Controls.Staff_Inventory.UC_StaffStockReceipt.resources" />
-    <EmbeddedResource Include="obj\Debug\OHIOCF.Controls.UC_Customers.resources" />
-    <EmbeddedResource Include="obj\Debug\OHIOCF.Controls.UC_Dashboard.resources" />
-    <EmbeddedResource Include="obj\Debug\OHIOCF.Controls.UC_Discount.resources" />
-    <EmbeddedResource Include="obj\Debug\OHIOCF.Controls.UC_Products.resources" />
-    <EmbeddedResource Include="obj\Debug\OHIOCF.Controls.UC_Sale.resources" />
-    <EmbeddedResource Include="obj\Debug\OHIOCF.Controls.UC_Sale1.resources" />
-    <EmbeddedResource Include="obj\Debug\OHIOCF.Controls.UC_SizeSelect.resources" />
-    <EmbeddedResource Include="obj\Debug\OHIOCF.Controls.UC_StaffClockIn.resources" />
-    <EmbeddedResource Include="obj\Debug\OHIOCF.Controls.UC_StaffDiscount.resources" />
-    <EmbeddedResource Include="obj\Debug\OHIOCF.Controls.UC_Tables.resources" />
-    <EmbeddedResource Include="obj\Debug\OHIOCF.Form1.resources" />
-    <EmbeddedResource Include="obj\Debug\OHIOCF.Forms.formAdmin.resources" />
-    <EmbeddedResource Include="obj\Debug\OHIOCF.Forms.formStaff.resources" />
-    <EmbeddedResource Include="obj\Debug\OHIOCF.Properties.Resources.resources" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -358,14 +335,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="bin\Debug\OHIOCF.exe.config" />
     <None Include="Data\ohiocf.db" />
-    <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
-    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
-    <None Include="obj\Debug\OHIOCF.csproj.AssemblyReference.cache" />
-    <None Include="obj\Debug\OHIOCF.csproj.CoreCompileInputs.cache" />
-    <None Include="obj\Debug\OHIOCF.csproj.GenerateResource.cache" />
-    <None Include="obj\Debug\OHIOCF.csproj.Up2Date" />
     <None Include="packages.config" />
     <None Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\.signature.p7s" />
     <None Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\buildTransitive\net20\Stub.System.Data.SQLite.Core.NetFramework.targets" />
@@ -399,18 +369,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="obj\Debug\TempPE\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include=".gitignore" />
-    <Content Include="bin\Debug\OHIOCF.exe" />
-    <Content Include="bin\Debug\OHIOCF.pdb" />
-    <Content Include="bin\Debug\System.Data.SQLite.dll" />
-    <Content Include="bin\Debug\System.Data.SQLite.xml" />
-    <Content Include="obj\Debug\OHIOCF.csproj.FileListAbsolute.txt" />
-    <Content Include="obj\Debug\OHIOCF.exe" />
-    <Content Include="obj\Debug\OHIOCF.pdb" />
     <Content Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\build\net20\x64\SQLite.Interop.dll" />
     <Content Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\build\net20\x86\SQLite.Interop.dll" />
     <Content Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\build\net40\x64\SQLite.Interop.dll" />

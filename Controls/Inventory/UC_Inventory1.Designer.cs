@@ -33,12 +33,6 @@
             this.lblNVLName = new System.Windows.Forms.Label();
             this.lblPrice = new System.Windows.Forms.Label();
             this.dgvInventory = new System.Windows.Forms.DataGridView();
-            this.colMaNVL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTenNVL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDonVi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTonKho = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNguongMin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.lblHeaderTitle = new System.Windows.Forms.Label();
@@ -58,9 +52,15 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.colMaNVL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTenNVL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDonVi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTonKho = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNguongMin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
@@ -114,41 +114,6 @@
             this.dgvInventory.Size = new System.Drawing.Size(698, 621);
             this.dgvInventory.TabIndex = 1;
             // 
-            // colMaNVL
-            // 
-            this.colMaNVL.HeaderText = "Mã NVL";
-            this.colMaNVL.Name = "colMaNVL";
-            // 
-            // colTenNVL
-            // 
-            this.colTenNVL.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colTenNVL.HeaderText = "Tên nguyên vật liệu";
-            this.colTenNVL.Name = "colTenNVL";
-            // 
-            // colDonVi
-            // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.colDonVi.DefaultCellStyle = dataGridViewCellStyle1;
-            this.colDonVi.HeaderText = "Đơn vị tính";
-            this.colDonVi.Name = "colDonVi";
-            // 
-            // colTonKho
-            // 
-            this.colTonKho.HeaderText = "Số lượng tồn";
-            this.colTonKho.Name = "colTonKho";
-            // 
-            // colNguongMin
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colNguongMin.DefaultCellStyle = dataGridViewCellStyle2;
-            this.colNguongMin.HeaderText = "Ngưỡng tối thiểu";
-            this.colNguongMin.Name = "colNguongMin";
-            // 
-            // colTrangThai
-            // 
-            this.colTrangThai.HeaderText = "Trạng thái";
-            this.colTrangThai.Name = "colTrangThai";
-            // 
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(92)))), ((int)(((byte)(33)))));
@@ -200,9 +165,9 @@
             // 
             // btnSearch
             // 
+            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(242)))), ((int)(((byte)(80)))));
             this.tableLayoutPanel2.SetColumnSpan(this.btnSearch, 3);
-            this.btnSearch.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnSearch.FlatAppearance.BorderSize = 0;
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSearch.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Bold);
@@ -246,12 +211,12 @@
             // txtSearch
             // 
             this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel2.SetColumnSpan(this.txtSearch, 5);
+            this.tableLayoutPanel2.SetColumnSpan(this.txtSearch, 6);
             this.txtSearch.Font = new System.Drawing.Font("Bahnschrift Light", 12F);
             this.txtSearch.Location = new System.Drawing.Point(126, 29);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(0);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(160, 27);
+            this.txtSearch.Size = new System.Drawing.Size(192, 27);
             this.txtSearch.TabIndex = 11;
             // 
             // txtNVLCode
@@ -474,22 +439,6 @@
             this.tableLayoutPanel5.Size = new System.Drawing.Size(286, 64);
             this.tableLayoutPanel5.TabIndex = 22;
             // 
-            // btnDelete
-            // 
-            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(242)))), ((int)(((byte)(80)))));
-            this.btnDelete.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnDelete.FlatAppearance.BorderSize = 0;
-            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnDelete.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Bold);
-            this.btnDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(92)))), ((int)(((byte)(33)))));
-            this.btnDelete.Location = new System.Drawing.Point(195, 5);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(5);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(86, 54);
-            this.btnDelete.TabIndex = 24;
-            this.btnDelete.Text = "XÓA";
-            this.btnDelete.UseVisualStyleBackColor = false;
-            // 
             // btnUpdate
             // 
             this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(242)))), ((int)(((byte)(80)))));
@@ -506,6 +455,22 @@
             this.btnUpdate.Text = "CẬP NHẬT";
             this.btnUpdate.UseVisualStyleBackColor = false;
             // 
+            // btnDelete
+            // 
+            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(242)))), ((int)(((byte)(80)))));
+            this.btnDelete.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnDelete.FlatAppearance.BorderSize = 0;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnDelete.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Bold);
+            this.btnDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(92)))), ((int)(((byte)(33)))));
+            this.btnDelete.Location = new System.Drawing.Point(195, 5);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(5);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(86, 54);
+            this.btnDelete.TabIndex = 24;
+            this.btnDelete.Text = "XÓA";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            // 
             // btnAdd
             // 
             this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(242)))), ((int)(((byte)(80)))));
@@ -521,6 +486,46 @@
             this.btnAdd.TabIndex = 23;
             this.btnAdd.Text = "THÊM MỚI";
             this.btnAdd.UseVisualStyleBackColor = false;
+            // 
+            // colMaNVL
+            // 
+            this.colMaNVL.HeaderText = "Mã NVL";
+            this.colMaNVL.Name = "colMaNVL";
+            this.colMaNVL.Width = 70;
+            // 
+            // colTenNVL
+            // 
+            this.colTenNVL.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colTenNVL.HeaderText = "Tên nguyên vật liệu";
+            this.colTenNVL.Name = "colTenNVL";
+            // 
+            // colDonVi
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.colDonVi.DefaultCellStyle = dataGridViewCellStyle1;
+            this.colDonVi.HeaderText = "Đơn vị tính";
+            this.colDonVi.Name = "colDonVi";
+            this.colDonVi.Width = 70;
+            // 
+            // colTonKho
+            // 
+            this.colTonKho.HeaderText = "Số lượng tồn";
+            this.colTonKho.Name = "colTonKho";
+            this.colTonKho.Width = 70;
+            // 
+            // colNguongMin
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colNguongMin.DefaultCellStyle = dataGridViewCellStyle2;
+            this.colNguongMin.HeaderText = "Ngưỡng tối thiểu";
+            this.colNguongMin.Name = "colNguongMin";
+            this.colNguongMin.Width = 70;
+            // 
+            // colTrangThai
+            // 
+            this.colTrangThai.HeaderText = "Trạng thái";
+            this.colTrangThai.Name = "colTrangThai";
+            this.colTrangThai.Width = 70;
             // 
             // UC_Inventory1
             // 
@@ -566,15 +571,15 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.Label lblHeaderTitle;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaNVL;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTenNVL;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDonVi;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTonKho;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNguongMin;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTrangThai;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
-        private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Button btnAdd;
     }
 }

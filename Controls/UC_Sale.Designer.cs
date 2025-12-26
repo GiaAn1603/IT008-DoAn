@@ -71,6 +71,7 @@
             this.cmbFloorSelect = new System.Windows.Forms.ComboBox();
             this.pnlIndoorTables = new System.Windows.Forms.Label();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
+            this.lblFreeable = new System.Windows.Forms.Label();
             this.pnlTableDetails = new System.Windows.Forms.TableLayoutPanel();
             this.lblCurrentTable = new System.Windows.Forms.Label();
             this.lblTableNumber = new System.Windows.Forms.Label();
@@ -78,23 +79,22 @@
             this.lblInvoiceTitle = new System.Windows.Forms.Label();
             this.lblTableStatus = new System.Windows.Forms.Label();
             this.DGVInvoiceSummary = new System.Windows.Forms.DataGridView();
-            this.colTenMon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnUpdateStatus = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.btnUpdateStatus = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label10 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.btnAddNewOrder = new System.Windows.Forms.Button();
-            this.lblFreeable = new System.Windows.Forms.Label();
+            this.colTenMon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
@@ -766,6 +766,21 @@
             this.tableLayoutPanel7.Size = new System.Drawing.Size(313, 604);
             this.tableLayoutPanel7.TabIndex = 2;
             // 
+            // lblFreeable
+            // 
+            this.lblFreeable.AutoSize = true;
+            this.lblFreeable.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(242)))), ((int)(((byte)(80)))));
+            this.lblFreeable.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblFreeable.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
+            this.lblFreeable.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(92)))), ((int)(((byte)(33)))));
+            this.lblFreeable.Location = new System.Drawing.Point(0, 0);
+            this.lblFreeable.Margin = new System.Windows.Forms.Padding(0);
+            this.lblFreeable.Name = "lblFreeable";
+            this.lblFreeable.Size = new System.Drawing.Size(313, 30);
+            this.lblFreeable.TabIndex = 6;
+            this.lblFreeable.Text = "Số bàn trống:";
+            this.lblFreeable.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // pnlTableDetails
             // 
             this.pnlTableDetails.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(215)))), ((int)(((byte)(32)))));
@@ -917,30 +932,6 @@
             this.DGVInvoiceSummary.Size = new System.Drawing.Size(276, 274);
             this.DGVInvoiceSummary.TabIndex = 7;
             // 
-            // colTenMon
-            // 
-            this.colTenMon.Frozen = true;
-            this.colTenMon.HeaderText = "Tên món";
-            this.colTenMon.Name = "colTenMon";
-            // 
-            // colSize
-            // 
-            this.colSize.HeaderText = "Size";
-            this.colSize.Name = "colSize";
-            this.colSize.Width = 30;
-            // 
-            // colDonGia
-            // 
-            this.colDonGia.HeaderText = "Đơn giá";
-            this.colDonGia.Name = "colDonGia";
-            this.colDonGia.Width = 50;
-            // 
-            // colSL
-            // 
-            this.colSL.HeaderText = "SL";
-            this.colSL.Name = "colSL";
-            this.colSL.Width = 30;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -989,24 +980,6 @@
             this.label3.Text = "TỔNG TIỀN";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // btnUpdateStatus
-            // 
-            this.btnUpdateStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(242)))), ((int)(((byte)(80)))));
-            this.pnlTableDetails.SetColumnSpan(this.btnUpdateStatus, 4);
-            this.btnUpdateStatus.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnUpdateStatus.FlatAppearance.BorderSize = 0;
-            this.btnUpdateStatus.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnUpdateStatus.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Bold);
-            this.btnUpdateStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(92)))), ((int)(((byte)(33)))));
-            this.btnUpdateStatus.Location = new System.Drawing.Point(171, 516);
-            this.btnUpdateStatus.Margin = new System.Windows.Forms.Padding(0);
-            this.btnUpdateStatus.Name = "btnUpdateStatus";
-            this.pnlTableDetails.SetRowSpan(this.btnUpdateStatus, 2);
-            this.btnUpdateStatus.Size = new System.Drawing.Size(120, 43);
-            this.btnUpdateStatus.TabIndex = 9;
-            this.btnUpdateStatus.Text = "CẬP NHẬT";
-            this.btnUpdateStatus.UseVisualStyleBackColor = false;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -1051,6 +1024,24 @@
             this.label11.Size = new System.Drawing.Size(180, 21);
             this.label11.TabIndex = 15;
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // btnUpdateStatus
+            // 
+            this.btnUpdateStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(242)))), ((int)(((byte)(80)))));
+            this.pnlTableDetails.SetColumnSpan(this.btnUpdateStatus, 4);
+            this.btnUpdateStatus.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnUpdateStatus.FlatAppearance.BorderSize = 0;
+            this.btnUpdateStatus.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnUpdateStatus.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Bold);
+            this.btnUpdateStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(92)))), ((int)(((byte)(33)))));
+            this.btnUpdateStatus.Location = new System.Drawing.Point(171, 516);
+            this.btnUpdateStatus.Margin = new System.Windows.Forms.Padding(0);
+            this.btnUpdateStatus.Name = "btnUpdateStatus";
+            this.pnlTableDetails.SetRowSpan(this.btnUpdateStatus, 2);
+            this.btnUpdateStatus.Size = new System.Drawing.Size(120, 43);
+            this.btnUpdateStatus.TabIndex = 9;
+            this.btnUpdateStatus.Text = "CẬP NHẬT";
+            this.btnUpdateStatus.UseVisualStyleBackColor = false;
             // 
             // tableLayoutPanel1
             // 
@@ -1148,20 +1139,29 @@
             this.btnAddNewOrder.UseVisualStyleBackColor = false;
             this.btnAddNewOrder.Click += new System.EventHandler(this.btnAddNewOrder_Click);
             // 
-            // lblFreeable
+            // colTenMon
             // 
-            this.lblFreeable.AutoSize = true;
-            this.lblFreeable.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(242)))), ((int)(((byte)(80)))));
-            this.lblFreeable.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblFreeable.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
-            this.lblFreeable.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(92)))), ((int)(((byte)(33)))));
-            this.lblFreeable.Location = new System.Drawing.Point(0, 0);
-            this.lblFreeable.Margin = new System.Windows.Forms.Padding(0);
-            this.lblFreeable.Name = "lblFreeable";
-            this.lblFreeable.Size = new System.Drawing.Size(313, 30);
-            this.lblFreeable.TabIndex = 6;
-            this.lblFreeable.Text = "Số bàn trống:";
-            this.lblFreeable.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.colTenMon.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colTenMon.HeaderText = "Tên món";
+            this.colTenMon.Name = "colTenMon";
+            // 
+            // colSize
+            // 
+            this.colSize.HeaderText = "Size";
+            this.colSize.Name = "colSize";
+            this.colSize.Width = 30;
+            // 
+            // colDonGia
+            // 
+            this.colDonGia.HeaderText = "Đơn giá";
+            this.colDonGia.Name = "colDonGia";
+            this.colDonGia.Width = 50;
+            // 
+            // colSL
+            // 
+            this.colSL.HeaderText = "SL";
+            this.colSL.Name = "colSL";
+            this.colSL.Width = 30;
             // 
             // UC_Sale
             // 
@@ -1267,10 +1267,10 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lblFreeable;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTenMon;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSize;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDonGia;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSL;
-        private System.Windows.Forms.Label lblFreeable;
     }
 }

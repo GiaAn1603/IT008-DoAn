@@ -35,14 +35,6 @@
             this.lblHeaderTitle = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.dgvStaffData = new System.Windows.Forms.DataGridView();
-            this.shift = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.monday = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.tuesday = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.wednesday = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.thursday = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.friday = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.saturday = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.sunday = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label5 = new System.Windows.Forms.Label();
@@ -57,6 +49,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.shift = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.monday = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.tuesday = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.wednesday = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.thursday = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.friday = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.saturday = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.sunday = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStaffData)).BeginInit();
@@ -176,62 +176,6 @@
             this.dgvStaffData.Size = new System.Drawing.Size(715, 620);
             this.dgvStaffData.TabIndex = 1;
             this.dgvStaffData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStaffData_CellContentClick);
-            // 
-            // shift
-            // 
-            this.shift.Frozen = true;
-            this.shift.HeaderText = "Ca";
-            this.shift.Name = "shift";
-            this.shift.Width = 80;
-            // 
-            // monday
-            // 
-            this.monday.HeaderText = "Thứ Hai";
-            this.monday.Name = "monday";
-            this.monday.ReadOnly = true;
-            this.monday.Width = 80;
-            // 
-            // tuesday
-            // 
-            this.tuesday.HeaderText = "Thứ Ba";
-            this.tuesday.Name = "tuesday";
-            this.tuesday.Width = 80;
-            // 
-            // wednesday
-            // 
-            this.wednesday.HeaderText = "Thứ Tư";
-            this.wednesday.Name = "wednesday";
-            this.wednesday.Width = 80;
-            // 
-            // thursday
-            // 
-            this.thursday.HeaderText = "Thứ Năm";
-            this.thursday.Name = "thursday";
-            this.thursday.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.thursday.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.thursday.Width = 80;
-            // 
-            // friday
-            // 
-            this.friday.HeaderText = "Thứ Sáu";
-            this.friday.Name = "friday";
-            this.friday.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.friday.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.friday.Width = 80;
-            // 
-            // saturday
-            // 
-            this.saturday.HeaderText = "Thứ Bảy";
-            this.saturday.Name = "saturday";
-            this.saturday.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.saturday.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.saturday.Width = 80;
-            // 
-            // sunday
-            // 
-            this.sunday.HeaderText = "Chủ Nhật";
-            this.sunday.Name = "sunday";
-            this.sunday.Width = 80;
             // 
             // tableLayoutPanel1
             // 
@@ -438,6 +382,61 @@
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
+            // shift
+            // 
+            this.shift.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.shift.HeaderText = "Ca";
+            this.shift.Name = "shift";
+            // 
+            // monday
+            // 
+            this.monday.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.monday.HeaderText = "Thứ Hai";
+            this.monday.Name = "monday";
+            this.monday.ReadOnly = true;
+            // 
+            // tuesday
+            // 
+            this.tuesday.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.tuesday.HeaderText = "Thứ Ba";
+            this.tuesday.Name = "tuesday";
+            // 
+            // wednesday
+            // 
+            this.wednesday.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.wednesday.HeaderText = "Thứ Tư";
+            this.wednesday.Name = "wednesday";
+            // 
+            // thursday
+            // 
+            this.thursday.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.thursday.HeaderText = "Thứ Năm";
+            this.thursday.Name = "thursday";
+            this.thursday.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.thursday.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // friday
+            // 
+            this.friday.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.friday.HeaderText = "Thứ Sáu";
+            this.friday.Name = "friday";
+            this.friday.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.friday.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // saturday
+            // 
+            this.saturday.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.saturday.HeaderText = "Thứ Bảy";
+            this.saturday.Name = "saturday";
+            this.saturday.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.saturday.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // sunday
+            // 
+            this.sunday.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.sunday.HeaderText = "Chủ Nhật";
+            this.sunday.Name = "sunday";
+            // 
             // UC_Shift
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -486,6 +485,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridViewTextBoxColumn shift;
         private System.Windows.Forms.DataGridViewComboBoxColumn monday;
         private System.Windows.Forms.DataGridViewComboBoxColumn tuesday;
@@ -494,6 +494,5 @@
         private System.Windows.Forms.DataGridViewComboBoxColumn friday;
         private System.Windows.Forms.DataGridViewComboBoxColumn saturday;
         private System.Windows.Forms.DataGridViewComboBoxColumn sunday;
-        private System.Windows.Forms.Label label5;
     }
 }

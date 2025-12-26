@@ -113,26 +113,26 @@
             // 
             // lblUsername
             // 
+            this.lblUsername.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblUsername.AutoSize = true;
             this.tableLayoutPanel1.SetColumnSpan(this.lblUsername, 4);
-            this.lblUsername.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsername.Location = new System.Drawing.Point(201, 360);
+            this.lblUsername.Location = new System.Drawing.Point(201, 374);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(258, 60);
+            this.lblUsername.Size = new System.Drawing.Size(258, 31);
             this.lblUsername.TabIndex = 1;
             this.lblUsername.Text = "Tên đăng nhập";
             this.lblUsername.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // lblPassword
             // 
+            this.lblPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblPassword.AutoSize = true;
             this.tableLayoutPanel1.SetColumnSpan(this.lblPassword, 4);
-            this.lblPassword.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassword.Location = new System.Drawing.Point(201, 432);
+            this.lblPassword.Location = new System.Drawing.Point(201, 448);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(258, 63);
+            this.lblPassword.Size = new System.Drawing.Size(258, 31);
             this.lblPassword.TabIndex = 2;
             this.lblPassword.Text = "Mật khẩu";
             this.lblPassword.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -142,8 +142,9 @@
             this.btnLogIn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(92)))), ((int)(((byte)(33)))));
             this.tableLayoutPanel1.SetColumnSpan(this.btnLogIn, 4);
             this.btnLogIn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnLogIn.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnLogIn.FlatAppearance.BorderSize = 0;
-            this.btnLogIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogIn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnLogIn.Font = new System.Drawing.Font("Bahnschrift Light", 18F, System.Drawing.FontStyle.Bold);
             this.btnLogIn.ForeColor = System.Drawing.Color.White;
             this.btnLogIn.Location = new System.Drawing.Point(531, 527);
@@ -157,10 +158,10 @@
             // 
             // txtUsername
             // 
+            this.txtUsername.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.SetColumnSpan(this.txtUsername, 9);
-            this.txtUsername.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsername.Location = new System.Drawing.Point(462, 360);
+            this.txtUsername.Location = new System.Drawing.Point(462, 371);
             this.txtUsername.Margin = new System.Windows.Forms.Padding(0);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(594, 38);
@@ -168,10 +169,10 @@
             // 
             // txtPassword
             // 
+            this.txtPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.SetColumnSpan(this.txtPassword, 9);
-            this.txtPassword.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(462, 432);
+            this.txtPassword.Location = new System.Drawing.Point(462, 444);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(0);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';

@@ -39,12 +39,12 @@
             this.btnExport = new System.Windows.Forms.Button();
             this.txtSearchKeyword = new System.Windows.Forms.TextBox();
             this.dgvReportData = new System.Windows.Forms.DataGridView();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.colNgay = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTienHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDichVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colThuKhac = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReportData)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
@@ -237,36 +237,6 @@
             this.dgvReportData.Size = new System.Drawing.Size(1057, 537);
             this.dgvReportData.TabIndex = 1;
             // 
-            // colNgay
-            // 
-            this.colNgay.HeaderText = "Ngày";
-            this.colNgay.Name = "colNgay";
-            this.colNgay.Width = 200;
-            // 
-            // colTong
-            // 
-            this.colTong.HeaderText = "Tổng";
-            this.colTong.Name = "colTong";
-            this.colTong.Width = 200;
-            // 
-            // colTienHang
-            // 
-            this.colTienHang.HeaderText = "Tiền hàng";
-            this.colTienHang.Name = "colTienHang";
-            this.colTienHang.Width = 200;
-            // 
-            // colDichVu
-            // 
-            this.colDichVu.HeaderText = "Tiền thu từ dịch vụ";
-            this.colDichVu.Name = "colDichVu";
-            this.colDichVu.Width = 200;
-            // 
-            // colThuKhac
-            // 
-            this.colThuKhac.HeaderText = "Tiền thu khác";
-            this.colThuKhac.Name = "colThuKhac";
-            this.colThuKhac.Width = 200;
-            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
@@ -282,6 +252,36 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80.28571F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1063, 676);
             this.tableLayoutPanel1.TabIndex = 6;
+            // 
+            // colNgay
+            // 
+            this.colNgay.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colNgay.HeaderText = "Ngày";
+            this.colNgay.Name = "colNgay";
+            // 
+            // colTong
+            // 
+            this.colTong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colTong.HeaderText = "Tổng";
+            this.colTong.Name = "colTong";
+            // 
+            // colTienHang
+            // 
+            this.colTienHang.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colTienHang.HeaderText = "Tiền hàng";
+            this.colTienHang.Name = "colTienHang";
+            // 
+            // colDichVu
+            // 
+            this.colDichVu.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colDichVu.HeaderText = "Tiền thu từ dịch vụ";
+            this.colDichVu.Name = "colDichVu";
+            // 
+            // colThuKhac
+            // 
+            this.colThuKhac.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colThuKhac.HeaderText = "Tiền thu khác";
+            this.colThuKhac.Name = "colThuKhac";
             // 
             // UC_SalesReport
             // 
