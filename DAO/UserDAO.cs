@@ -51,7 +51,10 @@ namespace OHIOCF.DAO
         public List<UserDTO> GetListUser()
         {
             List<UserDTO> list = new List<UserDTO>();
-            string query = "SELECT * FROM User WHERE isActive = 1";
+            string query = @"SELECT u.*, r.roleName 
+                     FROM User u 
+                     LEFT JOIN Role r ON u.roleId = r.id 
+                     WHERE u.isActive = 1";
 
             using (SQLiteConnection conn = new SQLiteConnection(Database.ConnectionString))
             {
@@ -69,7 +72,8 @@ namespace OHIOCF.DAO
                                 Username = reader["username"].ToString(),
                                 Password = reader["password"].ToString(),
                                 FullName = reader["fullName"].ToString(),
-                                IsActive = Convert.ToBoolean(reader["isActive"])
+                                IsActive = Convert.ToBoolean(reader["isActive"]),
+                                RoleName = reader["roleName"].ToString()
                             });
                         }
                     }

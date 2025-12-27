@@ -30,19 +30,21 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.dgvWeeklySchedule = new System.Windows.Forms.DataGridView();
-            this.colNgay = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colThu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colGioVao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colGioRa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTongGio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colGhiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.dgvWeekSchedule = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.lblScheduleTitle = new System.Windows.Forms.Label();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblTotalHours = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -61,78 +63,62 @@
             this.timerClock = new System.Windows.Forms.Timer(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvWeeklySchedule)).BeginInit();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvWeekSchedule)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dgvWeeklySchedule
+            // dgvWeekSchedule
             // 
-            this.dgvWeeklySchedule.BackgroundColor = System.Drawing.Color.White;
-            this.dgvWeeklySchedule.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgvWeeklySchedule.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
-            this.dgvWeeklySchedule.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colNgay,
-            this.colThu,
-            this.colCa,
-            this.colGioVao,
-            this.colGioRa,
-            this.colTongGio,
-            this.colGhiChu});
-            this.tableLayoutPanel4.SetColumnSpan(this.dgvWeeklySchedule, 3);
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Bahnschrift Light", 12F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvWeeklySchedule.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvWeeklySchedule.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvWeeklySchedule.GridColor = System.Drawing.Color.Beige;
-            this.dgvWeeklySchedule.Location = new System.Drawing.Point(3, 3);
-            this.dgvWeeklySchedule.Name = "dgvWeeklySchedule";
-            this.dgvWeeklySchedule.Size = new System.Drawing.Size(709, 582);
-            this.dgvWeeklySchedule.TabIndex = 1;
-            // 
-            // colNgay
-            // 
-            this.colNgay.Frozen = true;
-            this.colNgay.HeaderText = "Ngày";
-            this.colNgay.Name = "colNgay";
-            // 
-            // colThu
-            // 
-            this.colThu.Frozen = true;
-            this.colThu.HeaderText = "Thứ";
-            this.colThu.Name = "colThu";
-            // 
-            // colCa
-            // 
-            this.colCa.HeaderText = "Ca";
-            this.colCa.Name = "colCa";
-            // 
-            // colGioVao
-            // 
-            this.colGioVao.HeaderText = "Giờ vào";
-            this.colGioVao.Name = "colGioVao";
-            // 
-            // colGioRa
-            // 
-            this.colGioRa.HeaderText = "Giờ ra";
-            this.colGioRa.Name = "colGioRa";
-            // 
-            // colTongGio
-            // 
-            this.colTongGio.HeaderText = "Tổng giờ";
-            this.colTongGio.Name = "colTongGio";
-            // 
-            // colGhiChu
-            // 
-            this.colGhiChu.HeaderText = "Ghi chú";
-            this.colGhiChu.Name = "colGhiChu";
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.dgvWeekSchedule.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvWeekSchedule.BackgroundColor = System.Drawing.Color.White;
+            this.dgvWeekSchedule.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvWeekSchedule.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvWeekSchedule.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvWeekSchedule.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5,
+            this.Column6,
+            this.Column7,
+            this.Column8});
+            this.tableLayoutPanel4.SetColumnSpan(this.dgvWeekSchedule, 3);
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Bahnschrift Light", 12F);
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvWeekSchedule.DefaultCellStyle = dataGridViewCellStyle11;
+            this.dgvWeekSchedule.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvWeekSchedule.GridColor = System.Drawing.Color.Beige;
+            this.dgvWeekSchedule.Location = new System.Drawing.Point(3, 3);
+            this.dgvWeekSchedule.Name = "dgvWeekSchedule";
+            this.dgvWeekSchedule.ReadOnly = true;
+            this.dgvWeekSchedule.Size = new System.Drawing.Size(709, 582);
+            this.dgvWeekSchedule.TabIndex = 1;
+            this.dgvWeekSchedule.Resize += new System.EventHandler(this.dgvWeekSchedule_Resize);
             // 
             // tableLayoutPanel3
             // 
@@ -174,13 +160,12 @@
             // 
             // tableLayoutPanel4
             // 
-            this.tableLayoutPanel4.ColumnCount = 3;
+            this.tableLayoutPanel4.ColumnCount = 2;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 59.68586F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40.31414F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 144F));
-            this.tableLayoutPanel4.Controls.Add(this.label5, 1, 1);
-            this.tableLayoutPanel4.Controls.Add(this.dgvWeeklySchedule, 0, 0);
-            this.tableLayoutPanel4.Controls.Add(this.label6, 2, 1);
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 146F));
+            this.tableLayoutPanel4.Controls.Add(this.lblTotalHours, 1, 1);
+            this.tableLayoutPanel4.Controls.Add(this.dgvWeekSchedule, 0, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.ForeColor = System.Drawing.Color.White;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 49);
@@ -191,36 +176,20 @@
             this.tableLayoutPanel4.Size = new System.Drawing.Size(715, 642);
             this.tableLayoutPanel4.TabIndex = 3;
             // 
-            // label5
+            // lblTotalHours
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(92)))), ((int)(((byte)(33)))));
-            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label5.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(349, 597);
-            this.label5.Margin = new System.Windows.Forms.Padding(9);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(212, 36);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Số giờ làm việc tuần này";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label5.Click += new System.EventHandler(this.label5_Click);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(92)))), ((int)(((byte)(33)))));
-            this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label6.Font = new System.Drawing.Font("Bahnschrift Light", 12F);
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(579, 597);
-            this.label6.Margin = new System.Windows.Forms.Padding(9);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(127, 36);
-            this.label6.TabIndex = 1;
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label6.Click += new System.EventHandler(this.label6_Click);
+            this.lblTotalHours.AutoSize = true;
+            this.lblTotalHours.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(92)))), ((int)(((byte)(33)))));
+            this.lblTotalHours.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblTotalHours.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
+            this.lblTotalHours.ForeColor = System.Drawing.Color.White;
+            this.lblTotalHours.Location = new System.Drawing.Point(435, 597);
+            this.lblTotalHours.Margin = new System.Windows.Forms.Padding(9);
+            this.lblTotalHours.Name = "lblTotalHours";
+            this.lblTotalHours.Size = new System.Drawing.Size(271, 36);
+            this.lblTotalHours.TabIndex = 0;
+            this.lblTotalHours.Text = "Số giờ làm việc tuần này";
+            this.lblTotalHours.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // button2
             // 
@@ -501,6 +470,79 @@
             this.label4.TabIndex = 21;
             this.label4.Text = "label4";
             // 
+            // Column1
+            // 
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Column1.HeaderText = "Ca";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            this.Column2.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Column2.HeaderText = "Thứ Hai";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            this.Column3.DefaultCellStyle = dataGridViewCellStyle5;
+            this.Column3.HeaderText = "Thứ Ba";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle6;
+            this.Column4.HeaderText = "Thứ Tư";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            this.Column5.DefaultCellStyle = dataGridViewCellStyle7;
+            this.Column5.HeaderText = "Thứ Năm";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            this.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
+            this.Column6.DefaultCellStyle = dataGridViewCellStyle8;
+            this.Column6.HeaderText = "Thứ Sáu";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            // 
+            // Column7
+            // 
+            this.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
+            this.Column7.DefaultCellStyle = dataGridViewCellStyle9;
+            this.Column7.HeaderText = "Thứ Bảy";
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            // 
+            // Column8
+            // 
+            this.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
+            this.Column8.DefaultCellStyle = dataGridViewCellStyle10;
+            this.Column8.HeaderText = "Chủ Nhật";
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
+            // 
             // UC_StaffClockIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -508,7 +550,8 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "UC_StaffClockIn";
             this.Size = new System.Drawing.Size(1063, 700);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvWeeklySchedule)).EndInit();
+            this.Load += new System.EventHandler(this.UC_StaffClockIn_Load_1);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvWeekSchedule)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
             this.tableLayoutPanel4.ResumeLayout(false);
@@ -522,7 +565,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dgvWeeklySchedule;
+        private System.Windows.Forms.DataGridView dgvWeekSchedule;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button4;
@@ -544,14 +587,14 @@
         private System.Windows.Forms.Button btnClockOut;
         private System.Windows.Forms.Label lblLastActionTime;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colNgay;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colThu;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colCa;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colGioVao;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colGioRa;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTongGio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colGhiChu;
+        private System.Windows.Forms.Label lblTotalHours;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
     }
 }

@@ -31,9 +31,21 @@ namespace OHIOCF.BUS
             return CategoryDAO.Instance.UpdateCategory(cat);
         }
 
-        public bool RemoveCategory(string id)
+        public string DeleteCategory(string id)
         {
-            return CategoryDAO.Instance.DeleteCategory(id);
+            var products = ProductDAO.Instance.GetProductsByCategoryId(id);
+
+            if (products.Count > 0)
+            {
+                return "Không thể xóa: Danh mục này vẫn còn sản phẩm. Vui lòng xóa hết sản phẩm trước!";
+            }
+
+            if (CategoryDAO.Instance.DeleteCategory(id))
+            {
+                return "Xóa danh mục thành công!";
+            }
+
+            return "Xóa thất bại (Lỗi hệ thống).";
         }
     }
 }

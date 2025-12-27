@@ -31,24 +31,24 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.lblReceiptCode = new System.Windows.Forms.Label();
+            this.txtReceiptCode = new System.Windows.Forms.TextBox();
+            this.lblReceiptDate = new System.Windows.Forms.Label();
+            this.txtReceiptDate = new System.Windows.Forms.TextBox();
+            this.lblUser = new System.Windows.Forms.Label();
+            this.txtUser = new System.Windows.Forms.TextBox();
+            this.lblPrice = new System.Windows.Forms.Label();
+            this.txtPrice = new System.Windows.Forms.TextBox();
+            this.lblNote = new System.Windows.Forms.Label();
+            this.txtNote = new System.Windows.Forms.TextBox();
+            this.lblReceiptStatus = new System.Windows.Forms.Label();
+            this.cmbReceiptStatus = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.btnView = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.cmbReceiptStatus = new System.Windows.Forms.ComboBox();
-            this.lblReceiptStatus = new System.Windows.Forms.Label();
-            this.txtNote = new System.Windows.Forms.TextBox();
-            this.lblNote = new System.Windows.Forms.Label();
-            this.txtPrice = new System.Windows.Forms.TextBox();
-            this.lblPrice = new System.Windows.Forms.Label();
-            this.txtUser = new System.Windows.Forms.TextBox();
-            this.lblUser = new System.Windows.Forms.Label();
-            this.txtReceiptDate = new System.Windows.Forms.TextBox();
-            this.lblReceiptDate = new System.Windows.Forms.Label();
-            this.txtReceiptCode = new System.Windows.Forms.TextBox();
-            this.lblReceiptCode = new System.Windows.Forms.Label();
-            this.txtSearch = new System.Windows.Forms.TextBox();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.lblHeaderTitle = new System.Windows.Forms.Label();
@@ -148,6 +148,197 @@
             this.tableLayoutPanel2.TabIndex = 8;
             this.tableLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel2_Paint);
             // 
+            // btnSearch
+            // 
+            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(242)))), ((int)(((byte)(80)))));
+            this.tableLayoutPanel2.SetColumnSpan(this.btnSearch, 3);
+            this.btnSearch.FlatAppearance.BorderSize = 0;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSearch.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Bold);
+            this.btnSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(92)))), ((int)(((byte)(33)))));
+            this.btnSearch.Location = new System.Drawing.Point(21, 29);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(113, 27);
+            this.btnSearch.TabIndex = 0;
+            this.btnSearch.Text = "Tìm kiếm";
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel2.SetColumnSpan(this.txtSearch, 5);
+            this.txtSearch.Font = new System.Drawing.Font("Bahnschrift Light", 12F);
+            this.txtSearch.Location = new System.Drawing.Point(136, 29);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(0);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(195, 27);
+            this.txtSearch.TabIndex = 11;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            // 
+            // lblReceiptCode
+            // 
+            this.lblReceiptCode.AutoSize = true;
+            this.tableLayoutPanel2.SetColumnSpan(this.lblReceiptCode, 3);
+            this.lblReceiptCode.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblReceiptCode.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
+            this.lblReceiptCode.Location = new System.Drawing.Point(22, 79);
+            this.lblReceiptCode.Name = "lblReceiptCode";
+            this.lblReceiptCode.Size = new System.Drawing.Size(111, 27);
+            this.lblReceiptCode.TabIndex = 3;
+            this.lblReceiptCode.Text = "Mã phiếu";
+            this.lblReceiptCode.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblReceiptCode.Click += new System.EventHandler(this.lblReceiptCode_Click);
+            // 
+            // txtReceiptCode
+            // 
+            this.txtReceiptCode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel2.SetColumnSpan(this.txtReceiptCode, 5);
+            this.txtReceiptCode.Font = new System.Drawing.Font("Bahnschrift Light", 12F);
+            this.txtReceiptCode.Location = new System.Drawing.Point(136, 79);
+            this.txtReceiptCode.Margin = new System.Windows.Forms.Padding(0);
+            this.txtReceiptCode.Name = "txtReceiptCode";
+            this.txtReceiptCode.Size = new System.Drawing.Size(195, 27);
+            this.txtReceiptCode.TabIndex = 12;
+            this.txtReceiptCode.TextChanged += new System.EventHandler(this.txtNVLCode_TextChanged);
+            // 
+            // lblReceiptDate
+            // 
+            this.lblReceiptDate.AutoSize = true;
+            this.tableLayoutPanel2.SetColumnSpan(this.lblReceiptDate, 3);
+            this.lblReceiptDate.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblReceiptDate.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
+            this.lblReceiptDate.Location = new System.Drawing.Point(22, 133);
+            this.lblReceiptDate.Name = "lblReceiptDate";
+            this.lblReceiptDate.Size = new System.Drawing.Size(111, 27);
+            this.lblReceiptDate.TabIndex = 4;
+            this.lblReceiptDate.Text = "Ngày nhập";
+            this.lblReceiptDate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblReceiptDate.Click += new System.EventHandler(this.lblNVLName_Click);
+            // 
+            // txtReceiptDate
+            // 
+            this.txtReceiptDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel2.SetColumnSpan(this.txtReceiptDate, 5);
+            this.txtReceiptDate.Font = new System.Drawing.Font("Bahnschrift Light", 12F);
+            this.txtReceiptDate.Location = new System.Drawing.Point(136, 133);
+            this.txtReceiptDate.Margin = new System.Windows.Forms.Padding(0);
+            this.txtReceiptDate.Name = "txtReceiptDate";
+            this.txtReceiptDate.Size = new System.Drawing.Size(195, 27);
+            this.txtReceiptDate.TabIndex = 13;
+            this.txtReceiptDate.TextChanged += new System.EventHandler(this.txtNVLName_TextChanged);
+            // 
+            // lblUser
+            // 
+            this.lblUser.AutoSize = true;
+            this.tableLayoutPanel2.SetColumnSpan(this.lblUser, 3);
+            this.lblUser.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblUser.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
+            this.lblUser.Location = new System.Drawing.Point(22, 187);
+            this.lblUser.Name = "lblUser";
+            this.lblUser.Size = new System.Drawing.Size(111, 33);
+            this.lblUser.TabIndex = 5;
+            this.lblUser.Text = "Người nhập";
+            this.lblUser.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblUser.Click += new System.EventHandler(this.lblUnit_Click);
+            // 
+            // txtUser
+            // 
+            this.txtUser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel2.SetColumnSpan(this.txtUser, 5);
+            this.txtUser.Font = new System.Drawing.Font("Bahnschrift Light", 12F);
+            this.txtUser.Location = new System.Drawing.Point(136, 190);
+            this.txtUser.Margin = new System.Windows.Forms.Padding(0);
+            this.txtUser.Name = "txtUser";
+            this.txtUser.Size = new System.Drawing.Size(195, 27);
+            this.txtUser.TabIndex = 23;
+            // 
+            // lblPrice
+            // 
+            this.lblPrice.AutoSize = true;
+            this.tableLayoutPanel2.SetColumnSpan(this.lblPrice, 3);
+            this.lblPrice.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblPrice.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
+            this.lblPrice.Location = new System.Drawing.Point(22, 239);
+            this.lblPrice.Name = "lblPrice";
+            this.lblPrice.Size = new System.Drawing.Size(111, 27);
+            this.lblPrice.TabIndex = 6;
+            this.lblPrice.Text = "Giá";
+            this.lblPrice.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblPrice.Click += new System.EventHandler(this.lblPrice_Click);
+            // 
+            // txtPrice
+            // 
+            this.txtPrice.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel2.SetColumnSpan(this.txtPrice, 5);
+            this.txtPrice.Font = new System.Drawing.Font("Bahnschrift Light", 12F);
+            this.txtPrice.Location = new System.Drawing.Point(136, 239);
+            this.txtPrice.Margin = new System.Windows.Forms.Padding(0);
+            this.txtPrice.Name = "txtPrice";
+            this.txtPrice.Size = new System.Drawing.Size(195, 27);
+            this.txtPrice.TabIndex = 14;
+            this.txtPrice.TextChanged += new System.EventHandler(this.txtPrice_TextChanged);
+            // 
+            // lblNote
+            // 
+            this.lblNote.AutoSize = true;
+            this.tableLayoutPanel2.SetColumnSpan(this.lblNote, 3);
+            this.lblNote.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblNote.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
+            this.lblNote.Location = new System.Drawing.Point(22, 293);
+            this.lblNote.Name = "lblNote";
+            this.lblNote.Size = new System.Drawing.Size(111, 27);
+            this.lblNote.TabIndex = 17;
+            this.lblNote.Text = "Ghi chú";
+            this.lblNote.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblNote.Click += new System.EventHandler(this.lblQuantity_Click);
+            // 
+            // txtNote
+            // 
+            this.txtNote.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel2.SetColumnSpan(this.txtNote, 5);
+            this.txtNote.Font = new System.Drawing.Font("Bahnschrift Light", 12F);
+            this.txtNote.Location = new System.Drawing.Point(136, 293);
+            this.txtNote.Margin = new System.Windows.Forms.Padding(0);
+            this.txtNote.Multiline = true;
+            this.txtNote.Name = "txtNote";
+            this.txtNote.Size = new System.Drawing.Size(195, 27);
+            this.txtNote.TabIndex = 18;
+            this.txtNote.TextChanged += new System.EventHandler(this.txtQuantity_TextChanged);
+            // 
+            // lblReceiptStatus
+            // 
+            this.lblReceiptStatus.AutoSize = true;
+            this.tableLayoutPanel2.SetColumnSpan(this.lblReceiptStatus, 3);
+            this.lblReceiptStatus.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblReceiptStatus.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
+            this.lblReceiptStatus.Location = new System.Drawing.Point(22, 347);
+            this.lblReceiptStatus.Name = "lblReceiptStatus";
+            this.lblReceiptStatus.Size = new System.Drawing.Size(111, 27);
+            this.lblReceiptStatus.TabIndex = 21;
+            this.lblReceiptStatus.Text = "Trạng thái";
+            this.lblReceiptStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblReceiptStatus.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // cmbReceiptStatus
+            // 
+            this.cmbReceiptStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel2.SetColumnSpan(this.cmbReceiptStatus, 5);
+            this.cmbReceiptStatus.Font = new System.Drawing.Font("Bahnschrift Light", 12F);
+            this.cmbReceiptStatus.FormattingEnabled = true;
+            this.cmbReceiptStatus.Items.AddRange(new object[] {
+            "Chờ duyệt",
+            "Đã duyệt",
+            "Hủy"});
+            this.cmbReceiptStatus.Location = new System.Drawing.Point(136, 347);
+            this.cmbReceiptStatus.Margin = new System.Windows.Forms.Padding(0);
+            this.cmbReceiptStatus.Name = "cmbReceiptStatus";
+            this.cmbReceiptStatus.Size = new System.Drawing.Size(195, 27);
+            this.cmbReceiptStatus.TabIndex = 22;
+            this.cmbReceiptStatus.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
             // tableLayoutPanel5
             // 
             this.tableLayoutPanel5.ColumnCount = 3;
@@ -224,197 +415,6 @@
             this.btnDelete.Text = "XÓA";
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // cmbReceiptStatus
-            // 
-            this.cmbReceiptStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel2.SetColumnSpan(this.cmbReceiptStatus, 5);
-            this.cmbReceiptStatus.Font = new System.Drawing.Font("Bahnschrift Light", 12F);
-            this.cmbReceiptStatus.FormattingEnabled = true;
-            this.cmbReceiptStatus.Items.AddRange(new object[] {
-            "Chờ duyệt",
-            "Đã duyệt",
-            "Hủy"});
-            this.cmbReceiptStatus.Location = new System.Drawing.Point(136, 347);
-            this.cmbReceiptStatus.Margin = new System.Windows.Forms.Padding(0);
-            this.cmbReceiptStatus.Name = "cmbReceiptStatus";
-            this.cmbReceiptStatus.Size = new System.Drawing.Size(195, 27);
-            this.cmbReceiptStatus.TabIndex = 22;
-            this.cmbReceiptStatus.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
-            // lblReceiptStatus
-            // 
-            this.lblReceiptStatus.AutoSize = true;
-            this.tableLayoutPanel2.SetColumnSpan(this.lblReceiptStatus, 3);
-            this.lblReceiptStatus.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblReceiptStatus.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
-            this.lblReceiptStatus.Location = new System.Drawing.Point(22, 347);
-            this.lblReceiptStatus.Name = "lblReceiptStatus";
-            this.lblReceiptStatus.Size = new System.Drawing.Size(111, 27);
-            this.lblReceiptStatus.TabIndex = 21;
-            this.lblReceiptStatus.Text = "Trạng thái";
-            this.lblReceiptStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblReceiptStatus.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // txtNote
-            // 
-            this.txtNote.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel2.SetColumnSpan(this.txtNote, 5);
-            this.txtNote.Font = new System.Drawing.Font("Bahnschrift Light", 12F);
-            this.txtNote.Location = new System.Drawing.Point(136, 293);
-            this.txtNote.Margin = new System.Windows.Forms.Padding(0);
-            this.txtNote.Multiline = true;
-            this.txtNote.Name = "txtNote";
-            this.txtNote.Size = new System.Drawing.Size(195, 27);
-            this.txtNote.TabIndex = 18;
-            this.txtNote.TextChanged += new System.EventHandler(this.txtQuantity_TextChanged);
-            // 
-            // lblNote
-            // 
-            this.lblNote.AutoSize = true;
-            this.tableLayoutPanel2.SetColumnSpan(this.lblNote, 3);
-            this.lblNote.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblNote.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
-            this.lblNote.Location = new System.Drawing.Point(22, 293);
-            this.lblNote.Name = "lblNote";
-            this.lblNote.Size = new System.Drawing.Size(111, 27);
-            this.lblNote.TabIndex = 17;
-            this.lblNote.Text = "Ghi chú";
-            this.lblNote.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblNote.Click += new System.EventHandler(this.lblQuantity_Click);
-            // 
-            // txtPrice
-            // 
-            this.txtPrice.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel2.SetColumnSpan(this.txtPrice, 5);
-            this.txtPrice.Font = new System.Drawing.Font("Bahnschrift Light", 12F);
-            this.txtPrice.Location = new System.Drawing.Point(136, 239);
-            this.txtPrice.Margin = new System.Windows.Forms.Padding(0);
-            this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(195, 27);
-            this.txtPrice.TabIndex = 14;
-            this.txtPrice.TextChanged += new System.EventHandler(this.txtPrice_TextChanged);
-            // 
-            // lblPrice
-            // 
-            this.lblPrice.AutoSize = true;
-            this.tableLayoutPanel2.SetColumnSpan(this.lblPrice, 3);
-            this.lblPrice.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblPrice.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
-            this.lblPrice.Location = new System.Drawing.Point(22, 239);
-            this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(111, 27);
-            this.lblPrice.TabIndex = 6;
-            this.lblPrice.Text = "Giá";
-            this.lblPrice.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblPrice.Click += new System.EventHandler(this.lblPrice_Click);
-            // 
-            // txtUser
-            // 
-            this.txtUser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel2.SetColumnSpan(this.txtUser, 5);
-            this.txtUser.Font = new System.Drawing.Font("Bahnschrift Light", 12F);
-            this.txtUser.Location = new System.Drawing.Point(136, 190);
-            this.txtUser.Margin = new System.Windows.Forms.Padding(0);
-            this.txtUser.Name = "txtUser";
-            this.txtUser.Size = new System.Drawing.Size(195, 27);
-            this.txtUser.TabIndex = 23;
-            // 
-            // lblUser
-            // 
-            this.lblUser.AutoSize = true;
-            this.tableLayoutPanel2.SetColumnSpan(this.lblUser, 3);
-            this.lblUser.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblUser.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
-            this.lblUser.Location = new System.Drawing.Point(22, 187);
-            this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(111, 33);
-            this.lblUser.TabIndex = 5;
-            this.lblUser.Text = "Người nhập";
-            this.lblUser.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblUser.Click += new System.EventHandler(this.lblUnit_Click);
-            // 
-            // txtReceiptDate
-            // 
-            this.txtReceiptDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel2.SetColumnSpan(this.txtReceiptDate, 5);
-            this.txtReceiptDate.Font = new System.Drawing.Font("Bahnschrift Light", 12F);
-            this.txtReceiptDate.Location = new System.Drawing.Point(136, 133);
-            this.txtReceiptDate.Margin = new System.Windows.Forms.Padding(0);
-            this.txtReceiptDate.Name = "txtReceiptDate";
-            this.txtReceiptDate.Size = new System.Drawing.Size(195, 27);
-            this.txtReceiptDate.TabIndex = 13;
-            this.txtReceiptDate.TextChanged += new System.EventHandler(this.txtNVLName_TextChanged);
-            // 
-            // lblReceiptDate
-            // 
-            this.lblReceiptDate.AutoSize = true;
-            this.tableLayoutPanel2.SetColumnSpan(this.lblReceiptDate, 3);
-            this.lblReceiptDate.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblReceiptDate.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
-            this.lblReceiptDate.Location = new System.Drawing.Point(22, 133);
-            this.lblReceiptDate.Name = "lblReceiptDate";
-            this.lblReceiptDate.Size = new System.Drawing.Size(111, 27);
-            this.lblReceiptDate.TabIndex = 4;
-            this.lblReceiptDate.Text = "Ngày nhập";
-            this.lblReceiptDate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblReceiptDate.Click += new System.EventHandler(this.lblNVLName_Click);
-            // 
-            // txtReceiptCode
-            // 
-            this.txtReceiptCode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel2.SetColumnSpan(this.txtReceiptCode, 5);
-            this.txtReceiptCode.Font = new System.Drawing.Font("Bahnschrift Light", 12F);
-            this.txtReceiptCode.Location = new System.Drawing.Point(136, 79);
-            this.txtReceiptCode.Margin = new System.Windows.Forms.Padding(0);
-            this.txtReceiptCode.Name = "txtReceiptCode";
-            this.txtReceiptCode.Size = new System.Drawing.Size(195, 27);
-            this.txtReceiptCode.TabIndex = 12;
-            this.txtReceiptCode.TextChanged += new System.EventHandler(this.txtNVLCode_TextChanged);
-            // 
-            // lblReceiptCode
-            // 
-            this.lblReceiptCode.AutoSize = true;
-            this.tableLayoutPanel2.SetColumnSpan(this.lblReceiptCode, 3);
-            this.lblReceiptCode.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblReceiptCode.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
-            this.lblReceiptCode.Location = new System.Drawing.Point(22, 79);
-            this.lblReceiptCode.Name = "lblReceiptCode";
-            this.lblReceiptCode.Size = new System.Drawing.Size(111, 27);
-            this.lblReceiptCode.TabIndex = 3;
-            this.lblReceiptCode.Text = "Mã phiếu";
-            this.lblReceiptCode.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblReceiptCode.Click += new System.EventHandler(this.lblReceiptCode_Click);
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel2.SetColumnSpan(this.txtSearch, 5);
-            this.txtSearch.Font = new System.Drawing.Font("Bahnschrift Light", 12F);
-            this.txtSearch.Location = new System.Drawing.Point(136, 29);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(0);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(195, 27);
-            this.txtSearch.TabIndex = 11;
-            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(242)))), ((int)(((byte)(80)))));
-            this.tableLayoutPanel2.SetColumnSpan(this.btnSearch, 3);
-            this.btnSearch.FlatAppearance.BorderSize = 0;
-            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnSearch.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Bold);
-            this.btnSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(92)))), ((int)(((byte)(33)))));
-            this.btnSearch.Location = new System.Drawing.Point(21, 29);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(2);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(113, 27);
-            this.btnSearch.TabIndex = 0;
-            this.btnSearch.Text = "Tìm kiếm";
-            this.btnSearch.UseVisualStyleBackColor = false;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // tableLayoutPanel3
             // 

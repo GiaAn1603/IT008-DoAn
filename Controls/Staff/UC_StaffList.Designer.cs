@@ -49,10 +49,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.lblFullnameTitle = new System.Windows.Forms.Label();
             this.txtFullname = new System.Windows.Forms.TextBox();
-            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.lblHeaderTitle = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.dgvStaffData = new System.Windows.Forms.DataGridView();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,12 +57,15 @@
             this.Username = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Password = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IsActive = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnExport = new System.Windows.Forms.Button();
+            this.lblHeaderTitle = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbStaffImage)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStaffData)).BeginInit();
+            this.tableLayoutPanel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblPasswordTitle
@@ -203,6 +202,9 @@
             this.tableLayoutPanel2.SetColumnSpan(this.cmbStatus, 5);
             this.cmbStatus.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbStatus.FormattingEnabled = true;
+            this.cmbStatus.Items.AddRange(new object[] {
+            "Hoạt động",
+            "Ngưng hoạt động"});
             this.cmbStatus.Location = new System.Drawing.Point(148, 381);
             this.cmbStatus.Margin = new System.Windows.Forms.Padding(0);
             this.cmbStatus.Name = "cmbStatus";
@@ -278,6 +280,7 @@
             this.btnUploadImage.TabIndex = 5;
             this.btnUploadImage.Text = "NHẬP";
             this.btnUploadImage.UseVisualStyleBackColor = false;
+            this.btnUploadImage.Click += new System.EventHandler(this.btnUploadImage_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -294,7 +297,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1063, 676);
             this.tableLayoutPanel1.TabIndex = 1;
-            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // tableLayoutPanel2
             // 
@@ -387,68 +389,6 @@
             this.txtFullname.Size = new System.Drawing.Size(165, 27);
             this.txtFullname.TabIndex = 24;
             // 
-            // tableLayoutPanel4
-            // 
-            this.tableLayoutPanel4.ColumnCount = 3;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel4.Controls.Add(this.button2, 2, 0);
-            this.tableLayoutPanel4.Controls.Add(this.button1, 1, 0);
-            this.tableLayoutPanel4.Controls.Add(this.lblHeaderTitle, 0, 0);
-            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 1;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(721, 44);
-            this.tableLayoutPanel4.TabIndex = 2;
-            // 
-            // lblHeaderTitle
-            // 
-            this.lblHeaderTitle.AutoSize = true;
-            this.lblHeaderTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(92)))), ((int)(((byte)(33)))));
-            this.lblHeaderTitle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblHeaderTitle.Font = new System.Drawing.Font("Bahnschrift Light", 20F, System.Drawing.FontStyle.Bold);
-            this.lblHeaderTitle.ForeColor = System.Drawing.Color.White;
-            this.lblHeaderTitle.Location = new System.Drawing.Point(3, 0);
-            this.lblHeaderTitle.Name = "lblHeaderTitle";
-            this.lblHeaderTitle.Size = new System.Drawing.Size(570, 44);
-            this.lblHeaderTitle.TabIndex = 25;
-            this.lblHeaderTitle.Text = "DANH SÁCH NHÂN VIÊN";
-            this.lblHeaderTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(242)))), ((int)(((byte)(80)))));
-            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Bold);
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(92)))), ((int)(((byte)(33)))));
-            this.button1.Location = new System.Drawing.Point(579, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(66, 38);
-            this.button1.TabIndex = 26;
-            this.button1.Text = "XUẤT FILE";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(242)))), ((int)(((byte)(80)))));
-            this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Bold);
-            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(92)))), ((int)(((byte)(33)))));
-            this.button2.Location = new System.Drawing.Point(651, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(67, 38);
-            this.button2.TabIndex = 27;
-            this.button2.Text = "LƯU";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(92)))), ((int)(((byte)(33)))));
@@ -519,7 +459,7 @@
             // 
             // RoleId
             // 
-            this.RoleId.DataPropertyName = "RoleId";
+            this.RoleId.DataPropertyName = "RoleName";
             this.RoleId.HeaderText = "Vai trò";
             this.RoleId.MinimumWidth = 8;
             this.RoleId.Name = "RoleId";
@@ -549,6 +489,53 @@
             this.IsActive.Name = "IsActive";
             this.IsActive.Width = 80;
             // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.ColumnCount = 2;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel4.Controls.Add(this.btnExport, 1, 0);
+            this.tableLayoutPanel4.Controls.Add(this.lblHeaderTitle, 0, 0);
+            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 1;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(721, 44);
+            this.tableLayoutPanel4.TabIndex = 2;
+            // 
+            // btnExport
+            // 
+            this.btnExport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(242)))), ((int)(((byte)(80)))));
+            this.btnExport.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnExport.FlatAppearance.BorderSize = 0;
+            this.btnExport.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnExport.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Bold);
+            this.btnExport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(92)))), ((int)(((byte)(33)))));
+            this.btnExport.Location = new System.Drawing.Point(643, 3);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(75, 38);
+            this.btnExport.TabIndex = 26;
+            this.btnExport.Text = "XUẤT FILE";
+            this.btnExport.UseVisualStyleBackColor = false;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
+            // 
+            // lblHeaderTitle
+            // 
+            this.lblHeaderTitle.AutoSize = true;
+            this.lblHeaderTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(92)))), ((int)(((byte)(33)))));
+            this.lblHeaderTitle.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblHeaderTitle.Font = new System.Drawing.Font("Bahnschrift Light", 20F, System.Drawing.FontStyle.Bold);
+            this.lblHeaderTitle.ForeColor = System.Drawing.Color.White;
+            this.lblHeaderTitle.Location = new System.Drawing.Point(3, 0);
+            this.lblHeaderTitle.Name = "lblHeaderTitle";
+            this.lblHeaderTitle.Size = new System.Drawing.Size(634, 44);
+            this.lblHeaderTitle.TabIndex = 25;
+            this.lblHeaderTitle.Text = "DANH SÁCH NHÂN VIÊN";
+            this.lblHeaderTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // UC_StaffList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -561,10 +548,10 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
-            this.tableLayoutPanel4.ResumeLayout(false);
-            this.tableLayoutPanel4.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvStaffData)).EndInit();
+            this.tableLayoutPanel4.ResumeLayout(false);
+            this.tableLayoutPanel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -593,8 +580,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.DataGridView dgvStaffData;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnExport;
         private System.Windows.Forms.Label lblHeaderTitle;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn FullName;

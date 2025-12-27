@@ -43,25 +43,25 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.btnDelete = new System.Windows.Forms.Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.dgvInventory = new System.Windows.Forms.DataGridView();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnUpdate = new System.Windows.Forms.Button();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.btnAdd = new System.Windows.Forms.Button();
             this.lblHeaderTitle = new System.Windows.Forms.Label();
+            this.dgvInventory = new System.Windows.Forms.DataGridView();
             this.nvl_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nvl_code = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.tableLayoutPanel3.SuspendLayout();
+            this.tableLayoutPanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
-            this.tableLayoutPanel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblNote
@@ -264,6 +264,51 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(707, 670);
             this.tableLayoutPanel3.TabIndex = 5;
             // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.ColumnCount = 2;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 90F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel5.Controls.Add(this.btnAdd, 1, 0);
+            this.tableLayoutPanel5.Controls.Add(this.lblHeaderTitle, 0, 0);
+            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 1;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(707, 43);
+            this.tableLayoutPanel5.TabIndex = 2;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(242)))), ((int)(((byte)(80)))));
+            this.btnAdd.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnAdd.FlatAppearance.BorderSize = 0;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAdd.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Bold);
+            this.btnAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(92)))), ((int)(((byte)(33)))));
+            this.btnAdd.Location = new System.Drawing.Point(639, 3);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(65, 37);
+            this.btnAdd.TabIndex = 25;
+            this.btnAdd.Text = "PHIẾU MỚI";
+            this.btnAdd.UseVisualStyleBackColor = false;
+            // 
+            // lblHeaderTitle
+            // 
+            this.lblHeaderTitle.AutoSize = true;
+            this.lblHeaderTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(92)))), ((int)(((byte)(33)))));
+            this.lblHeaderTitle.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblHeaderTitle.Font = new System.Drawing.Font("Bahnschrift Light", 20F, System.Drawing.FontStyle.Bold);
+            this.lblHeaderTitle.ForeColor = System.Drawing.Color.White;
+            this.lblHeaderTitle.Location = new System.Drawing.Point(3, 0);
+            this.lblHeaderTitle.Name = "lblHeaderTitle";
+            this.lblHeaderTitle.Size = new System.Drawing.Size(630, 43);
+            this.lblHeaderTitle.TabIndex = 23;
+            this.lblHeaderTitle.Text = "PHIẾU NHẬP KHO";
+            this.lblHeaderTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // dgvInventory
             // 
             this.dgvInventory.BackgroundColor = System.Drawing.Color.White;
@@ -280,6 +325,35 @@
             this.dgvInventory.Name = "dgvInventory";
             this.dgvInventory.Size = new System.Drawing.Size(701, 621);
             this.dgvInventory.TabIndex = 1;
+            // 
+            // nvl_name
+            // 
+            this.nvl_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nvl_name.HeaderText = "Tên NVL";
+            this.nvl_name.Name = "nvl_name";
+            // 
+            // nvl_code
+            // 
+            this.nvl_code.HeaderText = "Mã NVL";
+            this.nvl_code.Name = "nvl_code";
+            // 
+            // quantity
+            // 
+            this.quantity.HeaderText = "Số lượng";
+            this.quantity.Name = "quantity";
+            this.quantity.Width = 70;
+            // 
+            // unit
+            // 
+            this.unit.HeaderText = "Đơn vị";
+            this.unit.Name = "unit";
+            this.unit.Width = 70;
+            // 
+            // Price
+            // 
+            this.Price.HeaderText = "Đơn giá";
+            this.Price.Name = "Price";
+            this.Price.Width = 150;
             // 
             // tableLayoutPanel1
             // 
@@ -398,80 +472,6 @@
             this.btnUpdate.Text = "GỬI";
             this.btnUpdate.UseVisualStyleBackColor = false;
             // 
-            // tableLayoutPanel5
-            // 
-            this.tableLayoutPanel5.ColumnCount = 2;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 90F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel5.Controls.Add(this.btnAdd, 1, 0);
-            this.tableLayoutPanel5.Controls.Add(this.lblHeaderTitle, 0, 0);
-            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 1;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(707, 43);
-            this.tableLayoutPanel5.TabIndex = 2;
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(242)))), ((int)(((byte)(80)))));
-            this.btnAdd.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnAdd.FlatAppearance.BorderSize = 0;
-            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAdd.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Bold);
-            this.btnAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(92)))), ((int)(((byte)(33)))));
-            this.btnAdd.Location = new System.Drawing.Point(639, 3);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(65, 37);
-            this.btnAdd.TabIndex = 25;
-            this.btnAdd.Text = "PHIẾU MỚI";
-            this.btnAdd.UseVisualStyleBackColor = false;
-            // 
-            // lblHeaderTitle
-            // 
-            this.lblHeaderTitle.AutoSize = true;
-            this.lblHeaderTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(92)))), ((int)(((byte)(33)))));
-            this.lblHeaderTitle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblHeaderTitle.Font = new System.Drawing.Font("Bahnschrift Light", 20F, System.Drawing.FontStyle.Bold);
-            this.lblHeaderTitle.ForeColor = System.Drawing.Color.White;
-            this.lblHeaderTitle.Location = new System.Drawing.Point(3, 0);
-            this.lblHeaderTitle.Name = "lblHeaderTitle";
-            this.lblHeaderTitle.Size = new System.Drawing.Size(630, 43);
-            this.lblHeaderTitle.TabIndex = 23;
-            this.lblHeaderTitle.Text = "PHIẾU NHẬP KHO";
-            this.lblHeaderTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // nvl_name
-            // 
-            this.nvl_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nvl_name.HeaderText = "Tên NVL";
-            this.nvl_name.Name = "nvl_name";
-            // 
-            // nvl_code
-            // 
-            this.nvl_code.HeaderText = "Mã NVL";
-            this.nvl_code.Name = "nvl_code";
-            // 
-            // quantity
-            // 
-            this.quantity.HeaderText = "Số lượng";
-            this.quantity.Name = "quantity";
-            this.quantity.Width = 70;
-            // 
-            // unit
-            // 
-            this.unit.HeaderText = "Đơn vị";
-            this.unit.Name = "unit";
-            this.unit.Width = 70;
-            // 
-            // Price
-            // 
-            this.Price.HeaderText = "Đơn giá";
-            this.Price.Name = "Price";
-            this.Price.Width = 150;
-            // 
             // UC_StaffStockReceipt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -481,13 +481,13 @@
             this.Name = "UC_StaffStockReceipt";
             this.Size = new System.Drawing.Size(1067, 676);
             this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel5.ResumeLayout(false);
+            this.tableLayoutPanel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel6.ResumeLayout(false);
-            this.tableLayoutPanel5.ResumeLayout(false);
-            this.tableLayoutPanel5.PerformLayout();
             this.ResumeLayout(false);
 
         }

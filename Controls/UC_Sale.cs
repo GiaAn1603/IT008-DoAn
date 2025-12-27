@@ -23,6 +23,5 @@ namespace OHIOCF.Controls
             LoadUserControlRequested?.Invoke(this, typeof(UC_Sale1));
         }
 
-        
     }
 }

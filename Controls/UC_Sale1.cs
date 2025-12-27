@@ -91,5 +91,34 @@ namespace OHIOCF.Controls
         {
 
         }
+
+        private void tsType_Resize(object sender, EventArgs e)
+        {
+            // đếm số lượng nút thực tế
+            int buttonCount = 0;
+            foreach (ToolStripItem item in tsType.Items)
+            {
+                if (item is ToolStripButton) buttonCount++;
+            }
+
+            if (buttonCount > 0)
+            {
+                // Lấy chiều rộng vùng hiển thị của ToolStrip
+                // Trừ đi khoảng 2-5px để tránh bị hiện nút mũi tên
+                int totalWidth = tsType.DisplayRectangle.Width - 2;
+                int eachWidth = totalWidth / buttonCount;
+
+                // Ép các nút giãn ra
+                foreach (ToolStripItem item in tsType.Items)
+                {
+                    if (item is ToolStripButton btn)
+                    {
+                        btn.AutoSize = false;
+                        btn.Width = eachWidth;
+                        btn.TextAlign = ContentAlignment.MiddleCenter;
+                    }
+                }
+            }
+        }
     }
 }

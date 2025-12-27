@@ -67,22 +67,18 @@
             this.button15 = new System.Windows.Forms.Button();
             this.button16 = new System.Windows.Forms.Button();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
-            this.cmbFloorFilter = new System.Windows.Forms.ComboBox();
             this.lblIndoorArea = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.btnAddTable = new System.Windows.Forms.Button();
             this.btnDeleteTable = new System.Windows.Forms.Button();
-            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
-            this.lblAreaTitle = new System.Windows.Forms.Label();
-            this.lblFloorTitle = new System.Windows.Forms.Label();
             this.lblTableNumberTitle = new System.Windows.Forms.Label();
+            this.txtTableNumber = new System.Windows.Forms.TextBox();
+            this.lblAreaTitle = new System.Windows.Forms.Label();
             this.rdoIndoor = new System.Windows.Forms.RadioButton();
             this.rdoOutdoor = new System.Windows.Forms.RadioButton();
-            this.cmbFloorSelect = new System.Windows.Forms.ComboBox();
-            this.txtTableNumber = new System.Windows.Forms.TextBox();
-            this.btnConfirmUpdate = new System.Windows.Forms.Button();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.flpOutdoorTables.SuspendLayout();
@@ -100,8 +96,8 @@
             this.tableLayoutPanel8.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
-            this.tableLayoutPanel6.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
+            this.tableLayoutPanel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel2
@@ -226,7 +222,7 @@
             this.lblOutdoorArea.Size = new System.Drawing.Size(672, 38);
             this.lblOutdoorArea.TabIndex = 0;
             this.lblOutdoorArea.Text = "BÊN NGOÀI";
-            this.lblOutdoorArea.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblOutdoorArea.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel4
             // 
@@ -685,10 +681,9 @@
             // tableLayoutPanel8
             // 
             this.tableLayoutPanel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(215)))), ((int)(((byte)(32)))));
-            this.tableLayoutPanel8.ColumnCount = 2;
+            this.tableLayoutPanel8.ColumnCount = 1;
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 86.74863F));
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.25137F));
-            this.tableLayoutPanel8.Controls.Add(this.cmbFloorFilter, 1, 0);
             this.tableLayoutPanel8.Controls.Add(this.lblIndoorArea, 0, 0);
             this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel8.Location = new System.Drawing.Point(3, 3);
@@ -697,26 +692,6 @@
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel8.Size = new System.Drawing.Size(672, 36);
             this.tableLayoutPanel8.TabIndex = 2;
-            // 
-            // cmbFloorFilter
-            // 
-            this.cmbFloorFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbFloorFilter.BackColor = System.Drawing.Color.White;
-            this.cmbFloorFilter.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
-            this.cmbFloorFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(92)))), ((int)(((byte)(33)))));
-            this.cmbFloorFilter.FormattingEnabled = true;
-            this.cmbFloorFilter.IntegralHeight = false;
-            this.cmbFloorFilter.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4"});
-            this.cmbFloorFilter.Location = new System.Drawing.Point(582, 4);
-            this.cmbFloorFilter.Margin = new System.Windows.Forms.Padding(0);
-            this.cmbFloorFilter.Name = "cmbFloorFilter";
-            this.cmbFloorFilter.Size = new System.Drawing.Size(90, 27);
-            this.cmbFloorFilter.TabIndex = 0;
-            this.cmbFloorFilter.Text = "Tầng";
             // 
             // lblIndoorArea
             // 
@@ -727,10 +702,10 @@
             this.lblIndoorArea.ForeColor = System.Drawing.Color.Black;
             this.lblIndoorArea.Location = new System.Drawing.Point(3, 1);
             this.lblIndoorArea.Name = "lblIndoorArea";
-            this.lblIndoorArea.Size = new System.Drawing.Size(576, 33);
+            this.lblIndoorArea.Size = new System.Drawing.Size(666, 33);
             this.lblIndoorArea.TabIndex = 1;
             this.lblIndoorArea.Text = "BÊN TRONG";
-            this.lblIndoorArea.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblIndoorArea.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel1
             // 
@@ -753,67 +728,15 @@
             this.tableLayoutPanel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(215)))), ((int)(((byte)(32)))));
             this.tableLayoutPanel3.ColumnCount = 1;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel6, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel7, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel7, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(687, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 2;
+            this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90.90909F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(373, 694);
             this.tableLayoutPanel3.TabIndex = 1;
-            // 
-            // tableLayoutPanel6
-            // 
-            this.tableLayoutPanel6.ColumnCount = 2;
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.Controls.Add(this.btnAddTable, 0, 0);
-            this.tableLayoutPanel6.Controls.Add(this.btnDeleteTable, 1, 0);
-            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
-            this.tableLayoutPanel6.RowCount = 1;
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(373, 63);
-            this.tableLayoutPanel6.TabIndex = 0;
-            // 
-            // btnAddTable
-            // 
-            this.btnAddTable.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddTable.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(242)))), ((int)(((byte)(80)))));
-            this.btnAddTable.FlatAppearance.BorderSize = 0;
-            this.btnAddTable.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddTable.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
-            this.btnAddTable.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(92)))), ((int)(((byte)(33)))));
-            this.btnAddTable.Location = new System.Drawing.Point(5, 6);
-            this.btnAddTable.Margin = new System.Windows.Forms.Padding(5);
-            this.btnAddTable.Name = "btnAddTable";
-            this.btnAddTable.Size = new System.Drawing.Size(176, 51);
-            this.btnAddTable.TabIndex = 0;
-            this.btnAddTable.Text = "THÊM";
-            this.btnAddTable.UseVisualStyleBackColor = false;
-            this.btnAddTable.Click += new System.EventHandler(this.btnAddTable_Click);
-            // 
-            // btnDeleteTable
-            // 
-            this.btnDeleteTable.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDeleteTable.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(242)))), ((int)(((byte)(80)))));
-            this.btnDeleteTable.FlatAppearance.BorderSize = 0;
-            this.btnDeleteTable.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeleteTable.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
-            this.btnDeleteTable.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(92)))), ((int)(((byte)(33)))));
-            this.btnDeleteTable.Location = new System.Drawing.Point(191, 6);
-            this.btnDeleteTable.Margin = new System.Windows.Forms.Padding(5);
-            this.btnDeleteTable.Name = "btnDeleteTable";
-            this.btnDeleteTable.Size = new System.Drawing.Size(177, 51);
-            this.btnDeleteTable.TabIndex = 1;
-            this.btnDeleteTable.Text = "XÓA";
-            this.btnDeleteTable.UseVisualStyleBackColor = false;
-            this.btnDeleteTable.Click += new System.EventHandler(this.btnDeleteTable_Click);
             // 
             // tableLayoutPanel7
             // 
@@ -824,16 +747,14 @@
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tableLayoutPanel7.Controls.Add(this.lblAreaTitle, 1, 1);
-            this.tableLayoutPanel7.Controls.Add(this.lblFloorTitle, 1, 3);
-            this.tableLayoutPanel7.Controls.Add(this.lblTableNumberTitle, 1, 5);
-            this.tableLayoutPanel7.Controls.Add(this.rdoIndoor, 2, 1);
-            this.tableLayoutPanel7.Controls.Add(this.rdoOutdoor, 2, 1);
-            this.tableLayoutPanel7.Controls.Add(this.cmbFloorSelect, 2, 3);
-            this.tableLayoutPanel7.Controls.Add(this.txtTableNumber, 2, 5);
-            this.tableLayoutPanel7.Controls.Add(this.btnConfirmUpdate, 2, 7);
+            this.tableLayoutPanel7.Controls.Add(this.tableLayoutPanel6, 1, 11);
+            this.tableLayoutPanel7.Controls.Add(this.lblAreaTitle, 1, 5);
+            this.tableLayoutPanel7.Controls.Add(this.rdoIndoor, 2, 5);
+            this.tableLayoutPanel7.Controls.Add(this.rdoOutdoor, 3, 5);
+            this.tableLayoutPanel7.Controls.Add(this.lblTableNumberTitle, 1, 7);
+            this.tableLayoutPanel7.Controls.Add(this.txtTableNumber, 2, 7);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(0, 63);
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel7.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 20;
@@ -857,49 +778,102 @@
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.016773F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.016773F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.016773F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(373, 631);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(373, 694);
             this.tableLayoutPanel7.TabIndex = 1;
             // 
-            // lblAreaTitle
+            // tableLayoutPanel6
             // 
-            this.lblAreaTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblAreaTitle.AutoSize = true;
-            this.lblAreaTitle.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
-            this.lblAreaTitle.Location = new System.Drawing.Point(21, 37);
-            this.lblAreaTitle.Name = "lblAreaTitle";
-            this.lblAreaTitle.Size = new System.Drawing.Size(105, 19);
-            this.lblAreaTitle.TabIndex = 0;
-            this.lblAreaTitle.Text = "Khu vực";
-            this.lblAreaTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tableLayoutPanel6.ColumnCount = 2;
+            this.tableLayoutPanel7.SetColumnSpan(this.tableLayoutPanel6, 3);
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.Controls.Add(this.btnAddTable, 0, 0);
+            this.tableLayoutPanel6.Controls.Add(this.btnDeleteTable, 1, 0);
+            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(18, 373);
+            this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
+            this.tableLayoutPanel6.RowCount = 1;
+            this.tableLayoutPanel7.SetRowSpan(this.tableLayoutPanel6, 2);
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(333, 69);
+            this.tableLayoutPanel6.TabIndex = 7;
             // 
-            // lblFloorTitle
+            // btnAddTable
             // 
-            this.lblFloorTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblFloorTitle.AutoSize = true;
-            this.lblFloorTitle.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
-            this.lblFloorTitle.Location = new System.Drawing.Point(21, 99);
-            this.lblFloorTitle.Name = "lblFloorTitle";
-            this.lblFloorTitle.Size = new System.Drawing.Size(105, 19);
-            this.lblFloorTitle.TabIndex = 1;
-            this.lblFloorTitle.Text = "Tầng";
+            this.btnAddTable.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(242)))), ((int)(((byte)(80)))));
+            this.btnAddTable.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnAddTable.FlatAppearance.BorderSize = 0;
+            this.btnAddTable.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAddTable.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
+            this.btnAddTable.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(92)))), ((int)(((byte)(33)))));
+            this.btnAddTable.Location = new System.Drawing.Point(5, 5);
+            this.btnAddTable.Margin = new System.Windows.Forms.Padding(5);
+            this.btnAddTable.Name = "btnAddTable";
+            this.btnAddTable.Size = new System.Drawing.Size(156, 59);
+            this.btnAddTable.TabIndex = 0;
+            this.btnAddTable.Text = "THÊM";
+            this.btnAddTable.UseVisualStyleBackColor = false;
+            this.btnAddTable.Click += new System.EventHandler(this.btnAddTable_Click);
+            // 
+            // btnDeleteTable
+            // 
+            this.btnDeleteTable.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(242)))), ((int)(((byte)(80)))));
+            this.btnDeleteTable.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnDeleteTable.FlatAppearance.BorderSize = 0;
+            this.btnDeleteTable.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnDeleteTable.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
+            this.btnDeleteTable.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(92)))), ((int)(((byte)(33)))));
+            this.btnDeleteTable.Location = new System.Drawing.Point(171, 5);
+            this.btnDeleteTable.Margin = new System.Windows.Forms.Padding(5);
+            this.btnDeleteTable.Name = "btnDeleteTable";
+            this.btnDeleteTable.Size = new System.Drawing.Size(157, 59);
+            this.btnDeleteTable.TabIndex = 1;
+            this.btnDeleteTable.Text = "XÓA";
+            this.btnDeleteTable.UseVisualStyleBackColor = false;
+            this.btnDeleteTable.Click += new System.EventHandler(this.btnDeleteTable_Click);
             // 
             // lblTableNumberTitle
             // 
             this.lblTableNumberTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTableNumberTitle.AutoSize = true;
             this.lblTableNumberTitle.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
-            this.lblTableNumberTitle.Location = new System.Drawing.Point(21, 161);
+            this.lblTableNumberTitle.Location = new System.Drawing.Point(21, 252);
             this.lblTableNumberTitle.Name = "lblTableNumberTitle";
             this.lblTableNumberTitle.Size = new System.Drawing.Size(105, 19);
             this.lblTableNumberTitle.TabIndex = 2;
             this.lblTableNumberTitle.Text = "Bàn số";
+            // 
+            // txtTableNumber
+            // 
+            this.txtTableNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel7.SetColumnSpan(this.txtTableNumber, 2);
+            this.txtTableNumber.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
+            this.txtTableNumber.Location = new System.Drawing.Point(129, 248);
+            this.txtTableNumber.Margin = new System.Windows.Forms.Padding(0);
+            this.txtTableNumber.Name = "txtTableNumber";
+            this.txtTableNumber.Size = new System.Drawing.Size(222, 27);
+            this.txtTableNumber.TabIndex = 6;
+            // 
+            // lblAreaTitle
+            // 
+            this.lblAreaTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblAreaTitle.AutoSize = true;
+            this.lblAreaTitle.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
+            this.lblAreaTitle.Location = new System.Drawing.Point(21, 177);
+            this.lblAreaTitle.Name = "lblAreaTitle";
+            this.lblAreaTitle.Size = new System.Drawing.Size(105, 19);
+            this.lblAreaTitle.TabIndex = 0;
+            this.lblAreaTitle.Text = "Khu vực";
+            this.lblAreaTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // rdoIndoor
             // 
             this.rdoIndoor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.rdoIndoor.AutoSize = true;
             this.rdoIndoor.Font = new System.Drawing.Font("Bahnschrift Light", 12F);
-            this.rdoIndoor.Location = new System.Drawing.Point(132, 35);
+            this.rdoIndoor.Location = new System.Drawing.Point(132, 175);
             this.rdoIndoor.Name = "rdoIndoor";
             this.rdoIndoor.Size = new System.Drawing.Size(105, 23);
             this.rdoIndoor.TabIndex = 3;
@@ -912,54 +886,13 @@
             this.rdoOutdoor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.rdoOutdoor.AutoSize = true;
             this.rdoOutdoor.Font = new System.Drawing.Font("Bahnschrift Light", 12F);
-            this.rdoOutdoor.Location = new System.Drawing.Point(243, 35);
+            this.rdoOutdoor.Location = new System.Drawing.Point(243, 175);
             this.rdoOutdoor.Name = "rdoOutdoor";
             this.rdoOutdoor.Size = new System.Drawing.Size(105, 23);
             this.rdoOutdoor.TabIndex = 4;
             this.rdoOutdoor.TabStop = true;
             this.rdoOutdoor.Text = "Bên ngoài";
             this.rdoOutdoor.UseVisualStyleBackColor = true;
-            // 
-            // cmbFloorSelect
-            // 
-            this.cmbFloorSelect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel7.SetColumnSpan(this.cmbFloorSelect, 2);
-            this.cmbFloorSelect.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
-            this.cmbFloorSelect.FormattingEnabled = true;
-            this.cmbFloorSelect.Location = new System.Drawing.Point(129, 95);
-            this.cmbFloorSelect.Margin = new System.Windows.Forms.Padding(0);
-            this.cmbFloorSelect.Name = "cmbFloorSelect";
-            this.cmbFloorSelect.Size = new System.Drawing.Size(222, 27);
-            this.cmbFloorSelect.TabIndex = 5;
-            // 
-            // txtTableNumber
-            // 
-            this.txtTableNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel7.SetColumnSpan(this.txtTableNumber, 2);
-            this.txtTableNumber.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
-            this.txtTableNumber.Location = new System.Drawing.Point(129, 157);
-            this.txtTableNumber.Margin = new System.Windows.Forms.Padding(0);
-            this.txtTableNumber.Name = "txtTableNumber";
-            this.txtTableNumber.Size = new System.Drawing.Size(222, 27);
-            this.txtTableNumber.TabIndex = 6;
-            // 
-            // btnConfirmUpdate
-            // 
-            this.btnConfirmUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(242)))), ((int)(((byte)(80)))));
-            this.btnConfirmUpdate.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnConfirmUpdate.FlatAppearance.BorderSize = 0;
-            this.btnConfirmUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnConfirmUpdate.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Bold);
-            this.btnConfirmUpdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(92)))), ((int)(((byte)(33)))));
-            this.btnConfirmUpdate.Location = new System.Drawing.Point(129, 217);
-            this.btnConfirmUpdate.Margin = new System.Windows.Forms.Padding(0);
-            this.btnConfirmUpdate.Name = "btnConfirmUpdate";
-            this.btnConfirmUpdate.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.tableLayoutPanel7.SetRowSpan(this.btnConfirmUpdate, 2);
-            this.btnConfirmUpdate.Size = new System.Drawing.Size(111, 62);
-            this.btnConfirmUpdate.TabIndex = 7;
-            this.btnConfirmUpdate.Text = "XÁC NHẬN";
-            this.btnConfirmUpdate.UseVisualStyleBackColor = false;
             // 
             // UC_Tables
             // 
@@ -969,6 +902,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "UC_Tables";
             this.Size = new System.Drawing.Size(1063, 700);
+            this.Load += new System.EventHandler(this.UC_Tables_Load);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
             this.flpOutdoorTables.ResumeLayout(false);
@@ -991,9 +925,9 @@
             this.tableLayoutPanel8.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
-            this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel7.ResumeLayout(false);
             this.tableLayoutPanel7.PerformLayout();
+            this.tableLayoutPanel6.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1026,23 +960,11 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
         private System.Windows.Forms.Label lblIndoorArea;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
-        private System.Windows.Forms.Button btnAddTable;
-        private System.Windows.Forms.Button btnDeleteTable;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
-        private System.Windows.Forms.Label lblAreaTitle;
-        private System.Windows.Forms.Label lblFloorTitle;
-        private System.Windows.Forms.Label lblTableNumberTitle;
-        private System.Windows.Forms.RadioButton rdoIndoor;
-        private System.Windows.Forms.RadioButton rdoOutdoor;
-        private System.Windows.Forms.ComboBox cmbFloorSelect;
-        private System.Windows.Forms.TextBox txtTableNumber;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button10;
@@ -1052,7 +974,15 @@
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.Button button15;
         private System.Windows.Forms.Button button16;
-        private System.Windows.Forms.ComboBox cmbFloorFilter;
-        private System.Windows.Forms.Button btnConfirmUpdate;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
+        private System.Windows.Forms.Button btnAddTable;
+        private System.Windows.Forms.Button btnDeleteTable;
+        private System.Windows.Forms.Label lblTableNumberTitle;
+        private System.Windows.Forms.TextBox txtTableNumber;
+        private System.Windows.Forms.Label lblAreaTitle;
+        private System.Windows.Forms.RadioButton rdoIndoor;
+        private System.Windows.Forms.RadioButton rdoOutdoor;
     }
 }

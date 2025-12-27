@@ -39,9 +39,9 @@ namespace OHIOCF.DAO
             return list;
         }
 
-        public bool UpdateStock(string ingredientId, double quantityChange)
+        public bool UpdateStock(string ingredientId, double quantityChange, double? minThreshold)
         {
-            string query = "UPDATE Inventory SET stockQuantity = stockQuantity + @change, lastUpdated = @time WHERE ingredientId = @id";
+            string query = "UPDATE Inventory SET stockQuantity = stockQuantity + @change, lastUpdated = @time, minThreshold = COALESCE(@min, minThreshold) WHERE ingredientId = @id";
             using (SQLiteConnection conn = new SQLiteConnection(Database.ConnectionString))
             {
                 conn.Open();
@@ -50,6 +50,9 @@ namespace OHIOCF.DAO
                     cmd.Parameters.AddWithValue("@id", ingredientId);
                     cmd.Parameters.AddWithValue("@change", quantityChange);
                     cmd.Parameters.AddWithValue("@time", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                    cmd.Parameters.AddWithValue("@min",
+                        minThreshold.HasValue ? (object)minThreshold.Value : DBNull.Value);
+
                     return cmd.ExecuteNonQuery() > 0;
                 }
             }

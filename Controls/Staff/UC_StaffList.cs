@@ -3,7 +3,9 @@ using OHIOCF.DAO;
 using OHIOCF.DTO;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Windows.Forms;
+using ClosedXML.Excel;
 
 namespace OHIOCF.Controls.Staff_Inventory
 {
@@ -15,6 +17,7 @@ namespace OHIOCF.Controls.Staff_Inventory
         {
             InitializeComponent();
             this.Load += UC_StaffList_Load;
+            dgvStaffData.AutoGenerateColumns = false;
             dgvStaffData.DataSource = userList;
         }
 
@@ -32,17 +35,7 @@ namespace OHIOCF.Controls.Staff_Inventory
 
         void LoadListUser()
         {
-            dgvStaffData.AutoGenerateColumns = false;
             userList.DataSource = UserBUS.Instance.GetListUser();
-
-            if (dgvStaffData.Columns["Username"] != null) dgvStaffData.Columns["Username"].HeaderText = "Tài khoản";
-            if (dgvStaffData.Columns["FullName"] != null) dgvStaffData.Columns["FullName"].HeaderText = "Họ tên";
-            if (dgvStaffData.Columns["IsActive"] != null) dgvStaffData.Columns["IsActive"].HeaderText = "Trạng thái";
-
-            if (dgvStaffData.Columns["Password"] != null) dgvStaffData.Columns["Password"].HeaderText = "Mật khẩu (Mã hóa)";
-
-            if (dgvStaffData.Columns["Id"] != null) dgvStaffData.Columns["Id"].HeaderText = "Mã NV";
-            if (dgvStaffData.Columns["RoleId"] != null) dgvStaffData.Columns["RoleId"].HeaderText = "Mã Vai trò";
         }
 
         void LoadRoleIntoCombobox()
@@ -95,12 +88,6 @@ namespace OHIOCF.Controls.Staff_Inventory
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (dgvStaffData.CurrentRow == null)
-            {
-                MessageBox.Show("Vui lòng chọn nhân viên cần sửa!");
-                return;
-            }
-
             string id = dgvStaffData.CurrentRow.Cells["Id"].Value.ToString();
 
             UserDTO user = new UserDTO()
@@ -108,7 +95,7 @@ namespace OHIOCF.Controls.Staff_Inventory
                 Id = id,
                 Username = txtUsername.Text,
                 FullName = txtFullname.Text,
-                RoleId = cmbRole.SelectedValue.ToString(),
+                RoleName = cmbRole.SelectedValue.ToString(),
                 IsActive = (bool)cmbStatus.SelectedValue
             };
 
@@ -171,8 +158,8 @@ namespace OHIOCF.Controls.Staff_Inventory
                 txtFullname.Text = row.Cells["FullName"].Value?.ToString() ?? "";
                 txtPassword.Text = row.Cells["Password"].Value?.ToString() ?? "";
 
-                if (row.Cells["RoleId"].Value != null)
-                    cmbRole.SelectedValue = row.Cells["RoleId"].Value.ToString();
+                if (row.Cells["RoleName"].Value != null)
+                    cmbRole.SelectedValue = row.Cells["RoleName"].Value.ToString();
 
                 if (row.Cells["IsActive"].Value != null)
                 {
@@ -183,9 +170,91 @@ namespace OHIOCF.Controls.Staff_Inventory
             }
         }
 
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        private void btnUploadImage_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+            if (dgvStaffData.Rows.Count == 0)
+            {
+                MessageBox.Show("Không có dữ liệu để xuất!", "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            try
+            {
+                // Mở hộp thoại chọn nơi lưu file
+                SaveFileDialog saveDialog = new SaveFileDialog();
+                saveDialog.Filter = "Excel Files|*.xlsx";
+                saveDialog.Title = "Xuất danh sách nhân viên";
+                saveDialog.FileName = $"DanhSachNhanVien_{DateTime.Now:yyyyMMdd_HHmmss}.xlsx";
+
+                if (saveDialog.ShowDialog() == DialogResult.OK)
+                {
+                    using (var workbook = new XLWorkbook())
+                    {
+                        var worksheet = workbook.Worksheets.Add("Nhân viên");
+
+                        // tiêu đề cột
+                        for (int i = 0; i < dgvStaffData.Columns.Count; i++)
+                        {
+                            // Bỏ qua cột ẩn
+                            if (!dgvStaffData.Columns[i].Visible) continue;
+
+                            worksheet.Cell(1, i + 1).Value = dgvStaffData.Columns[i].HeaderText;
+                            worksheet.Cell(1, i + 1).Style.Font.Bold = true;
+                            worksheet.Cell(1, i + 1).Style.Fill.BackgroundColor = XLColor.LightGray;
+                        }
+
+                        // Thêm dữ liệu
+                        int excelRow = 2;
+                        foreach (DataGridViewRow row in dgvStaffData.Rows)
+                        {
+                            if (row.IsNewRow) continue;
+
+                            int excelCol = 1;
+                            for (int i = 0; i < dgvStaffData.Columns.Count; i++)
+                            {
+                                if (!dgvStaffData.Columns[i].Visible) continue;
+
+                                var cellValue = row.Cells[i].Value?.ToString() ?? "";
+
+                                if (dgvStaffData.Columns[i].DataPropertyName == "IsActive")
+                                {
+                                    bool isActive;
+                                    if (bool.TryParse(cellValue, out isActive))
+                                    {
+                                        cellValue = isActive ? "Hoạt động" : "Ngưng hoạt động";
+                                    }
+                                }
+
+                                worksheet.Cell(excelRow, excelCol).Value = cellValue;
+                                excelCol++;
+                            }
+                            excelRow++;
+                        }
+
+                        worksheet.Columns().AdjustToContents();
+
+                        workbook.SaveAs(saveDialog.FileName);
+                    }
+
+
+                    if (MessageBox.Show("Xuất file thành công, bạn có muốn mở file vừa xuất?", "Xác nhận",
+                        MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        System.Diagnostics.Process.Start(saveDialog.FileName);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi xuất file: {ex.Message}", "Lỗi",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

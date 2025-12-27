@@ -79,6 +79,10 @@
             this.lblInvoiceTitle = new System.Windows.Forms.Label();
             this.lblTableStatus = new System.Windows.Forms.Label();
             this.DGVInvoiceSummary = new System.Windows.Forms.DataGridView();
+            this.colTenMon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -91,10 +95,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.btnAddNewOrder = new System.Windows.Forms.Button();
-            this.colTenMon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
@@ -932,6 +932,30 @@
             this.DGVInvoiceSummary.Size = new System.Drawing.Size(276, 274);
             this.DGVInvoiceSummary.TabIndex = 7;
             // 
+            // colTenMon
+            // 
+            this.colTenMon.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colTenMon.HeaderText = "Tên món";
+            this.colTenMon.Name = "colTenMon";
+            // 
+            // colSize
+            // 
+            this.colSize.HeaderText = "Size";
+            this.colSize.Name = "colSize";
+            this.colSize.Width = 30;
+            // 
+            // colDonGia
+            // 
+            this.colDonGia.HeaderText = "Đơn giá";
+            this.colDonGia.Name = "colDonGia";
+            this.colDonGia.Width = 50;
+            // 
+            // colSL
+            // 
+            this.colSL.HeaderText = "SL";
+            this.colSL.Name = "colSL";
+            this.colSL.Width = 30;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -1138,30 +1162,6 @@
             this.btnAddNewOrder.TabIndex = 1;
             this.btnAddNewOrder.UseVisualStyleBackColor = false;
             this.btnAddNewOrder.Click += new System.EventHandler(this.btnAddNewOrder_Click);
-            // 
-            // colTenMon
-            // 
-            this.colTenMon.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colTenMon.HeaderText = "Tên món";
-            this.colTenMon.Name = "colTenMon";
-            // 
-            // colSize
-            // 
-            this.colSize.HeaderText = "Size";
-            this.colSize.Name = "colSize";
-            this.colSize.Width = 30;
-            // 
-            // colDonGia
-            // 
-            this.colDonGia.HeaderText = "Đơn giá";
-            this.colDonGia.Name = "colDonGia";
-            this.colDonGia.Width = 50;
-            // 
-            // colSL
-            // 
-            this.colSL.HeaderText = "SL";
-            this.colSL.Name = "colSL";
-            this.colSL.Width = 30;
             // 
             // UC_Sale
             // 

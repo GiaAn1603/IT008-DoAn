@@ -12,16 +12,16 @@ namespace OHIOCF.BUS
 
         public List<InventoryDTO> GetInventoryStatus() => InventoryDAO.Instance.GetList();
 
-        public bool ImportStock(string ingredientId, double quantity)
+        public bool ImportStock(string ingredientId, double quantity, double? minThreshold = null)
         {
-            if (quantity <= 0) return false;
-            return InventoryDAO.Instance.UpdateStock(ingredientId, quantity);
+            if (quantity < 0) return false;
+            return InventoryDAO.Instance.UpdateStock(ingredientId, quantity, minThreshold);
         }
 
-        public bool DeductStock(string ingredientId, double quantity)
+        public bool DeductStock(string ingredientId, double quantity, double? minThreshold = null)
         {
             if (quantity <= 0) return false;
-            return InventoryDAO.Instance.UpdateStock(ingredientId, -quantity);
+            return InventoryDAO.Instance.UpdateStock(ingredientId, -quantity, minThreshold);
         }
     }
 }

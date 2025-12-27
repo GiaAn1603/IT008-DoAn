@@ -47,6 +47,9 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.lblHeaderTitle = new System.Windows.Forms.Label();
             this.dgvInventory = new System.Windows.Forms.DataGridView();
             this.colTenNVL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMaNVL = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,15 +57,12 @@
             this.colDonVi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colThanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.lblHeaderTitle = new System.Windows.Forms.Label();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).BeginInit();
             this.tableLayoutPanel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel2
@@ -381,6 +381,50 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(704, 670);
             this.tableLayoutPanel3.TabIndex = 5;
             // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.ColumnCount = 2;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 90F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel5.Controls.Add(this.btnAdd, 1, 0);
+            this.tableLayoutPanel5.Controls.Add(this.lblHeaderTitle, 0, 0);
+            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 1;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(704, 43);
+            this.tableLayoutPanel5.TabIndex = 2;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(242)))), ((int)(((byte)(80)))));
+            this.btnAdd.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnAdd.FlatAppearance.BorderSize = 0;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAdd.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Bold);
+            this.btnAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(92)))), ((int)(((byte)(33)))));
+            this.btnAdd.Location = new System.Drawing.Point(636, 3);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(65, 37);
+            this.btnAdd.TabIndex = 25;
+            this.btnAdd.Text = "PHIẾU MỚI";
+            this.btnAdd.UseVisualStyleBackColor = false;
+            // 
+            // lblHeaderTitle
+            // 
+            this.lblHeaderTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(92)))), ((int)(((byte)(33)))));
+            this.lblHeaderTitle.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblHeaderTitle.Font = new System.Drawing.Font("Bahnschrift Light", 20F, System.Drawing.FontStyle.Bold);
+            this.lblHeaderTitle.ForeColor = System.Drawing.Color.White;
+            this.lblHeaderTitle.Location = new System.Drawing.Point(3, 0);
+            this.lblHeaderTitle.Name = "lblHeaderTitle";
+            this.lblHeaderTitle.Size = new System.Drawing.Size(627, 43);
+            this.lblHeaderTitle.TabIndex = 23;
+            this.lblHeaderTitle.Text = "PHIẾU NHẬP KHO";
+            this.lblHeaderTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // dgvInventory
             // 
             this.dgvInventory.BackgroundColor = System.Drawing.Color.White;
@@ -430,50 +474,6 @@
             this.colThanhTien.HeaderText = "Thành tiền";
             this.colThanhTien.Name = "colThanhTien";
             // 
-            // tableLayoutPanel5
-            // 
-            this.tableLayoutPanel5.ColumnCount = 2;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 90F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel5.Controls.Add(this.btnAdd, 1, 0);
-            this.tableLayoutPanel5.Controls.Add(this.lblHeaderTitle, 0, 0);
-            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 1;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(704, 43);
-            this.tableLayoutPanel5.TabIndex = 2;
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(242)))), ((int)(((byte)(80)))));
-            this.btnAdd.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnAdd.FlatAppearance.BorderSize = 0;
-            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAdd.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Bold);
-            this.btnAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(92)))), ((int)(((byte)(33)))));
-            this.btnAdd.Location = new System.Drawing.Point(636, 3);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(65, 37);
-            this.btnAdd.TabIndex = 25;
-            this.btnAdd.Text = "PHIẾU MỚI";
-            this.btnAdd.UseVisualStyleBackColor = false;
-            // 
-            // lblHeaderTitle
-            // 
-            this.lblHeaderTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(92)))), ((int)(((byte)(33)))));
-            this.lblHeaderTitle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblHeaderTitle.Font = new System.Drawing.Font("Bahnschrift Light", 20F, System.Drawing.FontStyle.Bold);
-            this.lblHeaderTitle.ForeColor = System.Drawing.Color.White;
-            this.lblHeaderTitle.Location = new System.Drawing.Point(3, 0);
-            this.lblHeaderTitle.Name = "lblHeaderTitle";
-            this.lblHeaderTitle.Size = new System.Drawing.Size(627, 43);
-            this.lblHeaderTitle.TabIndex = 23;
-            this.lblHeaderTitle.Text = "PHIẾU NHẬP KHO";
-            this.lblHeaderTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // UC_StockReceipt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -487,8 +487,8 @@
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).EndInit();
             this.tableLayoutPanel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).EndInit();
             this.ResumeLayout(false);
 
         }
