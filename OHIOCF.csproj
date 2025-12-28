@@ -104,29 +104,11 @@
     <Compile Include="BUS\ReservationBUS.cs" />
     <Compile Include="BUS\ScheduleBUS.cs" />
     <Compile Include="BUS\UserBUS.cs" />
-    <Compile Include="Controls\Inventory\UC_Inventory.cs">
+    <Compile Include="Controls\UC_Inventory.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\Inventory\UC_Inventory.Designer.cs">
+    <Compile Include="Controls\UC_Inventory.Designer.cs">
       <DependentUpon>UC_Inventory.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\Inventory\UC_Inventory1.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\Inventory\UC_Inventory1.Designer.cs">
-      <DependentUpon>UC_Inventory1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\Inventory\UC_ReceiptHistory.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\Inventory\UC_ReceiptHistory.Designer.cs">
-      <DependentUpon>UC_ReceiptHistory.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\Inventory\UC_StockReceipt.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\Inventory\UC_StockReceipt.Designer.cs">
-      <DependentUpon>UC_StockReceipt.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\Report\UC_Report.cs">
       <SubType>UserControl</SubType>
@@ -164,23 +146,11 @@
     <Compile Include="Controls\Staff\UC_Shift.Designer.cs">
       <DependentUpon>UC_Shift.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\Staff_Inventory\UC_StaffInventory.cs">
+    <Compile Include="Controls\UC_StaffInventory.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\Staff_Inventory\UC_StaffInventory.Designer.cs">
+    <Compile Include="Controls\UC_StaffInventory.Designer.cs">
       <DependentUpon>UC_StaffInventory.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\Staff_Inventory\UC_StaffInventory1.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\Staff_Inventory\UC_StaffInventory1.Designer.cs">
-      <DependentUpon>UC_StaffInventory1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\Staff_Inventory\UC_StaffStockReceipt.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\Staff_Inventory\UC_StaffStockReceipt.Designer.cs">
-      <DependentUpon>UC_StaffStockReceipt.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\UC_Customers.cs">
       <SubType>UserControl</SubType>
@@ -297,14 +267,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Controls\Inventory\UC_Inventory1.resx">
-      <DependentUpon>UC_Inventory1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Inventory\UC_ReceiptHistory.resx">
-      <DependentUpon>UC_ReceiptHistory.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Inventory\UC_StockReceipt.resx">
-      <DependentUpon>UC_StockReceipt.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\UC_Inventory.resx">
+      <DependentUpon>UC_Inventory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Report\UC_RevenueReport.resx">
       <DependentUpon>UC_RevenueReport.cs</DependentUpon>
@@ -318,11 +282,8 @@
     <EmbeddedResource Include="Controls\Staff\UC_Shift.resx">
       <DependentUpon>UC_Shift.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Staff_Inventory\UC_StaffInventory1.resx">
-      <DependentUpon>UC_StaffInventory1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Staff_Inventory\UC_StaffStockReceipt.resx">
-      <DependentUpon>UC_StaffStockReceipt.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\UC_StaffInventory.resx">
+      <DependentUpon>UC_StaffInventory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\UC_Customers.resx">
       <DependentUpon>UC_Customers.cs</DependentUpon>

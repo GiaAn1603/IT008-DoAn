@@ -1,6 +1,6 @@
-﻿namespace OHIOCF.Controls.Inventory
+﻿namespace OHIOCF.Controls
 {
-    partial class UC_Inventory1
+    partial class UC_Inventory
     {
         /// <summary> 
         /// Required designer variable.
@@ -54,6 +54,7 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.buttonAdd = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.lblStockQuantity = new System.Windows.Forms.Label();
@@ -93,6 +94,7 @@
             this.dgvInventory.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvInventory.Location = new System.Drawing.Point(3, 46);
             this.dgvInventory.Name = "dgvInventory";
+            this.dgvInventory.RowHeadersWidth = 51;
             this.dgvInventory.Size = new System.Drawing.Size(698, 621);
             this.dgvInventory.TabIndex = 1;
             this.dgvInventory.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInventory_CellClick);
@@ -101,32 +103,41 @@
             // 
             this.IngredientId.DataPropertyName = "IngredientId";
             this.IngredientId.HeaderText = "Mã NVL";
+            this.IngredientId.MinimumWidth = 6;
             this.IngredientId.Name = "IngredientId";
+            this.IngredientId.Width = 125;
             // 
             // IngredientName
             // 
             this.IngredientName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.IngredientName.DataPropertyName = "IngredientName";
             this.IngredientName.HeaderText = "Tên nguyên vật liệu";
+            this.IngredientName.MinimumWidth = 6;
             this.IngredientName.Name = "IngredientName";
             // 
             // Unit
             // 
             this.Unit.DataPropertyName = "Unit";
             this.Unit.HeaderText = "Đơn vị tính";
+            this.Unit.MinimumWidth = 6;
             this.Unit.Name = "Unit";
+            this.Unit.Width = 125;
             // 
             // StockQuantity
             // 
             this.StockQuantity.DataPropertyName = "StockQuantity";
             this.StockQuantity.HeaderText = "Số lượng tồn";
+            this.StockQuantity.MinimumWidth = 6;
             this.StockQuantity.Name = "StockQuantity";
+            this.StockQuantity.Width = 125;
             // 
             // MinThreshold
             // 
             this.MinThreshold.DataPropertyName = "MinThreshold";
             this.MinThreshold.HeaderText = "Mức tối thiểu";
+            this.MinThreshold.MinimumWidth = 6;
             this.MinThreshold.Name = "MinThreshold";
+            this.MinThreshold.Width = 125;
             // 
             // tableLayoutPanel3
             // 
@@ -187,7 +198,7 @@
             this.btnSearch.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Bold);
             this.btnSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(92)))), ((int)(((byte)(33)))));
             this.btnSearch.Location = new System.Drawing.Point(34, 29);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(90, 27);
             this.btnSearch.TabIndex = 0;
@@ -419,8 +430,8 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.755043F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 1.585014F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.763689F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 3.746398F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.889423F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 3.605769F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
@@ -429,11 +440,12 @@
             // 
             // tableLayoutPanel5
             // 
-            this.tableLayoutPanel5.ColumnCount = 2;
+            this.tableLayoutPanel5.ColumnCount = 3;
             this.tableLayoutPanel2.SetColumnSpan(this.tableLayoutPanel5, 9);
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel5.Controls.Add(this.buttonAdd, 2, 0);
             this.tableLayoutPanel5.Controls.Add(this.btnDelete, 1, 0);
             this.tableLayoutPanel5.Controls.Add(this.btnUpdate, 0, 0);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -452,6 +464,23 @@
             this.tableLayoutPanel5.Size = new System.Drawing.Size(286, 64);
             this.tableLayoutPanel5.TabIndex = 22;
             // 
+            // buttonAdd
+            // 
+            this.buttonAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(242)))), ((int)(((byte)(80)))));
+            this.buttonAdd.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonAdd.FlatAppearance.BorderSize = 0;
+            this.buttonAdd.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonAdd.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Bold);
+            this.buttonAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(92)))), ((int)(((byte)(33)))));
+            this.buttonAdd.Location = new System.Drawing.Point(195, 5);
+            this.buttonAdd.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.buttonAdd.Name = "buttonAdd";
+            this.buttonAdd.Size = new System.Drawing.Size(86, 54);
+            this.buttonAdd.TabIndex = 28;
+            this.buttonAdd.Text = "THÊM";
+            this.buttonAdd.UseVisualStyleBackColor = false;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
+            // 
             // btnDelete
             // 
             this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(242)))), ((int)(((byte)(80)))));
@@ -460,10 +489,10 @@
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnDelete.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Bold);
             this.btnDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(92)))), ((int)(((byte)(33)))));
-            this.btnDelete.Location = new System.Drawing.Point(148, 5);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(5);
+            this.btnDelete.Location = new System.Drawing.Point(100, 5);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(133, 54);
+            this.btnDelete.Size = new System.Drawing.Size(85, 54);
             this.btnDelete.TabIndex = 27;
             this.btnDelete.Text = "XÓA";
             this.btnDelete.UseVisualStyleBackColor = false;
@@ -478,9 +507,9 @@
             this.btnUpdate.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Bold);
             this.btnUpdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(92)))), ((int)(((byte)(33)))));
             this.btnUpdate.Location = new System.Drawing.Point(5, 5);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(5);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(133, 54);
+            this.btnUpdate.Size = new System.Drawing.Size(85, 54);
             this.btnUpdate.TabIndex = 26;
             this.btnUpdate.Text = "CẬP NHẬT";
             this.btnUpdate.UseVisualStyleBackColor = false;
@@ -499,13 +528,13 @@
             this.lblStockQuantity.Text = "Số lượng";
             this.lblStockQuantity.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // UC_Inventory1
+            // UC_Inventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(215)))), ((int)(((byte)(32)))));
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "UC_Inventory1";
+            this.Name = "UC_Inventory";
             this.Size = new System.Drawing.Size(1063, 676);
             this.Load += new System.EventHandler(this.UC_Inventory1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).EndInit();
@@ -552,5 +581,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn MinThreshold;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button buttonAdd;
     }
 }
