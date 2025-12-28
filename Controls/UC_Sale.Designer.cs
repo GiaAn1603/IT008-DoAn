@@ -79,22 +79,22 @@
             this.lblInvoiceTitle = new System.Windows.Forms.Label();
             this.lblTableStatus = new System.Windows.Forms.Label();
             this.DGVInvoiceSummary = new System.Windows.Forms.DataGridView();
-            this.colTenMon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.lblSubTotal = new System.Windows.Forms.Label();
+            this.lblDiscount = new System.Windows.Forms.Label();
+            this.lblTotal = new System.Windows.Forms.Label();
             this.btnUpdateStatus = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label10 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.btnAddNewOrder = new System.Windows.Forms.Button();
+            this.colTenMon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
@@ -132,7 +132,7 @@
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1063, 610);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1417, 751);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
             // tableLayoutPanel4
@@ -143,12 +143,13 @@
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel5, 0, 1);
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel6, 0, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(4, 4);
+            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 2;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55.01672F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 44.98328F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(738, 604);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(983, 743);
             this.tableLayoutPanel4.TabIndex = 1;
             // 
             // tableLayoutPanel5
@@ -159,13 +160,13 @@
             this.tableLayoutPanel5.Controls.Add(this.flpOutdoorTables, 0, 1);
             this.tableLayoutPanel5.Controls.Add(this.pnlOutdoorTables, 0, 0);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(0, 332);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(0, 408);
             this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 2;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.97059F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 86.02941F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(738, 272);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(983, 335);
             this.tableLayoutPanel5.TabIndex = 1;
             // 
             // flpOutdoorTables
@@ -176,9 +177,10 @@
             this.flpOutdoorTables.Controls.Add(this.button8);
             this.flpOutdoorTables.Controls.Add(this.button9);
             this.flpOutdoorTables.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flpOutdoorTables.Location = new System.Drawing.Point(3, 41);
+            this.flpOutdoorTables.Location = new System.Drawing.Point(4, 50);
+            this.flpOutdoorTables.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.flpOutdoorTables.Name = "flpOutdoorTables";
-            this.flpOutdoorTables.Size = new System.Drawing.Size(732, 228);
+            this.flpOutdoorTables.Size = new System.Drawing.Size(975, 281);
             this.flpOutdoorTables.TabIndex = 2;
             // 
             // button6
@@ -188,10 +190,10 @@
             this.button6.FlatAppearance.BorderSize = 0;
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
-            this.button6.Location = new System.Drawing.Point(10, 10);
-            this.button6.Margin = new System.Windows.Forms.Padding(10);
+            this.button6.Location = new System.Drawing.Point(13, 12);
+            this.button6.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(100, 100);
+            this.button6.Size = new System.Drawing.Size(133, 123);
             this.button6.TabIndex = 0;
             this.button6.Text = "Bàn 1";
             this.button6.UseVisualStyleBackColor = false;
@@ -203,10 +205,10 @@
             this.button7.FlatAppearance.BorderSize = 0;
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
-            this.button7.Location = new System.Drawing.Point(130, 10);
-            this.button7.Margin = new System.Windows.Forms.Padding(10);
+            this.button7.Location = new System.Drawing.Point(172, 12);
+            this.button7.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(100, 100);
+            this.button7.Size = new System.Drawing.Size(133, 123);
             this.button7.TabIndex = 1;
             this.button7.Text = "Bàn 2";
             this.button7.UseVisualStyleBackColor = false;
@@ -218,10 +220,10 @@
             this.button8.FlatAppearance.BorderSize = 0;
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
-            this.button8.Location = new System.Drawing.Point(250, 10);
-            this.button8.Margin = new System.Windows.Forms.Padding(10);
+            this.button8.Location = new System.Drawing.Point(331, 12);
+            this.button8.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(100, 100);
+            this.button8.Size = new System.Drawing.Size(133, 123);
             this.button8.TabIndex = 2;
             this.button8.Text = "Bàn 3";
             this.button8.UseVisualStyleBackColor = false;
@@ -233,10 +235,10 @@
             this.button9.FlatAppearance.BorderSize = 0;
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button9.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
-            this.button9.Location = new System.Drawing.Point(370, 10);
-            this.button9.Margin = new System.Windows.Forms.Padding(10);
+            this.button9.Location = new System.Drawing.Point(490, 12);
+            this.button9.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(100, 100);
+            this.button9.Size = new System.Drawing.Size(133, 123);
             this.button9.TabIndex = 3;
             this.button9.Text = "Bàn 4";
             this.button9.UseVisualStyleBackColor = false;
@@ -247,9 +249,10 @@
             this.pnlOutdoorTables.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlOutdoorTables.Font = new System.Drawing.Font("Bahnschrift Light", 20F, System.Drawing.FontStyle.Bold);
             this.pnlOutdoorTables.ForeColor = System.Drawing.Color.Black;
-            this.pnlOutdoorTables.Location = new System.Drawing.Point(3, 0);
+            this.pnlOutdoorTables.Location = new System.Drawing.Point(4, 0);
+            this.pnlOutdoorTables.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.pnlOutdoorTables.Name = "pnlOutdoorTables";
-            this.pnlOutdoorTables.Size = new System.Drawing.Size(732, 38);
+            this.pnlOutdoorTables.Size = new System.Drawing.Size(975, 46);
             this.pnlOutdoorTables.TabIndex = 0;
             this.pnlOutdoorTables.Text = "BÊN NGOÀI";
             this.pnlOutdoorTables.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -268,7 +271,7 @@
             this.tableLayoutPanel6.RowCount = 2;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.24149F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 85.75851F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(738, 332);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(983, 408);
             this.tableLayoutPanel6.TabIndex = 0;
             // 
             // flpIndoorTables
@@ -286,9 +289,10 @@
             this.flpIndoorTables.Controls.Add(this.button15);
             this.flpIndoorTables.Controls.Add(this.button16);
             this.flpIndoorTables.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flpIndoorTables.Location = new System.Drawing.Point(3, 50);
+            this.flpIndoorTables.Location = new System.Drawing.Point(4, 62);
+            this.flpIndoorTables.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.flpIndoorTables.Name = "flpIndoorTables";
-            this.flpIndoorTables.Size = new System.Drawing.Size(732, 279);
+            this.flpIndoorTables.Size = new System.Drawing.Size(975, 342);
             this.flpIndoorTables.TabIndex = 1;
             // 
             // tableLayoutPanel9
@@ -303,11 +307,12 @@
             this.tableLayoutPanel9.Controls.Add(this.tableLayoutPanel12, 1, 0);
             this.tableLayoutPanel9.Controls.Add(this.tableLayoutPanel13, 0, 0);
             this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel9.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel9.Location = new System.Drawing.Point(4, 4);
+            this.tableLayoutPanel9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
             this.tableLayoutPanel9.RowCount = 1;
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel9.Size = new System.Drawing.Size(1057, 0);
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(1409, 0);
             this.tableLayoutPanel9.TabIndex = 7;
             // 
             // tableLayoutPanel10
@@ -320,14 +325,15 @@
             this.tableLayoutPanel10.Controls.Add(this.pictureBox3, 0, 1);
             this.tableLayoutPanel10.Controls.Add(this.label9, 0, 0);
             this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel10.Location = new System.Drawing.Point(795, 3);
+            this.tableLayoutPanel10.Location = new System.Drawing.Point(1060, 4);
+            this.tableLayoutPanel10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel10.Name = "tableLayoutPanel10";
             this.tableLayoutPanel10.RowCount = 2;
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 28.83436F));
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 71.16564F));
-            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel10.Size = new System.Drawing.Size(259, 1);
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(345, 1);
             this.tableLayoutPanel10.TabIndex = 3;
             // 
             // lblTotalIncome
@@ -336,9 +342,10 @@
             this.lblTotalIncome.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblTotalIncome.Font = new System.Drawing.Font("Bahnschrift Light", 25F);
             this.lblTotalIncome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(92)))), ((int)(((byte)(33)))));
-            this.lblTotalIncome.Location = new System.Drawing.Point(132, 0);
+            this.lblTotalIncome.Location = new System.Drawing.Point(176, 0);
+            this.lblTotalIncome.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTotalIncome.Name = "lblTotalIncome";
-            this.lblTotalIncome.Size = new System.Drawing.Size(124, 1);
+            this.lblTotalIncome.Size = new System.Drawing.Size(165, 1);
             this.lblTotalIncome.TabIndex = 2;
             this.lblTotalIncome.Text = "45678";
             this.lblTotalIncome.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -347,9 +354,10 @@
             // 
             this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox3.Location = new System.Drawing.Point(4, 4);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(123, 1);
+            this.pictureBox3.Size = new System.Drawing.Size(164, 1);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 0;
             this.pictureBox3.TabStop = false;
@@ -362,9 +370,10 @@
             this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label9.Font = new System.Drawing.Font("Bahnschrift Light", 18F, System.Drawing.FontStyle.Bold);
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(92)))), ((int)(((byte)(33)))));
-            this.label9.Location = new System.Drawing.Point(3, 0);
+            this.label9.Location = new System.Drawing.Point(4, 0);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(253, 1);
+            this.label9.Size = new System.Drawing.Size(337, 1);
             this.label9.TabIndex = 1;
             this.label9.Text = "Tổng doanh thu";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -379,14 +388,15 @@
             this.tableLayoutPanel11.Controls.Add(this.label6, 0, 0);
             this.tableLayoutPanel11.Controls.Add(this.pictureBox2, 0, 1);
             this.tableLayoutPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel11.Location = new System.Drawing.Point(531, 3);
+            this.tableLayoutPanel11.Location = new System.Drawing.Point(708, 4);
+            this.tableLayoutPanel11.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel11.Name = "tableLayoutPanel11";
             this.tableLayoutPanel11.RowCount = 2;
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30.06135F));
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 69.93865F));
-            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel11.Size = new System.Drawing.Size(258, 1);
+            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel11.Size = new System.Drawing.Size(344, 1);
             this.tableLayoutPanel11.TabIndex = 2;
             // 
             // lblTodayIncome
@@ -395,9 +405,10 @@
             this.lblTodayIncome.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblTodayIncome.Font = new System.Drawing.Font("Bahnschrift Light", 25F);
             this.lblTodayIncome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(215)))), ((int)(((byte)(32)))));
-            this.lblTodayIncome.Location = new System.Drawing.Point(132, 0);
+            this.lblTodayIncome.Location = new System.Drawing.Point(176, 0);
+            this.lblTodayIncome.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTodayIncome.Name = "lblTodayIncome";
-            this.lblTodayIncome.Size = new System.Drawing.Size(123, 1);
+            this.lblTodayIncome.Size = new System.Drawing.Size(164, 1);
             this.lblTodayIncome.TabIndex = 2;
             this.lblTodayIncome.Text = "4567";
             this.lblTodayIncome.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -410,9 +421,10 @@
             this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label6.Font = new System.Drawing.Font("Bahnschrift Light", 18F, System.Drawing.FontStyle.Bold);
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(215)))), ((int)(((byte)(32)))));
-            this.label6.Location = new System.Drawing.Point(3, 0);
+            this.label6.Location = new System.Drawing.Point(4, 0);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(252, 1);
+            this.label6.Size = new System.Drawing.Size(336, 1);
             this.label6.TabIndex = 1;
             this.label6.Text = "Doanh thu hôm nay";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -421,9 +433,10 @@
             // 
             this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox2.Location = new System.Drawing.Point(4, 4);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(123, 1);
+            this.pictureBox2.Size = new System.Drawing.Size(164, 1);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
@@ -438,14 +451,15 @@
             this.tableLayoutPanel12.Controls.Add(this.pictureBox1, 0, 1);
             this.tableLayoutPanel12.Controls.Add(this.label7, 0, 0);
             this.tableLayoutPanel12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel12.Location = new System.Drawing.Point(267, 3);
+            this.tableLayoutPanel12.Location = new System.Drawing.Point(356, 4);
+            this.tableLayoutPanel12.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel12.Name = "tableLayoutPanel12";
             this.tableLayoutPanel12.RowCount = 2;
             this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30.06135F));
             this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 69.93865F));
-            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel12.Size = new System.Drawing.Size(258, 1);
+            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel12.Size = new System.Drawing.Size(344, 1);
             this.tableLayoutPanel12.TabIndex = 1;
             // 
             // lblCustomerTotal
@@ -454,9 +468,10 @@
             this.lblCustomerTotal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblCustomerTotal.Font = new System.Drawing.Font("Bahnschrift Light", 25F);
             this.lblCustomerTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(92)))), ((int)(((byte)(33)))));
-            this.lblCustomerTotal.Location = new System.Drawing.Point(132, 0);
+            this.lblCustomerTotal.Location = new System.Drawing.Point(176, 0);
+            this.lblCustomerTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCustomerTotal.Name = "lblCustomerTotal";
-            this.lblCustomerTotal.Size = new System.Drawing.Size(123, 1);
+            this.lblCustomerTotal.Size = new System.Drawing.Size(164, 1);
             this.lblCustomerTotal.TabIndex = 2;
             this.lblCustomerTotal.Text = "50";
             this.lblCustomerTotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -465,9 +480,10 @@
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(123, 1);
+            this.pictureBox1.Size = new System.Drawing.Size(164, 1);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -480,9 +496,10 @@
             this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label7.Font = new System.Drawing.Font("Bahnschrift Light", 18F, System.Drawing.FontStyle.Bold);
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(92)))), ((int)(((byte)(33)))));
-            this.label7.Location = new System.Drawing.Point(3, 0);
+            this.label7.Location = new System.Drawing.Point(4, 0);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(252, 1);
+            this.label7.Size = new System.Drawing.Size(336, 1);
             this.label7.TabIndex = 1;
             this.label7.Text = "Tổng số hóa đơn";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -497,14 +514,15 @@
             this.tableLayoutPanel13.Controls.Add(this.pictureBox4, 0, 1);
             this.tableLayoutPanel13.Controls.Add(this.label8, 0, 0);
             this.tableLayoutPanel13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel13.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel13.Location = new System.Drawing.Point(4, 4);
+            this.tableLayoutPanel13.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel13.Name = "tableLayoutPanel13";
             this.tableLayoutPanel13.RowCount = 2;
             this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.12883F));
             this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 66.87116F));
-            this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel13.Size = new System.Drawing.Size(258, 1);
+            this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel13.Size = new System.Drawing.Size(344, 1);
             this.tableLayoutPanel13.TabIndex = 0;
             // 
             // lblStaffTotal
@@ -514,9 +532,10 @@
             this.lblStaffTotal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblStaffTotal.Font = new System.Drawing.Font("Bahnschrift Light", 25F);
             this.lblStaffTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(215)))), ((int)(((byte)(32)))));
-            this.lblStaffTotal.Location = new System.Drawing.Point(124, 0);
+            this.lblStaffTotal.Location = new System.Drawing.Point(166, 0);
+            this.lblStaffTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblStaffTotal.Name = "lblStaffTotal";
-            this.lblStaffTotal.Size = new System.Drawing.Size(131, 1);
+            this.lblStaffTotal.Size = new System.Drawing.Size(174, 1);
             this.lblStaffTotal.TabIndex = 2;
             this.lblStaffTotal.Text = "5";
             this.lblStaffTotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -526,9 +545,10 @@
             this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(92)))), ((int)(((byte)(33)))));
             this.pictureBox4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox4.Location = new System.Drawing.Point(4, 4);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(115, 1);
+            this.pictureBox4.Size = new System.Drawing.Size(154, 1);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 0;
             this.pictureBox4.TabStop = false;
@@ -541,9 +561,10 @@
             this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label8.Font = new System.Drawing.Font("Bahnschrift Light", 18F, System.Drawing.FontStyle.Bold);
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(215)))), ((int)(((byte)(32)))));
-            this.label8.Location = new System.Drawing.Point(3, 0);
+            this.label8.Location = new System.Drawing.Point(4, 0);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(252, 1);
+            this.label8.Size = new System.Drawing.Size(336, 1);
             this.label8.TabIndex = 1;
             this.label8.Text = "Tổng số nhân viên";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -555,10 +576,10 @@
             this.btnTable1.FlatAppearance.BorderSize = 0;
             this.btnTable1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTable1.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
-            this.btnTable1.Location = new System.Drawing.Point(10, 16);
-            this.btnTable1.Margin = new System.Windows.Forms.Padding(10);
+            this.btnTable1.Location = new System.Drawing.Point(13, 20);
+            this.btnTable1.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.btnTable1.Name = "btnTable1";
-            this.btnTable1.Size = new System.Drawing.Size(100, 100);
+            this.btnTable1.Size = new System.Drawing.Size(133, 123);
             this.btnTable1.TabIndex = 8;
             this.btnTable1.Text = "Bàn 1";
             this.btnTable1.UseVisualStyleBackColor = false;
@@ -570,10 +591,10 @@
             this.btnTable2.FlatAppearance.BorderSize = 0;
             this.btnTable2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTable2.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
-            this.btnTable2.Location = new System.Drawing.Point(130, 16);
-            this.btnTable2.Margin = new System.Windows.Forms.Padding(10);
+            this.btnTable2.Location = new System.Drawing.Point(172, 20);
+            this.btnTable2.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.btnTable2.Name = "btnTable2";
-            this.btnTable2.Size = new System.Drawing.Size(100, 100);
+            this.btnTable2.Size = new System.Drawing.Size(133, 123);
             this.btnTable2.TabIndex = 9;
             this.btnTable2.Text = "Bàn 2";
             this.btnTable2.UseVisualStyleBackColor = false;
@@ -585,10 +606,10 @@
             this.btnTable3.FlatAppearance.BorderSize = 0;
             this.btnTable3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTable3.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
-            this.btnTable3.Location = new System.Drawing.Point(250, 16);
-            this.btnTable3.Margin = new System.Windows.Forms.Padding(10);
+            this.btnTable3.Location = new System.Drawing.Point(331, 20);
+            this.btnTable3.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.btnTable3.Name = "btnTable3";
-            this.btnTable3.Size = new System.Drawing.Size(100, 100);
+            this.btnTable3.Size = new System.Drawing.Size(133, 123);
             this.btnTable3.TabIndex = 10;
             this.btnTable3.Text = "Bàn 3";
             this.btnTable3.UseVisualStyleBackColor = false;
@@ -600,10 +621,10 @@
             this.button10.FlatAppearance.BorderSize = 0;
             this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button10.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
-            this.button10.Location = new System.Drawing.Point(370, 16);
-            this.button10.Margin = new System.Windows.Forms.Padding(10);
+            this.button10.Location = new System.Drawing.Point(490, 20);
+            this.button10.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(100, 100);
+            this.button10.Size = new System.Drawing.Size(133, 123);
             this.button10.TabIndex = 11;
             this.button10.Text = "Bàn 4";
             this.button10.UseVisualStyleBackColor = false;
@@ -615,10 +636,10 @@
             this.button11.FlatAppearance.BorderSize = 0;
             this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button11.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
-            this.button11.Location = new System.Drawing.Point(490, 16);
-            this.button11.Margin = new System.Windows.Forms.Padding(10);
+            this.button11.Location = new System.Drawing.Point(649, 20);
+            this.button11.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(100, 100);
+            this.button11.Size = new System.Drawing.Size(133, 123);
             this.button11.TabIndex = 12;
             this.button11.Text = "Bàn 5";
             this.button11.UseVisualStyleBackColor = false;
@@ -630,10 +651,10 @@
             this.button12.FlatAppearance.BorderSize = 0;
             this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button12.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
-            this.button12.Location = new System.Drawing.Point(610, 16);
-            this.button12.Margin = new System.Windows.Forms.Padding(10);
+            this.button12.Location = new System.Drawing.Point(808, 20);
+            this.button12.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(100, 100);
+            this.button12.Size = new System.Drawing.Size(133, 123);
             this.button12.TabIndex = 13;
             this.button12.Text = "Bàn 6";
             this.button12.UseVisualStyleBackColor = false;
@@ -645,10 +666,10 @@
             this.button13.FlatAppearance.BorderSize = 0;
             this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button13.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
-            this.button13.Location = new System.Drawing.Point(10, 136);
-            this.button13.Margin = new System.Windows.Forms.Padding(10);
+            this.button13.Location = new System.Drawing.Point(13, 167);
+            this.button13.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(100, 100);
+            this.button13.Size = new System.Drawing.Size(133, 123);
             this.button13.TabIndex = 14;
             this.button13.Text = "Bàn 7";
             this.button13.UseVisualStyleBackColor = false;
@@ -660,10 +681,10 @@
             this.button14.FlatAppearance.BorderSize = 0;
             this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button14.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
-            this.button14.Location = new System.Drawing.Point(130, 136);
-            this.button14.Margin = new System.Windows.Forms.Padding(10);
+            this.button14.Location = new System.Drawing.Point(172, 167);
+            this.button14.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(100, 100);
+            this.button14.Size = new System.Drawing.Size(133, 123);
             this.button14.TabIndex = 15;
             this.button14.Text = "Bàn 8";
             this.button14.UseVisualStyleBackColor = false;
@@ -675,10 +696,10 @@
             this.button15.FlatAppearance.BorderSize = 0;
             this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button15.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
-            this.button15.Location = new System.Drawing.Point(250, 136);
-            this.button15.Margin = new System.Windows.Forms.Padding(10);
+            this.button15.Location = new System.Drawing.Point(331, 167);
+            this.button15.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(100, 100);
+            this.button15.Size = new System.Drawing.Size(133, 123);
             this.button15.TabIndex = 16;
             this.button15.Text = "Bàn 9";
             this.button15.UseVisualStyleBackColor = false;
@@ -690,10 +711,10 @@
             this.button16.FlatAppearance.BorderSize = 0;
             this.button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button16.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
-            this.button16.Location = new System.Drawing.Point(370, 136);
-            this.button16.Margin = new System.Windows.Forms.Padding(10);
+            this.button16.Location = new System.Drawing.Point(490, 167);
+            this.button16.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(100, 100);
+            this.button16.Size = new System.Drawing.Size(133, 123);
             this.button16.TabIndex = 17;
             this.button16.Text = "Bàn 10";
             this.button16.UseVisualStyleBackColor = false;
@@ -707,11 +728,12 @@
             this.tableLayoutPanel8.Controls.Add(this.cmbFloorSelect, 1, 0);
             this.tableLayoutPanel8.Controls.Add(this.pnlIndoorTables, 0, 0);
             this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel8.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(4, 4);
+            this.tableLayoutPanel8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             this.tableLayoutPanel8.RowCount = 1;
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(732, 41);
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(975, 50);
             this.tableLayoutPanel8.TabIndex = 2;
             // 
             // cmbFloorSelect
@@ -727,10 +749,10 @@
             "2",
             "3",
             "4"});
-            this.cmbFloorSelect.Location = new System.Drawing.Point(634, 7);
+            this.cmbFloorSelect.Location = new System.Drawing.Point(845, 9);
             this.cmbFloorSelect.Margin = new System.Windows.Forms.Padding(0);
             this.cmbFloorSelect.Name = "cmbFloorSelect";
-            this.cmbFloorSelect.Size = new System.Drawing.Size(98, 27);
+            this.cmbFloorSelect.Size = new System.Drawing.Size(130, 32);
             this.cmbFloorSelect.TabIndex = 0;
             this.cmbFloorSelect.Text = "Tầng";
             // 
@@ -741,9 +763,10 @@
             this.pnlIndoorTables.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(215)))), ((int)(((byte)(32)))));
             this.pnlIndoorTables.Font = new System.Drawing.Font("Bahnschrift Light", 20F, System.Drawing.FontStyle.Bold);
             this.pnlIndoorTables.ForeColor = System.Drawing.Color.Black;
-            this.pnlIndoorTables.Location = new System.Drawing.Point(3, 4);
+            this.pnlIndoorTables.Location = new System.Drawing.Point(4, 4);
+            this.pnlIndoorTables.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.pnlIndoorTables.Name = "pnlIndoorTables";
-            this.pnlIndoorTables.Size = new System.Drawing.Size(628, 33);
+            this.pnlIndoorTables.Size = new System.Drawing.Size(837, 41);
             this.pnlIndoorTables.TabIndex = 1;
             this.pnlIndoorTables.Text = "BÊN TRONG";
             this.pnlIndoorTables.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -757,13 +780,14 @@
             this.tableLayoutPanel7.Controls.Add(this.lblFreeable, 0, 0);
             this.tableLayoutPanel7.Controls.Add(this.pnlTableDetails, 0, 1);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(747, 3);
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(995, 4);
+            this.tableLayoutPanel7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 2;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.016722F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 94.98328F));
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(313, 604);
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(418, 743);
             this.tableLayoutPanel7.TabIndex = 2;
             // 
             // lblFreeable
@@ -776,7 +800,7 @@
             this.lblFreeable.Location = new System.Drawing.Point(0, 0);
             this.lblFreeable.Margin = new System.Windows.Forms.Padding(0);
             this.lblFreeable.Name = "lblFreeable";
-            this.lblFreeable.Size = new System.Drawing.Size(313, 30);
+            this.lblFreeable.Size = new System.Drawing.Size(418, 37);
             this.lblFreeable.TabIndex = 6;
             this.lblFreeable.Text = "Số bàn trống:";
             this.lblFreeable.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -806,12 +830,12 @@
             this.pnlTableDetails.Controls.Add(this.label1, 1, 8);
             this.pnlTableDetails.Controls.Add(this.label2, 1, 10);
             this.pnlTableDetails.Controls.Add(this.label3, 1, 12);
-            this.pnlTableDetails.Controls.Add(this.label4, 5, 8);
-            this.pnlTableDetails.Controls.Add(this.label5, 5, 10);
-            this.pnlTableDetails.Controls.Add(this.label11, 5, 12);
+            this.pnlTableDetails.Controls.Add(this.lblSubTotal, 5, 8);
+            this.pnlTableDetails.Controls.Add(this.lblDiscount, 5, 10);
+            this.pnlTableDetails.Controls.Add(this.lblTotal, 5, 12);
             this.pnlTableDetails.Controls.Add(this.btnUpdateStatus, 7, 14);
             this.pnlTableDetails.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlTableDetails.Location = new System.Drawing.Point(0, 30);
+            this.pnlTableDetails.Location = new System.Drawing.Point(0, 37);
             this.pnlTableDetails.Margin = new System.Windows.Forms.Padding(0);
             this.pnlTableDetails.Name = "pnlTableDetails";
             this.pnlTableDetails.RowCount = 17;
@@ -831,8 +855,8 @@
             this.pnlTableDetails.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 1.431127F));
             this.pnlTableDetails.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.545617F));
             this.pnlTableDetails.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.202642F));
-            this.pnlTableDetails.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
-            this.pnlTableDetails.Size = new System.Drawing.Size(313, 574);
+            this.pnlTableDetails.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
+            this.pnlTableDetails.Size = new System.Drawing.Size(418, 706);
             this.pnlTableDetails.TabIndex = 3;
             // 
             // lblCurrentTable
@@ -843,10 +867,10 @@
             this.lblCurrentTable.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblCurrentTable.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblCurrentTable.Font = new System.Drawing.Font("Bahnschrift Light", 12F);
-            this.lblCurrentTable.Location = new System.Drawing.Point(111, 15);
-            this.lblCurrentTable.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
+            this.lblCurrentTable.Location = new System.Drawing.Point(148, 19);
+            this.lblCurrentTable.Margin = new System.Windows.Forms.Padding(0, 4, 0, 4);
             this.lblCurrentTable.Name = "lblCurrentTable";
-            this.lblCurrentTable.Size = new System.Drawing.Size(180, 21);
+            this.lblCurrentTable.Size = new System.Drawing.Size(240, 25);
             this.lblCurrentTable.TabIndex = 2;
             this.lblCurrentTable.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -858,10 +882,10 @@
             this.lblTableNumber.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblTableNumber.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblTableNumber.Font = new System.Drawing.Font("Bahnschrift Light", 12F);
-            this.lblTableNumber.Location = new System.Drawing.Point(15, 15);
-            this.lblTableNumber.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
+            this.lblTableNumber.Location = new System.Drawing.Point(20, 19);
+            this.lblTableNumber.Margin = new System.Windows.Forms.Padding(0, 4, 0, 4);
             this.lblTableNumber.Name = "lblTableNumber";
-            this.lblTableNumber.Size = new System.Drawing.Size(90, 21);
+            this.lblTableNumber.Size = new System.Drawing.Size(120, 25);
             this.lblTableNumber.TabIndex = 5;
             this.lblTableNumber.Text = "Bàn số";
             this.lblTableNumber.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -874,10 +898,10 @@
             this.lblStatus.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblStatus.Font = new System.Drawing.Font("Bahnschrift Light", 12F);
-            this.lblStatus.Location = new System.Drawing.Point(15, 54);
-            this.lblStatus.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
+            this.lblStatus.Location = new System.Drawing.Point(20, 67);
+            this.lblStatus.Margin = new System.Windows.Forms.Padding(0, 4, 0, 4);
             this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(90, 21);
+            this.lblStatus.Size = new System.Drawing.Size(120, 25);
             this.lblStatus.TabIndex = 1;
             this.lblStatus.Text = "Trạng thái";
             this.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -890,10 +914,10 @@
             this.lblInvoiceTitle.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblInvoiceTitle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblInvoiceTitle.Font = new System.Drawing.Font("Bahnschrift Light", 12F);
-            this.lblInvoiceTitle.Location = new System.Drawing.Point(15, 93);
-            this.lblInvoiceTitle.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
+            this.lblInvoiceTitle.Location = new System.Drawing.Point(20, 115);
+            this.lblInvoiceTitle.Margin = new System.Windows.Forms.Padding(0, 4, 0, 4);
             this.lblInvoiceTitle.Name = "lblInvoiceTitle";
-            this.lblInvoiceTitle.Size = new System.Drawing.Size(90, 21);
+            this.lblInvoiceTitle.Size = new System.Drawing.Size(120, 25);
             this.lblInvoiceTitle.TabIndex = 6;
             this.lblInvoiceTitle.Text = "Hóa đơn";
             this.lblInvoiceTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -906,10 +930,10 @@
             this.lblTableStatus.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblTableStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblTableStatus.Font = new System.Drawing.Font("Bahnschrift Light", 12F);
-            this.lblTableStatus.Location = new System.Drawing.Point(111, 54);
-            this.lblTableStatus.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
+            this.lblTableStatus.Location = new System.Drawing.Point(148, 67);
+            this.lblTableStatus.Margin = new System.Windows.Forms.Padding(0, 4, 0, 4);
             this.lblTableStatus.Name = "lblTableStatus";
-            this.lblTableStatus.Size = new System.Drawing.Size(180, 21);
+            this.lblTableStatus.Size = new System.Drawing.Size(240, 25);
             this.lblTableStatus.TabIndex = 3;
             this.lblTableStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -926,35 +950,12 @@
             this.colSL});
             this.pnlTableDetails.SetColumnSpan(this.DGVInvoiceSummary, 10);
             this.DGVInvoiceSummary.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DGVInvoiceSummary.Location = new System.Drawing.Point(15, 117);
+            this.DGVInvoiceSummary.Location = new System.Drawing.Point(20, 144);
             this.DGVInvoiceSummary.Margin = new System.Windows.Forms.Padding(0);
             this.DGVInvoiceSummary.Name = "DGVInvoiceSummary";
-            this.DGVInvoiceSummary.Size = new System.Drawing.Size(276, 274);
+            this.DGVInvoiceSummary.RowHeadersWidth = 51;
+            this.DGVInvoiceSummary.Size = new System.Drawing.Size(368, 337);
             this.DGVInvoiceSummary.TabIndex = 7;
-            // 
-            // colTenMon
-            // 
-            this.colTenMon.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colTenMon.HeaderText = "Tên món";
-            this.colTenMon.Name = "colTenMon";
-            // 
-            // colSize
-            // 
-            this.colSize.HeaderText = "Size";
-            this.colSize.Name = "colSize";
-            this.colSize.Width = 30;
-            // 
-            // colDonGia
-            // 
-            this.colDonGia.HeaderText = "Đơn giá";
-            this.colDonGia.Name = "colDonGia";
-            this.colDonGia.Width = 50;
-            // 
-            // colSL
-            // 
-            this.colSL.HeaderText = "SL";
-            this.colSL.Name = "colSL";
-            this.colSL.Width = 30;
             // 
             // label1
             // 
@@ -964,10 +965,10 @@
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label1.Font = new System.Drawing.Font("Bahnschrift Light", 12F);
-            this.label1.Location = new System.Drawing.Point(15, 406);
-            this.label1.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
+            this.label1.Location = new System.Drawing.Point(20, 500);
+            this.label1.Margin = new System.Windows.Forms.Padding(0, 4, 0, 4);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(96, 21);
+            this.label1.Size = new System.Drawing.Size(128, 25);
             this.label1.TabIndex = 10;
             this.label1.Text = "Tạm tính";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -980,10 +981,10 @@
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label2.Font = new System.Drawing.Font("Bahnschrift Light", 12F);
-            this.label2.Location = new System.Drawing.Point(15, 445);
-            this.label2.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
+            this.label2.Location = new System.Drawing.Point(20, 548);
+            this.label2.Margin = new System.Windows.Forms.Padding(0, 4, 0, 4);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(96, 21);
+            this.label2.Size = new System.Drawing.Size(128, 25);
             this.label2.TabIndex = 11;
             this.label2.Text = "Giảm giá";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -996,58 +997,58 @@
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label3.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(15, 484);
-            this.label3.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
+            this.label3.Location = new System.Drawing.Point(20, 596);
+            this.label3.Margin = new System.Windows.Forms.Padding(0, 4, 0, 4);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(96, 21);
+            this.label3.Size = new System.Drawing.Size(128, 25);
             this.label3.TabIndex = 12;
             this.label3.Text = "TỔNG TIỀN";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label4
+            // lblSubTotal
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(215)))), ((int)(((byte)(32)))));
-            this.pnlTableDetails.SetColumnSpan(this.label4, 6);
-            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label4.Font = new System.Drawing.Font("Bahnschrift Light", 12F);
-            this.label4.Location = new System.Drawing.Point(111, 406);
-            this.label4.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(180, 21);
-            this.label4.TabIndex = 13;
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblSubTotal.AutoSize = true;
+            this.lblSubTotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(215)))), ((int)(((byte)(32)))));
+            this.pnlTableDetails.SetColumnSpan(this.lblSubTotal, 6);
+            this.lblSubTotal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblSubTotal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblSubTotal.Font = new System.Drawing.Font("Bahnschrift Light", 12F);
+            this.lblSubTotal.Location = new System.Drawing.Point(148, 500);
+            this.lblSubTotal.Margin = new System.Windows.Forms.Padding(0, 4, 0, 4);
+            this.lblSubTotal.Name = "lblSubTotal";
+            this.lblSubTotal.Size = new System.Drawing.Size(240, 25);
+            this.lblSubTotal.TabIndex = 13;
+            this.lblSubTotal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label5
+            // lblDiscount
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(215)))), ((int)(((byte)(32)))));
-            this.pnlTableDetails.SetColumnSpan(this.label5, 6);
-            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label5.Font = new System.Drawing.Font("Bahnschrift Light", 12F);
-            this.label5.Location = new System.Drawing.Point(111, 445);
-            this.label5.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(180, 21);
-            this.label5.TabIndex = 14;
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblDiscount.AutoSize = true;
+            this.lblDiscount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(215)))), ((int)(((byte)(32)))));
+            this.pnlTableDetails.SetColumnSpan(this.lblDiscount, 6);
+            this.lblDiscount.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblDiscount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblDiscount.Font = new System.Drawing.Font("Bahnschrift Light", 12F);
+            this.lblDiscount.Location = new System.Drawing.Point(148, 548);
+            this.lblDiscount.Margin = new System.Windows.Forms.Padding(0, 4, 0, 4);
+            this.lblDiscount.Name = "lblDiscount";
+            this.lblDiscount.Size = new System.Drawing.Size(240, 25);
+            this.lblDiscount.TabIndex = 14;
+            this.lblDiscount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label11
+            // lblTotal
             // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(215)))), ((int)(((byte)(32)))));
-            this.pnlTableDetails.SetColumnSpan(this.label11, 6);
-            this.label11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label11.Font = new System.Drawing.Font("Bahnschrift Light", 12F);
-            this.label11.Location = new System.Drawing.Point(111, 484);
-            this.label11.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(180, 21);
-            this.label11.TabIndex = 15;
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(215)))), ((int)(((byte)(32)))));
+            this.pnlTableDetails.SetColumnSpan(this.lblTotal, 6);
+            this.lblTotal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblTotal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblTotal.Font = new System.Drawing.Font("Bahnschrift Light", 12F);
+            this.lblTotal.Location = new System.Drawing.Point(148, 596);
+            this.lblTotal.Margin = new System.Windows.Forms.Padding(0, 4, 0, 4);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(240, 25);
+            this.lblTotal.TabIndex = 15;
+            this.lblTotal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btnUpdateStatus
             // 
@@ -1058,11 +1059,11 @@
             this.btnUpdateStatus.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnUpdateStatus.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Bold);
             this.btnUpdateStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(92)))), ((int)(((byte)(33)))));
-            this.btnUpdateStatus.Location = new System.Drawing.Point(171, 516);
+            this.btnUpdateStatus.Location = new System.Drawing.Point(228, 634);
             this.btnUpdateStatus.Margin = new System.Windows.Forms.Padding(0);
             this.btnUpdateStatus.Name = "btnUpdateStatus";
             this.pnlTableDetails.SetRowSpan(this.btnUpdateStatus, 2);
-            this.btnUpdateStatus.Size = new System.Drawing.Size(120, 43);
+            this.btnUpdateStatus.Size = new System.Drawing.Size(160, 53);
             this.btnUpdateStatus.TabIndex = 9;
             this.btnUpdateStatus.Text = "CẬP NHẬT";
             this.btnUpdateStatus.UseVisualStyleBackColor = false;
@@ -1080,7 +1081,7 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 87.14286F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.85714F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1063, 700);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1417, 862);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // tableLayoutPanel2
@@ -1110,16 +1111,17 @@
             this.tableLayoutPanel2.Controls.Add(this.label14, 12, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnAddNewOrder, 18, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 613);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(4, 755);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 84F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 84F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 84F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 84F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 84F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1057, 84);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 103F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 103F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 103F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 103F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 103F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1409, 103);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // label10
@@ -1129,9 +1131,10 @@
             this.tableLayoutPanel2.SetColumnSpan(this.label10, 7);
             this.label10.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
             this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(3, 13);
+            this.label10.Location = new System.Drawing.Point(4, 15);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(358, 57);
+            this.label10.Size = new System.Drawing.Size(482, 72);
             this.label10.TabIndex = 8;
             this.label10.Text = "GHI CHÚ:\r\n- Màu xanh: bàn đã có khách/đặt trước\r\n- Màu trắng: bàn trống";
             // 
@@ -1140,9 +1143,10 @@
             this.label14.AutoSize = true;
             this.tableLayoutPanel2.SetColumnSpan(this.label14, 5);
             this.label14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label14.Location = new System.Drawing.Point(627, 0);
+            this.label14.Location = new System.Drawing.Point(844, 0);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(254, 84);
+            this.label14.Size = new System.Drawing.Size(342, 103);
             this.label14.TabIndex = 2;
             this.label14.Text = "click cập nhật mở giao diện sale1 của bàn, hóa đơn, thực hiện thêm(+) hoặc xóa(-)" +
     " món\r\nhóa đơn đã thanh toán không cập nhật, tạo hóa đơn mới. Bàn trống thì không" +
@@ -1156,21 +1160,55 @@
             this.btnAddNewOrder.FlatAppearance.BorderSize = 0;
             this.btnAddNewOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddNewOrder.Image = ((System.Drawing.Image)(resources.GetObject("btnAddNewOrder.Image")));
-            this.btnAddNewOrder.Location = new System.Drawing.Point(939, 3);
+            this.btnAddNewOrder.Location = new System.Drawing.Point(1264, 4);
+            this.btnAddNewOrder.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAddNewOrder.Name = "btnAddNewOrder";
-            this.btnAddNewOrder.Size = new System.Drawing.Size(115, 78);
+            this.btnAddNewOrder.Size = new System.Drawing.Size(141, 95);
             this.btnAddNewOrder.TabIndex = 1;
             this.btnAddNewOrder.UseVisualStyleBackColor = false;
             this.btnAddNewOrder.Click += new System.EventHandler(this.btnAddNewOrder_Click);
             // 
+            // colTenMon
+            // 
+            this.colTenMon.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colTenMon.DataPropertyName = "colTenMon";
+            this.colTenMon.HeaderText = "Tên món";
+            this.colTenMon.MinimumWidth = 6;
+            this.colTenMon.Name = "colTenMon";
+            // 
+            // colSize
+            // 
+            this.colSize.DataPropertyName = "colSize";
+            this.colSize.HeaderText = "Size";
+            this.colSize.MinimumWidth = 6;
+            this.colSize.Name = "colSize";
+            this.colSize.Width = 30;
+            // 
+            // colDonGia
+            // 
+            this.colDonGia.DataPropertyName = "colDonGia";
+            this.colDonGia.HeaderText = "Đơn giá";
+            this.colDonGia.MinimumWidth = 6;
+            this.colDonGia.Name = "colDonGia";
+            this.colDonGia.Width = 50;
+            // 
+            // colSL
+            // 
+            this.colSL.DataPropertyName = "colSL";
+            this.colSL.HeaderText = "SL";
+            this.colSL.MinimumWidth = 6;
+            this.colSL.Name = "colSL";
+            this.colSL.Width = 30;
+            // 
             // UC_Sale
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(215)))), ((int)(((byte)(32)))));
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "UC_Sale";
-            this.Size = new System.Drawing.Size(1063, 700);
+            this.Size = new System.Drawing.Size(1417, 862);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
@@ -1264,9 +1302,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lblSubTotal;
+        private System.Windows.Forms.Label lblDiscount;
+        private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Label lblFreeable;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTenMon;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSize;

@@ -34,7 +34,6 @@
             this.lblRoleTitle = new System.Windows.Forms.Label();
             this.lblStatusTitle = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
             this.lblUsernameTitle = new System.Windows.Forms.Label();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
@@ -49,17 +48,19 @@
             this.label5 = new System.Windows.Forms.Label();
             this.lblFullnameTitle = new System.Windows.Forms.Label();
             this.txtFullname = new System.Windows.Forms.TextBox();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.dgvStaffData = new System.Windows.Forms.DataGridView();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RoleId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Username = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Password = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IsActive = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.btnExport = new System.Windows.Forms.Button();
             this.lblHeaderTitle = new System.Windows.Forms.Label();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RoleId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RoleName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Username = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Password = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IsActive = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pbStaffImage)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -129,25 +130,6 @@
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // btnDelete
-            // 
-            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(242)))), ((int)(((byte)(80)))));
-            this.tableLayoutPanel2.SetColumnSpan(this.btnDelete, 3);
-            this.btnDelete.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnDelete.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnDelete.FlatAppearance.BorderSize = 0;
-            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnDelete.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Bold);
-            this.btnDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(84)))), ((int)(((byte)(48)))));
-            this.btnDelete.Location = new System.Drawing.Point(49, 530);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(0);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(99, 48);
-            this.btnDelete.TabIndex = 14;
-            this.btnDelete.Text = "XÓA";
-            this.btnDelete.UseVisualStyleBackColor = false;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
             // lblUsernameTitle
             // 
             this.lblUsernameTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -188,6 +170,7 @@
             // 
             this.cmbRole.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel2.SetColumnSpan(this.cmbRole, 5);
+            this.cmbRole.DisplayMember = "RoleId";
             this.cmbRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbRole.FormattingEnabled = true;
             this.cmbRole.Location = new System.Drawing.Point(148, 339);
@@ -195,6 +178,7 @@
             this.cmbRole.Name = "cmbRole";
             this.cmbRole.Size = new System.Drawing.Size(165, 28);
             this.cmbRole.TabIndex = 21;
+            this.cmbRole.ValueMember = "RoleId";
             // 
             // cmbStatus
             // 
@@ -389,6 +373,25 @@
             this.txtFullname.Size = new System.Drawing.Size(165, 27);
             this.txtFullname.TabIndex = 24;
             // 
+            // btnDelete
+            // 
+            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(242)))), ((int)(((byte)(80)))));
+            this.tableLayoutPanel2.SetColumnSpan(this.btnDelete, 3);
+            this.btnDelete.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnDelete.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnDelete.FlatAppearance.BorderSize = 0;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnDelete.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Bold);
+            this.btnDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(84)))), ((int)(((byte)(48)))));
+            this.btnDelete.Location = new System.Drawing.Point(49, 530);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(0);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(99, 48);
+            this.btnDelete.TabIndex = 14;
+            this.btnDelete.Text = "XÓA";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(92)))), ((int)(((byte)(33)))));
@@ -420,8 +423,9 @@
             this.dgvStaffData.ColumnHeadersHeight = 34;
             this.dgvStaffData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
-            this.FullName,
             this.RoleId,
+            this.FullName,
+            this.RoleName,
             this.Username,
             this.Password,
             this.IsActive});
@@ -440,54 +444,7 @@
             this.dgvStaffData.RowHeadersWidth = 62;
             this.dgvStaffData.Size = new System.Drawing.Size(715, 620);
             this.dgvStaffData.TabIndex = 3;
-            // 
-            // Id
-            // 
-            this.Id.DataPropertyName = "Id";
-            this.Id.HeaderText = "Mã NV";
-            this.Id.MinimumWidth = 8;
-            this.Id.Name = "Id";
-            this.Id.Width = 70;
-            // 
-            // FullName
-            // 
-            this.FullName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.FullName.DataPropertyName = "FullName";
-            this.FullName.HeaderText = "Họ và tên";
-            this.FullName.MinimumWidth = 8;
-            this.FullName.Name = "FullName";
-            // 
-            // RoleId
-            // 
-            this.RoleId.DataPropertyName = "RoleName";
-            this.RoleId.HeaderText = "Vai trò";
-            this.RoleId.MinimumWidth = 8;
-            this.RoleId.Name = "RoleId";
-            this.RoleId.Width = 70;
-            // 
-            // Username
-            // 
-            this.Username.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Username.DataPropertyName = "Username";
-            this.Username.HeaderText = "Tên tài khoản";
-            this.Username.MinimumWidth = 8;
-            this.Username.Name = "Username";
-            // 
-            // Password
-            // 
-            this.Password.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Password.DataPropertyName = "Password";
-            this.Password.HeaderText = "Mật khẩu";
-            this.Password.MinimumWidth = 8;
-            this.Password.Name = "Password";
-            // 
-            // IsActive
-            // 
-            this.IsActive.DataPropertyName = "IsActive";
-            this.IsActive.HeaderText = "Trạng thái";
-            this.IsActive.MinimumWidth = 8;
-            this.IsActive.Name = "IsActive";
-            this.IsActive.Width = 80;
+            this.dgvStaffData.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStaffData_CellClick);
             // 
             // tableLayoutPanel4
             // 
@@ -536,6 +493,61 @@
             this.lblHeaderTitle.Text = "DANH SÁCH NHÂN VIÊN";
             this.lblHeaderTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Mã NV";
+            this.Id.MinimumWidth = 8;
+            this.Id.Name = "Id";
+            this.Id.Width = 70;
+            // 
+            // RoleId
+            // 
+            this.RoleId.DataPropertyName = "RoleId";
+            this.RoleId.HeaderText = "Mã role";
+            this.RoleId.Name = "RoleId";
+            this.RoleId.Visible = false;
+            // 
+            // FullName
+            // 
+            this.FullName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.FullName.DataPropertyName = "FullName";
+            this.FullName.HeaderText = "Họ và tên";
+            this.FullName.MinimumWidth = 8;
+            this.FullName.Name = "FullName";
+            // 
+            // RoleName
+            // 
+            this.RoleName.DataPropertyName = "RoleName";
+            this.RoleName.HeaderText = "Vai trò";
+            this.RoleName.MinimumWidth = 8;
+            this.RoleName.Name = "RoleName";
+            this.RoleName.Width = 70;
+            // 
+            // Username
+            // 
+            this.Username.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Username.DataPropertyName = "Username";
+            this.Username.HeaderText = "Tên tài khoản";
+            this.Username.MinimumWidth = 8;
+            this.Username.Name = "Username";
+            // 
+            // Password
+            // 
+            this.Password.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Password.DataPropertyName = "Password";
+            this.Password.HeaderText = "Mật khẩu";
+            this.Password.MinimumWidth = 8;
+            this.Password.Name = "Password";
+            // 
+            // IsActive
+            // 
+            this.IsActive.DataPropertyName = "IsActive";
+            this.IsActive.HeaderText = "Trạng thái";
+            this.IsActive.MinimumWidth = 8;
+            this.IsActive.Name = "IsActive";
+            this.IsActive.Width = 80;
+            // 
             // UC_StaffList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -563,7 +575,6 @@
         private System.Windows.Forms.Label lblRoleTitle;
         private System.Windows.Forms.Label lblStatusTitle;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Label lblUsernameTitle;
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.TextBox txtPassword;
@@ -582,9 +593,11 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.Button btnExport;
         private System.Windows.Forms.Label lblHeaderTitle;
+        private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FullName;
         private System.Windows.Forms.DataGridViewTextBoxColumn RoleId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FullName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RoleName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Username;
         private System.Windows.Forms.DataGridViewTextBoxColumn Password;
         private System.Windows.Forms.DataGridViewTextBoxColumn IsActive;

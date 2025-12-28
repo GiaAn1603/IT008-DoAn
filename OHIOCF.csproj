@@ -101,6 +101,7 @@
     <Compile Include="BUS\ProductIngredientBUS.cs" />
     <Compile Include="BUS\ProductSizeBUS.cs" />
     <Compile Include="BUS\PromotionBUS.cs" />
+    <Compile Include="BUS\ReportBUS.cs" />
     <Compile Include="BUS\ReservationBUS.cs" />
     <Compile Include="BUS\ScheduleBUS.cs" />
     <Compile Include="BUS\UserBUS.cs" />
@@ -110,23 +111,11 @@
     <Compile Include="Controls\UC_Inventory.Designer.cs">
       <DependentUpon>UC_Inventory.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\Report\UC_Report.cs">
+    <Compile Include="Controls\UC_Report.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\Report\UC_Report.Designer.cs">
+    <Compile Include="Controls\UC_Report.Designer.cs">
       <DependentUpon>UC_Report.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\Report\UC_RevenueReport.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\Report\UC_RevenueReport.Designer.cs">
-      <DependentUpon>UC_RevenueReport.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\Report\UC_SalesReport.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\Report\UC_SalesReport.Designer.cs">
-      <DependentUpon>UC_SalesReport.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\Staff\UC_Staff.cs">
       <SubType>UserControl</SubType>
@@ -225,6 +214,7 @@
     <Compile Include="DAO\ProductIngredientDAO.cs" />
     <Compile Include="DAO\ProductSizeDAO.cs" />
     <Compile Include="DAO\PromotionDAO.cs" />
+    <Compile Include="DAO\ReportDAO.cs" />
     <Compile Include="DAO\ReservationDAO.cs" />
     <Compile Include="DAO\RoleDAO.cs" />
     <Compile Include="DAO\ScheduleDAO.cs" />
@@ -243,6 +233,7 @@
     <Compile Include="DTO\ProductIngredientDTO.cs" />
     <Compile Include="DTO\ProductSizeDTO.cs" />
     <Compile Include="DTO\PromotionDTO.cs" />
+    <Compile Include="DTO\ReportDTO.cs" />
     <Compile Include="DTO\ReservationDTO.cs" />
     <Compile Include="DTO\RoleDTO.cs" />
     <Compile Include="DTO\ScheduleDTO.cs" />
@@ -267,14 +258,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Controls\Staff\UC_Staff.resx">
+      <DependentUpon>UC_Staff.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\UC_Inventory.resx">
       <DependentUpon>UC_Inventory.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Report\UC_RevenueReport.resx">
-      <DependentUpon>UC_RevenueReport.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Report\UC_SalesReport.resx">
-      <DependentUpon>UC_SalesReport.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\UC_Report.resx">
+      <DependentUpon>UC_Report.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Staff\UC_StaffList.resx">
       <DependentUpon>UC_StaffList.cs</DependentUpon>

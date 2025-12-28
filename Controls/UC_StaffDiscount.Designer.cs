@@ -241,40 +241,49 @@
             // 
             // colId
             // 
-            this.colId.Frozen = true;
+            this.colId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colId.DataPropertyName = "Id";
             this.colId.HeaderText = "Mã KM";
             this.colId.Name = "colId";
             this.colId.ReadOnly = true;
-            this.colId.Width = 40;
             // 
             // colName
             // 
             this.colName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colName.DataPropertyName = "Code";
             this.colName.HeaderText = "Tên KM";
             this.colName.Name = "colName";
             this.colName.ReadOnly = true;
             // 
             // colValue
             // 
+            this.colValue.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colValue.DataPropertyName = "DiscountValue";
             this.colValue.HeaderText = "Giá trị";
             this.colValue.Name = "colValue";
             this.colValue.ReadOnly = true;
+            this.colValue.Visible = false;
             // 
             // colType
             // 
-            this.colType.HeaderText = "Loại";
+            this.colType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colType.DataPropertyName = "DiscountType";
+            this.colType.HeaderText = "Khuyến mãi";
             this.colType.Name = "colType";
             this.colType.ReadOnly = true;
-            this.colType.Width = 40;
             // 
             // colStartDate
             // 
+            this.colStartDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colStartDate.DataPropertyName = "StartDate";
             this.colStartDate.HeaderText = "Từ ngày";
             this.colStartDate.Name = "colStartDate";
             this.colStartDate.ReadOnly = true;
             // 
             // colEndDate
             // 
+            this.colEndDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colEndDate.DataPropertyName = "EndDate";
             this.colEndDate.HeaderText = "Đến ngày";
             this.colEndDate.Name = "colEndDate";
             this.colEndDate.ReadOnly = true;

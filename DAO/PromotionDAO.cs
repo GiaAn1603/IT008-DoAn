@@ -40,6 +40,37 @@ namespace OHIOCF.DAO
             return list;
         }
 
+        public PromotionDTO GetById(string id)
+        {
+            if (string.IsNullOrEmpty(id)) return null;
+
+            string query = "SELECT * FROM Promotion WHERE id = @id";
+            using (SQLiteConnection conn = new SQLiteConnection(Database.ConnectionString))
+            {
+                conn.Open();
+                using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@id", id);
+                    using (SQLiteDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            return new PromotionDTO
+                            {
+                                Id = reader["id"].ToString(),
+                                Code = reader["code"].ToString(),
+                                DiscountValue = Convert.ToDecimal(reader["discountValue"]),
+                                DiscountType = Convert.ToInt32(reader["discountType"]),
+                                StartDate = DateTime.Parse(reader["startDate"].ToString()),
+                                EndDate = DateTime.Parse(reader["endDate"].ToString())
+                            };
+                        }
+                    }
+                }
+            }
+            return null;
+        }
+
         public PromotionDTO GetByCode(string code)
         {
             string query = "SELECT * FROM Promotion WHERE code = @code";

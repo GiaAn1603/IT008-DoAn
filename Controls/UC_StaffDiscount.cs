@@ -15,6 +15,16 @@ namespace OHIOCF.Controls
     public partial class UC_StaffDiscount : UserControl
     {
         private List<PromotionDTO> promotionList;
+        public class PromotionView
+        {
+            public string Id { get; set; }
+            public string Code { get; set; }
+            public decimal DiscountValue { get; set; }
+            public string DiscountType { get; set; }
+            public DateTime StartDate { get; set; }
+            public DateTime EndDate { get; set; }
+        }
+
         public UC_StaffDiscount()
         {
             InitializeComponent();
@@ -26,59 +36,75 @@ namespace OHIOCF.Controls
         void LoadPromotions()
         {
             promotionList = PromotionBUS.Instance.GetAllPromotions();
-            DisplayPromotions(promotionList);
-        }
-        void DisplayPromotions(List<PromotionDTO> list)
-        {
-            dgvPromotions.Rows.Clear();
 
-            foreach (var promo in list)
+            var view = promotionList.Select(p => new PromotionView
             {
-                int idx = dgvPromotions.Rows.Add();
-                var row = dgvPromotions.Rows[idx];
+                Id = p.Id,
+                Code = p.Code,
+                DiscountValue = p.DiscountValue,
+                DiscountType = p.DiscountType == 0
+                    ? $"{p.DiscountValue}%"
+                    : $"{p.DiscountValue:N0} VNĐ",
+                StartDate = p.StartDate,
+                EndDate = p.EndDate
+            }).ToList();
 
-                row.Cells["colId"].Value = promo.Id;
-                row.Cells["colName"].Value = promo.Code;
-                row.Cells["colValue"].Value = promo.DiscountValue;
-                string type = promo.DiscountType == 0
-                    ? $"{promo.DiscountType}%"
-                    : $"{promo.DiscountType:N0} VNĐ";
-                row.Cells["colType"].Value = type;
-                row.Cells["colStartDate"].Value = promo.StartDate;
-                row.Cells["colEndDate"].Value = promo.EndDate;
-
-            }
+            dgvPromotions.AutoGenerateColumns = false;
+            dgvPromotions.DataSource = view;
         }
+
         private void lblSearch_Click(object sender, EventArgs e)
         {
             string keyword = txtSearch.Text.Trim().ToLower();
 
-            if (string.IsNullOrEmpty(keyword))
-            {
-                DisplayPromotions(promotionList);
-                return;
-            }
+            var filtered = promotionList
+                .Where(p =>
+                    p.Code.ToLower().Contains(keyword) ||
+                    p.Id.ToLower().Contains(keyword))
+                .Select(p => new PromotionView
+                {
+                    Id = p.Id,
+                    Code = p.Code,
+                    DiscountValue = p.DiscountValue,
+                    DiscountType = p.DiscountType == 0
+                        ? $"{p.DiscountValue}%"
+                        : $"{p.DiscountValue:N0} VNĐ",
+                    StartDate = p.StartDate,
+                    EndDate = p.EndDate
+                })
+                .ToList();
 
-            var filtered = promotionList.Where(p =>
-                p.Code.ToLower().Contains(keyword) ||
-                p.Id.ToLower().Contains(keyword)
-            ).ToList();
-
-            DisplayPromotions(filtered);
+            dgvPromotions.DataSource = filtered;
         }
+
 
         private void btnFilter_Click(object sender, EventArgs e)
         {
             DateTime fromDate = dtpFromDate.Value.Date;
             DateTime toDate = dtpToDate.Value.Date;
 
-            var filtered = promotionList.Where(p =>
-                p.StartDate.Date >= fromDate && p.EndDate.Date <= toDate
-            ).ToList();
+            var filtered = promotionList
+                .Where(p =>
+                    p.StartDate.Date <= toDate &&
+                    p.EndDate.Date >= fromDate
+                )
+                .Select(p => new PromotionView
+                {
+                    Id = p.Id,
+                    Code = p.Code,
+                    DiscountValue = p.DiscountValue,
+                    DiscountType = p.DiscountType == 0
+                        ? $"{p.DiscountValue}%"
+                        : $"{p.DiscountValue:N0} VNĐ",
+                    StartDate = p.StartDate,
+                    EndDate = p.EndDate
+                })
+                .ToList();
 
-            DisplayPromotions(filtered);
+            dgvPromotions.DataSource = filtered;
         }
 
-        
+
+
     }
 }

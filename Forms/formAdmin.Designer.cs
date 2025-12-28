@@ -200,7 +200,7 @@
             this.tableLayoutPanel2.SetColumnSpan(this.lblRoleTitle, 2);
             this.lblRoleTitle.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblRoleTitle.Font = new System.Drawing.Font("Bahnschrift Light", 15F);
-            this.lblRoleTitle.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblRoleTitle.ForeColor = System.Drawing.Color.White;
             this.lblRoleTitle.Location = new System.Drawing.Point(0, 116);
             this.lblRoleTitle.Margin = new System.Windows.Forms.Padding(0);
             this.lblRoleTitle.Name = "lblRoleTitle";
@@ -224,7 +224,7 @@
             this.btnCustomers.Size = new System.Drawing.Size(248, 48);
             this.btnCustomers.TabIndex = 36;
             this.btnCustomers.Tag = "UC_Customers";
-            this.btnCustomers.Text = "Hóa đơn/Khách hàng";
+            this.btnCustomers.Text = "Khách hàng thân thiết";
             this.btnCustomers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCustomers.UseVisualStyleBackColor = false;
             this.btnCustomers.Click += new System.EventHandler(this.btnCustomers_Click);
@@ -294,7 +294,7 @@
             this.tableLayoutPanel2.SetColumnSpan(this.lblUsername, 2);
             this.lblUsername.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblUsername.Font = new System.Drawing.Font("Bahnschrift Light", 12F);
-            this.lblUsername.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblUsername.ForeColor = System.Drawing.Color.White;
             this.lblUsername.Location = new System.Drawing.Point(0, 145);
             this.lblUsername.Margin = new System.Windows.Forms.Padding(0);
             this.lblUsername.Name = "lblUsername";

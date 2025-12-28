@@ -32,16 +32,12 @@ namespace OHIOCF.Controls
         void LoadCategories()
         {
             categoryList = CategoryBUS.Instance.GetAllCategories();
-            cmbCategory.DataSource = null;
 
+            cmbCategory.DataSource = null;
             cmbCategory.DisplayMember = "Name";
             cmbCategory.ValueMember = "Id";
             cmbCategory.DataSource = categoryList;
-            if (cmbCategory.Items.Count > 0)
-            {
-                cmbCategory.SelectedIndex = 0;
-            }
-            
+
         }
 
 

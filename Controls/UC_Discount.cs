@@ -15,38 +15,50 @@ namespace OHIOCF.Controls
     public partial class UC_Discount : UserControl
     {
         private List<PromotionDTO> promotionList;
+        public class PromotionView
+        {
+            public string Id { get; set; }
+            public string Code { get; set; }
+            public decimal DiscountValue { get; set; }
+            public int DiscountType { get; set; }
+            public string DiscountDisplay { get; set; }
+            public DateTime StartDate { get; set; }
+            public DateTime EndDate { get; set; }
+        }
+
         public UC_Discount()
         {
             InitializeComponent();
         }
+        private void UC_Discount_Load(object sender, EventArgs e)
+        {
+            cmbDiscountType.Items.Clear();
+            cmbDiscountType.Items.Add("Phần trăm (%)");
+            cmbDiscountType.Items.Add("Giá cố định (VNĐ)");
+            cmbDiscountType.SelectedIndex = 0;
+            LoadPromotions();
+        }
         void LoadPromotions()
         {
             promotionList = PromotionBUS.Instance.GetAllPromotions();
-            DisplayPromotions(promotionList);
-        }
-        private void UC_Discount_Load(object sender, EventArgs e)
-        {
-            LoadPromotions();
-        }
-        void DisplayPromotions(List<PromotionDTO> list)
-        {
-            dgvPromotions.Rows.Clear();
 
-            foreach (var promo in list)
+            var view = promotionList.Select(p => new PromotionView
             {
-                int idx = dgvPromotions.Rows.Add();
-                var row = dgvPromotions.Rows[idx];
+                Id = p.Id,
+                Code = p.Code,
+                DiscountValue = p.DiscountValue,
+                DiscountType = p.DiscountType,
+                DiscountDisplay = p.DiscountType == 0
+                    ? $"{p.DiscountValue}%"
+                    : $"{p.DiscountValue:N0} VNĐ",
+                StartDate = p.StartDate,
+                EndDate = p.EndDate
+            }).ToList();
 
-                row.Cells["colId"].Value = promo.Id;
-                row.Cells["colname"].Value = promo.Code;
-                row.Cells["colType"].Value = promo.DiscountType == 0 ? "%" : "VNĐ";
-                row.Cells["colValue"].Value = promo.DiscountValue;
-                row.Cells["colStartDate"].Value = promo.StartDate;
-                row.Cells["colEndDate"].Value = promo.EndDate;
-
-                DateTime now = DateTime.Now;
-            }
+            dgvPromotions.AutoGenerateColumns = false;
+            dgvPromotions.DataSource = view;
         }
+
         private void btnAddDiscount_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtDiscountName.Text))
@@ -115,30 +127,52 @@ namespace OHIOCF.Controls
             DateTime fromDate = dtpFromDate.Value.Date;
             DateTime toDate = dtpToDate.Value.Date;
 
-            var filtered = promotionList.Where(p =>
-                p.StartDate.Date >= fromDate && p.EndDate.Date <= toDate
-            ).ToList();
+            var filtered = promotionList
+                .Where(p =>
+                    p.StartDate.Date <= toDate &&
+                    p.EndDate.Date >= fromDate
+                )
+                .Select(p => new PromotionView
+                {
+                    Id = p.Id,
+                    Code = p.Code,
+                    DiscountValue = p.DiscountValue,
+                    DiscountType = p.DiscountType,
+                    DiscountDisplay = p.DiscountType == 0
+                        ? $"{p.DiscountValue}%"
+                        : $"{p.DiscountValue:N0} VNĐ",
+                    StartDate = p.StartDate,
+                    EndDate = p.EndDate
+                })
+                .ToList();
 
-            DisplayPromotions(filtered);
+            dgvPromotions.DataSource = filtered;
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            string keyword = txtSearch.Text.Trim().ToLower();
+            var keyword = txtSearch.Text.Trim().ToLower();
 
-            if (string.IsNullOrEmpty(keyword))
-            {
-                DisplayPromotions(promotionList);
-                return;
-            }
+            var filtered = promotionList
+                .Where(p =>
+                    p.Code.ToLower().Contains(keyword) ||
+                    p.Id.ToLower().Contains(keyword))
+                .Select(p => new PromotionView
+                {
+                    Id = p.Id,
+                    Code = p.Code,
+                    DiscountValue = p.DiscountValue,
+                    DiscountType = p.DiscountType,
+                    DiscountDisplay = p.DiscountType == 0
+                        ? $"{p.DiscountValue}%"
+                        : $"{p.DiscountValue:N0} VNĐ",
+                    StartDate = p.StartDate,
+                    EndDate = p.EndDate
+                })
+                .ToList();
 
-            var filtered = promotionList.Where(p =>
-                p.Code.ToLower().Contains(keyword)
-            ).ToList();
-
-            DisplayPromotions(filtered);
+            dgvPromotions.DataSource = filtered;
         }
-
 
         private void dgvDiscountList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -146,18 +180,16 @@ namespace OHIOCF.Controls
 
             var row = dgvPromotions.Rows[e.RowIndex];
 
-            txtDiscountId.Text = row.Cells["colId"].Value?.ToString();
-            txtDiscountName.Text = row.Cells["colName"].Value?.ToString();
+            txtDiscountId.Text = row.Cells["Id"].Value?.ToString();
+            txtDiscountName.Text = row.Cells["Code"].Value?.ToString();
 
-            string type = row.Cells["colType"].Value?.ToString();
-            cmbDiscountType.SelectedIndex = type == "%" ? 0 : 1;
+            txtDiscountValue.Text = row.Cells["DiscountValue"].Value?.ToString();
 
-            txtDiscountValue.Text = row.Cells["colValue"].Value?.ToString();
-            if (DateTime.TryParse(row.Cells["colStartDate"].Value?.ToString(), out DateTime start))
-                dtpStartDate.Value = start;
+            cmbDiscountType.SelectedIndex =
+                    Convert.ToInt32(row.Cells["DiscountType"].Value);
 
-            if (DateTime.TryParse(row.Cells["colEndDate"].Value?.ToString(), out DateTime end))
-                dtpEndDate.Value = end;
+            dtpStartDate.Value = Convert.ToDateTime(row.Cells["StartDate"].Value);
+            dtpEndDate.Value = Convert.ToDateTime(row.Cells["EndDate"].Value);
 
         }
         void ClearInputs()

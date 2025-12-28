@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data.SQLite;
+using DocumentFormat.OpenXml.Office.Y2022.FeaturePropertyBag;
 using OHIOCF.DTO;
 
 namespace OHIOCF.DAO
@@ -78,6 +79,27 @@ namespace OHIOCF.DAO
             }
         }
 
+        public bool UpdateOrderInfo(string orderId, decimal totalAmount, string promotionId)
+        {
+            string query = "UPDATE [Order] SET totalAmount = @total, promotionId = @promo WHERE id = @id";
+            using (SQLiteConnection conn = new SQLiteConnection(Database.ConnectionString))
+            {
+                conn.Open();
+                using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@id", orderId);
+                    cmd.Parameters.AddWithValue("@total", totalAmount);
+
+                    if (string.IsNullOrEmpty(promotionId))
+                        cmd.Parameters.AddWithValue("@promo", DBNull.Value);
+                    else
+                        cmd.Parameters.AddWithValue("@promo", promotionId);
+
+                    return cmd.ExecuteNonQuery() > 0;
+                }
+            }
+        }
+
         public bool CheckoutOrder(string id, decimal finalTotal, string customerId = null, string promotionId = null)
         {
             string query = "UPDATE [Order] SET status = 1, totalAmount = @total, customerId = @cid, promotionId = @pid WHERE id = @id";
@@ -105,6 +127,27 @@ namespace OHIOCF.DAO
                 {
                     cmd.Parameters.AddWithValue("@id", id);
                     try { return cmd.ExecuteNonQuery() > 0; } catch { return false; }
+                }
+            }
+        }
+
+        public bool UpdateOrderPromotion(string orderId, string promotionId)
+        {
+            string query = "UPDATE [Order] SET promotionId = @promoId WHERE id = @id";
+
+            using (SQLiteConnection conn = new SQLiteConnection(Database.ConnectionString))
+            {
+                conn.Open();
+                using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@id", orderId);
+
+                    if (string.IsNullOrEmpty(promotionId))
+                        cmd.Parameters.AddWithValue("@promoId", DBNull.Value);
+                    else
+                        cmd.Parameters.AddWithValue("@promoId", promotionId);
+
+                    return cmd.ExecuteNonQuery() > 0;
                 }
             }
         }

@@ -40,10 +40,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.dgvWeekSchedule = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.lblScheduleTitle = new System.Windows.Forms.Label();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.dgvWeekSchedule = new System.Windows.Forms.DataGridView();
             this.lblTotalHours = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -71,54 +71,12 @@
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvWeekSchedule)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvWeekSchedule)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // dgvWeekSchedule
-            // 
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            this.dgvWeekSchedule.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvWeekSchedule.BackgroundColor = System.Drawing.Color.White;
-            this.dgvWeekSchedule.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgvWeekSchedule.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvWeekSchedule.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvWeekSchedule.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6,
-            this.Column7,
-            this.Column8});
-            this.tableLayoutPanel4.SetColumnSpan(this.dgvWeekSchedule, 3);
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Bahnschrift Light", 12F);
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvWeekSchedule.DefaultCellStyle = dataGridViewCellStyle11;
-            this.dgvWeekSchedule.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvWeekSchedule.GridColor = System.Drawing.Color.Beige;
-            this.dgvWeekSchedule.Location = new System.Drawing.Point(3, 3);
-            this.dgvWeekSchedule.Name = "dgvWeekSchedule";
-            this.dgvWeekSchedule.ReadOnly = true;
-            this.dgvWeekSchedule.Size = new System.Drawing.Size(709, 582);
-            this.dgvWeekSchedule.TabIndex = 1;
-            this.dgvWeekSchedule.Resize += new System.EventHandler(this.dgvWeekSchedule_Resize);
             // 
             // tableLayoutPanel3
             // 
@@ -175,6 +133,52 @@
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.411215F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(715, 642);
             this.tableLayoutPanel4.TabIndex = 3;
+            // 
+            // dgvWeekSchedule
+            // 
+            this.dgvWeekSchedule.AllowUserToAddRows = false;
+            this.dgvWeekSchedule.AllowUserToDeleteRows = false;
+            this.dgvWeekSchedule.AllowUserToResizeColumns = false;
+            this.dgvWeekSchedule.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.dgvWeekSchedule.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvWeekSchedule.BackgroundColor = System.Drawing.Color.White;
+            this.dgvWeekSchedule.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvWeekSchedule.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvWeekSchedule.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvWeekSchedule.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5,
+            this.Column6,
+            this.Column7,
+            this.Column8});
+            this.tableLayoutPanel4.SetColumnSpan(this.dgvWeekSchedule, 3);
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Bahnschrift Light", 12F);
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvWeekSchedule.DefaultCellStyle = dataGridViewCellStyle11;
+            this.dgvWeekSchedule.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvWeekSchedule.GridColor = System.Drawing.Color.Beige;
+            this.dgvWeekSchedule.Location = new System.Drawing.Point(3, 3);
+            this.dgvWeekSchedule.Name = "dgvWeekSchedule";
+            this.dgvWeekSchedule.ReadOnly = true;
+            this.dgvWeekSchedule.Size = new System.Drawing.Size(709, 582);
+            this.dgvWeekSchedule.TabIndex = 1;
+            this.dgvWeekSchedule.Resize += new System.EventHandler(this.dgvWeekSchedule_Resize);
             // 
             // lblTotalHours
             // 
@@ -478,6 +482,7 @@
             this.Column1.HeaderText = "Ca";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
+            this.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Column2
             // 
@@ -487,6 +492,7 @@
             this.Column2.HeaderText = "Thứ Hai";
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
+            this.Column2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Column3
             // 
@@ -496,6 +502,7 @@
             this.Column3.HeaderText = "Thứ Ba";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
+            this.Column3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Column4
             // 
@@ -505,6 +512,7 @@
             this.Column4.HeaderText = "Thứ Tư";
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
+            this.Column4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Column5
             // 
@@ -514,6 +522,7 @@
             this.Column5.HeaderText = "Thứ Năm";
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
+            this.Column5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Column6
             // 
@@ -524,6 +533,7 @@
             this.Column6.HeaderText = "Thứ Sáu";
             this.Column6.Name = "Column6";
             this.Column6.ReadOnly = true;
+            this.Column6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Column7
             // 
@@ -533,6 +543,7 @@
             this.Column7.HeaderText = "Thứ Bảy";
             this.Column7.Name = "Column7";
             this.Column7.ReadOnly = true;
+            this.Column7.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Column8
             // 
@@ -542,6 +553,7 @@
             this.Column8.HeaderText = "Chủ Nhật";
             this.Column8.Name = "Column8";
             this.Column8.ReadOnly = true;
+            this.Column8.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // UC_StaffClockIn
             // 
@@ -550,12 +562,12 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "UC_StaffClockIn";
             this.Size = new System.Drawing.Size(1063, 700);
-            this.Load += new System.EventHandler(this.UC_StaffClockIn_Load_1);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvWeekSchedule)).EndInit();
+            this.Load += new System.EventHandler(this.UC_StaffClockIn_Load);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvWeekSchedule)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
@@ -564,8 +576,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dgvWeekSchedule;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button4;
@@ -587,6 +597,7 @@
         private System.Windows.Forms.Button btnClockOut;
         private System.Windows.Forms.Label lblLastActionTime;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        private System.Windows.Forms.DataGridView dgvWeekSchedule;
         private System.Windows.Forms.Label lblTotalHours;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;

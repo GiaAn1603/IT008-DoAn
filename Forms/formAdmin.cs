@@ -37,6 +37,10 @@ namespace OHIOCF.Forms
         private void formAdmin_Load(object sender, EventArgs e)
         {
             LoadUserControl(typeof(UC_Dashboard));
+            if (Form1.loggedInUser != null)
+            {
+                lblUsername.Text = Form1.loggedInUser.Username;
+            }
         }
         
         private void LoadUserControl(Type ucType)

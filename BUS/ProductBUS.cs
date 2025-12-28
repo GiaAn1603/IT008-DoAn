@@ -10,6 +10,11 @@ namespace OHIOCF.BUS
         public static ProductBUS Instance => instance ?? (instance = new ProductBUS());
         private ProductBUS() { }
 
+        public ProductDTO GetProductById(string id)
+        {
+            return ProductDAO.Instance.GetProductById(id);
+        }
+
         public List<ProductDTO> GetProductsByCategory(string categoryId)
         {
             return ProductDAO.Instance.GetProductsByCategoryId(categoryId);

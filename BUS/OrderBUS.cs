@@ -39,9 +39,19 @@ namespace OHIOCF.BUS
             return null;
         }
 
+        public bool UpdateOrderInfo(string orderId, decimal totalAmount, string promotionId)
+        {
+            return OrderDAO.Instance.UpdateOrderInfo(orderId, totalAmount, promotionId);
+        }
+
         public bool PayOrder(string orderId, decimal finalAmount, string customerId, string promotionId)
         {
             return OrderDAO.Instance.CheckoutOrder(orderId, finalAmount, customerId, promotionId);
+        }
+
+        public bool UpdatePromotion(string orderId, string promotionId)
+        {
+            return OrderDAO.Instance.UpdateOrderPromotion(orderId, promotionId);
         }
     }
 }

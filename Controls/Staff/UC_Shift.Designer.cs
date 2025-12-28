@@ -36,6 +36,7 @@
             this.lblHeaderTitle = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.dgvScheduleData = new System.Windows.Forms.DataGridView();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.colCa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMonday = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.colTuesday = new System.Windows.Forms.DataGridViewComboBoxColumn();
@@ -44,7 +45,6 @@
             this.colFriday = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.colSaturday = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.colSunday = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvScheduleData)).BeginInit();
@@ -143,16 +143,17 @@
             this.dgvScheduleData.AllowUserToAddRows = false;
             this.dgvScheduleData.AllowUserToDeleteRows = false;
             this.dgvScheduleData.AllowUserToResizeColumns = false;
+            this.dgvScheduleData.AllowUserToResizeRows = false;
             this.dgvScheduleData.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Bahnschrift Light", 14F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvScheduleData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvScheduleData.ColumnHeadersHeight = 30;
+            this.dgvScheduleData.ColumnHeadersHeight = 40;
             this.dgvScheduleData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colCa,
             this.colMonday,
@@ -174,11 +175,27 @@
             this.dgvScheduleData.Size = new System.Drawing.Size(1051, 620);
             this.dgvScheduleData.TabIndex = 1;
             // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 68.42918F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.57081F));
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 0, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1063, 676);
+            this.tableLayoutPanel1.TabIndex = 2;
+            // 
             // colCa
             // 
             this.colCa.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.colCa.HeaderText = "Ca";
             this.colCa.Name = "colCa";
+            this.colCa.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // colMonday
             // 
@@ -203,45 +220,24 @@
             this.colThursday.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.colThursday.HeaderText = "Thứ Năm";
             this.colThursday.Name = "colThursday";
-            this.colThursday.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colThursday.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // colFriday
             // 
             this.colFriday.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.colFriday.HeaderText = "Thứ Sáu";
             this.colFriday.Name = "colFriday";
-            this.colFriday.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colFriday.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // colSaturday
             // 
             this.colSaturday.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.colSaturday.HeaderText = "Thứ Bảy";
             this.colSaturday.Name = "colSaturday";
-            this.colSaturday.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colSaturday.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // colSunday
             // 
             this.colSunday.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.colSunday.HeaderText = "Chủ Nhật";
             this.colSunday.Name = "colSunday";
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 68.42918F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.57081F));
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 0, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1063, 676);
-            this.tableLayoutPanel1.TabIndex = 2;
             // 
             // UC_Shift
             // 

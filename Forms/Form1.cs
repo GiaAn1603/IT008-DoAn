@@ -11,6 +11,8 @@ namespace OHIOCF
 {
     public partial class Form1 : Form
     {
+        public static UserDTO loggedInUser;
+
         private Size _baseSize;
         private Dictionary<Control, float> _initialFontSizes = new Dictionary<Control, float>();
 
@@ -31,6 +33,7 @@ namespace OHIOCF
 
             if (user != null)
             {
+                Form1.loggedInUser = user;
                 RoleDTO role = RoleDAO.Instance.GetRoleById(user.RoleId);
 
                 if (role != null)

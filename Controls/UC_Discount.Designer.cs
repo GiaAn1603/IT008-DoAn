@@ -58,12 +58,13 @@
             this.lblDiscountCode = new System.Windows.Forms.Label();
             this.txtDiscountId = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colStartDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colEndDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Code = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Discount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiscountType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiscountValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StartDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EndDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPromotions)).BeginInit();
@@ -267,12 +268,13 @@
             this.dgvPromotions.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvPromotions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPromotions.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colId,
-            this.colName,
-            this.colType,
-            this.colValue,
-            this.colStartDate,
-            this.colEndDate});
+            this.Id,
+            this.Code,
+            this.Discount,
+            this.DiscountType,
+            this.DiscountValue,
+            this.StartDate,
+            this.EndDate});
             this.dgvPromotions.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvPromotions.Location = new System.Drawing.Point(0, 136);
             this.dgvPromotions.Margin = new System.Windows.Forms.Padding(0);
@@ -444,7 +446,6 @@
             this.cmbDiscountType.Name = "cmbDiscountType";
             this.cmbDiscountType.Size = new System.Drawing.Size(238, 27);
             this.cmbDiscountType.TabIndex = 5;
-            this.cmbDiscountType.Text = "Giảm giá % hay giá cố định";
             // 
             // tableLayoutPanel6
             // 
@@ -558,42 +559,56 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1063, 700);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // colId
+            // Id
             // 
-            this.colId.Frozen = true;
-            this.colId.HeaderText = "Mã KM";
-            this.colId.Name = "colId";
-            this.colId.Width = 70;
+            this.Id.DataPropertyName = "Id";
+            this.Id.Frozen = true;
+            this.Id.HeaderText = "Mã KM";
+            this.Id.Name = "Id";
+            this.Id.Width = 70;
             // 
-            // colName
+            // Code
             // 
-            this.colName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colName.HeaderText = "Tên KM";
-            this.colName.Name = "colName";
+            this.Code.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Code.DataPropertyName = "Code";
+            this.Code.HeaderText = "Tên KM";
+            this.Code.Name = "Code";
             // 
-            // colType
+            // Discount
             // 
-            this.colType.HeaderText = "Loại KM";
-            this.colType.Name = "colType";
-            this.colType.Width = 70;
+            this.Discount.DataPropertyName = "DiscountDisplay";
+            this.Discount.HeaderText = "Khuyến mãi";
+            this.Discount.Name = "Discount";
             // 
-            // colValue
+            // DiscountType
             // 
-            this.colValue.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colValue.HeaderText = "Giá trị";
-            this.colValue.Name = "colValue";
+            this.DiscountType.DataPropertyName = "DiscountType";
+            this.DiscountType.HeaderText = "Loại KM";
+            this.DiscountType.Name = "DiscountType";
+            this.DiscountType.Visible = false;
+            this.DiscountType.Width = 70;
             // 
-            // colStartDate
+            // DiscountValue
             // 
-            this.colStartDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colStartDate.HeaderText = "Từ ngày";
-            this.colStartDate.Name = "colStartDate";
+            this.DiscountValue.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.DiscountValue.DataPropertyName = "DiscountValue";
+            this.DiscountValue.HeaderText = "Giá trị";
+            this.DiscountValue.Name = "DiscountValue";
+            this.DiscountValue.Visible = false;
             // 
-            // colEndDate
+            // StartDate
             // 
-            this.colEndDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colEndDate.HeaderText = "Đến ngày";
-            this.colEndDate.Name = "colEndDate";
+            this.StartDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.StartDate.DataPropertyName = "StartDate";
+            this.StartDate.HeaderText = "Từ ngày";
+            this.StartDate.Name = "StartDate";
+            // 
+            // EndDate
+            // 
+            this.EndDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.EndDate.DataPropertyName = "EndDate";
+            this.EndDate.HeaderText = "Đến ngày";
+            this.EndDate.Name = "EndDate";
             // 
             // UC_Discount
             // 
@@ -649,11 +664,12 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         private System.Windows.Forms.Button btnAddDiscount;
         private System.Windows.Forms.Button btnDeleteDiscount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colType;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colValue;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colStartDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colEndDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Code;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Discount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DiscountType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DiscountValue;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StartDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EndDate;
     }
 }

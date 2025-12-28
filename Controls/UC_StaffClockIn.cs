@@ -17,24 +17,35 @@ namespace OHIOCF.Controls
         private string currentUserId;
         private List<UserDTO> userList;
         private DateTime currentMonday;
+        public UC_StaffClockIn() : this(null)
+        {
+        }
 
-        public UC_StaffClockIn()
+        public UC_StaffClockIn(string userId = null)
         {
             InitializeComponent();
-        }
-        public UC_StaffClockIn(string userId)
-        {
             currentUserId = userId;
+
+            this.Load += UC_StaffClockIn_Load;
+            dgvWeekSchedule.Resize += dgvWeekSchedule_Resize;
         }
 
-        private void UC_StaffClockIn_Load_1(object sender, EventArgs e)
+        private void UC_StaffClockIn_Load(object sender, EventArgs e)
         {
             timerClock.Start();
             UpdateClockTime();
-            LoadWeekSchedule();
-            FitRowsToGrid();
+            LoadData();
+            this.BeginInvoke(new Action(() =>
+            {
+                FitRowsToGrid();
+            }));
+            dgvWeekSchedule.EnableHeadersVisualStyles = false;
+            dgvWeekSchedule.ColumnHeadersDefaultCellStyle.BackColor = Color.WhiteSmoke;
+            dgvWeekSchedule.ColumnHeadersDefaultCellStyle.Alignment =
+                DataGridViewContentAlignment.MiddleCenter;
+
         }
-        private void LoadWeekSchedule()
+        private void LoadData()
         {
             currentMonday = ScheduleBUS.Instance.GetMondayOfWeek(DateTime.Now);
 
@@ -43,32 +54,37 @@ namespace OHIOCF.Controls
             LoadScheduleData();
         }
 
+        private void LoadUserList()
+        {
+            userList = UserBUS.Instance.GetListUser();
+        }
+        
+
         void SetupFixedCaColumn()
         {
-            dgvWeekSchedule.Rows.Clear();
-            dgvWeekSchedule.Rows.Add(6);
+            if (dgvWeekSchedule.Rows.Count < 6)
+            {
+                dgvWeekSchedule.Rows.Clear();
+                dgvWeekSchedule.Rows.Add(6);
+            }
 
             dgvWeekSchedule.Rows[0].Cells[0].Value = "Sáng (5h-12h)";
             dgvWeekSchedule.Rows[2].Cells[0].Value = "Chiều (12h-17h)";
             dgvWeekSchedule.Rows[4].Cells[0].Value = "Tối (17h-22h)";
         }
 
-        void LoadUserList()
+        private void ClearGridCells()
         {
-            userList = UserBUS.Instance.GetListUser();
+            foreach (DataGridViewRow row in dgvWeekSchedule.Rows)
+                for (int col = 1; col < dgvWeekSchedule.Columns.Count; col++)
+                    row.Cells[col].Value = null;
         }
         void LoadScheduleData()
         {
-            // Clear grid
-            foreach (DataGridViewRow row in dgvWeekSchedule.Rows)
-            {
-                for (int col = 1; col < dgvWeekSchedule.Columns.Count; col++)
-                {
-                    row.Cells[col].Value = null;
-                }
-            }
+            ClearGridCells();
 
-            var groupedSchedules = ScheduleBUS.Instance.GetWeekSchedulesGrouped(currentMonday);
+            var groupedSchedules =
+                ScheduleBUS.Instance.GetWeekSchedulesGrouped(currentMonday);
 
             for (int dayIndex = 0; dayIndex < 7; dayIndex++)
             {
@@ -83,8 +99,8 @@ namespace OHIOCF.Controls
                 {
                     if (!daySchedules.ContainsKey(shift)) continue;
 
-                    var shiftSchedules = daySchedules[shift];
                     int baseRow = shift * 2;
+                    var shiftSchedules = daySchedules[shift];
 
                     for (int i = 0; i < Math.Min(2, shiftSchedules.Count); i++)
                     {
@@ -93,7 +109,10 @@ namespace OHIOCF.Controls
 
                         if (user != null)
                         {
-                            dgvWeekSchedule.Rows[baseRow + i].Cells[colIndex].Value = user.FullName;
+                            dgvWeekSchedule
+                                .Rows[baseRow + i]
+                                .Cells[colIndex]
+                                .Value = user.FullName;
                         }
                     }
                 }

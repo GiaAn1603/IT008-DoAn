@@ -11,6 +11,37 @@ namespace OHIOCF.DAO
         public static ProductDAO Instance => instance ?? (instance = new ProductDAO());
         private ProductDAO() { }
 
+        public ProductDTO GetProductById(string id)
+        {
+            ProductDTO product = null;
+            string query = "SELECT * FROM Product WHERE id = @id";
+
+            using (SQLiteConnection conn = new SQLiteConnection(Database.ConnectionString))
+            {
+                conn.Open();
+                using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@id", id);
+                    using (SQLiteDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            product = new ProductDTO
+                            {
+                                Id = reader["id"].ToString(),
+                                CategoryId = reader["categoryId"].ToString(),
+                                Name = reader["name"].ToString(),
+                                BasePrice = Convert.ToDecimal(reader["basePrice"]),
+                                Image = reader["image"] != DBNull.Value ? reader["image"].ToString() : "",
+                                IsAvailable = Convert.ToInt32(reader["isAvailable"]) == 1
+                            };
+                        }
+                    }
+                }
+            }
+            return product;
+        }
+
         public List<ProductDTO> GetProductsByCategoryId(string catId)
         {
             List<ProductDTO> list = new List<ProductDTO>();

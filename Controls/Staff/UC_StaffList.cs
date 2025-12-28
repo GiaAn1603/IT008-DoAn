@@ -95,7 +95,7 @@ namespace OHIOCF.Controls.Staff_Inventory
                 Id = id,
                 Username = txtUsername.Text,
                 FullName = txtFullname.Text,
-                RoleName = cmbRole.SelectedValue.ToString(),
+                RoleId = cmbRole.SelectedValue.ToString(),
                 IsActive = (bool)cmbStatus.SelectedValue
             };
 
@@ -150,23 +150,21 @@ namespace OHIOCF.Controls.Staff_Inventory
 
         private void dgvStaffData_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0 && dgvStaffData.CurrentRow != null && !dgvStaffData.CurrentRow.IsNewRow)
+            if (e.RowIndex < 0) return;
+
+            var row = dgvStaffData.Rows[e.RowIndex];
+
+            txtUsername.Text = row.Cells["Username"].Value?.ToString();
+            txtFullname.Text = row.Cells["FullName"].Value?.ToString();
+            txtPassword.Clear();
+
+            if (row.Cells["RoleId"].Value != null)
+                cmbRole.SelectedValue = row.Cells["RoleId"].Value.ToString();
+
+            if (row.Cells["IsActive"].Value != null &&
+                bool.TryParse(row.Cells["IsActive"].Value.ToString(), out bool active))
             {
-                var row = dgvStaffData.CurrentRow;
-
-                txtUsername.Text = row.Cells["Username"].Value?.ToString() ?? "";
-                txtFullname.Text = row.Cells["FullName"].Value?.ToString() ?? "";
-                txtPassword.Text = row.Cells["Password"].Value?.ToString() ?? "";
-
-                if (row.Cells["RoleName"].Value != null)
-                    cmbRole.SelectedValue = row.Cells["RoleName"].Value.ToString();
-
-                if (row.Cells["IsActive"].Value != null)
-                {
-                    bool isActive;
-                    if (bool.TryParse(row.Cells["IsActive"].Value.ToString(), out isActive))
-                        cmbStatus.SelectedValue = isActive;
-                }
+                cmbStatus.SelectedValue = active;
             }
         }
 
@@ -175,86 +173,12 @@ namespace OHIOCF.Controls.Staff_Inventory
 
         }
 
+        
+
         private void btnExport_Click(object sender, EventArgs e)
         {
-            if (dgvStaffData.Rows.Count == 0)
-            {
-                MessageBox.Show("Không có dữ liệu để xuất!", "Thông báo",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
 
-            try
-            {
-                // Mở hộp thoại chọn nơi lưu file
-                SaveFileDialog saveDialog = new SaveFileDialog();
-                saveDialog.Filter = "Excel Files|*.xlsx";
-                saveDialog.Title = "Xuất danh sách nhân viên";
-                saveDialog.FileName = $"DanhSachNhanVien_{DateTime.Now:yyyyMMdd_HHmmss}.xlsx";
-
-                if (saveDialog.ShowDialog() == DialogResult.OK)
-                {
-                    using (var workbook = new XLWorkbook())
-                    {
-                        var worksheet = workbook.Worksheets.Add("Nhân viên");
-
-                        // tiêu đề cột
-                        for (int i = 0; i < dgvStaffData.Columns.Count; i++)
-                        {
-                            // Bỏ qua cột ẩn
-                            if (!dgvStaffData.Columns[i].Visible) continue;
-
-                            worksheet.Cell(1, i + 1).Value = dgvStaffData.Columns[i].HeaderText;
-                            worksheet.Cell(1, i + 1).Style.Font.Bold = true;
-                            worksheet.Cell(1, i + 1).Style.Fill.BackgroundColor = XLColor.LightGray;
-                        }
-
-                        // Thêm dữ liệu
-                        int excelRow = 2;
-                        foreach (DataGridViewRow row in dgvStaffData.Rows)
-                        {
-                            if (row.IsNewRow) continue;
-
-                            int excelCol = 1;
-                            for (int i = 0; i < dgvStaffData.Columns.Count; i++)
-                            {
-                                if (!dgvStaffData.Columns[i].Visible) continue;
-
-                                var cellValue = row.Cells[i].Value?.ToString() ?? "";
-
-                                if (dgvStaffData.Columns[i].DataPropertyName == "IsActive")
-                                {
-                                    bool isActive;
-                                    if (bool.TryParse(cellValue, out isActive))
-                                    {
-                                        cellValue = isActive ? "Hoạt động" : "Ngưng hoạt động";
-                                    }
-                                }
-
-                                worksheet.Cell(excelRow, excelCol).Value = cellValue;
-                                excelCol++;
-                            }
-                            excelRow++;
-                        }
-
-                        worksheet.Columns().AdjustToContents();
-
-                        workbook.SaveAs(saveDialog.FileName);
-                    }
-
-
-                    if (MessageBox.Show("Xuất file thành công, bạn có muốn mở file vừa xuất?", "Xác nhận",
-                        MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                    {
-                        System.Diagnostics.Process.Start(saveDialog.FileName);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Lỗi khi xuất file: {ex.Message}", "Lỗi",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
         }
+
     }
 }

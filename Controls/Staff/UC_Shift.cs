@@ -1,10 +1,11 @@
-﻿using ClosedXML.Excel;
-using OHIOCF.BUS;
+﻿using OHIOCF.BUS;
 using OHIOCF.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using System.Drawing;
+
 
 namespace OHIOCF.Controls.Staff_Inventory
 {
@@ -23,6 +24,11 @@ namespace OHIOCF.Controls.Staff_Inventory
         private void UC_Shift_Load(object sender, EventArgs e)
         {
             LoadData();
+
+            this.BeginInvoke(new Action(() =>
+            {
+                FitRowsToGrid();
+            }));
         }
 
         void LoadData()
@@ -33,22 +39,19 @@ namespace OHIOCF.Controls.Staff_Inventory
             SetupFixedCaColumn();
             LoadUserList();
             LoadScheduleData();
-            FitRowsToGrid();
         }
 
         void SetupFixedCaColumn()
         {
-            dgvScheduleData.Rows.Clear();
-            dgvScheduleData.Rows.Add(6);
+            if (dgvScheduleData.Rows.Count < 6)
+            {
+                dgvScheduleData.Rows.Clear();
+                dgvScheduleData.Rows.Add(6);
+            }
 
             dgvScheduleData.Rows[0].Cells[0].Value = "Sáng (5h-12h)";
             dgvScheduleData.Rows[2].Cells[0].Value = "Chiều (12h-17h)";
             dgvScheduleData.Rows[4].Cells[0].Value = "Tối (17h-22h)";
-
-            foreach (DataGridViewRow row in dgvScheduleData.Rows)
-            {
-                row.DefaultCellStyle = dgvScheduleData.DefaultCellStyle;
-            }
         }
 
         private void FitRowsToGrid()
@@ -61,6 +64,7 @@ namespace OHIOCF.Controls.Staff_Inventory
 
             foreach (DataGridViewRow row in dgvScheduleData.Rows)
                 row.Height = rowHeight;
+
         }
 
         private void dgvScheduleData_Resize(object sender, EventArgs e)
@@ -70,18 +74,19 @@ namespace OHIOCF.Controls.Staff_Inventory
 
         void LoadUserList()
         {
-            // Gọi BUS để lấy danh sách nhân viên
             userList = UserBUS.Instance.GetListUser();
-            var names = userList.Select(u => u.FullName).ToList();
 
-            // Bind vào ComboBox columns
             for (int i = 1; i < dgvScheduleData.Columns.Count; i++)
             {
                 if (dgvScheduleData.Columns[i] is DataGridViewComboBoxColumn comboCol)
                 {
                     comboCol.DataSource = null;
-                    comboCol.ValueType = typeof(string);
-                    comboCol.DataSource = names;
+                    comboCol.DataSource = userList;
+                    comboCol.DisplayMember = "FullName";
+                    comboCol.ValueMember = "Id";
+
+                    comboCol.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                    comboCol.FlatStyle = FlatStyle.Flat;
                 }
             }
         }
@@ -126,101 +131,12 @@ namespace OHIOCF.Controls.Staff_Inventory
 
                         if (user != null)
                         {
-                            dgvScheduleData.Rows[baseRow + i].Cells[colIndex].Value = user.FullName;
+                            dgvScheduleData.Rows[baseRow + i]
+                                .Cells[colIndex].Value = user.Id;
                         }
+
                     }
                 }
-            }
-        }
-
-        private void btnExport_Click(object sender, EventArgs e)
-        {
-            if (dgvScheduleData.Rows.Count == 0)
-            {
-                MessageBox.Show("Không có dữ liệu để xuất!", "Thông báo",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            try
-            {
-                SaveFileDialog saveDialog = new SaveFileDialog();
-                saveDialog.Filter = "Excel Files|*.xlsx";
-                saveDialog.Title = "Xuất lịch làm việc";
-                saveDialog.FileName = $"LichLamViec_{currentMonday:yyyyMMdd}.xlsx";
-
-                if (saveDialog.ShowDialog() == DialogResult.OK)
-                {
-                    using (var workbook = new XLWorkbook())
-                    {
-                        var worksheet = workbook.Worksheets.Add("Lịch làm việc");
-
-                        // Tiêu đề
-                        worksheet.Cell(1, 1).Value = $"LỊCH LÀM VIỆC TUẦN {currentMonday:dd/MM/yyyy} - {currentMonday.AddDays(6):dd/MM/yyyy}";
-                        worksheet.Range(1, 1, 1, dgvScheduleData.Columns.Count).Merge();
-                        worksheet.Cell(1, 1).Style.Font.Bold = true;
-                        worksheet.Cell(1, 1).Style.Font.FontSize = 14;
-                        worksheet.Cell(1, 1).Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
-
-                        // Tiêu đề cột (row 2)
-                        for (int i = 0; i < dgvScheduleData.Columns.Count; i++)
-                        {
-                            if (!dgvScheduleData.Columns[i].Visible) continue;
-
-                            worksheet.Cell(2, i + 1).Value = dgvScheduleData.Columns[i].HeaderText;
-                            worksheet.Cell(2, i + 1).Style.Font.Bold = true;
-                            worksheet.Cell(2, i + 1).Style.Fill.BackgroundColor = XLColor.LightGray;
-                            worksheet.Cell(2, i + 1).Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
-                        }
-
-                        // Dữ liệu (từ row 3)
-                        int excelRow = 3;
-                        foreach (DataGridViewRow row in dgvScheduleData.Rows)
-                        {
-                            if (row.IsNewRow) continue;
-
-                            for (int i = 0; i < dgvScheduleData.Columns.Count; i++)
-                            {
-                                if (!dgvScheduleData.Columns[i].Visible) continue;
-
-                                var cellValue = row.Cells[i].Value?.ToString() ?? "";
-                                worksheet.Cell(excelRow, i + 1).Value = cellValue;
-                            }
-                            excelRow++;
-                        }
-
-                        // Merge cells cho các ca
-                        worksheet.Range(3, 1, 4, 1).Merge(); // Ca sáng
-                        worksheet.Range(5, 1, 6, 1).Merge(); // Ca chiều
-                        worksheet.Range(7, 1, 8, 1).Merge(); // Ca tối
-
-                        // Format
-                        worksheet.Columns().AdjustToContents();
-                        worksheet.Range(2, 1, excelRow - 1, dgvScheduleData.Columns.Count)
-                            .Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
-                        worksheet.Range(2, 1, excelRow - 1, dgvScheduleData.Columns.Count)
-                            .Style.Alignment.Vertical = XLAlignmentVerticalValues.Center;
-
-                        // Border
-                        worksheet.Range(2, 1, excelRow - 1, dgvScheduleData.Columns.Count)
-                            .Style.Border.OutsideBorder = XLBorderStyleValues.Thin;
-                        worksheet.Range(2, 1, excelRow - 1, dgvScheduleData.Columns.Count)
-                            .Style.Border.InsideBorder = XLBorderStyleValues.Thin;
-
-                        workbook.SaveAs(saveDialog.FileName);
-                    }
-
-                    if (MessageBox.Show("Xuất file thành công! Bạn có muốn mở file?", "Xác nhận",
-                        MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                    {
-                        System.Diagnostics.Process.Start(saveDialog.FileName);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Lỗi khi xuất file: {ex.Message}", "Lỗi",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -247,11 +163,11 @@ namespace OHIOCF.Controls.Staff_Inventory
 
                     for (int col = 1; col < dgvScheduleData.Columns.Count; col++)
                     {
-                        var cellValue = dgvScheduleData.Rows[row].Cells[col].Value?.ToString();
-                        if (string.IsNullOrEmpty(cellValue)) continue;
+                        var cellValue = dgvScheduleData.Rows[row].Cells[col].Value;
+                        if (cellValue == null) continue;
 
-                        // Tìm user
-                        var user = userList.FirstOrDefault(u => u.FullName == cellValue);
+                        string userId = cellValue.ToString();
+                        var user = userList.FirstOrDefault(u => u.Id == userId);
                         if (user == null) continue;
 
                         // Xác định ngày (thứ 2 = col 1, thứ 3 = col 2,...)
@@ -283,5 +199,11 @@ namespace OHIOCF.Controls.Staff_Inventory
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
