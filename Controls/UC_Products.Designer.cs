@@ -52,7 +52,6 @@
             this.lblProductName = new System.Windows.Forms.Label();
             this.txtProductName = new System.Windows.Forms.TextBox();
             this.lblCategory = new System.Windows.Forms.Label();
-            this.cmbCategory = new System.Windows.Forms.ComboBox();
             this.lblProductSize = new System.Windows.Forms.Label();
             this.cmbProductSize = new System.Windows.Forms.ComboBox();
             this.lblIngredientsList = new System.Windows.Forms.Label();
@@ -77,6 +76,7 @@
             this.lblStatus = new System.Windows.Forms.Label();
             this.cmbIngredientUnit = new System.Windows.Forms.ComboBox();
             this.cmbStatus = new System.Windows.Forms.ComboBox();
+            this.cmbCategory = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.flpMenuItems.SuspendLayout();
@@ -324,7 +324,6 @@
             this.tableLayoutPanel2.Controls.Add(this.lblProductName, 1, 5);
             this.tableLayoutPanel2.Controls.Add(this.txtProductName, 3, 5);
             this.tableLayoutPanel2.Controls.Add(this.lblCategory, 1, 6);
-            this.tableLayoutPanel2.Controls.Add(this.cmbCategory, 3, 6);
             this.tableLayoutPanel2.Controls.Add(this.lblProductSize, 1, 7);
             this.tableLayoutPanel2.Controls.Add(this.cmbProductSize, 3, 7);
             this.tableLayoutPanel2.Controls.Add(this.lblIngredientsList, 1, 10);
@@ -342,6 +341,7 @@
             this.tableLayoutPanel2.Controls.Add(this.lblStatus, 1, 9);
             this.tableLayoutPanel2.Controls.Add(this.cmbIngredientUnit, 13, 8);
             this.tableLayoutPanel2.Controls.Add(this.cmbStatus, 3, 9);
+            this.tableLayoutPanel2.Controls.Add(this.cmbCategory, 3, 6);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Font = new System.Drawing.Font("Bahnschrift Light", 12F);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(521, 0);
@@ -822,6 +822,24 @@
             this.cmbStatus.Size = new System.Drawing.Size(162, 27);
             this.cmbStatus.TabIndex = 46;
             // 
+            // cmbCategory
+            // 
+            this.cmbCategory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel2.SetColumnSpan(this.cmbCategory, 6);
+            this.cmbCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCategory.Font = new System.Drawing.Font("Bahnschrift Light", 12F);
+            this.cmbCategory.FormattingEnabled = true;
+            this.cmbCategory.Items.AddRange(new object[] {
+            "Cà phê",
+            "Trà - trà sữa",
+            "Bánh",
+            "Khác"});
+            this.cmbCategory.Location = new System.Drawing.Point(103, 226);
+            this.cmbCategory.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
+            this.cmbCategory.Name = "cmbCategory";
+            this.cmbCategory.Size = new System.Drawing.Size(162, 27);
+            this.cmbCategory.TabIndex = 47;
+            // 
             // UC_Products
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -896,7 +914,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colIngredientQuantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn colIngredientUnit;
         private System.Windows.Forms.DataGridViewButtonColumn colDelete;
-        private System.Windows.Forms.ComboBox cmbCategory;
         private System.Windows.Forms.ComboBox cmbStatus;
+        private System.Windows.Forms.ComboBox cmbCategory;
     }
 }
