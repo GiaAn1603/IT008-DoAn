@@ -1,4 +1,4 @@
-﻿using OHIOCF.Controls.Inventory;
+﻿using OHIOCF.Controls;
 using OHIOCF.Controls.Report;
 using OHIOCF.Controls.Staff_Inventory;
 using System;

@@ -11,9 +11,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace OHIOCF.Controls.Inventory
+namespace OHIOCF.Controls
 {
-    public partial class UC_Inventory1 : UserControl
+    public partial class UC_Inventory : UserControl
     {
         private List<InventoryDTO> inventoryList;
         private List<IngredientDTO> ingredientList;
@@ -28,7 +28,7 @@ namespace OHIOCF.Controls.Inventory
             public double MinThreshold { get; set; }
         }
 
-        public UC_Inventory1()
+        public UC_Inventory()
         {
             InitializeComponent();
             this.Load += UC_Inventory1_Load;
@@ -171,5 +171,40 @@ namespace OHIOCF.Controls.Inventory
             dgvInventory.DataSource = inventoryView.ToList();
         }
 
+        private void buttonAdd_Click(object sender, EventArgs e)
+        {
+            string name = txtIngredientName.Text.Trim();
+            string unit = cmbUnit.Text.Trim();
+            string quantityText = txtStockQuantity.Text.Trim();
+            string minText = txtMinThreshold.Text.Trim();
+
+
+            if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(unit) ||
+                !double.TryParse(quantityText, out double quantity) || quantity < 0 ||
+                !double.TryParse(minText, out double minThreshold) || minThreshold < 0)
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ và hợp lệ thông tin nguyên liệu.");
+                return;
+            }
+
+            IngredientDTO newIngredient = new IngredientDTO
+            {
+                Id = Guid.NewGuid().ToString(),
+                Name = name,
+                Unit = unit
+            };
+
+            if (InventoryBUS.Instance.InitStock(newIngredient, quantity, minThreshold))
+            {
+                MessageBox.Show("Thêm nguyên liệu và tạo kho thành công!");
+                LoadData();
+
+                ClearInputs();
+            }
+            else
+            {
+                MessageBox.Show("Lỗi khi thêm mới.");
+            }
+        }
     }
 }
