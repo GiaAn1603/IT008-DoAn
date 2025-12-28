@@ -31,14 +31,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_Sale1));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.cmbProductCategory = new System.Windows.Forms.ComboBox();
             this.flpMenuItems = new System.Windows.Forms.FlowLayoutPanel();
             this.tlpProduct = new System.Windows.Forms.TableLayoutPanel();
             this.pbProductPicture = new System.Windows.Forms.PictureBox();
             this.lblProductName = new System.Windows.Forms.Label();
             this.lblProductPrice = new System.Windows.Forms.Label();
             this.txtProductSearch = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
@@ -63,6 +61,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.tsType = new System.Windows.Forms.ToolStrip();
+            this.tsbCoffee = new System.Windows.Forms.ToolStripButton();
+            this.tsbTea = new System.Windows.Forms.ToolStripButton();
+            this.tsbCake = new System.Windows.Forms.ToolStripButton();
+            this.tsbOther = new System.Windows.Forms.ToolStripButton();
+            this.tsbAll = new System.Windows.Forms.ToolStripButton();
+            this.button1 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.flpMenuItems.SuspendLayout();
@@ -73,6 +78,7 @@
             this.tableLayoutPanel6.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrderItems)).BeginInit();
+            this.tsType.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -98,6 +104,14 @@
             this.tableLayoutPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(215)))), ((int)(((byte)(32)))));
             this.tableLayoutPanel2.ColumnCount = 20;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.112971F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2.64993F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.252441F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2.51046F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
@@ -109,18 +123,10 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tableLayoutPanel2.Controls.Add(this.cmbProductCategory, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.button1, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.tsType, 8, 0);
             this.tableLayoutPanel2.Controls.Add(this.flpMenuItems, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.txtProductSearch, 6, 0);
-            this.tableLayoutPanel2.Controls.Add(this.button1, 18, 0);
+            this.tableLayoutPanel2.Controls.Add(this.txtProductSearch, 2, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Bold);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
@@ -131,17 +137,6 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(717, 694);
             this.tableLayoutPanel2.TabIndex = 0;
-            // 
-            // cmbProductCategory
-            // 
-            this.cmbProductCategory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel2.SetColumnSpan(this.cmbProductCategory, 6);
-            this.cmbProductCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbProductCategory.FormattingEnabled = true;
-            this.cmbProductCategory.Location = new System.Drawing.Point(3, 3);
-            this.cmbProductCategory.Name = "cmbProductCategory";
-            this.cmbProductCategory.Size = new System.Drawing.Size(204, 28);
-            this.cmbProductCategory.TabIndex = 4;
             // 
             // flpMenuItems
             // 
@@ -215,27 +210,12 @@
             // txtProductSearch
             // 
             this.txtProductSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel2.SetColumnSpan(this.txtProductSearch, 12);
+            this.tableLayoutPanel2.SetColumnSpan(this.txtProductSearch, 6);
             this.txtProductSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtProductSearch.Location = new System.Drawing.Point(213, 3);
+            this.txtProductSearch.Location = new System.Drawing.Point(90, 3);
             this.txtProductSearch.Name = "txtProductSearch";
-            this.txtProductSearch.Size = new System.Drawing.Size(414, 26);
+            this.txtProductSearch.Size = new System.Drawing.Size(209, 26);
             this.txtProductSearch.TabIndex = 2;
-            // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(242)))), ((int)(((byte)(80)))));
-            this.tableLayoutPanel2.SetColumnSpan(this.button1, 2);
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(633, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(81, 26);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Tìm kiếm";
-            this.button1.UseVisualStyleBackColor = false;
             // 
             // tableLayoutPanel4
             // 
@@ -330,7 +310,6 @@
             this.rdoDineIn.Name = "rdoDineIn";
             this.rdoDineIn.Size = new System.Drawing.Size(225, 28);
             this.rdoDineIn.TabIndex = 10;
-            this.rdoDineIn.TabStop = true;
             this.rdoDineIn.Text = "Tại quán";
             this.rdoDineIn.UseVisualStyleBackColor = false;
             // 
@@ -338,6 +317,7 @@
             // 
             this.rdoTakeaway.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.rdoTakeaway.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(215)))), ((int)(((byte)(32)))));
+            this.rdoTakeaway.Checked = true;
             this.rdoTakeaway.Font = new System.Drawing.Font("Bahnschrift Light", 12F);
             this.rdoTakeaway.Location = new System.Drawing.Point(3, 5);
             this.rdoTakeaway.Name = "rdoTakeaway";
@@ -571,6 +551,108 @@
             this.label11.Text = "tạm tính";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // tsType
+            // 
+            this.tsType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tsType.AutoSize = false;
+            this.tsType.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.tableLayoutPanel2.SetColumnSpan(this.tsType, 12);
+            this.tsType.Dock = System.Windows.Forms.DockStyle.None;
+            this.tsType.Font = new System.Drawing.Font("Bahnschrift Light", 10F, System.Drawing.FontStyle.Bold);
+            this.tsType.GripMargin = new System.Windows.Forms.Padding(6);
+            this.tsType.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.tsType.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsbCoffee,
+            this.tsbTea,
+            this.tsbCake,
+            this.tsbOther,
+            this.tsbAll});
+            this.tsType.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
+            this.tsType.Location = new System.Drawing.Point(305, 3);
+            this.tsType.Margin = new System.Windows.Forms.Padding(3);
+            this.tsType.Name = "tsType";
+            this.tsType.ShowItemToolTips = false;
+            this.tsType.Size = new System.Drawing.Size(409, 26);
+            this.tsType.TabIndex = 26;
+            this.tsType.Text = "toolStrip1";
+            // 
+            // tsbCoffee
+            // 
+            this.tsbCoffee.AutoSize = false;
+            this.tsbCoffee.AutoToolTip = false;
+            this.tsbCoffee.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsbCoffee.Image = ((System.Drawing.Image)(resources.GetObject("tsbCoffee.Image")));
+            this.tsbCoffee.ImageTransparentColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.tsbCoffee.Name = "tsbCoffee";
+            this.tsbCoffee.Padding = new System.Windows.Forms.Padding(10);
+            this.tsbCoffee.Size = new System.Drawing.Size(80, 40);
+            this.tsbCoffee.Text = "Cà phê";
+            // 
+            // tsbTea
+            // 
+            this.tsbTea.AutoSize = false;
+            this.tsbTea.AutoToolTip = false;
+            this.tsbTea.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsbTea.Image = ((System.Drawing.Image)(resources.GetObject("tsbTea.Image")));
+            this.tsbTea.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbTea.Name = "tsbTea";
+            this.tsbTea.Padding = new System.Windows.Forms.Padding(10);
+            this.tsbTea.Size = new System.Drawing.Size(80, 40);
+            this.tsbTea.Text = "Trà";
+            // 
+            // tsbCake
+            // 
+            this.tsbCake.AutoSize = false;
+            this.tsbCake.AutoToolTip = false;
+            this.tsbCake.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsbCake.Font = new System.Drawing.Font("Bahnschrift Light", 10F, System.Drawing.FontStyle.Bold);
+            this.tsbCake.Image = ((System.Drawing.Image)(resources.GetObject("tsbCake.Image")));
+            this.tsbCake.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbCake.Name = "tsbCake";
+            this.tsbCake.Padding = new System.Windows.Forms.Padding(10);
+            this.tsbCake.Size = new System.Drawing.Size(80, 40);
+            this.tsbCake.Text = "Bánh";
+            // 
+            // tsbOther
+            // 
+            this.tsbOther.AutoSize = false;
+            this.tsbOther.AutoToolTip = false;
+            this.tsbOther.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsbOther.Image = ((System.Drawing.Image)(resources.GetObject("tsbOther.Image")));
+            this.tsbOther.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbOther.Name = "tsbOther";
+            this.tsbOther.Padding = new System.Windows.Forms.Padding(10);
+            this.tsbOther.Size = new System.Drawing.Size(80, 40);
+            this.tsbOther.Text = "Khác";
+            // 
+            // tsbAll
+            // 
+            this.tsbAll.AutoSize = false;
+            this.tsbAll.AutoToolTip = false;
+            this.tsbAll.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsbAll.Font = new System.Drawing.Font("Bahnschrift Light", 10F, System.Drawing.FontStyle.Bold);
+            this.tsbAll.Image = ((System.Drawing.Image)(resources.GetObject("tsbAll.Image")));
+            this.tsbAll.ImageTransparentColor = System.Drawing.SystemColors.Menu;
+            this.tsbAll.Name = "tsbAll";
+            this.tsbAll.Padding = new System.Windows.Forms.Padding(10);
+            this.tsbAll.Size = new System.Drawing.Size(80, 40);
+            this.tsbAll.Text = "Tất cả";
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(242)))), ((int)(((byte)(80)))));
+            this.tableLayoutPanel2.SetColumnSpan(this.button1, 2);
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(3, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(81, 26);
+            this.button1.TabIndex = 27;
+            this.button1.Text = "Tìm kiếm";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // UC_Sale1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -593,6 +675,8 @@
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrderItems)).EndInit();
+            this.tsType.ResumeLayout(false);
+            this.tsType.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -602,8 +686,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TextBox txtProductSearch;
-        private System.Windows.Forms.ComboBox cmbProductCategory;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.FlowLayoutPanel flpMenuItems;
         private System.Windows.Forms.TableLayoutPanel tlpProduct;
         private System.Windows.Forms.PictureBox pbProductPicture;
@@ -633,5 +715,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colSize;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDonGia;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSL;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ToolStrip tsType;
+        private System.Windows.Forms.ToolStripButton tsbCoffee;
+        private System.Windows.Forms.ToolStripButton tsbTea;
+        private System.Windows.Forms.ToolStripButton tsbCake;
+        private System.Windows.Forms.ToolStripButton tsbOther;
+        private System.Windows.Forms.ToolStripButton tsbAll;
     }
 }

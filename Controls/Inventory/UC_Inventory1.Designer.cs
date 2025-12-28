@@ -28,17 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblNVLName = new System.Windows.Forms.Label();
-            this.lblPrice = new System.Windows.Forms.Label();
             this.dgvInventory = new System.Windows.Forms.DataGridView();
-            this.colMaNVL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTenNVL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDonVi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTonKho = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNguongMin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IngredientId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IngredientName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StockQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MinThreshold = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.lblHeaderTitle = new System.Windows.Forms.Label();
@@ -46,21 +42,21 @@
             this.pbNVLImage = new System.Windows.Forms.PictureBox();
             this.btnUploadImage = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
-            this.txtNVLCode = new System.Windows.Forms.TextBox();
-            this.txtNVLName = new System.Windows.Forms.TextBox();
+            this.txtIngredientId = new System.Windows.Forms.TextBox();
+            this.txtIngredientName = new System.Windows.Forms.TextBox();
             this.lblNVLCode = new System.Windows.Forms.Label();
             this.lblUnit = new System.Windows.Forms.Label();
-            this.lblQuantity = new System.Windows.Forms.Label();
-            this.txtPrice = new System.Windows.Forms.TextBox();
+            this.lblMinThreshold = new System.Windows.Forms.Label();
+            this.txtStockQuantity = new System.Windows.Forms.TextBox();
             this.cmbUnit = new System.Windows.Forms.ComboBox();
-            this.txtQuantity = new System.Windows.Forms.TextBox();
+            this.txtMinThreshold = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
+            this.lblStockQuantity = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
@@ -83,71 +79,54 @@
             this.lblNVLName.Text = "Tên NVL";
             this.lblNVLName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // lblPrice
-            // 
-            this.lblPrice.AutoSize = true;
-            this.tableLayoutPanel2.SetColumnSpan(this.lblPrice, 4);
-            this.lblPrice.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblPrice.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
-            this.lblPrice.Location = new System.Drawing.Point(35, 401);
-            this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(120, 27);
-            this.lblPrice.TabIndex = 6;
-            this.lblPrice.Text = "Ngưỡng MIN";
-            this.lblPrice.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // dgvInventory
             // 
             this.dgvInventory.BackgroundColor = System.Drawing.Color.White;
             this.dgvInventory.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvInventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvInventory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colMaNVL,
-            this.colTenNVL,
-            this.colDonVi,
-            this.colTonKho,
-            this.colNguongMin,
-            this.colTrangThai});
+            this.IngredientId,
+            this.IngredientName,
+            this.Unit,
+            this.StockQuantity,
+            this.MinThreshold});
             this.dgvInventory.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvInventory.Location = new System.Drawing.Point(3, 46);
             this.dgvInventory.Name = "dgvInventory";
             this.dgvInventory.Size = new System.Drawing.Size(698, 621);
             this.dgvInventory.TabIndex = 1;
+            this.dgvInventory.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInventory_CellClick);
             // 
-            // colMaNVL
+            // IngredientId
             // 
-            this.colMaNVL.HeaderText = "Mã NVL";
-            this.colMaNVL.Name = "colMaNVL";
+            this.IngredientId.DataPropertyName = "IngredientId";
+            this.IngredientId.HeaderText = "Mã NVL";
+            this.IngredientId.Name = "IngredientId";
             // 
-            // colTenNVL
+            // IngredientName
             // 
-            this.colTenNVL.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colTenNVL.HeaderText = "Tên nguyên vật liệu";
-            this.colTenNVL.Name = "colTenNVL";
+            this.IngredientName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.IngredientName.DataPropertyName = "IngredientName";
+            this.IngredientName.HeaderText = "Tên nguyên vật liệu";
+            this.IngredientName.Name = "IngredientName";
             // 
-            // colDonVi
+            // Unit
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.colDonVi.DefaultCellStyle = dataGridViewCellStyle1;
-            this.colDonVi.HeaderText = "Đơn vị tính";
-            this.colDonVi.Name = "colDonVi";
+            this.Unit.DataPropertyName = "Unit";
+            this.Unit.HeaderText = "Đơn vị tính";
+            this.Unit.Name = "Unit";
             // 
-            // colTonKho
+            // StockQuantity
             // 
-            this.colTonKho.HeaderText = "Số lượng tồn";
-            this.colTonKho.Name = "colTonKho";
+            this.StockQuantity.DataPropertyName = "StockQuantity";
+            this.StockQuantity.HeaderText = "Số lượng tồn";
+            this.StockQuantity.Name = "StockQuantity";
             // 
-            // colNguongMin
+            // MinThreshold
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colNguongMin.DefaultCellStyle = dataGridViewCellStyle2;
-            this.colNguongMin.HeaderText = "Ngưỡng tối thiểu";
-            this.colNguongMin.Name = "colNguongMin";
-            // 
-            // colTrangThai
-            // 
-            this.colTrangThai.HeaderText = "Trạng thái";
-            this.colTrangThai.Name = "colTrangThai";
+            this.MinThreshold.DataPropertyName = "MinThreshold";
+            this.MinThreshold.HeaderText = "Mức tối thiểu";
+            this.MinThreshold.Name = "MinThreshold";
             // 
             // tableLayoutPanel3
             // 
@@ -200,9 +179,9 @@
             // 
             // btnSearch
             // 
+            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(242)))), ((int)(((byte)(80)))));
             this.tableLayoutPanel2.SetColumnSpan(this.btnSearch, 3);
-            this.btnSearch.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnSearch.FlatAppearance.BorderSize = 0;
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSearch.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Bold);
@@ -214,16 +193,17 @@
             this.btnSearch.TabIndex = 0;
             this.btnSearch.Text = "Tìm kiếm";
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // pbNVLImage
             // 
             this.pbNVLImage.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.tableLayoutPanel2.SetColumnSpan(this.pbNVLImage, 4);
+            this.tableLayoutPanel2.SetColumnSpan(this.pbNVLImage, 5);
             this.pbNVLImage.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pbNVLImage.Location = new System.Drawing.Point(99, 82);
             this.pbNVLImage.Name = "pbNVLImage";
             this.tableLayoutPanel2.SetRowSpan(this.pbNVLImage, 4);
-            this.pbNVLImage.Size = new System.Drawing.Size(120, 102);
+            this.pbNVLImage.Size = new System.Drawing.Size(152, 102);
             this.pbNVLImage.TabIndex = 1;
             this.pbNVLImage.TabStop = false;
             // 
@@ -246,35 +226,35 @@
             // txtSearch
             // 
             this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel2.SetColumnSpan(this.txtSearch, 5);
+            this.tableLayoutPanel2.SetColumnSpan(this.txtSearch, 6);
             this.txtSearch.Font = new System.Drawing.Font("Bahnschrift Light", 12F);
             this.txtSearch.Location = new System.Drawing.Point(126, 29);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(0);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(160, 27);
+            this.txtSearch.Size = new System.Drawing.Size(192, 27);
             this.txtSearch.TabIndex = 11;
             // 
-            // txtNVLCode
+            // txtIngredientId
             // 
-            this.txtNVLCode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel2.SetColumnSpan(this.txtNVLCode, 5);
-            this.txtNVLCode.Font = new System.Drawing.Font("Bahnschrift Light", 12F);
-            this.txtNVLCode.Location = new System.Drawing.Point(158, 239);
-            this.txtNVLCode.Margin = new System.Windows.Forms.Padding(0);
-            this.txtNVLCode.Name = "txtNVLCode";
-            this.txtNVLCode.Size = new System.Drawing.Size(160, 27);
-            this.txtNVLCode.TabIndex = 12;
+            this.txtIngredientId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel2.SetColumnSpan(this.txtIngredientId, 5);
+            this.txtIngredientId.Font = new System.Drawing.Font("Bahnschrift Light", 12F);
+            this.txtIngredientId.Location = new System.Drawing.Point(158, 239);
+            this.txtIngredientId.Margin = new System.Windows.Forms.Padding(0);
+            this.txtIngredientId.Name = "txtIngredientId";
+            this.txtIngredientId.Size = new System.Drawing.Size(160, 27);
+            this.txtIngredientId.TabIndex = 12;
             // 
-            // txtNVLName
+            // txtIngredientName
             // 
-            this.txtNVLName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel2.SetColumnSpan(this.txtNVLName, 5);
-            this.txtNVLName.Font = new System.Drawing.Font("Bahnschrift Light", 12F);
-            this.txtNVLName.Location = new System.Drawing.Point(158, 293);
-            this.txtNVLName.Margin = new System.Windows.Forms.Padding(0);
-            this.txtNVLName.Name = "txtNVLName";
-            this.txtNVLName.Size = new System.Drawing.Size(160, 27);
-            this.txtNVLName.TabIndex = 13;
+            this.txtIngredientName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel2.SetColumnSpan(this.txtIngredientName, 5);
+            this.txtIngredientName.Font = new System.Drawing.Font("Bahnschrift Light", 12F);
+            this.txtIngredientName.Location = new System.Drawing.Point(158, 293);
+            this.txtIngredientName.Margin = new System.Windows.Forms.Padding(0);
+            this.txtIngredientName.Name = "txtIngredientName";
+            this.txtIngredientName.Size = new System.Drawing.Size(160, 27);
+            this.txtIngredientName.TabIndex = 13;
             // 
             // lblNVLCode
             // 
@@ -288,7 +268,6 @@
             this.lblNVLCode.TabIndex = 3;
             this.lblNVLCode.Text = "Mã NVL";
             this.lblNVLCode.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblNVLCode.Click += new System.EventHandler(this.lblNVLCode_Click);
             // 
             // lblUnit
             // 
@@ -303,29 +282,29 @@
             this.lblUnit.Text = "Đơn vị tính";
             this.lblUnit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // lblQuantity
+            // lblMinThreshold
             // 
-            this.lblQuantity.AutoSize = true;
-            this.tableLayoutPanel2.SetColumnSpan(this.lblQuantity, 4);
-            this.lblQuantity.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblQuantity.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
-            this.lblQuantity.Location = new System.Drawing.Point(35, 455);
-            this.lblQuantity.Name = "lblQuantity";
-            this.lblQuantity.Size = new System.Drawing.Size(120, 27);
-            this.lblQuantity.TabIndex = 17;
-            this.lblQuantity.Text = "Tồn kho";
-            this.lblQuantity.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblMinThreshold.AutoSize = true;
+            this.tableLayoutPanel2.SetColumnSpan(this.lblMinThreshold, 4);
+            this.lblMinThreshold.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblMinThreshold.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
+            this.lblMinThreshold.Location = new System.Drawing.Point(35, 455);
+            this.lblMinThreshold.Name = "lblMinThreshold";
+            this.lblMinThreshold.Size = new System.Drawing.Size(120, 27);
+            this.lblMinThreshold.TabIndex = 17;
+            this.lblMinThreshold.Text = "Ngưỡng MIN";
+            this.lblMinThreshold.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // txtPrice
+            // txtStockQuantity
             // 
-            this.txtPrice.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel2.SetColumnSpan(this.txtPrice, 5);
-            this.txtPrice.Font = new System.Drawing.Font("Bahnschrift Light", 12F);
-            this.txtPrice.Location = new System.Drawing.Point(158, 401);
-            this.txtPrice.Margin = new System.Windows.Forms.Padding(0);
-            this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(160, 27);
-            this.txtPrice.TabIndex = 14;
+            this.txtStockQuantity.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel2.SetColumnSpan(this.txtStockQuantity, 5);
+            this.txtStockQuantity.Font = new System.Drawing.Font("Bahnschrift Light", 12F);
+            this.txtStockQuantity.Location = new System.Drawing.Point(158, 401);
+            this.txtStockQuantity.Margin = new System.Windows.Forms.Padding(0);
+            this.txtStockQuantity.Name = "txtStockQuantity";
+            this.txtStockQuantity.Size = new System.Drawing.Size(160, 27);
+            this.txtStockQuantity.TabIndex = 14;
             // 
             // cmbUnit
             // 
@@ -339,16 +318,16 @@
             this.cmbUnit.Size = new System.Drawing.Size(160, 27);
             this.cmbUnit.TabIndex = 15;
             // 
-            // txtQuantity
+            // txtMinThreshold
             // 
-            this.txtQuantity.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel2.SetColumnSpan(this.txtQuantity, 5);
-            this.txtQuantity.Font = new System.Drawing.Font("Bahnschrift Light", 12F);
-            this.txtQuantity.Location = new System.Drawing.Point(158, 455);
-            this.txtQuantity.Margin = new System.Windows.Forms.Padding(0);
-            this.txtQuantity.Name = "txtQuantity";
-            this.txtQuantity.Size = new System.Drawing.Size(160, 27);
-            this.txtQuantity.TabIndex = 18;
+            this.txtMinThreshold.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel2.SetColumnSpan(this.txtMinThreshold, 5);
+            this.txtMinThreshold.Font = new System.Drawing.Font("Bahnschrift Light", 12F);
+            this.txtMinThreshold.Location = new System.Drawing.Point(158, 455);
+            this.txtMinThreshold.Margin = new System.Windows.Forms.Padding(0);
+            this.txtMinThreshold.Name = "txtMinThreshold";
+            this.txtMinThreshold.Size = new System.Drawing.Size(160, 27);
+            this.txtMinThreshold.TabIndex = 18;
             // 
             // label6
             // 
@@ -402,18 +381,18 @@
             this.tableLayoutPanel2.Controls.Add(this.pbNVLImage, 3, 3);
             this.tableLayoutPanel2.Controls.Add(this.btnUploadImage, 4, 7);
             this.tableLayoutPanel2.Controls.Add(this.txtSearch, 3, 1);
-            this.tableLayoutPanel2.Controls.Add(this.txtNVLCode, 3, 9);
-            this.tableLayoutPanel2.Controls.Add(this.txtNVLName, 3, 11);
-            this.tableLayoutPanel2.Controls.Add(this.txtPrice, 3, 15);
+            this.tableLayoutPanel2.Controls.Add(this.txtIngredientName, 3, 11);
+            this.tableLayoutPanel2.Controls.Add(this.txtIngredientId, 3, 9);
+            this.tableLayoutPanel2.Controls.Add(this.txtStockQuantity, 3, 15);
             this.tableLayoutPanel2.Controls.Add(this.cmbUnit, 3, 13);
-            this.tableLayoutPanel2.Controls.Add(this.txtQuantity, 3, 17);
+            this.tableLayoutPanel2.Controls.Add(this.txtMinThreshold, 3, 17);
             this.tableLayoutPanel2.Controls.Add(this.label6, 0, 3);
             this.tableLayoutPanel2.Controls.Add(this.lblNVLCode, 1, 9);
             this.tableLayoutPanel2.Controls.Add(this.lblNVLName, 1, 11);
             this.tableLayoutPanel2.Controls.Add(this.lblUnit, 1, 13);
-            this.tableLayoutPanel2.Controls.Add(this.lblPrice, 1, 15);
-            this.tableLayoutPanel2.Controls.Add(this.lblQuantity, 1, 17);
+            this.tableLayoutPanel2.Controls.Add(this.lblMinThreshold, 1, 17);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel5, 1, 21);
+            this.tableLayoutPanel2.Controls.Add(this.lblStockQuantity, 1, 15);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(710, 0);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
@@ -450,14 +429,13 @@
             // 
             // tableLayoutPanel5
             // 
-            this.tableLayoutPanel5.ColumnCount = 3;
+            this.tableLayoutPanel5.ColumnCount = 2;
             this.tableLayoutPanel2.SetColumnSpan(this.tableLayoutPanel5, 9);
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel5.Controls.Add(this.btnUpdate, 1, 0);
-            this.tableLayoutPanel5.Controls.Add(this.btnDelete, 2, 0);
-            this.tableLayoutPanel5.Controls.Add(this.btnAdd, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.btnDelete, 1, 0);
+            this.tableLayoutPanel5.Controls.Add(this.btnUpdate, 0, 0);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(32, 551);
             this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(0);
@@ -465,12 +443,12 @@
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel2.SetRowSpan(this.tableLayoutPanel5, 2);
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 64F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 64F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 64F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 64F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 64F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 64F));
             this.tableLayoutPanel5.Size = new System.Drawing.Size(286, 64);
             this.tableLayoutPanel5.TabIndex = 22;
             // 
@@ -482,13 +460,14 @@
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnDelete.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Bold);
             this.btnDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(92)))), ((int)(((byte)(33)))));
-            this.btnDelete.Location = new System.Drawing.Point(195, 5);
+            this.btnDelete.Location = new System.Drawing.Point(148, 5);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(5);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(86, 54);
-            this.btnDelete.TabIndex = 24;
+            this.btnDelete.Size = new System.Drawing.Size(133, 54);
+            this.btnDelete.TabIndex = 27;
             this.btnDelete.Text = "XÓA";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 
@@ -498,29 +477,27 @@
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnUpdate.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Bold);
             this.btnUpdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(92)))), ((int)(((byte)(33)))));
-            this.btnUpdate.Location = new System.Drawing.Point(100, 5);
+            this.btnUpdate.Location = new System.Drawing.Point(5, 5);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(5);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(85, 54);
-            this.btnUpdate.TabIndex = 25;
+            this.btnUpdate.Size = new System.Drawing.Size(133, 54);
+            this.btnUpdate.TabIndex = 26;
             this.btnUpdate.Text = "CẬP NHẬT";
             this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
-            // btnAdd
+            // lblStockQuantity
             // 
-            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(242)))), ((int)(((byte)(80)))));
-            this.btnAdd.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnAdd.FlatAppearance.BorderSize = 0;
-            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAdd.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Bold);
-            this.btnAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(92)))), ((int)(((byte)(33)))));
-            this.btnAdd.Location = new System.Drawing.Point(5, 5);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(5);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(85, 54);
-            this.btnAdd.TabIndex = 23;
-            this.btnAdd.Text = "THÊM MỚI";
-            this.btnAdd.UseVisualStyleBackColor = false;
+            this.lblStockQuantity.AutoSize = true;
+            this.tableLayoutPanel2.SetColumnSpan(this.lblStockQuantity, 4);
+            this.lblStockQuantity.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblStockQuantity.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
+            this.lblStockQuantity.Location = new System.Drawing.Point(35, 401);
+            this.lblStockQuantity.Name = "lblStockQuantity";
+            this.lblStockQuantity.Size = new System.Drawing.Size(120, 27);
+            this.lblStockQuantity.TabIndex = 23;
+            this.lblStockQuantity.Text = "Số lượng";
+            this.lblStockQuantity.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // UC_Inventory1
             // 
@@ -530,6 +507,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "UC_Inventory1";
             this.Size = new System.Drawing.Size(1063, 676);
+            this.Load += new System.EventHandler(this.UC_Inventory1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
@@ -551,30 +529,28 @@
         private System.Windows.Forms.PictureBox pbNVLImage;
         private System.Windows.Forms.Button btnUploadImage;
         private System.Windows.Forms.TextBox txtSearch;
-        private System.Windows.Forms.TextBox txtNVLCode;
-        private System.Windows.Forms.TextBox txtNVLName;
+        private System.Windows.Forms.TextBox txtIngredientId;
+        private System.Windows.Forms.TextBox txtIngredientName;
         private System.Windows.Forms.Label lblNVLCode;
         private System.Windows.Forms.Label lblUnit;
-        private System.Windows.Forms.Label lblPrice;
-        private System.Windows.Forms.Label lblQuantity;
-        private System.Windows.Forms.TextBox txtPrice;
+        private System.Windows.Forms.Label lblMinThreshold;
+        private System.Windows.Forms.TextBox txtMinThreshold;
         private System.Windows.Forms.ComboBox cmbUnit;
-        private System.Windows.Forms.TextBox txtQuantity;
+        private System.Windows.Forms.TextBox txtStockQuantity;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataGridView dgvInventory;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.Label lblHeaderTitle;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colMaNVL;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTenNVL;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colDonVi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTonKho;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colNguongMin;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTrangThai;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
-        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Label lblStockQuantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IngredientId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IngredientName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Unit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StockQuantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MinThreshold;
         private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnUpdate;
     }
 }

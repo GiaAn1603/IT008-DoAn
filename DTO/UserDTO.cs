@@ -8,5 +8,6 @@
         public string Password { get; set; }
         public string FullName { get; set; }
         public bool IsActive { get; set; }
+        public string RoleName { get; set; }
     }
 }

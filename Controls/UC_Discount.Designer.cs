@@ -39,53 +39,37 @@
             this.lblHeaderTitle = new System.Windows.Forms.Label();
             this.btnFilter = new System.Windows.Forms.Button();
             this.btnExport = new System.Windows.Forms.Button();
-            this.dgvDiscountList = new System.Windows.Forms.DataGridView();
-            this.colMaKM = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTenKM = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colLoaiKM = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colGiaTri = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDieuKien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colApDung = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTuNgay = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDenNgay = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDadung = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTrangThaiKM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvPromotions = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
+            this.lblStartDate = new System.Windows.Forms.Label();
+            this.lblEndDate = new System.Windows.Forms.Label();
+            this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
+            this.dtpEndDate = new System.Windows.Forms.DateTimePicker();
+            this.lblDiscountValue = new System.Windows.Forms.Label();
+            this.txtDiscountValue = new System.Windows.Forms.TextBox();
+            this.lblDiscountType = new System.Windows.Forms.Label();
+            this.cmbDiscountType = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.btnAddDiscount = new System.Windows.Forms.Button();
             this.btnDeleteDiscount = new System.Windows.Forms.Button();
-            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
-            this.lblDiscountCode = new System.Windows.Forms.Label();
             this.lblDiscountName = new System.Windows.Forms.Label();
-            this.lblDiscountType = new System.Windows.Forms.Label();
-            this.txtDiscountCode = new System.Windows.Forms.TextBox();
             this.txtDiscountName = new System.Windows.Forms.TextBox();
-            this.cmbDiscountType = new System.Windows.Forms.ComboBox();
-            this.lblDiscountValue = new System.Windows.Forms.Label();
-            this.txtDiscountValue = new System.Windows.Forms.TextBox();
-            this.lblCondition = new System.Windows.Forms.Label();
-            this.lblProduct = new System.Windows.Forms.Label();
-            this.lblStartDate = new System.Windows.Forms.Label();
-            this.lblEndDate = new System.Windows.Forms.Label();
-            this.lblQuantityLimit = new System.Windows.Forms.Label();
-            this.txtQuantityLimit = new System.Windows.Forms.TextBox();
-            this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
-            this.dtpEndDate = new System.Windows.Forms.DateTimePicker();
-            this.txtProduct = new System.Windows.Forms.Button();
-            this.txtCondition = new System.Windows.Forms.TextBox();
-            this.btnConfirmUpdate = new System.Windows.Forms.Button();
-            this.lblStatus = new System.Windows.Forms.Label();
-            this.cmbStatus = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lblDiscountCode = new System.Windows.Forms.Label();
+            this.txtDiscountId = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colStartDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colEndDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDiscountList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPromotions)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
-            this.tableLayoutPanel6.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
+            this.tableLayoutPanel6.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -96,7 +80,7 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40.92192F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 59.07808F));
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel3, 0, 0);
-            this.tableLayoutPanel4.Controls.Add(this.dgvDiscountList, 0, 1);
+            this.tableLayoutPanel4.Controls.Add(this.dgvPromotions, 0, 1);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
@@ -163,6 +147,7 @@
             this.btnSearch.TabIndex = 11;
             this.btnSearch.Text = "Tìm kiếm";
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // lblFromDate
             // 
@@ -257,6 +242,7 @@
             this.btnFilter.TabIndex = 6;
             this.btnFilter.Text = "Thống kê";
             this.btnFilter.UseVisualStyleBackColor = false;
+            this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
             // 
             // btnExport
             // 
@@ -273,154 +259,42 @@
             this.btnExport.TabIndex = 7;
             this.btnExport.Text = "Xuất file";
             this.btnExport.UseVisualStyleBackColor = false;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
-            // dgvDiscountList
+            // dgvPromotions
             // 
-            this.dgvDiscountList.BackgroundColor = System.Drawing.Color.White;
-            this.dgvDiscountList.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgvDiscountList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDiscountList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colMaKM,
-            this.colTenKM,
-            this.colLoaiKM,
-            this.colGiaTri,
-            this.colDieuKien,
-            this.colApDung,
-            this.colTuNgay,
-            this.colDenNgay,
-            this.colSoLuong,
-            this.colDadung,
-            this.colTrangThaiKM});
-            this.dgvDiscountList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvDiscountList.Location = new System.Drawing.Point(0, 136);
-            this.dgvDiscountList.Margin = new System.Windows.Forms.Padding(0);
-            this.dgvDiscountList.Name = "dgvDiscountList";
-            this.dgvDiscountList.Size = new System.Drawing.Size(704, 558);
-            this.dgvDiscountList.TabIndex = 1;
-            this.dgvDiscountList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDiscountList_CellContentClick);
-            // 
-            // colMaKM
-            // 
-            this.colMaKM.Frozen = true;
-            this.colMaKM.HeaderText = "Mã KM";
-            this.colMaKM.Name = "colMaKM";
-            this.colMaKM.Width = 70;
-            // 
-            // colTenKM
-            // 
-            this.colTenKM.HeaderText = "Tên KM";
-            this.colTenKM.Name = "colTenKM";
-            // 
-            // colLoaiKM
-            // 
-            this.colLoaiKM.HeaderText = "Loại KM";
-            this.colLoaiKM.Name = "colLoaiKM";
-            this.colLoaiKM.Width = 70;
-            // 
-            // colGiaTri
-            // 
-            this.colGiaTri.HeaderText = "Giá trị";
-            this.colGiaTri.Name = "colGiaTri";
-            // 
-            // colDieuKien
-            // 
-            this.colDieuKien.HeaderText = "Điều kiện";
-            this.colDieuKien.Name = "colDieuKien";
-            // 
-            // colApDung
-            // 
-            this.colApDung.HeaderText = "Sản phẩm áp dụng";
-            this.colApDung.Name = "colApDung";
-            // 
-            // colTuNgay
-            // 
-            this.colTuNgay.HeaderText = "Từ ngày";
-            this.colTuNgay.Name = "colTuNgay";
-            // 
-            // colDenNgay
-            // 
-            this.colDenNgay.HeaderText = "Đến ngày";
-            this.colDenNgay.Name = "colDenNgay";
-            // 
-            // colSoLuong
-            // 
-            this.colSoLuong.HeaderText = "Số lượng";
-            this.colSoLuong.Name = "colSoLuong";
-            // 
-            // colDadung
-            // 
-            this.colDadung.HeaderText = "Đã dùng (Số lượng)";
-            this.colDadung.Name = "colDadung";
-            // 
-            // colTrangThaiKM
-            // 
-            this.colTrangThaiKM.HeaderText = "Trạng thái";
-            this.colTrangThaiKM.Name = "colTrangThaiKM";
+            this.dgvPromotions.BackgroundColor = System.Drawing.Color.White;
+            this.dgvPromotions.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvPromotions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPromotions.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colId,
+            this.colName,
+            this.colType,
+            this.colValue,
+            this.colStartDate,
+            this.colEndDate});
+            this.dgvPromotions.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvPromotions.Location = new System.Drawing.Point(0, 136);
+            this.dgvPromotions.Margin = new System.Windows.Forms.Padding(0);
+            this.dgvPromotions.Name = "dgvPromotions";
+            this.dgvPromotions.Size = new System.Drawing.Size(704, 558);
+            this.dgvPromotions.TabIndex = 1;
+            this.dgvPromotions.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDiscountList_CellClick);
             // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(215)))), ((int)(((byte)(32)))));
             this.tableLayoutPanel2.ColumnCount = 1;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel6, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel7, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel7, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(713, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 2;
+            this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90.90909F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(347, 694);
             this.tableLayoutPanel2.TabIndex = 10;
-            // 
-            // tableLayoutPanel6
-            // 
-            this.tableLayoutPanel6.ColumnCount = 2;
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.Controls.Add(this.btnAddDiscount, 0, 0);
-            this.tableLayoutPanel6.Controls.Add(this.btnDeleteDiscount, 1, 0);
-            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
-            this.tableLayoutPanel6.RowCount = 1;
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(347, 63);
-            this.tableLayoutPanel6.TabIndex = 0;
-            // 
-            // btnAddDiscount
-            // 
-            this.btnAddDiscount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(242)))), ((int)(((byte)(80)))));
-            this.btnAddDiscount.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnAddDiscount.FlatAppearance.BorderSize = 0;
-            this.btnAddDiscount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddDiscount.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
-            this.btnAddDiscount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(92)))), ((int)(((byte)(33)))));
-            this.btnAddDiscount.Location = new System.Drawing.Point(3, 3);
-            this.btnAddDiscount.Name = "btnAddDiscount";
-            this.btnAddDiscount.Size = new System.Drawing.Size(167, 57);
-            this.btnAddDiscount.TabIndex = 0;
-            this.btnAddDiscount.Text = "THÊM";
-            this.btnAddDiscount.UseVisualStyleBackColor = false;
-            this.btnAddDiscount.Click += new System.EventHandler(this.btnAddDiscount_Click);
-            // 
-            // btnDeleteDiscount
-            // 
-            this.btnDeleteDiscount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(242)))), ((int)(((byte)(80)))));
-            this.btnDeleteDiscount.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnDeleteDiscount.FlatAppearance.BorderSize = 0;
-            this.btnDeleteDiscount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeleteDiscount.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
-            this.btnDeleteDiscount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(92)))), ((int)(((byte)(33)))));
-            this.btnDeleteDiscount.Location = new System.Drawing.Point(176, 3);
-            this.btnDeleteDiscount.Name = "btnDeleteDiscount";
-            this.btnDeleteDiscount.Size = new System.Drawing.Size(168, 57);
-            this.btnDeleteDiscount.TabIndex = 1;
-            this.btnDeleteDiscount.Text = "XÓA";
-            this.btnDeleteDiscount.UseVisualStyleBackColor = false;
-            this.btnDeleteDiscount.Click += new System.EventHandler(this.btnDeleteDiscount_Click);
             // 
             // tableLayoutPanel7
             // 
@@ -430,31 +304,21 @@
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.88372F));
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.88704F));
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2.657807F));
-            this.tableLayoutPanel7.Controls.Add(this.lblDiscountCode, 0, 1);
-            this.tableLayoutPanel7.Controls.Add(this.lblDiscountName, 0, 3);
-            this.tableLayoutPanel7.Controls.Add(this.lblDiscountType, 0, 5);
-            this.tableLayoutPanel7.Controls.Add(this.txtDiscountCode, 1, 1);
-            this.tableLayoutPanel7.Controls.Add(this.txtDiscountName, 1, 3);
-            this.tableLayoutPanel7.Controls.Add(this.cmbDiscountType, 1, 5);
-            this.tableLayoutPanel7.Controls.Add(this.lblDiscountValue, 0, 7);
-            this.tableLayoutPanel7.Controls.Add(this.txtDiscountValue, 1, 7);
-            this.tableLayoutPanel7.Controls.Add(this.lblCondition, 0, 9);
-            this.tableLayoutPanel7.Controls.Add(this.lblProduct, 0, 11);
             this.tableLayoutPanel7.Controls.Add(this.lblStartDate, 0, 13);
             this.tableLayoutPanel7.Controls.Add(this.lblEndDate, 0, 15);
-            this.tableLayoutPanel7.Controls.Add(this.lblQuantityLimit, 0, 17);
-            this.tableLayoutPanel7.Controls.Add(this.txtQuantityLimit, 1, 17);
             this.tableLayoutPanel7.Controls.Add(this.dtpStartDate, 1, 13);
             this.tableLayoutPanel7.Controls.Add(this.dtpEndDate, 1, 15);
-            this.tableLayoutPanel7.Controls.Add(this.txtProduct, 1, 11);
-            this.tableLayoutPanel7.Controls.Add(this.txtCondition, 1, 9);
-            this.tableLayoutPanel7.Controls.Add(this.btnConfirmUpdate, 2, 23);
-            this.tableLayoutPanel7.Controls.Add(this.lblStatus, 0, 21);
-            this.tableLayoutPanel7.Controls.Add(this.cmbStatus, 1, 21);
-            this.tableLayoutPanel7.Controls.Add(this.label1, 0, 19);
-            this.tableLayoutPanel7.Controls.Add(this.textBox1, 1, 19);
+            this.tableLayoutPanel7.Controls.Add(this.lblDiscountValue, 0, 11);
+            this.tableLayoutPanel7.Controls.Add(this.txtDiscountValue, 1, 11);
+            this.tableLayoutPanel7.Controls.Add(this.lblDiscountType, 0, 9);
+            this.tableLayoutPanel7.Controls.Add(this.cmbDiscountType, 1, 9);
+            this.tableLayoutPanel7.Controls.Add(this.tableLayoutPanel6, 0, 20);
+            this.tableLayoutPanel7.Controls.Add(this.lblDiscountName, 0, 7);
+            this.tableLayoutPanel7.Controls.Add(this.txtDiscountName, 1, 7);
+            this.tableLayoutPanel7.Controls.Add(this.lblDiscountCode, 0, 5);
+            this.tableLayoutPanel7.Controls.Add(this.txtDiscountId, 1, 5);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(0, 63);
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel7.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 26;
@@ -484,131 +348,15 @@
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.166667F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(347, 631);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(347, 694);
             this.tableLayoutPanel7.TabIndex = 1;
-            // 
-            // lblDiscountCode
-            // 
-            this.lblDiscountCode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblDiscountCode.AutoSize = true;
-            this.lblDiscountCode.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
-            this.lblDiscountCode.Location = new System.Drawing.Point(3, 26);
-            this.lblDiscountCode.Name = "lblDiscountCode";
-            this.lblDiscountCode.Size = new System.Drawing.Size(93, 19);
-            this.lblDiscountCode.TabIndex = 0;
-            this.lblDiscountCode.Text = "Mã KM";
-            this.lblDiscountCode.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblDiscountName
-            // 
-            this.lblDiscountName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblDiscountName.AutoSize = true;
-            this.lblDiscountName.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
-            this.lblDiscountName.Location = new System.Drawing.Point(3, 74);
-            this.lblDiscountName.Name = "lblDiscountName";
-            this.lblDiscountName.Size = new System.Drawing.Size(93, 19);
-            this.lblDiscountName.TabIndex = 1;
-            this.lblDiscountName.Text = "Tên KM";
-            // 
-            // lblDiscountType
-            // 
-            this.lblDiscountType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblDiscountType.AutoSize = true;
-            this.lblDiscountType.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
-            this.lblDiscountType.Location = new System.Drawing.Point(3, 122);
-            this.lblDiscountType.Name = "lblDiscountType";
-            this.lblDiscountType.Size = new System.Drawing.Size(93, 19);
-            this.lblDiscountType.TabIndex = 2;
-            this.lblDiscountType.Text = "Loại KM";
-            // 
-            // txtDiscountCode
-            // 
-            this.txtDiscountCode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel7.SetColumnSpan(this.txtDiscountCode, 2);
-            this.txtDiscountCode.Font = new System.Drawing.Font("Bahnschrift Light", 12F);
-            this.txtDiscountCode.Location = new System.Drawing.Point(99, 24);
-            this.txtDiscountCode.Margin = new System.Windows.Forms.Padding(0);
-            this.txtDiscountCode.Name = "txtDiscountCode";
-            this.txtDiscountCode.Size = new System.Drawing.Size(238, 27);
-            this.txtDiscountCode.TabIndex = 7;
-            // 
-            // txtDiscountName
-            // 
-            this.txtDiscountName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel7.SetColumnSpan(this.txtDiscountName, 2);
-            this.txtDiscountName.Font = new System.Drawing.Font("Bahnschrift Light", 12F);
-            this.txtDiscountName.Location = new System.Drawing.Point(99, 72);
-            this.txtDiscountName.Margin = new System.Windows.Forms.Padding(0);
-            this.txtDiscountName.Name = "txtDiscountName";
-            this.txtDiscountName.Size = new System.Drawing.Size(238, 27);
-            this.txtDiscountName.TabIndex = 6;
-            // 
-            // cmbDiscountType
-            // 
-            this.cmbDiscountType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel7.SetColumnSpan(this.cmbDiscountType, 2);
-            this.cmbDiscountType.Font = new System.Drawing.Font("Bahnschrift Light", 12F);
-            this.cmbDiscountType.FormattingEnabled = true;
-            this.cmbDiscountType.Items.AddRange(new object[] {
-            "Giảm giá %",
-            "Giá cố định"});
-            this.cmbDiscountType.Location = new System.Drawing.Point(99, 120);
-            this.cmbDiscountType.Margin = new System.Windows.Forms.Padding(0);
-            this.cmbDiscountType.Name = "cmbDiscountType";
-            this.cmbDiscountType.Size = new System.Drawing.Size(238, 27);
-            this.cmbDiscountType.TabIndex = 5;
-            this.cmbDiscountType.Text = "Giảm giá % hay giá cố định";
-            // 
-            // lblDiscountValue
-            // 
-            this.lblDiscountValue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblDiscountValue.AutoSize = true;
-            this.lblDiscountValue.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
-            this.lblDiscountValue.Location = new System.Drawing.Point(3, 170);
-            this.lblDiscountValue.Name = "lblDiscountValue";
-            this.lblDiscountValue.Size = new System.Drawing.Size(93, 19);
-            this.lblDiscountValue.TabIndex = 8;
-            this.lblDiscountValue.Text = "Giá trị";
-            // 
-            // txtDiscountValue
-            // 
-            this.txtDiscountValue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel7.SetColumnSpan(this.txtDiscountValue, 2);
-            this.txtDiscountValue.Font = new System.Drawing.Font("Bahnschrift Light", 12F);
-            this.txtDiscountValue.Location = new System.Drawing.Point(99, 168);
-            this.txtDiscountValue.Margin = new System.Windows.Forms.Padding(0);
-            this.txtDiscountValue.Name = "txtDiscountValue";
-            this.txtDiscountValue.Size = new System.Drawing.Size(238, 27);
-            this.txtDiscountValue.TabIndex = 9;
-            // 
-            // lblCondition
-            // 
-            this.lblCondition.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblCondition.AutoSize = true;
-            this.lblCondition.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
-            this.lblCondition.Location = new System.Drawing.Point(3, 218);
-            this.lblCondition.Name = "lblCondition";
-            this.lblCondition.Size = new System.Drawing.Size(93, 19);
-            this.lblCondition.TabIndex = 10;
-            this.lblCondition.Text = "Điều kiện";
-            // 
-            // lblProduct
-            // 
-            this.lblProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblProduct.AutoSize = true;
-            this.lblProduct.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
-            this.lblProduct.Location = new System.Drawing.Point(3, 266);
-            this.lblProduct.Name = "lblProduct";
-            this.lblProduct.Size = new System.Drawing.Size(93, 19);
-            this.lblProduct.TabIndex = 12;
-            this.lblProduct.Text = "Sản phẩm";
             // 
             // lblStartDate
             // 
             this.lblStartDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblStartDate.AutoSize = true;
             this.lblStartDate.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
-            this.lblStartDate.Location = new System.Drawing.Point(3, 314);
+            this.lblStartDate.Location = new System.Drawing.Point(3, 355);
             this.lblStartDate.Name = "lblStartDate";
             this.lblStartDate.Size = new System.Drawing.Size(93, 19);
             this.lblStartDate.TabIndex = 13;
@@ -619,33 +367,11 @@
             this.lblEndDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblEndDate.AutoSize = true;
             this.lblEndDate.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
-            this.lblEndDate.Location = new System.Drawing.Point(3, 362);
+            this.lblEndDate.Location = new System.Drawing.Point(3, 409);
             this.lblEndDate.Name = "lblEndDate";
             this.lblEndDate.Size = new System.Drawing.Size(93, 19);
             this.lblEndDate.TabIndex = 14;
             this.lblEndDate.Text = "Đến ngày";
-            // 
-            // lblQuantityLimit
-            // 
-            this.lblQuantityLimit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblQuantityLimit.AutoSize = true;
-            this.lblQuantityLimit.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
-            this.lblQuantityLimit.Location = new System.Drawing.Point(3, 410);
-            this.lblQuantityLimit.Name = "lblQuantityLimit";
-            this.lblQuantityLimit.Size = new System.Drawing.Size(93, 19);
-            this.lblQuantityLimit.TabIndex = 15;
-            this.lblQuantityLimit.Text = "Số lượng";
-            // 
-            // txtQuantityLimit
-            // 
-            this.txtQuantityLimit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel7.SetColumnSpan(this.txtQuantityLimit, 2);
-            this.txtQuantityLimit.Font = new System.Drawing.Font("Bahnschrift Light", 12F);
-            this.txtQuantityLimit.Location = new System.Drawing.Point(99, 408);
-            this.txtQuantityLimit.Margin = new System.Windows.Forms.Padding(0);
-            this.txtQuantityLimit.Name = "txtQuantityLimit";
-            this.txtQuantityLimit.Size = new System.Drawing.Size(238, 27);
-            this.txtQuantityLimit.TabIndex = 20;
             // 
             // dtpStartDate
             // 
@@ -653,7 +379,7 @@
             this.tableLayoutPanel7.SetColumnSpan(this.dtpStartDate, 2);
             this.dtpStartDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.dtpStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpStartDate.Location = new System.Drawing.Point(99, 312);
+            this.dtpStartDate.Location = new System.Drawing.Point(99, 351);
             this.dtpStartDate.Margin = new System.Windows.Forms.Padding(0);
             this.dtpStartDate.Name = "dtpStartDate";
             this.dtpStartDate.Size = new System.Drawing.Size(238, 26);
@@ -665,108 +391,156 @@
             this.tableLayoutPanel7.SetColumnSpan(this.dtpEndDate, 2);
             this.dtpEndDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.dtpEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpEndDate.Location = new System.Drawing.Point(99, 360);
+            this.dtpEndDate.Location = new System.Drawing.Point(99, 405);
             this.dtpEndDate.Margin = new System.Windows.Forms.Padding(0);
             this.dtpEndDate.Name = "dtpEndDate";
             this.dtpEndDate.Size = new System.Drawing.Size(238, 26);
             this.dtpEndDate.TabIndex = 23;
             // 
-            // txtProduct
+            // lblDiscountValue
             // 
-            this.txtProduct.BackColor = System.Drawing.Color.White;
-            this.tableLayoutPanel7.SetColumnSpan(this.txtProduct, 2);
-            this.txtProduct.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtProduct.FlatAppearance.BorderSize = 0;
-            this.txtProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.txtProduct.Font = new System.Drawing.Font("Bahnschrift Light", 9F);
-            this.txtProduct.Location = new System.Drawing.Point(99, 264);
-            this.txtProduct.Margin = new System.Windows.Forms.Padding(0);
-            this.txtProduct.Name = "txtProduct";
-            this.txtProduct.Size = new System.Drawing.Size(238, 24);
-            this.txtProduct.TabIndex = 24;
-            this.txtProduct.Text = "Admin mô tả món để nv chọn";
-            this.txtProduct.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.txtProduct.UseVisualStyleBackColor = false;
+            this.lblDiscountValue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblDiscountValue.AutoSize = true;
+            this.lblDiscountValue.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
+            this.lblDiscountValue.Location = new System.Drawing.Point(3, 301);
+            this.lblDiscountValue.Name = "lblDiscountValue";
+            this.lblDiscountValue.Size = new System.Drawing.Size(93, 19);
+            this.lblDiscountValue.TabIndex = 8;
+            this.lblDiscountValue.Text = "Giá trị";
             // 
-            // txtCondition
+            // txtDiscountValue
             // 
-            this.tableLayoutPanel7.SetColumnSpan(this.txtCondition, 2);
-            this.txtCondition.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtCondition.Font = new System.Drawing.Font("Bahnschrift Light", 12F);
-            this.txtCondition.Location = new System.Drawing.Point(99, 216);
-            this.txtCondition.Margin = new System.Windows.Forms.Padding(0);
-            this.txtCondition.Name = "txtCondition";
-            this.txtCondition.Size = new System.Drawing.Size(238, 27);
-            this.txtCondition.TabIndex = 11;
-            this.txtCondition.Text = "vd: hóa đơn tối thiểu xxvnd";
+            this.txtDiscountValue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel7.SetColumnSpan(this.txtDiscountValue, 2);
+            this.txtDiscountValue.Font = new System.Drawing.Font("Bahnschrift Light", 12F);
+            this.txtDiscountValue.Location = new System.Drawing.Point(99, 297);
+            this.txtDiscountValue.Margin = new System.Windows.Forms.Padding(0);
+            this.txtDiscountValue.Name = "txtDiscountValue";
+            this.txtDiscountValue.Size = new System.Drawing.Size(238, 27);
+            this.txtDiscountValue.TabIndex = 9;
             // 
-            // btnConfirmUpdate
+            // lblDiscountType
             // 
-            this.btnConfirmUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(242)))), ((int)(((byte)(80)))));
-            this.btnConfirmUpdate.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnConfirmUpdate.FlatAppearance.BorderSize = 0;
-            this.btnConfirmUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnConfirmUpdate.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
-            this.btnConfirmUpdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(92)))), ((int)(((byte)(33)))));
-            this.btnConfirmUpdate.Location = new System.Drawing.Point(220, 552);
-            this.btnConfirmUpdate.Margin = new System.Windows.Forms.Padding(0);
-            this.btnConfirmUpdate.Name = "btnConfirmUpdate";
-            this.tableLayoutPanel7.SetRowSpan(this.btnConfirmUpdate, 2);
-            this.btnConfirmUpdate.Size = new System.Drawing.Size(117, 44);
-            this.btnConfirmUpdate.TabIndex = 26;
-            this.btnConfirmUpdate.Text = "XÁC NHẬN";
-            this.btnConfirmUpdate.UseVisualStyleBackColor = false;
+            this.lblDiscountType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblDiscountType.AutoSize = true;
+            this.lblDiscountType.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
+            this.lblDiscountType.Location = new System.Drawing.Point(3, 247);
+            this.lblDiscountType.Name = "lblDiscountType";
+            this.lblDiscountType.Size = new System.Drawing.Size(93, 19);
+            this.lblDiscountType.TabIndex = 2;
+            this.lblDiscountType.Text = "Loại KM";
             // 
-            // lblStatus
+            // cmbDiscountType
             // 
-            this.lblStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblStatus.AutoSize = true;
-            this.lblStatus.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
-            this.lblStatus.Location = new System.Drawing.Point(3, 506);
-            this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(93, 19);
-            this.lblStatus.TabIndex = 16;
-            this.lblStatus.Text = "Trạng thái";
-            // 
-            // cmbStatus
-            // 
-            this.cmbStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel7.SetColumnSpan(this.cmbStatus, 2);
-            this.cmbStatus.Font = new System.Drawing.Font("Bahnschrift Light", 12F);
-            this.cmbStatus.FormattingEnabled = true;
-            this.cmbStatus.Items.AddRange(new object[] {
+            this.cmbDiscountType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel7.SetColumnSpan(this.cmbDiscountType, 2);
+            this.cmbDiscountType.Font = new System.Drawing.Font("Bahnschrift Light", 12F);
+            this.cmbDiscountType.FormattingEnabled = true;
+            this.cmbDiscountType.Items.AddRange(new object[] {
             "Giảm giá %",
             "Giá cố định"});
-            this.cmbStatus.Location = new System.Drawing.Point(99, 504);
-            this.cmbStatus.Margin = new System.Windows.Forms.Padding(0);
-            this.cmbStatus.Name = "cmbStatus";
-            this.cmbStatus.Size = new System.Drawing.Size(238, 27);
-            this.cmbStatus.TabIndex = 21;
-            this.cmbStatus.Text = "đã áp dụng/ngừng";
+            this.cmbDiscountType.Location = new System.Drawing.Point(99, 243);
+            this.cmbDiscountType.Margin = new System.Windows.Forms.Padding(0);
+            this.cmbDiscountType.Name = "cmbDiscountType";
+            this.cmbDiscountType.Size = new System.Drawing.Size(238, 27);
+            this.cmbDiscountType.TabIndex = 5;
+            this.cmbDiscountType.Text = "Giảm giá % hay giá cố định";
             // 
-            // label1
+            // tableLayoutPanel6
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(3, 458);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 19);
-            this.label1.TabIndex = 27;
-            this.label1.Text = "Đã dùng";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.tableLayoutPanel6.ColumnCount = 2;
+            this.tableLayoutPanel7.SetColumnSpan(this.tableLayoutPanel6, 3);
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.Controls.Add(this.btnAddDiscount, 0, 0);
+            this.tableLayoutPanel6.Controls.Add(this.btnDeleteDiscount, 1, 0);
+            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(0, 540);
+            this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
+            this.tableLayoutPanel6.RowCount = 1;
+            this.tableLayoutPanel7.SetRowSpan(this.tableLayoutPanel6, 2);
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(337, 54);
+            this.tableLayoutPanel6.TabIndex = 30;
             // 
-            // textBox1
+            // btnAddDiscount
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel7.SetColumnSpan(this.textBox1, 2);
-            this.textBox1.Font = new System.Drawing.Font("Bahnschrift Light", 12F);
-            this.textBox1.Location = new System.Drawing.Point(99, 456);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(0);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(238, 27);
-            this.textBox1.TabIndex = 28;
-            this.textBox1.Text = "đếm từ Order.promotionId";
+            this.btnAddDiscount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(242)))), ((int)(((byte)(80)))));
+            this.btnAddDiscount.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnAddDiscount.FlatAppearance.BorderSize = 0;
+            this.btnAddDiscount.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAddDiscount.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
+            this.btnAddDiscount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(92)))), ((int)(((byte)(33)))));
+            this.btnAddDiscount.Location = new System.Drawing.Point(3, 3);
+            this.btnAddDiscount.Name = "btnAddDiscount";
+            this.btnAddDiscount.Size = new System.Drawing.Size(162, 48);
+            this.btnAddDiscount.TabIndex = 0;
+            this.btnAddDiscount.Text = "THÊM";
+            this.btnAddDiscount.UseVisualStyleBackColor = false;
+            this.btnAddDiscount.Click += new System.EventHandler(this.btnAddDiscount_Click);
+            // 
+            // btnDeleteDiscount
+            // 
+            this.btnDeleteDiscount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(242)))), ((int)(((byte)(80)))));
+            this.btnDeleteDiscount.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnDeleteDiscount.FlatAppearance.BorderSize = 0;
+            this.btnDeleteDiscount.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnDeleteDiscount.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
+            this.btnDeleteDiscount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(92)))), ((int)(((byte)(33)))));
+            this.btnDeleteDiscount.Location = new System.Drawing.Point(171, 3);
+            this.btnDeleteDiscount.Name = "btnDeleteDiscount";
+            this.btnDeleteDiscount.Size = new System.Drawing.Size(163, 48);
+            this.btnDeleteDiscount.TabIndex = 1;
+            this.btnDeleteDiscount.Text = "XÓA";
+            this.btnDeleteDiscount.UseVisualStyleBackColor = false;
+            this.btnDeleteDiscount.Click += new System.EventHandler(this.btnDeleteDiscount_Click);
+            // 
+            // lblDiscountName
+            // 
+            this.lblDiscountName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblDiscountName.AutoSize = true;
+            this.lblDiscountName.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
+            this.lblDiscountName.Location = new System.Drawing.Point(3, 193);
+            this.lblDiscountName.Name = "lblDiscountName";
+            this.lblDiscountName.Size = new System.Drawing.Size(93, 19);
+            this.lblDiscountName.TabIndex = 1;
+            this.lblDiscountName.Text = "Tên KM";
+            // 
+            // txtDiscountName
+            // 
+            this.txtDiscountName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel7.SetColumnSpan(this.txtDiscountName, 2);
+            this.txtDiscountName.Font = new System.Drawing.Font("Bahnschrift Light", 12F);
+            this.txtDiscountName.Location = new System.Drawing.Point(99, 189);
+            this.txtDiscountName.Margin = new System.Windows.Forms.Padding(0);
+            this.txtDiscountName.Name = "txtDiscountName";
+            this.txtDiscountName.Size = new System.Drawing.Size(238, 27);
+            this.txtDiscountName.TabIndex = 6;
+            // 
+            // lblDiscountCode
+            // 
+            this.lblDiscountCode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblDiscountCode.AutoSize = true;
+            this.lblDiscountCode.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
+            this.lblDiscountCode.Location = new System.Drawing.Point(3, 139);
+            this.lblDiscountCode.Name = "lblDiscountCode";
+            this.lblDiscountCode.Size = new System.Drawing.Size(93, 19);
+            this.lblDiscountCode.TabIndex = 0;
+            this.lblDiscountCode.Text = "Mã KM";
+            this.lblDiscountCode.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // txtDiscountId
+            // 
+            this.txtDiscountId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel7.SetColumnSpan(this.txtDiscountId, 2);
+            this.txtDiscountId.Font = new System.Drawing.Font("Bahnschrift Light", 12F);
+            this.txtDiscountId.Location = new System.Drawing.Point(99, 135);
+            this.txtDiscountId.Margin = new System.Windows.Forms.Padding(0);
+            this.txtDiscountId.Name = "txtDiscountId";
+            this.txtDiscountId.Size = new System.Drawing.Size(238, 27);
+            this.txtDiscountId.TabIndex = 7;
             // 
             // tableLayoutPanel1
             // 
@@ -784,6 +558,43 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1063, 700);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
+            // colId
+            // 
+            this.colId.Frozen = true;
+            this.colId.HeaderText = "Mã KM";
+            this.colId.Name = "colId";
+            this.colId.Width = 70;
+            // 
+            // colName
+            // 
+            this.colName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colName.HeaderText = "Tên KM";
+            this.colName.Name = "colName";
+            // 
+            // colType
+            // 
+            this.colType.HeaderText = "Loại KM";
+            this.colType.Name = "colType";
+            this.colType.Width = 70;
+            // 
+            // colValue
+            // 
+            this.colValue.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colValue.HeaderText = "Giá trị";
+            this.colValue.Name = "colValue";
+            // 
+            // colStartDate
+            // 
+            this.colStartDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colStartDate.HeaderText = "Từ ngày";
+            this.colStartDate.Name = "colStartDate";
+            // 
+            // colEndDate
+            // 
+            this.colEndDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colEndDate.HeaderText = "Đến ngày";
+            this.colEndDate.Name = "colEndDate";
+            // 
             // UC_Discount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -792,14 +603,15 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "UC_Discount";
             this.Size = new System.Drawing.Size(1063, 700);
+            this.Load += new System.EventHandler(this.UC_Discount_Load);
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDiscountList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPromotions)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel7.ResumeLayout(false);
             this.tableLayoutPanel7.PerformLayout();
+            this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -818,46 +630,30 @@
         private System.Windows.Forms.Label lblHeaderTitle;
         private System.Windows.Forms.Button btnFilter;
         private System.Windows.Forms.Button btnExport;
-        private System.Windows.Forms.DataGridView dgvDiscountList;
+        private System.Windows.Forms.DataGridView dgvPromotions;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
-        private System.Windows.Forms.Button btnAddDiscount;
-        private System.Windows.Forms.Button btnDeleteDiscount;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
         private System.Windows.Forms.Label lblDiscountCode;
         private System.Windows.Forms.Label lblDiscountName;
         private System.Windows.Forms.Label lblDiscountType;
-        private System.Windows.Forms.TextBox txtDiscountCode;
+        private System.Windows.Forms.TextBox txtDiscountId;
         private System.Windows.Forms.TextBox txtDiscountName;
         private System.Windows.Forms.ComboBox cmbDiscountType;
         private System.Windows.Forms.Label lblDiscountValue;
         private System.Windows.Forms.TextBox txtDiscountValue;
-        private System.Windows.Forms.Label lblCondition;
-        private System.Windows.Forms.Label lblProduct;
         private System.Windows.Forms.Label lblStartDate;
         private System.Windows.Forms.Label lblEndDate;
-        private System.Windows.Forms.Label lblQuantityLimit;
-        private System.Windows.Forms.Label lblStatus;
-        private System.Windows.Forms.TextBox txtQuantityLimit;
-        private System.Windows.Forms.ComboBox cmbStatus;
         private System.Windows.Forms.DateTimePicker dtpStartDate;
         private System.Windows.Forms.DateTimePicker dtpEndDate;
-        private System.Windows.Forms.Button txtProduct;
-        private System.Windows.Forms.TextBox txtCondition;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Button btnConfirmUpdate;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colMaKM;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTenKM;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colLoaiKM;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colGiaTri;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colDieuKien;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colApDung;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTuNgay;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colDenNgay;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colSoLuong;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colDadung;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTrangThaiKM;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
+        private System.Windows.Forms.Button btnAddDiscount;
+        private System.Windows.Forms.Button btnDeleteDiscount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colValue;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colStartDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colEndDate;
     }
 }

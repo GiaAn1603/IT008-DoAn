@@ -1,4 +1,6 @@
-﻿using System;
+﻿using OHIOCF.BUS;
+using OHIOCF.DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,65 +14,132 @@ namespace OHIOCF.Controls
 {
     public partial class UC_StaffClockIn : UserControl
     {
+        private string currentUserId;
+        private List<UserDTO> userList;
+        private DateTime currentMonday;
+
         public UC_StaffClockIn()
         {
             InitializeComponent();
         }
-
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        public UC_StaffClockIn(string userId)
         {
-
+            currentUserId = userId;
         }
 
-        
-            private void timerClock_Tick(object sender, EventArgs e)
+        private void UC_StaffClockIn_Load_1(object sender, EventArgs e)
         {
-            // Mỗi 1000ms (1 giây), hàm này được gọi
+            timerClock.Start();
             UpdateClockTime();
+            LoadWeekSchedule();
+            FitRowsToGrid();
         }
-       
-        private void UC_StaffClockIn_Load(object sender, EventArgs e)
+        private void LoadWeekSchedule()
         {
-            if (!timerClock.Enabled)
+            currentMonday = ScheduleBUS.Instance.GetMondayOfWeek(DateTime.Now);
+
+            SetupFixedCaColumn();
+            LoadUserList();
+            LoadScheduleData();
+        }
+
+        void SetupFixedCaColumn()
+        {
+            dgvWeekSchedule.Rows.Clear();
+            dgvWeekSchedule.Rows.Add(6);
+
+            dgvWeekSchedule.Rows[0].Cells[0].Value = "Sáng (5h-12h)";
+            dgvWeekSchedule.Rows[2].Cells[0].Value = "Chiều (12h-17h)";
+            dgvWeekSchedule.Rows[4].Cells[0].Value = "Tối (17h-22h)";
+        }
+
+        void LoadUserList()
+        {
+            userList = UserBUS.Instance.GetListUser();
+        }
+        void LoadScheduleData()
+        {
+            // Clear grid
+            foreach (DataGridViewRow row in dgvWeekSchedule.Rows)
             {
-                timerClock.Start();
+                for (int col = 1; col < dgvWeekSchedule.Columns.Count; col++)
+                {
+                    row.Cells[col].Value = null;
+                }
             }
 
-            UpdateClockTime();
+            var groupedSchedules = ScheduleBUS.Instance.GetWeekSchedulesGrouped(currentMonday);
+
+            for (int dayIndex = 0; dayIndex < 7; dayIndex++)
+            {
+                DateTime date = currentMonday.AddDays(dayIndex);
+                int colIndex = dayIndex + 1;
+
+                if (!groupedSchedules.ContainsKey(date)) continue;
+
+                var daySchedules = groupedSchedules[date];
+
+                for (int shift = 0; shift < 3; shift++)
+                {
+                    if (!daySchedules.ContainsKey(shift)) continue;
+
+                    var shiftSchedules = daySchedules[shift];
+                    int baseRow = shift * 2;
+
+                    for (int i = 0; i < Math.Min(2, shiftSchedules.Count); i++)
+                    {
+                        var schedule = shiftSchedules[i];
+                        var user = userList.FirstOrDefault(u => u.Id == schedule.UserId);
+
+                        if (user != null)
+                        {
+                            dgvWeekSchedule.Rows[baseRow + i].Cells[colIndex].Value = user.FullName;
+                        }
+                    }
+                }
+            }
         }
-
-        // Hàm cập nhật đồng hồ
-        private void UpdateClockTime()
-        {
-            // Cập nhật giờ (HH:MM AM/PM)
-            lblCurrentTime.Text = DateTime.Now.ToString("hh:mm tt"); // hh: 12h, HH: 24h, tt: AM/PM
-
-            // Cập nhật ngày tháng (Thứ, DD/MM/YYYY)
-            lblCurrentDate.Text = DateTime.Now.ToString("dddd, dd/MM/yyyy");
-        }
-
-        
 
         private void btnClockOut_Click(object sender, EventArgs e)
         {
             DateTime now = DateTime.Now;
-            lblLastActionTime.Text= $"Lần gần nhất: Kết thúc ca lúc {now:HH:mm} ngày {now:dd/MM/yyyy}";
+            lblLastActionTime.Text = $"Lần gần nhất: Kết thúc ca lúc {now:HH:mm} ngày {now:dd/MM/yyyy}";
+            lblStatus.Text = "Đã kết thúc ca";
+            lblStatus.ForeColor = Color.Red;
         }
 
         private void btnClockIn_Click(object sender, EventArgs e)
         {
             DateTime now = DateTime.Now;
             lblLastActionTime.Text = $"Lần gần nhất: Chấm công lúc {now:HH:mm} ngày {now:dd/MM/yyyy}";
+            lblStatus.Text = "Đã chấm công";
+            lblStatus.ForeColor = Color.Green;
+        }
+        private void timerClock_Tick(object sender, EventArgs e)
+        {
+            UpdateClockTime();
+        }
+        private void UpdateClockTime()
+        {
+            lblCurrentTime.Text = DateTime.Now.ToString("hh:mm tt"); // hh: 12h, HH: 24h, tt: AM/PM
+
+            lblCurrentDate.Text = DateTime.Now.ToString("dddd, dd/MM/yyyy");
+        }
+        private void FitRowsToGrid()
+        {
+            if (dgvWeekSchedule.Rows.Count == 0) return;
+
+            int headerHeight = dgvWeekSchedule.ColumnHeadersHeight;
+            int totalHeight = dgvWeekSchedule.ClientSize.Height;
+            int rowHeight = (totalHeight - headerHeight) / dgvWeekSchedule.Rows.Count;
+
+            foreach (DataGridViewRow row in dgvWeekSchedule.Rows)
+                row.Height = rowHeight;
         }
 
-        private void label5_Click(object sender, EventArgs e)
+        private void dgvWeekSchedule_Resize(object sender, EventArgs e)
         {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
+            FitRowsToGrid();
         }
     }
 }

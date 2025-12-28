@@ -48,8 +48,8 @@
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pnlTotalStaff = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.pbBackground = new System.Windows.Forms.PictureBox();
             this.btnChangeBackground = new System.Windows.Forms.Button();
+            this.pbBackground = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel14.SuspendLayout();
             this.tableLayoutPanel15.SuspendLayout();
@@ -80,7 +80,6 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 27.57143F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1063, 700);
             this.tableLayoutPanel2.TabIndex = 7;
-            this.tableLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel2_Paint);
             // 
             // tableLayoutPanel14
             // 
@@ -357,17 +356,6 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1063, 507);
             this.tableLayoutPanel1.TabIndex = 15;
             // 
-            // pbBackground
-            // 
-            this.pbBackground.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbBackground.Image = ((System.Drawing.Image)(resources.GetObject("pbBackground.Image")));
-            this.pbBackground.Location = new System.Drawing.Point(3, 33);
-            this.pbBackground.Name = "pbBackground";
-            this.pbBackground.Size = new System.Drawing.Size(1057, 471);
-            this.pbBackground.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbBackground.TabIndex = 16;
-            this.pbBackground.TabStop = false;
-            // 
             // btnChangeBackground
             // 
             this.btnChangeBackground.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -383,6 +371,17 @@
             this.btnChangeBackground.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnChangeBackground.UseVisualStyleBackColor = true;
             // 
+            // pbBackground
+            // 
+            this.pbBackground.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbBackground.Image = ((System.Drawing.Image)(resources.GetObject("pbBackground.Image")));
+            this.pbBackground.Location = new System.Drawing.Point(3, 33);
+            this.pbBackground.Name = "pbBackground";
+            this.pbBackground.Size = new System.Drawing.Size(1057, 471);
+            this.pbBackground.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbBackground.TabIndex = 16;
+            this.pbBackground.TabStop = false;
+            // 
             // UC_Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -390,6 +389,7 @@
             this.Controls.Add(this.tableLayoutPanel2);
             this.Name = "UC_Dashboard";
             this.Size = new System.Drawing.Size(1063, 700);
+            this.Load += new System.EventHandler(this.UC_Dashboard_Load);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel14.ResumeLayout(false);
             this.tableLayoutPanel15.ResumeLayout(false);
