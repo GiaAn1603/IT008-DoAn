@@ -105,6 +105,12 @@
     <Compile Include="BUS\ReservationBUS.cs" />
     <Compile Include="BUS\ScheduleBUS.cs" />
     <Compile Include="BUS\UserBUS.cs" />
+    <Compile Include="Controls\Staff\UC_AdminClockIn.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Staff\UC_AdminClockIn.Designer.cs">
+      <DependentUpon>UC_AdminClockIn.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\UC_Inventory.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -258,6 +264,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Controls\Staff\UC_AdminClockIn.resx">
+      <DependentUpon>UC_AdminClockIn.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\Staff\UC_Staff.resx">
       <DependentUpon>UC_Staff.cs</DependentUpon>
     </EmbeddedResource>

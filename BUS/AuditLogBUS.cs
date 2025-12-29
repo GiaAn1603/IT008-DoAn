@@ -17,5 +17,15 @@ namespace OHIOCF.BUS
         }
 
         public List<AuditLogDTO> GetAllLogs() => AuditLogDAO.Instance.GetLogs();
+
+        public void ClockIn(string userId)
+        {
+            WriteLog(userId, "ClockIn", "Chấm công vào ca");
+        }
+
+        public void ClockOut(string userId)
+        {
+            WriteLog(userId, "ClockOut", "Chấm công kết thúc ca");
+        }
     }
 }

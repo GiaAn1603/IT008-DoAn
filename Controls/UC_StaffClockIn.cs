@@ -17,24 +17,30 @@ namespace OHIOCF.Controls
         private string currentUserId;
         private List<UserDTO> userList;
         private DateTime currentMonday;
-        public UC_StaffClockIn() : this(null)
+        private List<AuditLogDTO> GetTodayLogs()
         {
+            return AuditLogBUS.Instance.GetAllLogs()
+                .Where(l => l.UserId == currentUserId
+                         && l.LogTime.Date == DateTime.Today
+                         && (l.Action == "ClockIn" || l.Action == "ClockOut"))
+                .OrderBy(l => l.LogTime)
+                .ToList();
         }
 
-        public UC_StaffClockIn(string userId = null)
+        public UC_StaffClockIn()
         {
             InitializeComponent();
-            currentUserId = userId;
-
             this.Load += UC_StaffClockIn_Load;
             dgvWeekSchedule.Resize += dgvWeekSchedule_Resize;
         }
 
         private void UC_StaffClockIn_Load(object sender, EventArgs e)
         {
+            currentUserId = Form1.loggedInUser.Id;
             timerClock.Start();
             UpdateClockTime();
             LoadData();
+            LoadTodayClockStatus();
             this.BeginInvoke(new Action(() =>
             {
                 FitRowsToGrid();
@@ -118,21 +124,105 @@ namespace OHIOCF.Controls
                 }
             }
         }
+        private void LoadTodayClockStatus()
+        {
+            var today = DateTime.Today;
+
+            var logs = AuditLogBUS.Instance.GetAllLogs()
+                .Where(l => l.UserId == currentUserId
+                         && (l.Action == "ClockIn" || l.Action == "ClockOut")
+                         && l.LogTime.Date == today)
+                .OrderByDescending(l => l.LogTime)
+                .ToList();
+
+            if (!logs.Any())
+            {
+                // CHƯA CHẤM CÔNG
+                lblStatus.Text = "Chưa chấm công";
+                lblStatus.ForeColor = Color.Gray;
+                lblLastActionTime.Text = "Chưa có dữ liệu chấm công hôm nay";
+                return;
+            }
+
+            var lastLog = logs.First();
+
+            if (lastLog.Action == "ClockIn")
+            {
+                lblStatus.Text = "Đã chấm công";
+                lblStatus.ForeColor = Color.Green;
+                lblLastActionTime.Text =
+                    $"Lần gần nhất: Chấm công lúc {lastLog.LogTime:HH:mm} ngày {lastLog.LogTime:dd/MM/yyyy}";
+            }
+            else if (lastLog.Action == "ClockOut")
+            {
+                lblStatus.Text = "Đã kết thúc ca";
+                lblStatus.ForeColor = Color.Red;
+                lblLastActionTime.Text =
+                    $"Lần gần nhất: Kết thúc ca lúc {lastLog.LogTime:HH:mm} ngày {lastLog.LogTime:dd/MM/yyyy}";
+            }
+        }
 
         private void btnClockOut_Click(object sender, EventArgs e)
         {
+            var todayLogs = GetTodayLogs();
+
+            bool hasClockIn = todayLogs.Any(l => l.Action == "ClockIn");
+            bool hasClockOut = todayLogs.Any(l => l.Action == "ClockOut");
+
+            if (!hasClockIn)
+            {
+                MessageBox.Show(
+                    "Bạn chưa chấm công hôm nay.",
+                    "Thông báo",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
+                return;
+            }
+
+            if (hasClockOut)
+            {
+                MessageBox.Show(
+                    "Bạn đã kết thúc ca hôm nay rồi.",
+                    "Thông báo",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
+                return;
+            }
+
+            AuditLogBUS.Instance.ClockOut(currentUserId);
+
             DateTime now = DateTime.Now;
-            lblLastActionTime.Text = $"Lần gần nhất: Kết thúc ca lúc {now:HH:mm} ngày {now:dd/MM/yyyy}";
             lblStatus.Text = "Đã kết thúc ca";
             lblStatus.ForeColor = Color.Red;
+            lblLastActionTime.Text =
+                $"Lần gần nhất: Kết thúc ca lúc {now:HH:mm} ngày {now:dd/MM/yyyy}";
         }
 
         private void btnClockIn_Click(object sender, EventArgs e)
         {
+            var todayLogs = GetTodayLogs();
+
+            // Đã clock in rồi
+            if (todayLogs.Any(l => l.Action == "ClockIn"))
+            {
+                MessageBox.Show(
+                    "Bạn đã chấm công hôm nay rồi.",
+                    "Thông báo",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
+                return;
+            }
+
+            AuditLogBUS.Instance.ClockIn(currentUserId);
+
             DateTime now = DateTime.Now;
-            lblLastActionTime.Text = $"Lần gần nhất: Chấm công lúc {now:HH:mm} ngày {now:dd/MM/yyyy}";
             lblStatus.Text = "Đã chấm công";
             lblStatus.ForeColor = Color.Green;
+            lblLastActionTime.Text =
+                $"Lần gần nhất: Chấm công lúc {now:HH:mm} ngày {now:dd/MM/yyyy}";
         }
         private void timerClock_Tick(object sender, EventArgs e)
         {

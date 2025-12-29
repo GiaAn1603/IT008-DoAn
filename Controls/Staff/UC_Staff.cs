@@ -1,4 +1,5 @@
-﻿using OHIOCF.Controls.Staff_Inventory;
+﻿using OHIOCF.Controls.Staff;
+using OHIOCF.Controls.Staff_Inventory;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -36,5 +37,9 @@ namespace OHIOCF.Controls
             ShowControl(new UC_Shift());
         }
 
+        private void quảnLýĐăngNhậpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowControl(new UC_AdminClockIn());
+        }
     }
 }
