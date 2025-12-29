@@ -286,6 +286,24 @@
             this.dgvCustomers.Size = new System.Drawing.Size(763, 557);
             this.dgvCustomers.TabIndex = 2;
             this.dgvCustomers.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCustomers_CellClick);
+            this.dgvCustomers.DefaultCellStyle.Font = new System.Drawing.Font(
+                "Bahnschrift Light",
+                12F,
+                System.Drawing.FontStyle.Regular,
+                System.Drawing.GraphicsUnit.Point
+            );
+            this.dgvCustomers.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font(
+                "Bahnschrift Light",
+                12F,
+                System.Drawing.FontStyle.Bold,
+                System.Drawing.GraphicsUnit.Point
+            );
+            this.dgvCustomers.ColumnHeadersDefaultCellStyle.Alignment =
+                System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+
+            this.dgvCustomers.DefaultCellStyle.Alignment =
+                System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.dgvCustomers.EnableHeadersVisualStyles = false;
             // 
             // tableLayoutPanel4
             // 

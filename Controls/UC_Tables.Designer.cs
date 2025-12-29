@@ -74,11 +74,11 @@
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.btnAddTable = new System.Windows.Forms.Button();
             this.btnDeleteTable = new System.Windows.Forms.Button();
-            this.lblTableNumberTitle = new System.Windows.Forms.Label();
-            this.txtTableNumber = new System.Windows.Forms.TextBox();
             this.lblAreaTitle = new System.Windows.Forms.Label();
             this.rdoIndoor = new System.Windows.Forms.RadioButton();
             this.rdoOutdoor = new System.Windows.Forms.RadioButton();
+            this.lblTableNumberTitle = new System.Windows.Forms.Label();
+            this.txtTableNumber = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.flpOutdoorTables.SuspendLayout();
@@ -135,6 +135,7 @@
             // 
             // flpOutdoorTables
             // 
+            this.flpOutdoorTables.AutoScroll = true;
             this.flpOutdoorTables.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(242)))), ((int)(((byte)(80)))));
             this.flpOutdoorTables.Controls.Add(this.button6);
             this.flpOutdoorTables.Controls.Add(this.button7);
@@ -242,6 +243,7 @@
             // 
             // flpIndoorTables
             // 
+            this.flpIndoorTables.AutoScroll = true;
             this.flpIndoorTables.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(242)))), ((int)(((byte)(80)))));
             this.flpIndoorTables.Controls.Add(this.tableLayoutPanel9);
             this.flpIndoorTables.Controls.Add(this.button3);
@@ -606,7 +608,7 @@
             this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button12.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
             this.button12.ForeColor = System.Drawing.Color.White;
-            this.button12.Location = new System.Drawing.Point(10, 151);
+            this.button12.Location = new System.Drawing.Point(685, 16);
             this.button12.Margin = new System.Windows.Forms.Padding(10);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(115, 115);
@@ -622,7 +624,7 @@
             this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button13.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
             this.button13.ForeColor = System.Drawing.Color.White;
-            this.button13.Location = new System.Drawing.Point(145, 151);
+            this.button13.Location = new System.Drawing.Point(820, 16);
             this.button13.Margin = new System.Windows.Forms.Padding(10);
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(115, 115);
@@ -638,7 +640,7 @@
             this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button14.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
             this.button14.ForeColor = System.Drawing.Color.White;
-            this.button14.Location = new System.Drawing.Point(280, 151);
+            this.button14.Location = new System.Drawing.Point(10, 151);
             this.button14.Margin = new System.Windows.Forms.Padding(10);
             this.button14.Name = "button14";
             this.button14.Size = new System.Drawing.Size(115, 115);
@@ -654,7 +656,7 @@
             this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button15.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
             this.button15.ForeColor = System.Drawing.Color.White;
-            this.button15.Location = new System.Drawing.Point(415, 151);
+            this.button15.Location = new System.Drawing.Point(145, 151);
             this.button15.Margin = new System.Windows.Forms.Padding(10);
             this.button15.Name = "button15";
             this.button15.Size = new System.Drawing.Size(115, 115);
@@ -670,7 +672,7 @@
             this.button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button16.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
             this.button16.ForeColor = System.Drawing.Color.White;
-            this.button16.Location = new System.Drawing.Point(550, 151);
+            this.button16.Location = new System.Drawing.Point(280, 151);
             this.button16.Margin = new System.Windows.Forms.Padding(10);
             this.button16.Name = "button16";
             this.button16.Size = new System.Drawing.Size(115, 115);
@@ -834,28 +836,6 @@
             this.btnDeleteTable.UseVisualStyleBackColor = false;
             this.btnDeleteTable.Click += new System.EventHandler(this.btnDeleteTable_Click);
             // 
-            // lblTableNumberTitle
-            // 
-            this.lblTableNumberTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblTableNumberTitle.AutoSize = true;
-            this.lblTableNumberTitle.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
-            this.lblTableNumberTitle.Location = new System.Drawing.Point(21, 252);
-            this.lblTableNumberTitle.Name = "lblTableNumberTitle";
-            this.lblTableNumberTitle.Size = new System.Drawing.Size(105, 19);
-            this.lblTableNumberTitle.TabIndex = 2;
-            this.lblTableNumberTitle.Text = "Bàn số";
-            // 
-            // txtTableNumber
-            // 
-            this.txtTableNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel7.SetColumnSpan(this.txtTableNumber, 2);
-            this.txtTableNumber.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
-            this.txtTableNumber.Location = new System.Drawing.Point(129, 248);
-            this.txtTableNumber.Margin = new System.Windows.Forms.Padding(0);
-            this.txtTableNumber.Name = "txtTableNumber";
-            this.txtTableNumber.Size = new System.Drawing.Size(222, 27);
-            this.txtTableNumber.TabIndex = 6;
-            // 
             // lblAreaTitle
             // 
             this.lblAreaTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -893,6 +873,28 @@
             this.rdoOutdoor.TabStop = true;
             this.rdoOutdoor.Text = "Bên ngoài";
             this.rdoOutdoor.UseVisualStyleBackColor = true;
+            // 
+            // lblTableNumberTitle
+            // 
+            this.lblTableNumberTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTableNumberTitle.AutoSize = true;
+            this.lblTableNumberTitle.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
+            this.lblTableNumberTitle.Location = new System.Drawing.Point(21, 252);
+            this.lblTableNumberTitle.Name = "lblTableNumberTitle";
+            this.lblTableNumberTitle.Size = new System.Drawing.Size(105, 19);
+            this.lblTableNumberTitle.TabIndex = 2;
+            this.lblTableNumberTitle.Text = "Bàn số";
+            // 
+            // txtTableNumber
+            // 
+            this.txtTableNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel7.SetColumnSpan(this.txtTableNumber, 2);
+            this.txtTableNumber.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
+            this.txtTableNumber.Location = new System.Drawing.Point(129, 248);
+            this.txtTableNumber.Margin = new System.Windows.Forms.Padding(0);
+            this.txtTableNumber.Name = "txtTableNumber";
+            this.txtTableNumber.Size = new System.Drawing.Size(222, 27);
+            this.txtTableNumber.TabIndex = 6;
             // 
             // UC_Tables
             // 

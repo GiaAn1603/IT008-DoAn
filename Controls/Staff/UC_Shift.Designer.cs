@@ -174,6 +174,24 @@
             this.dgvScheduleData.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dgvScheduleData.Size = new System.Drawing.Size(1051, 620);
             this.dgvScheduleData.TabIndex = 1;
+            this.dgvScheduleData.DefaultCellStyle.Font = new System.Drawing.Font(
+                "Bahnschrift Light",
+                12F,
+                System.Drawing.FontStyle.Regular,
+                System.Drawing.GraphicsUnit.Point
+            );
+            this.dgvScheduleData.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font(
+                "Bahnschrift Light",
+                12F,
+                System.Drawing.FontStyle.Bold,
+                System.Drawing.GraphicsUnit.Point
+            );
+            this.dgvScheduleData.ColumnHeadersDefaultCellStyle.Alignment =
+                System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+
+            this.dgvScheduleData.DefaultCellStyle.Alignment =
+                System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.dgvScheduleData.EnableHeadersVisualStyles = false;
             // 
             // tableLayoutPanel1
             // 

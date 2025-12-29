@@ -200,6 +200,25 @@
             this.dgvClockIn.ReadOnly = true;
             this.dgvClockIn.Size = new System.Drawing.Size(1057, 537);
             this.dgvClockIn.TabIndex = 1;
+            
+            this.dgvClockIn.DefaultCellStyle.Font = new System.Drawing.Font(
+                "Bahnschrift Light",
+                12F,
+                System.Drawing.FontStyle.Regular,
+                System.Drawing.GraphicsUnit.Point
+            );
+            this.dgvClockIn.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font(
+                "Bahnschrift Light",
+                12F,
+                System.Drawing.FontStyle.Bold,
+                System.Drawing.GraphicsUnit.Point
+            );
+            this.dgvClockIn.ColumnHeadersDefaultCellStyle.Alignment =
+                System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+
+            this.dgvClockIn.DefaultCellStyle.Alignment =
+                System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.dgvClockIn.EnableHeadersVisualStyles = false;
             // 
             // Id
             // 

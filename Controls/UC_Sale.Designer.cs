@@ -167,6 +167,7 @@
             // 
             // flpOutdoorTables
             // 
+            this.flpOutdoorTables.AutoScroll = true;
             this.flpOutdoorTables.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(242)))), ((int)(((byte)(80)))));
             this.flpOutdoorTables.Controls.Add(this.button6);
             this.flpOutdoorTables.Controls.Add(this.button7);
@@ -270,6 +271,7 @@
             // 
             // flpIndoorTables
             // 
+            this.flpIndoorTables.AutoScroll = true;
             this.flpIndoorTables.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(242)))), ((int)(((byte)(80)))));
             this.flpIndoorTables.Controls.Add(this.tableLayoutPanel9);
             this.flpIndoorTables.Controls.Add(this.btnTable1);
@@ -642,7 +644,7 @@
             this.button13.FlatAppearance.BorderSize = 0;
             this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button13.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
-            this.button13.Location = new System.Drawing.Point(10, 136);
+            this.button13.Location = new System.Drawing.Point(730, 16);
             this.button13.Margin = new System.Windows.Forms.Padding(10);
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(100, 100);
@@ -657,7 +659,7 @@
             this.button14.FlatAppearance.BorderSize = 0;
             this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button14.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
-            this.button14.Location = new System.Drawing.Point(130, 136);
+            this.button14.Location = new System.Drawing.Point(850, 16);
             this.button14.Margin = new System.Windows.Forms.Padding(10);
             this.button14.Name = "button14";
             this.button14.Size = new System.Drawing.Size(100, 100);
@@ -672,7 +674,7 @@
             this.button15.FlatAppearance.BorderSize = 0;
             this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button15.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
-            this.button15.Location = new System.Drawing.Point(250, 136);
+            this.button15.Location = new System.Drawing.Point(10, 136);
             this.button15.Margin = new System.Windows.Forms.Padding(10);
             this.button15.Name = "button15";
             this.button15.Size = new System.Drawing.Size(100, 100);
@@ -687,7 +689,7 @@
             this.button16.FlatAppearance.BorderSize = 0;
             this.button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button16.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
-            this.button16.Location = new System.Drawing.Point(370, 136);
+            this.button16.Location = new System.Drawing.Point(130, 136);
             this.button16.Margin = new System.Windows.Forms.Padding(10);
             this.button16.Name = "button16";
             this.button16.Size = new System.Drawing.Size(100, 100);

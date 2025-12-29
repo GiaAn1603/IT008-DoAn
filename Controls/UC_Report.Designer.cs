@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.lblHeaderTitle = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
@@ -277,6 +279,14 @@
             // 
             this.dgvReport.BackgroundColor = System.Drawing.Color.White;
             this.dgvReport.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvReport.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvReport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvReport.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.OrderId,
@@ -284,7 +294,16 @@
             this.CustomerName,
             this.StaffName,
             this.TotalAmount});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Bahnschrift Light", 12F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvReport.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvReport.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvReport.EnableHeadersVisualStyles = false;
             this.dgvReport.Location = new System.Drawing.Point(3, 3);
             this.dgvReport.Name = "dgvReport";
             this.dgvReport.Size = new System.Drawing.Size(1051, 485);
@@ -317,6 +336,7 @@
             this.StaffName.DataPropertyName = "StaffName";
             this.StaffName.HeaderText = "Nhân viên";
             this.StaffName.Name = "StaffName";
+            this.StaffName.Visible = false;
             // 
             // TotalAmount
             // 
