@@ -238,22 +238,6 @@
             this.dgvPromotions.ReadOnly = true;
             this.dgvPromotions.Size = new System.Drawing.Size(1057, 557);
             this.dgvPromotions.TabIndex = 1;
-            this.dgvPromotions.DefaultCellStyle.Font = new System.Drawing.Font(
-                "Bahnschrift Light",
-                12F,
-                System.Drawing.FontStyle.Regular,
-                System.Drawing.GraphicsUnit.Point);
-
-            this.dgvPromotions.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font(
-                "Bahnschrift",
-                12F,
-                System.Drawing.FontStyle.Bold,
-                System.Drawing.GraphicsUnit.Point);
-
-            this.dgvPromotions.ColumnHeadersDefaultCellStyle.Alignment =
-                System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-
-            this.dgvPromotions.EnableHeadersVisualStyles = false;
             // 
             // colId
             // 

@@ -440,13 +440,20 @@ namespace OHIOCF.Controls
                 string imagePath = "";
                 if (!string.IsNullOrEmpty(currentImagePath))
                 {
-                    string folder = Path.Combine(Application.StartupPath, "Images");
+                    // SỬA DÒNG NÀY: Đổi "Images" thành "assets"
+                    string folder = Path.Combine(Application.StartupPath, "assets");
+
                     if (!Directory.Exists(folder))
                         Directory.CreateDirectory(folder);
 
+                    // Tạo tên file ngẫu nhiên để không bị trùng
                     string fileName = Guid.NewGuid().ToString() + Path.GetExtension(currentImagePath);
                     string destPath = Path.Combine(folder, fileName);
+
+                    // Copy ảnh từ máy vào thư mục assets
                     File.Copy(currentImagePath, destPath, true);
+
+                    // Lưu đường dẫn tuyệt đối để dễ load (hoặc bạn có thể lưu relative path "assets/tenfile.jpg")
                     imagePath = destPath;
                 }
 
@@ -589,21 +596,24 @@ namespace OHIOCF.Controls
             string imagePath = currentImagePath;
             var oldProduct = ProductBUS.Instance.GetProductById(currentProductId);
 
-            if (!string.IsNullOrEmpty(currentImagePath) &&
-                currentImagePath != oldProduct.Image)
+            // Nếu người dùng có chọn ảnh mới (khác ảnh cũ)
+            if (!string.IsNullOrEmpty(currentImagePath) && currentImagePath != oldProduct.Image)
             {
-                string folder = Path.Combine(Application.StartupPath, "Images");
+                // SỬA DÒNG NÀY: Đổi "Images" thành "assets"
+                string folder = Path.Combine(Application.StartupPath, "assets");
+
                 if (!Directory.Exists(folder))
                     Directory.CreateDirectory(folder);
 
                 string fileName = Guid.NewGuid().ToString() + Path.GetExtension(currentImagePath);
                 string destPath = Path.Combine(folder, fileName);
+
                 File.Copy(currentImagePath, destPath, true);
                 imagePath = destPath;
             }
             else
             {
-                imagePath = oldProduct.Image;
+                imagePath = oldProduct.Image; // Giữ nguyên ảnh cũ
             }
 
             // UPDATE Product

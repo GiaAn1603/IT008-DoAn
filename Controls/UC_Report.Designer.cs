@@ -289,22 +289,6 @@
             this.dgvReport.Name = "dgvReport";
             this.dgvReport.Size = new System.Drawing.Size(1051, 485);
             this.dgvReport.TabIndex = 2;
-            this.dgvReport.DefaultCellStyle.Font = new System.Drawing.Font(
-                "Bahnschrift Light",
-                12F,
-                System.Drawing.FontStyle.Regular,
-                System.Drawing.GraphicsUnit.Point);
-
-            this.dgvReport.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font(
-                "Bahnschrift",
-                12F,
-                System.Drawing.FontStyle.Bold,
-                System.Drawing.GraphicsUnit.Point);
-
-            this.dgvReport.ColumnHeadersDefaultCellStyle.Alignment =
-                System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-
-            this.dgvReport.EnableHeadersVisualStyles = false;
             // 
             // OrderId
             // 

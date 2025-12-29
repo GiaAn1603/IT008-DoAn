@@ -178,22 +178,6 @@
             this.dgvWeekSchedule.Size = new System.Drawing.Size(709, 636);
             this.dgvWeekSchedule.TabIndex = 1;
             this.dgvWeekSchedule.Resize += new System.EventHandler(this.dgvWeekSchedule_Resize);
-            this.dgvWeekSchedule.DefaultCellStyle.Font = new System.Drawing.Font(
-                "Bahnschrift Light",
-                12F,
-                System.Drawing.FontStyle.Regular,
-                System.Drawing.GraphicsUnit.Point);
-
-            this.dgvWeekSchedule.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font(
-                "Bahnschrift",
-                12F,
-                System.Drawing.FontStyle.Bold,
-                System.Drawing.GraphicsUnit.Point);
-
-            this.dgvWeekSchedule.ColumnHeadersDefaultCellStyle.Alignment =
-                System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-
-            this.dgvWeekSchedule.EnableHeadersVisualStyles = false;
             // 
             // Column1
             // 
