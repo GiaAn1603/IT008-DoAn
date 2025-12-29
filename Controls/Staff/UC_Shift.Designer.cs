@@ -144,6 +144,22 @@
             this.dgvScheduleData.AllowUserToDeleteRows = false;
             this.dgvScheduleData.AllowUserToResizeColumns = false;
             this.dgvScheduleData.AllowUserToResizeRows = false;
+            this.dgvScheduleData.DefaultCellStyle.Font = new System.Drawing.Font(
+                "Bahnschrift Light",
+                12F,
+                System.Drawing.FontStyle.Regular,
+                System.Drawing.GraphicsUnit.Point);
+
+            this.dgvScheduleData.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font(
+                "Bahnschrift",
+                12F,
+                System.Drawing.FontStyle.Bold,
+                System.Drawing.GraphicsUnit.Point);
+
+            this.dgvScheduleData.ColumnHeadersDefaultCellStyle.Alignment =
+                System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+
+            this.dgvScheduleData.EnableHeadersVisualStyles = false;
             this.dgvScheduleData.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke;

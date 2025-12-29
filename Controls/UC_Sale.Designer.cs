@@ -78,10 +78,6 @@
             this.lblInvoiceTitle = new System.Windows.Forms.Label();
             this.lblTableStatus = new System.Windows.Forms.Label();
             this.DGVInvoiceSummary = new System.Windows.Forms.DataGridView();
-            this.colTenMon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -92,6 +88,10 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label10 = new System.Windows.Forms.Label();
             this.btnAddNewOrder = new System.Windows.Forms.Button();
+            this.colTenMon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
@@ -167,6 +167,7 @@
             // 
             // flpOutdoorTables
             // 
+            this.flpOutdoorTables.AutoScroll = true;
             this.flpOutdoorTables.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(242)))), ((int)(((byte)(80)))));
             this.flpOutdoorTables.Controls.Add(this.button6);
             this.flpOutdoorTables.Controls.Add(this.button7);
@@ -270,6 +271,7 @@
             // 
             // flpIndoorTables
             // 
+            this.flpIndoorTables.AutoScroll = true;
             this.flpIndoorTables.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(242)))), ((int)(((byte)(80)))));
             this.flpIndoorTables.Controls.Add(this.tableLayoutPanel9);
             this.flpIndoorTables.Controls.Add(this.btnTable1);
@@ -642,7 +644,7 @@
             this.button13.FlatAppearance.BorderSize = 0;
             this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button13.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
-            this.button13.Location = new System.Drawing.Point(10, 136);
+            this.button13.Location = new System.Drawing.Point(730, 16);
             this.button13.Margin = new System.Windows.Forms.Padding(10);
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(100, 100);
@@ -657,7 +659,7 @@
             this.button14.FlatAppearance.BorderSize = 0;
             this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button14.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
-            this.button14.Location = new System.Drawing.Point(130, 136);
+            this.button14.Location = new System.Drawing.Point(850, 16);
             this.button14.Margin = new System.Windows.Forms.Padding(10);
             this.button14.Name = "button14";
             this.button14.Size = new System.Drawing.Size(100, 100);
@@ -672,7 +674,7 @@
             this.button15.FlatAppearance.BorderSize = 0;
             this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button15.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
-            this.button15.Location = new System.Drawing.Point(250, 136);
+            this.button15.Location = new System.Drawing.Point(10, 136);
             this.button15.Margin = new System.Windows.Forms.Padding(10);
             this.button15.Name = "button15";
             this.button15.Size = new System.Drawing.Size(100, 100);
@@ -687,7 +689,7 @@
             this.button16.FlatAppearance.BorderSize = 0;
             this.button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button16.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
-            this.button16.Location = new System.Drawing.Point(370, 136);
+            this.button16.Location = new System.Drawing.Point(130, 136);
             this.button16.Margin = new System.Windows.Forms.Padding(10);
             this.button16.Name = "button16";
             this.button16.Size = new System.Drawing.Size(100, 100);
@@ -908,38 +910,6 @@
             this.DGVInvoiceSummary.Size = new System.Drawing.Size(276, 274);
             this.DGVInvoiceSummary.TabIndex = 7;
             // 
-            // colTenMon
-            // 
-            this.colTenMon.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colTenMon.DataPropertyName = "colTenMon";
-            this.colTenMon.HeaderText = "Tên món";
-            this.colTenMon.MinimumWidth = 6;
-            this.colTenMon.Name = "colTenMon";
-            // 
-            // colSize
-            // 
-            this.colSize.DataPropertyName = "colSize";
-            this.colSize.HeaderText = "Size";
-            this.colSize.MinimumWidth = 6;
-            this.colSize.Name = "colSize";
-            this.colSize.Width = 30;
-            // 
-            // colDonGia
-            // 
-            this.colDonGia.DataPropertyName = "colDonGia";
-            this.colDonGia.HeaderText = "Đơn giá";
-            this.colDonGia.MinimumWidth = 6;
-            this.colDonGia.Name = "colDonGia";
-            this.colDonGia.Width = 50;
-            // 
-            // colSL
-            // 
-            this.colSL.DataPropertyName = "colSL";
-            this.colSL.HeaderText = "SL";
-            this.colSL.MinimumWidth = 6;
-            this.colSL.Name = "colSL";
-            this.colSL.Width = 30;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -1114,6 +1084,38 @@
             this.btnAddNewOrder.TabIndex = 1;
             this.btnAddNewOrder.UseVisualStyleBackColor = false;
             this.btnAddNewOrder.Click += new System.EventHandler(this.btnAddNewOrder_Click);
+            // 
+            // colTenMon
+            // 
+            this.colTenMon.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colTenMon.DataPropertyName = "colTenMon";
+            this.colTenMon.HeaderText = "Tên món";
+            this.colTenMon.MinimumWidth = 6;
+            this.colTenMon.Name = "colTenMon";
+            // 
+            // colSize
+            // 
+            this.colSize.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colSize.DataPropertyName = "colSize";
+            this.colSize.HeaderText = "Size";
+            this.colSize.MinimumWidth = 6;
+            this.colSize.Name = "colSize";
+            // 
+            // colDonGia
+            // 
+            this.colDonGia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colDonGia.DataPropertyName = "colDonGia";
+            this.colDonGia.HeaderText = "Đơn giá";
+            this.colDonGia.MinimumWidth = 6;
+            this.colDonGia.Name = "colDonGia";
+            // 
+            // colSL
+            // 
+            this.colSL.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colSL.DataPropertyName = "colSL";
+            this.colSL.HeaderText = "SL";
+            this.colSL.MinimumWidth = 6;
+            this.colSL.Name = "colSL";
             // 
             // UC_Sale
             // 

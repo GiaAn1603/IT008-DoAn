@@ -370,6 +370,7 @@
             this.btnChangeBackground.TabIndex = 18;
             this.btnChangeBackground.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnChangeBackground.UseVisualStyleBackColor = true;
+            this.btnChangeBackground.Click += new System.EventHandler(this.btnChangeBackground_Click);
             // 
             // pbBackground
             // 

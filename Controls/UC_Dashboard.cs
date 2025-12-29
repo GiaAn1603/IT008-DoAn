@@ -1,4 +1,5 @@
 ﻿using OHIOCF.BUS;
+using System.IO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,6 +28,7 @@ namespace OHIOCF.Controls
         private void UC_Dashboard_Load(object sender, EventArgs e)
         {
             LoadDashboardData();
+            LoadBackground();
 
         }
 
@@ -43,6 +45,36 @@ namespace OHIOCF.Controls
 
             decimal dailyRevenue = OrderBUS.Instance.GetTodayRevenue();
             lblDailyRevenueValue.Text = dailyRevenue.ToString("N0", culture) + " đ";
+        }
+
+        private void btnChangeBackground_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog ofd = new OpenFileDialog())
+            {
+                ofd.Title = "Chọn ảnh nền";
+                ofd.Filter = "Image Files|*.jpg;*.png;*.jpeg;*.bmp";
+
+                if (ofd.ShowDialog() == DialogResult.OK)
+                {
+                    string imagePath = ofd.FileName;
+
+                    pbBackground.Image = Image.FromFile(imagePath);
+                    pbBackground.SizeMode = PictureBoxSizeMode.StretchImage;
+
+                    Properties.Settings.Default.BackgroundPath = imagePath;
+                    Properties.Settings.Default.Save();
+                }
+            }
+        }
+        private void LoadBackground()
+        {
+            string path = Properties.Settings.Default.BackgroundPath;
+
+            if (!string.IsNullOrEmpty(path) && File.Exists(path))
+            {
+                pbBackground.Image = Image.FromFile(path);
+                pbBackground.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
         }
     }
 }

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_Products));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.flpMenuItems = new System.Windows.Forms.FlowLayoutPanel();
@@ -57,6 +57,11 @@
             this.lblPrice = new System.Windows.Forms.Label();
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.dgvIngredientsList = new System.Windows.Forms.DataGridView();
+            this.colIngredientName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colIngredientQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colIngredientUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IngredientId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDelete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
@@ -72,11 +77,6 @@
             this.cmbIngredientUnit = new System.Windows.Forms.ComboBox();
             this.cmbStatus = new System.Windows.Forms.ComboBox();
             this.cmbCategory = new System.Windows.Forms.ComboBox();
-            this.colIngredientName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colIngredientQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colIngredientUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IngredientId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDelete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.flpMenuItems.SuspendLayout();
@@ -124,6 +124,7 @@
             // 
             // flpMenuItems
             // 
+            this.flpMenuItems.AutoScroll = true;
             this.flpMenuItems.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(215)))), ((int)(((byte)(32)))));
             this.flpMenuItems.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel3.SetColumnSpan(this.flpMenuItems, 20);
@@ -383,6 +384,7 @@
             this.pbProductImage.Location = new System.Drawing.Point(214, 50);
             this.pbProductImage.Name = "pbProductImage";
             this.pbProductImage.Size = new System.Drawing.Size(154, 112);
+            this.pbProductImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbProductImage.TabIndex = 1;
             this.pbProductImage.TabStop = false;
             // 
@@ -539,6 +541,46 @@
             this.dgvIngredientsList.Size = new System.Drawing.Size(528, 237);
             this.dgvIngredientsList.TabIndex = 27;
             this.dgvIngredientsList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvIngredientsList_CellClick);
+            // 
+            // colIngredientName
+            // 
+            this.colIngredientName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colIngredientName.DataPropertyName = "IngredientName";
+            this.colIngredientName.HeaderText = "Tên NVL";
+            this.colIngredientName.Name = "colIngredientName";
+            this.colIngredientName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // colIngredientQuantity
+            // 
+            this.colIngredientQuantity.DataPropertyName = "Quantity";
+            this.colIngredientQuantity.HeaderText = "SL";
+            this.colIngredientQuantity.Name = "colIngredientQuantity";
+            this.colIngredientQuantity.Width = 40;
+            // 
+            // colIngredientUnit
+            // 
+            this.colIngredientUnit.DataPropertyName = "Unit";
+            this.colIngredientUnit.HeaderText = "Đơn vị";
+            this.colIngredientUnit.Name = "colIngredientUnit";
+            this.colIngredientUnit.Width = 60;
+            // 
+            // IngredientId
+            // 
+            this.IngredientId.HeaderText = "Mã NVL";
+            this.IngredientId.Name = "IngredientId";
+            this.IngredientId.Visible = false;
+            // 
+            // colDelete
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.colDelete.DefaultCellStyle = dataGridViewCellStyle2;
+            this.colDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.colDelete.HeaderText = "Xóa";
+            this.colDelete.Name = "colDelete";
+            this.colDelete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colDelete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.colDelete.Width = 40;
             // 
             // tableLayoutPanel6
             // 
@@ -782,46 +824,6 @@
             this.cmbCategory.TabIndex = 47;
             this.cmbCategory.ValueMember = "Id";
             this.cmbCategory.SelectedIndexChanged += new System.EventHandler(this.cmbCategory_SelectedIndexChanged);
-            // 
-            // colIngredientName
-            // 
-            this.colIngredientName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colIngredientName.DataPropertyName = "IngredientName";
-            this.colIngredientName.HeaderText = "Tên NVL";
-            this.colIngredientName.Name = "colIngredientName";
-            this.colIngredientName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // colIngredientQuantity
-            // 
-            this.colIngredientQuantity.DataPropertyName = "Quantity";
-            this.colIngredientQuantity.HeaderText = "SL";
-            this.colIngredientQuantity.Name = "colIngredientQuantity";
-            this.colIngredientQuantity.Width = 40;
-            // 
-            // colIngredientUnit
-            // 
-            this.colIngredientUnit.DataPropertyName = "Unit";
-            this.colIngredientUnit.HeaderText = "Đơn vị";
-            this.colIngredientUnit.Name = "colIngredientUnit";
-            this.colIngredientUnit.Width = 60;
-            // 
-            // IngredientId
-            // 
-            this.IngredientId.HeaderText = "Mã NVL";
-            this.IngredientId.Name = "IngredientId";
-            this.IngredientId.Visible = false;
-            // 
-            // colDelete
-            // 
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.colDelete.DefaultCellStyle = dataGridViewCellStyle8;
-            this.colDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.colDelete.HeaderText = "Xóa";
-            this.colDelete.Name = "colDelete";
-            this.colDelete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colDelete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.colDelete.Width = 40;
             // 
             // UC_Products
             // 

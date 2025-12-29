@@ -208,9 +208,8 @@ namespace OHIOCF.Controls
         {
             categoryList = CategoryBUS.Instance.GetAllCategories();
             SetupButton(tsbAll, "All");
-            SetupButton(tsbCoffee, "Cà phê");
+            SetupButton(tsbCoffee, "Cà Phê");
             SetupButton(tsbTea, "Trà");
-            SetupButton(tsbCake, "Bánh");
             SetupButton(tsbOther, "Khác");
             tsType_Resize(null, null);
         }
@@ -438,70 +437,146 @@ namespace OHIOCF.Controls
         private void buttonPay_Click(object sender, EventArgs e)
         {
             if (currentTable == null) return;
-            OrderDTO order = OrderBUS.Instance.GetUncheckOrderByTable(currentTable.Id.ToString());
-            if (order != null && !string.IsNullOrEmpty(order.Id))
+
+            if (currentBill.Count == 0)
             {
-                decimal finalAmount = 0;
-                if (label6.Tag != null)
-                    finalAmount = Convert.ToDecimal(label6.Tag);
-                else
-                    finalAmount = currentBill.Sum(x => x.ThanhTien);
-                string promotionId = null;
-                if (cmbDiscount.SelectedValue != null && cmbDiscount.SelectedValue.ToString() != "")
+                MessageBox.Show("Chưa có món nào trong đơn hàng!", "Thông báo");
+                return;
+            }
+
+            OrderDTO order = OrderBUS.Instance.GetUncheckOrderByTable(currentTable.Id.ToString());
+
+            if (order == null || string.IsNullOrEmpty(order.Id))
+            {
+                if (currentTable.Id == "0")
                 {
-                    promotionId = cmbDiscount.SelectedValue.ToString();
+                    try
+                    {
+                        string newOrderId = OrderBUS.Instance.CreateOrder(
+                            currentTable.Id.ToString(),
+                            currentUserId
+                        );
+
+                        if (string.IsNullOrEmpty(newOrderId))
+                        {
+                            MessageBox.Show("Không thể tạo đơn hàng!", "Lỗi");
+                            return;
+                        }
+
+                        foreach (var item in currentBill)
+                        {
+                            OrderDetailBUS.Instance.AddDishToOrder(new OrderDetailDTO
+                            {
+                                Id = Guid.NewGuid().ToString(),
+                                OrderId = newOrderId,
+                                ProductId = item.ProductId,
+                                ProductSizeId = item.colSize,
+                                Quantity = item.colSoLuong,
+                                PriceAtTime = item.colDonGia
+                            });
+                        }
+
+                        string promoId = cmbDiscount.SelectedValue?.ToString();
+                        if (string.IsNullOrEmpty(promoId)) promoId = null;
+
+                        decimal subTotal = currentBill.Sum(x => x.ThanhTien);
+                        decimal discount = 0;
+                        if (cmbDiscount.SelectedItem is PromotionDTO promo && promoId != null)
+                        {
+                            discount = promo.DiscountType == 0
+                                ? subTotal * promo.DiscountValue / 100
+                                : promo.DiscountValue;
+                        }
+                        decimal finalTotal = Math.Max(0, subTotal - discount);
+
+                        string customerId = currentCustomer?.Id;
+                        OrderBUS.Instance.UpdateOrderInfo(newOrderId, finalTotal, promoId, customerId);
+
+                        order = OrderBUS.Instance.GetUncheckOrderByTable(currentTable.Id.ToString());
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Lỗi khi tạo đơn: " + ex.Message, "Lỗi");
+                        return;
+                    }
                 }
-                bool needConfirm = currentTable.Id != "0";
-                bool doPay = true;
-                if (needConfirm)
+                else
                 {
-                    doPay = MessageBox.Show(
-                    $"Thanh toán cho bàn {currentTable.TableName}?\nTổng tiền cần trả: {finalAmount.ToString("N0", culture)} đ",
+                    MessageBox.Show("Bàn này chưa có hóa đơn!\nVui lòng nhấn 'Lưu đơn' trước khi thanh toán.", "Thông báo");
+                    return;
+                }
+            }
+            if (order == null || string.IsNullOrEmpty(order.Id))
+            {
+                MessageBox.Show("Không thể tìm thấy đơn hàng!", "Lỗi");
+                return;
+            }
+
+            decimal finalAmount = 0;
+            if (label6.Tag != null)
+                finalAmount = Convert.ToDecimal(label6.Tag);
+            else
+                finalAmount = currentBill.Sum(x => x.ThanhTien);
+
+            string promotionId = null;
+            if (cmbDiscount.SelectedValue != null && cmbDiscount.SelectedValue.ToString() != "")
+            {
+                promotionId = cmbDiscount.SelectedValue.ToString();
+            }
+
+            bool needConfirm = currentTable.Id != "0";
+            bool doPay = true;
+
+            if (needConfirm)
+            {
+                doPay = MessageBox.Show(
+                    $"Thanh toán cho bàn {currentTable.TableName}?\nTổng tiền: {finalAmount.ToString("N0", culture)} đ",
                     "Xác nhận",
                     MessageBoxButtons.YesNo,
                     MessageBoxIcon.Question
-                    ) == DialogResult.Yes;
-                }
-                if (doPay)
-                {
-                    string phone = cmbCustomerPhone.Text.Trim();
-                    string customerId = null;
-                    if (!string.IsNullOrEmpty(phone))
-                    {
-                        if (currentCustomer == null)
-                        {
-                            CustomerDTO newCustomer = new CustomerDTO
-                            {
-                                Id = Guid.NewGuid().ToString(),
-                                FullName = txtCustomerName.Text.Trim(),
-                                Phone = phone,
-                                Points = 0,
-                                Rank = "Đồng"
-                            };
-                            CustomerBUS.Instance.AddCustomer(newCustomer);
-                            currentCustomer = newCustomer;
-                        }
-                        customerId = currentCustomer.Id;
-                    }
-                    bool success = OrderBUS.Instance.PayOrder(order.Id, finalAmount, customerId, promotionId);
-                    if (success)
-                    {
-                        if (currentTable.Id != "0")
-                        {
-                            CafeTableBUS.Instance.SwitchStatus(currentTable.Id, 0);
-                        }
-                        MessageBox.Show("Thanh toán thành công!", "Thông báo");
-                        ReturnToTableMap();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Thanh toán thất bại!", "Lỗi");
-                    }
-                }
+                ) == DialogResult.Yes;
             }
-            else
+
+            if (doPay)
             {
-                MessageBox.Show("Bàn này chưa có hóa đơn để thanh toán!");
+                string phone = cmbCustomerPhone.Text.Trim();
+                string customerId = null;
+
+                if (!string.IsNullOrEmpty(phone))
+                {
+                    if (currentCustomer == null)
+                    {
+                        CustomerDTO newCustomer = new CustomerDTO
+                        {
+                            Id = Guid.NewGuid().ToString(),
+                            FullName = txtCustomerName.Text.Trim(),
+                            Phone = phone,
+                            Points = 0,
+                            Rank = "Đồng"
+                        };
+                        CustomerBUS.Instance.AddCustomer(newCustomer);
+                        currentCustomer = newCustomer;
+                    }
+                    customerId = currentCustomer.Id;
+                }
+
+                bool success = OrderBUS.Instance.PayOrder(order.Id, finalAmount, customerId, promotionId);
+
+                if (success)
+                {
+                    if (currentTable.Id != "0")
+                    {
+                        CafeTableBUS.Instance.SwitchStatus(currentTable.Id, 0);
+                    }
+
+                    MessageBox.Show("Thanh toán thành công!", "Thông báo");
+                    ReturnToTableMap();
+                    
+                }
+                else
+                {
+                    MessageBox.Show("Thanh toán thất bại!", "Lỗi");
+                }
             }
         }
         private void ReturnToTableMap()

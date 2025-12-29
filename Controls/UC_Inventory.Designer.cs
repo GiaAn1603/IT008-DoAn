@@ -98,6 +98,22 @@
             this.dgvInventory.Size = new System.Drawing.Size(698, 621);
             this.dgvInventory.TabIndex = 1;
             this.dgvInventory.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInventory_CellClick);
+            this.dgvInventory.DefaultCellStyle.Font = new System.Drawing.Font(
+                "Bahnschrift Light",
+                12F,
+                System.Drawing.FontStyle.Regular,
+                System.Drawing.GraphicsUnit.Point);
+
+            this.dgvInventory.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font(
+                "Bahnschrift",
+                12F,
+                System.Drawing.FontStyle.Bold,
+                System.Drawing.GraphicsUnit.Point);
+
+            this.dgvInventory.ColumnHeadersDefaultCellStyle.Alignment =
+                System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+
+            this.dgvInventory.EnableHeadersVisualStyles = false;
             // 
             // IngredientId
             // 

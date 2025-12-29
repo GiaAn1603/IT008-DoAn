@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_StaffList));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblPasswordTitle = new System.Windows.Forms.Label();
             this.lblRoleTitle = new System.Windows.Forms.Label();
             this.lblStatusTitle = new System.Windows.Forms.Label();
@@ -51,16 +50,16 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.dgvStaffData = new System.Windows.Forms.DataGridView();
-            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnExport = new System.Windows.Forms.Button();
-            this.lblHeaderTitle = new System.Windows.Forms.Label();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RoleId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RoleName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Username = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RoleName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Password = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IsActive = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnExport = new System.Windows.Forms.Button();
+            this.lblHeaderTitle = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbStaffImage)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -420,24 +419,17 @@
             this.dgvStaffData.BackgroundColor = System.Drawing.Color.White;
             this.dgvStaffData.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvStaffData.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
-            this.dgvStaffData.ColumnHeadersHeight = 34;
+            this.dgvStaffData.ColumnHeadersHeight = 40;
             this.dgvStaffData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
             this.RoleId,
             this.FullName,
-            this.RoleName,
             this.Username,
+            this.RoleName,
             this.Password,
             this.IsActive});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Bahnschrift Light", 12F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvStaffData.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvStaffData.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvStaffData.EnableHeadersVisualStyles = false;
             this.dgvStaffData.GridColor = System.Drawing.Color.Beige;
             this.dgvStaffData.Location = new System.Drawing.Point(3, 47);
             this.dgvStaffData.Name = "dgvStaffData";
@@ -445,6 +437,85 @@
             this.dgvStaffData.Size = new System.Drawing.Size(715, 620);
             this.dgvStaffData.TabIndex = 3;
             this.dgvStaffData.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStaffData_CellClick);
+            this.dgvStaffData.DefaultCellStyle.Font = new System.Drawing.Font(
+                "Bahnschrift Light",
+                12F,
+                System.Drawing.FontStyle.Regular,
+                System.Drawing.GraphicsUnit.Point);
+
+            this.dgvStaffData.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font(
+                "Bahnschrift",
+                12F,
+                System.Drawing.FontStyle.Bold,
+                System.Drawing.GraphicsUnit.Point);
+
+            this.dgvStaffData.ColumnHeadersDefaultCellStyle.Alignment =
+                System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+
+            this.dgvStaffData.EnableHeadersVisualStyles = false;
+            // 
+            // Id
+            // 
+            this.Id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Id.DataPropertyName = "Id";
+            this.Id.FillWeight = 115.1269F;
+            this.Id.HeaderText = "Mã NV";
+            this.Id.MinimumWidth = 8;
+            this.Id.Name = "Id";
+            // 
+            // RoleId
+            // 
+            this.RoleId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.RoleId.DataPropertyName = "RoleId";
+            this.RoleId.HeaderText = "Mã role";
+            this.RoleId.Name = "RoleId";
+            this.RoleId.Visible = false;
+            // 
+            // FullName
+            // 
+            this.FullName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.FullName.DataPropertyName = "FullName";
+            this.FullName.FillWeight = 115.1269F;
+            this.FullName.HeaderText = "Họ và tên";
+            this.FullName.MinimumWidth = 8;
+            this.FullName.Name = "FullName";
+            // 
+            // Username
+            // 
+            this.Username.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Username.DataPropertyName = "Username";
+            this.Username.FillWeight = 24.36548F;
+            this.Username.HeaderText = "Tên tài khoản";
+            this.Username.MinimumWidth = 8;
+            this.Username.Name = "Username";
+            this.Username.Width = 150;
+            // 
+            // RoleName
+            // 
+            this.RoleName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.RoleName.DataPropertyName = "RoleName";
+            this.RoleName.FillWeight = 115.1269F;
+            this.RoleName.HeaderText = "Vai trò";
+            this.RoleName.MinimumWidth = 8;
+            this.RoleName.Name = "RoleName";
+            // 
+            // Password
+            // 
+            this.Password.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Password.DataPropertyName = "Password";
+            this.Password.FillWeight = 115.1269F;
+            this.Password.HeaderText = "Mật khẩu";
+            this.Password.MinimumWidth = 8;
+            this.Password.Name = "Password";
+            // 
+            // IsActive
+            // 
+            this.IsActive.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.IsActive.DataPropertyName = "IsActive";
+            this.IsActive.FillWeight = 115.1269F;
+            this.IsActive.HeaderText = "Trạng thái";
+            this.IsActive.MinimumWidth = 8;
+            this.IsActive.Name = "IsActive";
             // 
             // tableLayoutPanel4
             // 
@@ -492,61 +563,6 @@
             this.lblHeaderTitle.TabIndex = 25;
             this.lblHeaderTitle.Text = "DANH SÁCH NHÂN VIÊN";
             this.lblHeaderTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // Id
-            // 
-            this.Id.DataPropertyName = "Id";
-            this.Id.HeaderText = "Mã NV";
-            this.Id.MinimumWidth = 8;
-            this.Id.Name = "Id";
-            this.Id.Width = 70;
-            // 
-            // RoleId
-            // 
-            this.RoleId.DataPropertyName = "RoleId";
-            this.RoleId.HeaderText = "Mã role";
-            this.RoleId.Name = "RoleId";
-            this.RoleId.Visible = false;
-            // 
-            // FullName
-            // 
-            this.FullName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.FullName.DataPropertyName = "FullName";
-            this.FullName.HeaderText = "Họ và tên";
-            this.FullName.MinimumWidth = 8;
-            this.FullName.Name = "FullName";
-            // 
-            // RoleName
-            // 
-            this.RoleName.DataPropertyName = "RoleName";
-            this.RoleName.HeaderText = "Vai trò";
-            this.RoleName.MinimumWidth = 8;
-            this.RoleName.Name = "RoleName";
-            this.RoleName.Width = 70;
-            // 
-            // Username
-            // 
-            this.Username.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Username.DataPropertyName = "Username";
-            this.Username.HeaderText = "Tên tài khoản";
-            this.Username.MinimumWidth = 8;
-            this.Username.Name = "Username";
-            // 
-            // Password
-            // 
-            this.Password.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Password.DataPropertyName = "Password";
-            this.Password.HeaderText = "Mật khẩu";
-            this.Password.MinimumWidth = 8;
-            this.Password.Name = "Password";
-            // 
-            // IsActive
-            // 
-            this.IsActive.DataPropertyName = "IsActive";
-            this.IsActive.HeaderText = "Trạng thái";
-            this.IsActive.MinimumWidth = 8;
-            this.IsActive.Name = "IsActive";
-            this.IsActive.Width = 80;
             // 
             // UC_StaffList
             // 
@@ -597,8 +613,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn RoleId;
         private System.Windows.Forms.DataGridViewTextBoxColumn FullName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn RoleName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Username;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RoleName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Password;
         private System.Windows.Forms.DataGridViewTextBoxColumn IsActive;
     }

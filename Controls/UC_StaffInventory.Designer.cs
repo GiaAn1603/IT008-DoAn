@@ -97,6 +97,22 @@
             this.dgvStaffInventory.Size = new System.Drawing.Size(698, 621);
             this.dgvStaffInventory.TabIndex = 1;
             this.dgvStaffInventory.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInventory_CellClick);
+            this.dgvStaffInventory.DefaultCellStyle.Font = new System.Drawing.Font(
+                "Bahnschrift Light",
+                12F,
+                System.Drawing.FontStyle.Regular,
+                System.Drawing.GraphicsUnit.Point);
+
+            this.dgvStaffInventory.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font(
+                "Bahnschrift",
+                12F,
+                System.Drawing.FontStyle.Bold,
+                System.Drawing.GraphicsUnit.Point);
+
+            this.dgvStaffInventory.ColumnHeadersDefaultCellStyle.Alignment =
+                System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+
+            this.dgvStaffInventory.EnableHeadersVisualStyles = false;
             // 
             // colMaNVL
             // 

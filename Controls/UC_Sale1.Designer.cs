@@ -35,7 +35,6 @@
             this.tsType = new System.Windows.Forms.ToolStrip();
             this.tsbCoffee = new System.Windows.Forms.ToolStripButton();
             this.tsbTea = new System.Windows.Forms.ToolStripButton();
-            this.tsbCake = new System.Windows.Forms.ToolStripButton();
             this.tsbOther = new System.Windows.Forms.ToolStripButton();
             this.tsbAll = new System.Windows.Forms.ToolStripButton();
             this.flpMenuItems = new System.Windows.Forms.FlowLayoutPanel();
@@ -63,16 +62,16 @@
             this.btnCheckout = new System.Windows.Forms.Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.dgvOrderItems = new System.Windows.Forms.DataGridView();
+            this.colTenMon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.lblDiscount = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblSubTotal = new System.Windows.Forms.Label();
-            this.colSL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTenMon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tsType.SuspendLayout();
@@ -173,7 +172,6 @@
             this.tsType.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsbCoffee,
             this.tsbTea,
-            this.tsbCake,
             this.tsbOther,
             this.tsbAll});
             this.tsType.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
@@ -209,19 +207,6 @@
             this.tsbTea.Size = new System.Drawing.Size(80, 40);
             this.tsbTea.Text = "Trà";
             // 
-            // tsbCake
-            // 
-            this.tsbCake.AutoSize = false;
-            this.tsbCake.AutoToolTip = false;
-            this.tsbCake.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.tsbCake.Font = new System.Drawing.Font("Bahnschrift Light", 10F, System.Drawing.FontStyle.Bold);
-            this.tsbCake.Image = ((System.Drawing.Image)(resources.GetObject("tsbCake.Image")));
-            this.tsbCake.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbCake.Name = "tsbCake";
-            this.tsbCake.Padding = new System.Windows.Forms.Padding(10);
-            this.tsbCake.Size = new System.Drawing.Size(80, 40);
-            this.tsbCake.Text = "Bánh";
-            // 
             // tsbOther
             // 
             this.tsbOther.AutoSize = false;
@@ -249,6 +234,7 @@
             // 
             // flpMenuItems
             // 
+            this.flpMenuItems.AutoScroll = true;
             this.flpMenuItems.AutoSize = true;
             this.tableLayoutPanel2.SetColumnSpan(this.flpMenuItems, 20);
             this.flpMenuItems.Controls.Add(this.tlpProduct);
@@ -627,6 +613,41 @@
             this.dgvOrderItems.TabIndex = 2;
             this.dgvOrderItems.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvOrderItems_DataError);
             // 
+            // colTenMon
+            // 
+            this.colTenMon.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colTenMon.DataPropertyName = "colTenMon";
+            this.colTenMon.HeaderText = "Tên món";
+            this.colTenMon.MinimumWidth = 6;
+            this.colTenMon.Name = "colTenMon";
+            this.colTenMon.ReadOnly = true;
+            // 
+            // colSize
+            // 
+            this.colSize.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colSize.DataPropertyName = "colSize";
+            this.colSize.HeaderText = "Size";
+            this.colSize.MinimumWidth = 6;
+            this.colSize.Name = "colSize";
+            this.colSize.ReadOnly = true;
+            // 
+            // colDonGia
+            // 
+            this.colDonGia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colDonGia.DataPropertyName = "colDonGia";
+            this.colDonGia.HeaderText = "Đơn giá";
+            this.colDonGia.MinimumWidth = 6;
+            this.colDonGia.Name = "colDonGia";
+            this.colDonGia.ReadOnly = true;
+            // 
+            // colSL
+            // 
+            this.colSL.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colSL.DataPropertyName = "colSoLuong";
+            this.colSL.HeaderText = "SL";
+            this.colSL.MinimumWidth = 6;
+            this.colSL.Name = "colSL";
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -717,41 +738,6 @@
             this.lblSubTotal.Text = "tạm tính";
             this.lblSubTotal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // colSL
-            // 
-            this.colSL.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colSL.DataPropertyName = "colSL";
-            this.colSL.HeaderText = "SL";
-            this.colSL.MinimumWidth = 6;
-            this.colSL.Name = "colSL";
-            // 
-            // colDonGia
-            // 
-            this.colDonGia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colDonGia.DataPropertyName = "colDonGia";
-            this.colDonGia.HeaderText = "Đơn giá";
-            this.colDonGia.MinimumWidth = 6;
-            this.colDonGia.Name = "colDonGia";
-            this.colDonGia.ReadOnly = true;
-            // 
-            // colSize
-            // 
-            this.colSize.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colSize.DataPropertyName = "colSize";
-            this.colSize.HeaderText = "Size";
-            this.colSize.MinimumWidth = 6;
-            this.colSize.Name = "colSize";
-            this.colSize.ReadOnly = true;
-            // 
-            // colTenMon
-            // 
-            this.colTenMon.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colTenMon.DataPropertyName = "colTenMon";
-            this.colTenMon.HeaderText = "Tên món";
-            this.colTenMon.MinimumWidth = 6;
-            this.colTenMon.Name = "colTenMon";
-            this.colTenMon.ReadOnly = true;
-            // 
             // UC_Sale1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -805,7 +791,6 @@
         private System.Windows.Forms.ToolStrip tsType;
         private System.Windows.Forms.ToolStripButton tsbCoffee;
         private System.Windows.Forms.ToolStripButton tsbTea;
-        private System.Windows.Forms.ToolStripButton tsbCake;
         private System.Windows.Forms.ToolStripButton tsbOther;
         private System.Windows.Forms.ToolStripButton tsbAll;
         private System.Windows.Forms.Button buttonPay;
