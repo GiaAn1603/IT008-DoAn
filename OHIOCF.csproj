@@ -1,0 +1,650 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{90E3CF5E-8B73-4A39-B181-63D39586880B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>OHIOCF</RootNamespace>
+    <AssemblyName>OHIOCF</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ClosedXML, Version=0.105.0.0, Culture=neutral, PublicKeyToken=fd1eb21b62ae805b, processorArchitecture=MSIL">
+      <HintPath>packages\ClosedXML.0.105.0\lib\netstandard2.0\ClosedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="ClosedXML.Parser, Version=1.0.0.0, Culture=neutral, PublicKeyToken=1d5f7376574c51ec, processorArchitecture=MSIL">
+      <HintPath>packages\ClosedXML.Parser.2.0.0\lib\netstandard2.0\ClosedXML.Parser.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=3.1.1.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>packages\DocumentFormat.OpenXml.3.1.1\lib\net46\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml.Framework, Version=3.1.1.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>packages\DocumentFormat.OpenXml.Framework.3.1.1\lib\net46\DocumentFormat.OpenXml.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelNumberFormat, Version=1.1.0.0, Culture=neutral, PublicKeyToken=23c6f5d73be07eca, processorArchitecture=MSIL">
+      <HintPath>packages\ExcelNumberFormat.1.1.0\lib\net20\ExcelNumberFormat.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.HashCode, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Bcl.HashCode.1.1.1\lib\net461\Microsoft.Bcl.HashCode.dll</HintPath>
+    </Reference>
+    <Reference Include="RBush, Version=4.0.0.0, Culture=neutral, PublicKeyToken=c77e27b81f4d0187, processorArchitecture=MSIL">
+      <HintPath>packages\RBush.Signed.4.0.0\lib\net47\RBush.dll</HintPath>
+    </Reference>
+    <Reference Include="SixLabors.Fonts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d998eea7b14cab13, processorArchitecture=MSIL">
+      <HintPath>packages\SixLabors.Fonts.1.0.0\lib\netstandard2.0\SixLabors.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.119.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\lib\net46\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.4.7.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BUS\AuditLogBUS.cs" />
+    <Compile Include="BUS\CafeTableBUS.cs" />
+    <Compile Include="BUS\CategoryBUS.cs" />
+    <Compile Include="BUS\CustomerBUS.cs" />
+    <Compile Include="BUS\IngredientBUS.cs" />
+    <Compile Include="BUS\InventoryBUS.cs" />
+    <Compile Include="BUS\OrderBUS.cs" />
+    <Compile Include="BUS\OrderDetailBUS.cs" />
+    <Compile Include="BUS\PaymentBUS.cs" />
+    <Compile Include="BUS\ProductBUS.cs" />
+    <Compile Include="BUS\ProductIngredientBUS.cs" />
+    <Compile Include="BUS\ProductSizeBUS.cs" />
+    <Compile Include="BUS\PromotionBUS.cs" />
+    <Compile Include="BUS\ReportBUS.cs" />
+    <Compile Include="BUS\ReservationBUS.cs" />
+    <Compile Include="BUS\ScheduleBUS.cs" />
+    <Compile Include="BUS\UserBUS.cs" />
+    <Compile Include="Controls\Staff\UC_AdminClockIn.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Staff\UC_AdminClockIn.Designer.cs">
+      <DependentUpon>UC_AdminClockIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UC_Inventory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UC_Inventory.Designer.cs">
+      <DependentUpon>UC_Inventory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UC_Report.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UC_Report.Designer.cs">
+      <DependentUpon>UC_Report.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Staff\UC_Staff.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Staff\UC_Staff.Designer.cs">
+      <DependentUpon>UC_Staff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Staff\UC_StaffList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Staff\UC_StaffList.Designer.cs">
+      <DependentUpon>UC_StaffList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Staff\UC_Shift.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Staff\UC_Shift.Designer.cs">
+      <DependentUpon>UC_Shift.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UC_StaffInventory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UC_StaffInventory.Designer.cs">
+      <DependentUpon>UC_StaffInventory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UC_Customers.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UC_Customers.Designer.cs">
+      <DependentUpon>UC_Customers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UC_Dashboard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UC_Dashboard.Designer.cs">
+      <DependentUpon>UC_Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UC_Discount.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UC_Discount.Designer.cs">
+      <DependentUpon>UC_Discount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UC_Products.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UC_Products.Designer.cs">
+      <DependentUpon>UC_Products.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UC_Sale.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UC_Sale.Designer.cs">
+      <DependentUpon>UC_Sale.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UC_Sale1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UC_Sale1.Designer.cs">
+      <DependentUpon>UC_Sale1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UC_SizeSelect.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UC_SizeSelect.Designer.cs">
+      <DependentUpon>UC_SizeSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UC_StaffClockIn.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UC_StaffClockIn.Designer.cs">
+      <DependentUpon>UC_StaffClockIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UC_StaffDiscount.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UC_StaffDiscount.Designer.cs">
+      <DependentUpon>UC_StaffDiscount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UC_Tables.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UC_Tables.Designer.cs">
+      <DependentUpon>UC_Tables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\AuditLogDAO.cs" />
+    <Compile Include="DAO\CafeTableDAO.cs" />
+    <Compile Include="DAO\CategoryDAO.cs" />
+    <Compile Include="DAO\CustomerDAO.cs" />
+    <Compile Include="DAO\DataSeeder.cs" />
+    <Compile Include="DAO\IngredientDAO.cs" />
+    <Compile Include="DAO\InventoryDAO.cs" />
+    <Compile Include="DAO\OrderDAO.cs" />
+    <Compile Include="DAO\OrderDetailDAO.cs" />
+    <Compile Include="DAO\PaymentDAO.cs" />
+    <Compile Include="DAO\ProductDAO.cs" />
+    <Compile Include="DAO\ProductIngredientDAO.cs" />
+    <Compile Include="DAO\ProductSizeDAO.cs" />
+    <Compile Include="DAO\PromotionDAO.cs" />
+    <Compile Include="DAO\ReportDAO.cs" />
+    <Compile Include="DAO\ReservationDAO.cs" />
+    <Compile Include="DAO\RoleDAO.cs" />
+    <Compile Include="DAO\ScheduleDAO.cs" />
+    <Compile Include="DAO\UserDAO.cs" />
+    <Compile Include="Database.cs" />
+    <Compile Include="DTO\AuditLogDTO.cs" />
+    <Compile Include="DTO\CafeTableDTO.cs" />
+    <Compile Include="DTO\CategoryDTO.cs" />
+    <Compile Include="DTO\CustomerDTO.cs" />
+    <Compile Include="DTO\IngredientDTO.cs" />
+    <Compile Include="DTO\InventoryDTO.cs" />
+    <Compile Include="DTO\OrderDetailDTO.cs" />
+    <Compile Include="DTO\OrderDTO.cs" />
+    <Compile Include="DTO\PaymentDTO.cs" />
+    <Compile Include="DTO\ProductDTO.cs" />
+    <Compile Include="DTO\ProductIngredientDTO.cs" />
+    <Compile Include="DTO\ProductSizeDTO.cs" />
+    <Compile Include="DTO\PromotionDTO.cs" />
+    <Compile Include="DTO\ReportDTO.cs" />
+    <Compile Include="DTO\ReservationDTO.cs" />
+    <Compile Include="DTO\RoleDTO.cs" />
+    <Compile Include="DTO\ScheduleDTO.cs" />
+    <Compile Include="DTO\UserDTO.cs" />
+    <Compile Include="Forms\formAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\formAdmin.Designer.cs">
+      <DependentUpon>formAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\formStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\formStaff.Designer.cs">
+      <DependentUpon>formStaff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Controls\Staff\UC_AdminClockIn.resx">
+      <DependentUpon>UC_AdminClockIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Staff\UC_Staff.resx">
+      <DependentUpon>UC_Staff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UC_Inventory.resx">
+      <DependentUpon>UC_Inventory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UC_Report.resx">
+      <DependentUpon>UC_Report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Staff\UC_StaffList.resx">
+      <DependentUpon>UC_StaffList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Staff\UC_Shift.resx">
+      <DependentUpon>UC_Shift.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UC_StaffInventory.resx">
+      <DependentUpon>UC_StaffInventory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UC_Customers.resx">
+      <DependentUpon>UC_Customers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UC_Dashboard.resx">
+      <DependentUpon>UC_Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UC_Discount.resx">
+      <DependentUpon>UC_Discount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UC_Products.resx">
+      <DependentUpon>UC_Products.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UC_Sale.resx">
+      <DependentUpon>UC_Sale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UC_Sale1.resx">
+      <DependentUpon>UC_Sale1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UC_SizeSelect.resx">
+      <DependentUpon>UC_SizeSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UC_StaffClockIn.resx">
+      <DependentUpon>UC_StaffClockIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UC_StaffDiscount.resx">
+      <DependentUpon>UC_StaffDiscount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UC_Tables.resx">
+      <DependentUpon>UC_Tables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\formAdmin.resx">
+      <DependentUpon>formAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\formStaff.resx">
+      <DependentUpon>formStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="obj\Debug\OHIOCF.Controls.Staff.UC_AdminClockIn.resources" />
+    <EmbeddedResource Include="obj\Debug\OHIOCF.Controls.Staff_Inventory.UC_Shift.resources" />
+    <EmbeddedResource Include="obj\Debug\OHIOCF.Controls.Staff_Inventory.UC_StaffList.resources" />
+    <EmbeddedResource Include="obj\Debug\OHIOCF.Controls.UC_Customers.resources" />
+    <EmbeddedResource Include="obj\Debug\OHIOCF.Controls.UC_Dashboard.resources" />
+    <EmbeddedResource Include="obj\Debug\OHIOCF.Controls.UC_Discount.resources" />
+    <EmbeddedResource Include="obj\Debug\OHIOCF.Controls.UC_Inventory.resources" />
+    <EmbeddedResource Include="obj\Debug\OHIOCF.Controls.UC_Products.resources" />
+    <EmbeddedResource Include="obj\Debug\OHIOCF.Controls.UC_Report.resources" />
+    <EmbeddedResource Include="obj\Debug\OHIOCF.Controls.UC_Sale.resources" />
+    <EmbeddedResource Include="obj\Debug\OHIOCF.Controls.UC_Sale1.resources" />
+    <EmbeddedResource Include="obj\Debug\OHIOCF.Controls.UC_SizeSelect.resources" />
+    <EmbeddedResource Include="obj\Debug\OHIOCF.Controls.UC_Staff.resources" />
+    <EmbeddedResource Include="obj\Debug\OHIOCF.Controls.UC_StaffClockIn.resources" />
+    <EmbeddedResource Include="obj\Debug\OHIOCF.Controls.UC_StaffDiscount.resources" />
+    <EmbeddedResource Include="obj\Debug\OHIOCF.Controls.UC_StaffInventory.resources" />
+    <EmbeddedResource Include="obj\Debug\OHIOCF.Controls.UC_Tables.resources" />
+    <EmbeddedResource Include="obj\Debug\OHIOCF.Form1.resources" />
+    <EmbeddedResource Include="obj\Debug\OHIOCF.Forms.formAdmin.resources" />
+    <EmbeddedResource Include="obj\Debug\OHIOCF.Forms.formStaff.resources" />
+    <EmbeddedResource Include="obj\Debug\OHIOCF.Properties.Resources.resources" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="bin\Debug\OHIOCF.exe.config" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="obj\Debug\OHIOCF.csproj.AssemblyReference.cache" />
+    <None Include="obj\Debug\OHIOCF.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Debug\OHIOCF.csproj.GenerateResource.cache" />
+    <None Include="obj\Debug\OHIOCF.csproj.Up2Date" />
+    <None Include="packages.config" />
+    <None Include="packages\ClosedXML.0.105.0\.signature.p7s" />
+    <None Include="packages\ClosedXML.0.105.0\ClosedXML.0.105.0.nupkg" />
+    <None Include="packages\ClosedXML.Parser.2.0.0\.signature.p7s" />
+    <None Include="packages\ClosedXML.Parser.2.0.0\ClosedXML.Parser.2.0.0.nupkg" />
+    <None Include="packages\ClosedXML.Parser.2.0.0\README.md" />
+    <None Include="packages\DocumentFormat.OpenXml.3.1.1\.signature.p7s" />
+    <None Include="packages\DocumentFormat.OpenXml.3.1.1\DocumentFormat.OpenXml.3.1.1.nupkg" />
+    <None Include="packages\DocumentFormat.OpenXml.3.1.1\README.md" />
+    <None Include="packages\DocumentFormat.OpenXml.Framework.3.1.1\.signature.p7s" />
+    <None Include="packages\DocumentFormat.OpenXml.Framework.3.1.1\DocumentFormat.OpenXml.Framework.3.1.1.nupkg" />
+    <None Include="packages\DocumentFormat.OpenXml.Framework.3.1.1\README.md" />
+    <None Include="packages\ExcelNumberFormat.1.1.0\.signature.p7s" />
+    <None Include="packages\ExcelNumberFormat.1.1.0\ExcelNumberFormat.1.1.0.nupkg" />
+    <None Include="packages\Microsoft.Bcl.HashCode.1.1.1\.signature.p7s" />
+    <None Include="packages\Microsoft.Bcl.HashCode.1.1.1\Microsoft.Bcl.HashCode.1.1.1.nupkg" />
+    <None Include="packages\RBush.Signed.4.0.0\.signature.p7s" />
+    <None Include="packages\RBush.Signed.4.0.0\RBush.Signed.4.0.0.nupkg" />
+    <None Include="packages\RBush.Signed.4.0.0\readme.md" />
+    <None Include="packages\SixLabors.Fonts.1.0.0\.signature.p7s" />
+    <None Include="packages\SixLabors.Fonts.1.0.0\SixLabors.Fonts.1.0.0.nupkg" />
+    <None Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\.signature.p7s" />
+    <None Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\buildTransitive\net20\Stub.System.Data.SQLite.Core.NetFramework.targets" />
+    <None Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\buildTransitive\net40\Stub.System.Data.SQLite.Core.NetFramework.targets" />
+    <None Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\buildTransitive\net451\Stub.System.Data.SQLite.Core.NetFramework.targets" />
+    <None Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\buildTransitive\net45\Stub.System.Data.SQLite.Core.NetFramework.targets" />
+    <None Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\buildTransitive\net46\Stub.System.Data.SQLite.Core.NetFramework.targets" />
+    <None Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\build\net20\Stub.System.Data.SQLite.Core.NetFramework.targets" />
+    <None Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\build\net40\Stub.System.Data.SQLite.Core.NetFramework.targets" />
+    <None Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\build\net451\Stub.System.Data.SQLite.Core.NetFramework.targets" />
+    <None Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\build\net45\Stub.System.Data.SQLite.Core.NetFramework.targets" />
+    <None Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets" />
+    <None Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\lib\net20\System.Data.SQLite.dll.altconfig" />
+    <None Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\lib\net40\System.Data.SQLite.dll.altconfig" />
+    <None Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\lib\net451\System.Data.SQLite.dll.altconfig" />
+    <None Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\lib\net45\System.Data.SQLite.dll.altconfig" />
+    <None Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\lib\net46\System.Data.SQLite.dll.altconfig" />
+    <None Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0.nupkg" />
+    <None Include="packages\System.Buffers.4.5.1\.signature.p7s" />
+    <None Include="packages\System.Buffers.4.5.1\lib\netcoreapp2.0\_._" />
+    <None Include="packages\System.Buffers.4.5.1\lib\uap10.0.16299\_._" />
+    <None Include="packages\System.Buffers.4.5.1\ref\netcoreapp2.0\_._" />
+    <None Include="packages\System.Buffers.4.5.1\ref\uap10.0.16299\_._" />
+    <None Include="packages\System.Buffers.4.5.1\System.Buffers.4.5.1.nupkg" />
+    <None Include="packages\System.Data.SQLite.Core.1.0.119.0\.signature.p7s" />
+    <None Include="packages\System.Data.SQLite.Core.1.0.119.0\System.Data.SQLite.Core.1.0.119.0.nupkg" />
+    <None Include="packages\System.Memory.4.5.5\.signature.p7s" />
+    <None Include="packages\System.Memory.4.5.5\lib\netcoreapp2.1\_._" />
+    <None Include="packages\System.Memory.4.5.5\ref\netcoreapp2.1\_._" />
+    <None Include="packages\System.Memory.4.5.5\System.Memory.4.5.5.nupkg" />
+    <None Include="packages\System.Numerics.Vectors.4.5.0\.signature.p7s" />
+    <None Include="packages\System.Numerics.Vectors.4.5.0\lib\MonoAndroid10\_._" />
+    <None Include="packages\System.Numerics.Vectors.4.5.0\lib\MonoTouch10\_._" />
+    <None Include="packages\System.Numerics.Vectors.4.5.0\lib\netcoreapp2.0\_._" />
+    <None Include="packages\System.Numerics.Vectors.4.5.0\lib\uap10.0.16299\_._" />
+    <None Include="packages\System.Numerics.Vectors.4.5.0\lib\xamarinios10\_._" />
+    <None Include="packages\System.Numerics.Vectors.4.5.0\lib\xamarinmac20\_._" />
+    <None Include="packages\System.Numerics.Vectors.4.5.0\lib\xamarintvos10\_._" />
+    <None Include="packages\System.Numerics.Vectors.4.5.0\lib\xamarinwatchos10\_._" />
+    <None Include="packages\System.Numerics.Vectors.4.5.0\ref\MonoAndroid10\_._" />
+    <None Include="packages\System.Numerics.Vectors.4.5.0\ref\MonoTouch10\_._" />
+    <None Include="packages\System.Numerics.Vectors.4.5.0\ref\netcoreapp2.0\_._" />
+    <None Include="packages\System.Numerics.Vectors.4.5.0\ref\uap10.0.16299\_._" />
+    <None Include="packages\System.Numerics.Vectors.4.5.0\ref\xamarinios10\_._" />
+    <None Include="packages\System.Numerics.Vectors.4.5.0\ref\xamarinmac20\_._" />
+    <None Include="packages\System.Numerics.Vectors.4.5.0\ref\xamarintvos10\_._" />
+    <None Include="packages\System.Numerics.Vectors.4.5.0\ref\xamarinwatchos10\_._" />
+    <None Include="packages\System.Numerics.Vectors.4.5.0\System.Numerics.Vectors.4.5.0.nupkg" />
+    <None Include="packages\System.Runtime.CompilerServices.Unsafe.4.7.0\.signature.p7s" />
+    <None Include="packages\System.Runtime.CompilerServices.Unsafe.4.7.0\System.Runtime.CompilerServices.Unsafe.4.7.0.nupkg" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
+    <Folder Include="Data\" />
+    <Folder Include="obj\Debug\TempPE\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include=".gitignore" />
+    <Content Include="bin\Debug\ClosedXML.dll" />
+    <Content Include="bin\Debug\ClosedXML.Parser.dll" />
+    <Content Include="bin\Debug\ClosedXML.Parser.xml" />
+    <Content Include="bin\Debug\ClosedXML.pdb" />
+    <Content Include="bin\Debug\ClosedXML.xml" />
+    <Content Include="bin\Debug\DocumentFormat.OpenXml.dll" />
+    <Content Include="bin\Debug\DocumentFormat.OpenXml.Framework.dll" />
+    <Content Include="bin\Debug\DocumentFormat.OpenXml.Framework.xml" />
+    <Content Include="bin\Debug\DocumentFormat.OpenXml.xml" />
+    <Content Include="bin\Debug\ExcelNumberFormat.dll" />
+    <Content Include="bin\Debug\ExcelNumberFormat.xml" />
+    <Content Include="bin\Debug\Microsoft.Bcl.HashCode.dll" />
+    <Content Include="bin\Debug\Microsoft.Bcl.HashCode.xml" />
+    <Content Include="bin\Debug\OHIOCF.exe" />
+    <Content Include="bin\Debug\OHIOCF.pdb" />
+    <Content Include="bin\Debug\RBush.dll" />
+    <Content Include="bin\Debug\RBush.xml" />
+    <Content Include="bin\Debug\SixLabors.Fonts.dll" />
+    <Content Include="bin\Debug\SixLabors.Fonts.xml" />
+    <Content Include="bin\Debug\System.Buffers.dll" />
+    <Content Include="bin\Debug\System.Buffers.xml" />
+    <Content Include="bin\Debug\System.Data.SQLite.dll" />
+    <Content Include="bin\Debug\System.Data.SQLite.xml" />
+    <Content Include="bin\Debug\System.Memory.dll" />
+    <Content Include="bin\Debug\System.Memory.xml" />
+    <Content Include="bin\Debug\System.Numerics.Vectors.dll" />
+    <Content Include="bin\Debug\System.Numerics.Vectors.xml" />
+    <Content Include="bin\Debug\System.Runtime.CompilerServices.Unsafe.dll" />
+    <Content Include="bin\Debug\System.Runtime.CompilerServices.Unsafe.xml" />
+    <Content Include="obj\Debug\OHIOCF.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\OHIOCF.exe" />
+    <Content Include="obj\Debug\OHIOCF.pdb" />
+    <Content Include="packages\ClosedXML.0.105.0\lib\netstandard2.0\ClosedXML.dll" />
+    <Content Include="packages\ClosedXML.0.105.0\lib\netstandard2.0\ClosedXML.pdb" />
+    <Content Include="packages\ClosedXML.0.105.0\lib\netstandard2.0\ClosedXML.xml" />
+    <Content Include="packages\ClosedXML.0.105.0\lib\netstandard2.1\ClosedXML.dll" />
+    <Content Include="packages\ClosedXML.0.105.0\lib\netstandard2.1\ClosedXML.pdb" />
+    <Content Include="packages\ClosedXML.0.105.0\lib\netstandard2.1\ClosedXML.xml" />
+    <Content Include="packages\ClosedXML.0.105.0\nuget-logo.png" />
+    <Content Include="packages\ClosedXML.Parser.2.0.0\lib\netstandard2.0\ClosedXML.Parser.dll" />
+    <Content Include="packages\ClosedXML.Parser.2.0.0\lib\netstandard2.0\ClosedXML.Parser.xml" />
+    <Content Include="packages\ClosedXML.Parser.2.0.0\lib\netstandard2.1\ClosedXML.Parser.dll" />
+    <Content Include="packages\ClosedXML.Parser.2.0.0\lib\netstandard2.1\ClosedXML.Parser.xml" />
+    <Content Include="packages\DocumentFormat.OpenXml.3.1.1\icon.png" />
+    <Content Include="packages\DocumentFormat.OpenXml.3.1.1\lib\net35\DocumentFormat.OpenXml.dll" />
+    <Content Include="packages\DocumentFormat.OpenXml.3.1.1\lib\net35\DocumentFormat.OpenXml.xml" />
+    <Content Include="packages\DocumentFormat.OpenXml.3.1.1\lib\net40\DocumentFormat.OpenXml.dll" />
+    <Content Include="packages\DocumentFormat.OpenXml.3.1.1\lib\net40\DocumentFormat.OpenXml.xml" />
+    <Content Include="packages\DocumentFormat.OpenXml.3.1.1\lib\net46\DocumentFormat.OpenXml.dll" />
+    <Content Include="packages\DocumentFormat.OpenXml.3.1.1\lib\net46\DocumentFormat.OpenXml.xml" />
+    <Content Include="packages\DocumentFormat.OpenXml.3.1.1\lib\net8.0\DocumentFormat.OpenXml.dll" />
+    <Content Include="packages\DocumentFormat.OpenXml.3.1.1\lib\net8.0\DocumentFormat.OpenXml.xml" />
+    <Content Include="packages\DocumentFormat.OpenXml.3.1.1\lib\netstandard2.0\DocumentFormat.OpenXml.dll" />
+    <Content Include="packages\DocumentFormat.OpenXml.3.1.1\lib\netstandard2.0\DocumentFormat.OpenXml.xml" />
+    <Content Include="packages\DocumentFormat.OpenXml.Framework.3.1.1\icon.png" />
+    <Content Include="packages\DocumentFormat.OpenXml.Framework.3.1.1\lib\net35\DocumentFormat.OpenXml.Framework.dll" />
+    <Content Include="packages\DocumentFormat.OpenXml.Framework.3.1.1\lib\net35\DocumentFormat.OpenXml.Framework.xml" />
+    <Content Include="packages\DocumentFormat.OpenXml.Framework.3.1.1\lib\net40\DocumentFormat.OpenXml.Framework.dll" />
+    <Content Include="packages\DocumentFormat.OpenXml.Framework.3.1.1\lib\net40\DocumentFormat.OpenXml.Framework.xml" />
+    <Content Include="packages\DocumentFormat.OpenXml.Framework.3.1.1\lib\net46\DocumentFormat.OpenXml.Framework.dll" />
+    <Content Include="packages\DocumentFormat.OpenXml.Framework.3.1.1\lib\net46\DocumentFormat.OpenXml.Framework.xml" />
+    <Content Include="packages\DocumentFormat.OpenXml.Framework.3.1.1\lib\net6.0\DocumentFormat.OpenXml.Framework.dll" />
+    <Content Include="packages\DocumentFormat.OpenXml.Framework.3.1.1\lib\net6.0\DocumentFormat.OpenXml.Framework.xml" />
+    <Content Include="packages\DocumentFormat.OpenXml.Framework.3.1.1\lib\net8.0\DocumentFormat.OpenXml.Framework.dll" />
+    <Content Include="packages\DocumentFormat.OpenXml.Framework.3.1.1\lib\net8.0\DocumentFormat.OpenXml.Framework.xml" />
+    <Content Include="packages\DocumentFormat.OpenXml.Framework.3.1.1\lib\netstandard2.0\DocumentFormat.OpenXml.Framework.dll" />
+    <Content Include="packages\DocumentFormat.OpenXml.Framework.3.1.1\lib\netstandard2.0\DocumentFormat.OpenXml.Framework.xml" />
+    <Content Include="packages\ExcelNumberFormat.1.1.0\icon.png" />
+    <Content Include="packages\ExcelNumberFormat.1.1.0\lib\net20\ExcelNumberFormat.dll" />
+    <Content Include="packages\ExcelNumberFormat.1.1.0\lib\net20\ExcelNumberFormat.xml" />
+    <Content Include="packages\ExcelNumberFormat.1.1.0\lib\netstandard1.0\ExcelNumberFormat.dll" />
+    <Content Include="packages\ExcelNumberFormat.1.1.0\lib\netstandard1.0\ExcelNumberFormat.xml" />
+    <Content Include="packages\ExcelNumberFormat.1.1.0\lib\netstandard2.0\ExcelNumberFormat.dll" />
+    <Content Include="packages\ExcelNumberFormat.1.1.0\lib\netstandard2.0\ExcelNumberFormat.xml" />
+    <Content Include="packages\Microsoft.Bcl.HashCode.1.1.1\Icon.png" />
+    <Content Include="packages\Microsoft.Bcl.HashCode.1.1.1\lib\net461\Microsoft.Bcl.HashCode.dll" />
+    <Content Include="packages\Microsoft.Bcl.HashCode.1.1.1\lib\net461\Microsoft.Bcl.HashCode.xml" />
+    <Content Include="packages\Microsoft.Bcl.HashCode.1.1.1\lib\netcoreapp2.1\Microsoft.Bcl.HashCode.dll" />
+    <Content Include="packages\Microsoft.Bcl.HashCode.1.1.1\lib\netcoreapp2.1\Microsoft.Bcl.HashCode.xml" />
+    <Content Include="packages\Microsoft.Bcl.HashCode.1.1.1\lib\netstandard2.0\Microsoft.Bcl.HashCode.dll" />
+    <Content Include="packages\Microsoft.Bcl.HashCode.1.1.1\lib\netstandard2.0\Microsoft.Bcl.HashCode.xml" />
+    <Content Include="packages\Microsoft.Bcl.HashCode.1.1.1\lib\netstandard2.1\Microsoft.Bcl.HashCode.dll" />
+    <Content Include="packages\Microsoft.Bcl.HashCode.1.1.1\lib\netstandard2.1\Microsoft.Bcl.HashCode.xml" />
+    <Content Include="packages\Microsoft.Bcl.HashCode.1.1.1\LICENSE.TXT" />
+    <Content Include="packages\Microsoft.Bcl.HashCode.1.1.1\ref\net461\Microsoft.Bcl.HashCode.dll" />
+    <Content Include="packages\Microsoft.Bcl.HashCode.1.1.1\ref\netcoreapp2.1\Microsoft.Bcl.HashCode.dll" />
+    <Content Include="packages\Microsoft.Bcl.HashCode.1.1.1\ref\netstandard2.0\Microsoft.Bcl.HashCode.dll" />
+    <Content Include="packages\Microsoft.Bcl.HashCode.1.1.1\ref\netstandard2.1\Microsoft.Bcl.HashCode.dll" />
+    <Content Include="packages\Microsoft.Bcl.HashCode.1.1.1\THIRD-PARTY-NOTICES.TXT" />
+    <Content Include="packages\Microsoft.Bcl.HashCode.1.1.1\useSharedDesignerContext.txt" />
+    <Content Include="packages\Microsoft.Bcl.HashCode.1.1.1\version.txt" />
+    <Content Include="packages\RBush.Signed.4.0.0\lib\net47\RBush.dll" />
+    <Content Include="packages\RBush.Signed.4.0.0\lib\net47\RBush.xml" />
+    <Content Include="packages\RBush.Signed.4.0.0\lib\net8.0\RBush.dll" />
+    <Content Include="packages\RBush.Signed.4.0.0\lib\net8.0\RBush.xml" />
+    <Content Include="packages\RBush.Signed.4.0.0\lib\netstandard2.0\RBush.dll" />
+    <Content Include="packages\RBush.Signed.4.0.0\lib\netstandard2.0\RBush.xml" />
+    <Content Include="packages\SixLabors.Fonts.1.0.0\lib\netcoreapp3.1\SixLabors.Fonts.dll" />
+    <Content Include="packages\SixLabors.Fonts.1.0.0\lib\netcoreapp3.1\SixLabors.Fonts.xml" />
+    <Content Include="packages\SixLabors.Fonts.1.0.0\lib\netstandard2.0\SixLabors.Fonts.dll" />
+    <Content Include="packages\SixLabors.Fonts.1.0.0\lib\netstandard2.0\SixLabors.Fonts.xml" />
+    <Content Include="packages\SixLabors.Fonts.1.0.0\lib\netstandard2.1\SixLabors.Fonts.dll" />
+    <Content Include="packages\SixLabors.Fonts.1.0.0\lib\netstandard2.1\SixLabors.Fonts.xml" />
+    <Content Include="packages\SixLabors.Fonts.1.0.0\sixlabors.fonts.128.png" />
+    <Content Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\build\net20\x64\SQLite.Interop.dll" />
+    <Content Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\build\net20\x86\SQLite.Interop.dll" />
+    <Content Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\build\net40\x64\SQLite.Interop.dll" />
+    <Content Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\build\net40\x86\SQLite.Interop.dll" />
+    <Content Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\build\net451\x64\SQLite.Interop.dll" />
+    <Content Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\build\net451\x86\SQLite.Interop.dll" />
+    <Content Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\build\net45\x64\SQLite.Interop.dll" />
+    <Content Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\build\net45\x86\SQLite.Interop.dll" />
+    <Content Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\build\net46\x64\SQLite.Interop.dll" />
+    <Content Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\build\net46\x86\SQLite.Interop.dll" />
+    <Content Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\lib\net20\System.Data.SQLite.dll" />
+    <Content Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\lib\net20\System.Data.SQLite.xml" />
+    <Content Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\lib\net40\System.Data.SQLite.dll" />
+    <Content Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\lib\net40\System.Data.SQLite.xml" />
+    <Content Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\lib\net451\System.Data.SQLite.dll" />
+    <Content Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\lib\net451\System.Data.SQLite.xml" />
+    <Content Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\lib\net45\System.Data.SQLite.dll" />
+    <Content Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\lib\net45\System.Data.SQLite.xml" />
+    <Content Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\lib\net46\System.Data.SQLite.dll" />
+    <Content Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\lib\net46\System.Data.SQLite.xml" />
+    <Content Include="packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll" />
+    <Content Include="packages\System.Buffers.4.5.1\lib\net461\System.Buffers.xml" />
+    <Content Include="packages\System.Buffers.4.5.1\lib\netstandard1.1\System.Buffers.dll" />
+    <Content Include="packages\System.Buffers.4.5.1\lib\netstandard1.1\System.Buffers.xml" />
+    <Content Include="packages\System.Buffers.4.5.1\lib\netstandard2.0\System.Buffers.dll" />
+    <Content Include="packages\System.Buffers.4.5.1\lib\netstandard2.0\System.Buffers.xml" />
+    <Content Include="packages\System.Buffers.4.5.1\LICENSE.TXT" />
+    <Content Include="packages\System.Buffers.4.5.1\ref\net45\System.Buffers.dll" />
+    <Content Include="packages\System.Buffers.4.5.1\ref\net45\System.Buffers.xml" />
+    <Content Include="packages\System.Buffers.4.5.1\ref\netstandard1.1\System.Buffers.dll" />
+    <Content Include="packages\System.Buffers.4.5.1\ref\netstandard1.1\System.Buffers.xml" />
+    <Content Include="packages\System.Buffers.4.5.1\ref\netstandard2.0\System.Buffers.dll" />
+    <Content Include="packages\System.Buffers.4.5.1\ref\netstandard2.0\System.Buffers.xml" />
+    <Content Include="packages\System.Buffers.4.5.1\THIRD-PARTY-NOTICES.TXT" />
+    <Content Include="packages\System.Buffers.4.5.1\useSharedDesignerContext.txt" />
+    <Content Include="packages\System.Buffers.4.5.1\version.txt" />
+    <Content Include="packages\System.Memory.4.5.5\lib\net461\System.Memory.dll" />
+    <Content Include="packages\System.Memory.4.5.5\lib\net461\System.Memory.xml" />
+    <Content Include="packages\System.Memory.4.5.5\lib\netstandard1.1\System.Memory.dll" />
+    <Content Include="packages\System.Memory.4.5.5\lib\netstandard1.1\System.Memory.xml" />
+    <Content Include="packages\System.Memory.4.5.5\lib\netstandard2.0\System.Memory.dll" />
+    <Content Include="packages\System.Memory.4.5.5\lib\netstandard2.0\System.Memory.xml" />
+    <Content Include="packages\System.Memory.4.5.5\LICENSE.TXT" />
+    <Content Include="packages\System.Memory.4.5.5\THIRD-PARTY-NOTICES.TXT" />
+    <Content Include="packages\System.Memory.4.5.5\useSharedDesignerContext.txt" />
+    <Content Include="packages\System.Memory.4.5.5\version.txt" />
+    <Content Include="packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll" />
+    <Content Include="packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.xml" />
+    <Content Include="packages\System.Numerics.Vectors.4.5.0\lib\netstandard1.0\System.Numerics.Vectors.dll" />
+    <Content Include="packages\System.Numerics.Vectors.4.5.0\lib\netstandard1.0\System.Numerics.Vectors.xml" />
+    <Content Include="packages\System.Numerics.Vectors.4.5.0\lib\netstandard2.0\System.Numerics.Vectors.dll" />
+    <Content Include="packages\System.Numerics.Vectors.4.5.0\lib\netstandard2.0\System.Numerics.Vectors.xml" />
+    <Content Include="packages\System.Numerics.Vectors.4.5.0\lib\portable-net45+win8+wp8+wpa81\System.Numerics.Vectors.dll" />
+    <Content Include="packages\System.Numerics.Vectors.4.5.0\lib\portable-net45+win8+wp8+wpa81\System.Numerics.Vectors.xml" />
+    <Content Include="packages\System.Numerics.Vectors.4.5.0\LICENSE.TXT" />
+    <Content Include="packages\System.Numerics.Vectors.4.5.0\ref\net45\System.Numerics.Vectors.dll" />
+    <Content Include="packages\System.Numerics.Vectors.4.5.0\ref\net45\System.Numerics.Vectors.xml" />
+    <Content Include="packages\System.Numerics.Vectors.4.5.0\ref\net46\System.Numerics.Vectors.dll" />
+    <Content Include="packages\System.Numerics.Vectors.4.5.0\ref\net46\System.Numerics.Vectors.xml" />
+    <Content Include="packages\System.Numerics.Vectors.4.5.0\ref\netstandard1.0\System.Numerics.Vectors.dll" />
+    <Content Include="packages\System.Numerics.Vectors.4.5.0\ref\netstandard1.0\System.Numerics.Vectors.xml" />
+    <Content Include="packages\System.Numerics.Vectors.4.5.0\ref\netstandard2.0\System.Numerics.Vectors.dll" />
+    <Content Include="packages\System.Numerics.Vectors.4.5.0\ref\netstandard2.0\System.Numerics.Vectors.xml" />
+    <Content Include="packages\System.Numerics.Vectors.4.5.0\THIRD-PARTY-NOTICES.TXT" />
+    <Content Include="packages\System.Numerics.Vectors.4.5.0\useSharedDesignerContext.txt" />
+    <Content Include="packages\System.Numerics.Vectors.4.5.0\version.txt" />
+    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.4.7.0\lib\netcoreapp2.0\System.Runtime.CompilerServices.Unsafe.dll" />
+    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.4.7.0\lib\netcoreapp2.0\System.Runtime.CompilerServices.Unsafe.xml" />
+    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.4.7.0\lib\netstandard1.0\System.Runtime.CompilerServices.Unsafe.dll" />
+    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.4.7.0\lib\netstandard1.0\System.Runtime.CompilerServices.Unsafe.xml" />
+    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.4.7.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll" />
+    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.4.7.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.xml" />
+    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.4.7.0\LICENSE.TXT" />
+    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.4.7.0\ref\netstandard1.0\System.Runtime.CompilerServices.Unsafe.dll" />
+    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.4.7.0\ref\netstandard1.0\System.Runtime.CompilerServices.Unsafe.xml" />
+    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.4.7.0\ref\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll" />
+    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.4.7.0\ref\netstandard2.0\System.Runtime.CompilerServices.Unsafe.xml" />
+    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.4.7.0\THIRD-PARTY-NOTICES.TXT" />
+    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.4.7.0\useSharedDesignerContext.txt" />
+    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.4.7.0\version.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets" Condition="Exists('packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets'))" />
+  </Target>
+</Project>
