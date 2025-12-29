@@ -1,7 +1,8 @@
-﻿using System;
+﻿using OHIOCF.DTO;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SQLite;
-using OHIOCF.DTO;
 
 namespace OHIOCF.DAO
 {
@@ -131,5 +132,53 @@ namespace OHIOCF.DAO
                 }
             }
         }
+        public CustomerDTO GetCustomerById(string id)
+        {
+            string query = "SELECT * FROM Customer WHERE id = @id";
+
+            using (SQLiteConnection conn = new SQLiteConnection(Database.ConnectionString))
+            {
+                conn.Open();
+                using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@id", id);
+                    using (SQLiteDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            return new CustomerDTO
+                            {
+                                Id = reader["id"].ToString(),
+                                FullName = reader["fullName"].ToString(),
+                                Phone = reader["phone"].ToString(),
+                                Points = Convert.ToInt32(reader["points"]),
+                                Rank = reader["rank"] != DBNull.Value
+                                    ? reader["rank"].ToString()
+                                    : "Đồng"
+                            };
+                        }
+                    }
+                }
+            }
+            return null;
+        }
+        public bool UpdatePointAndRank(string id, int points, string rank)
+        {
+            string query = "UPDATE Customer SET points = @points, rank = @rank WHERE id = @id";
+
+            using (SQLiteConnection conn = new SQLiteConnection(Database.ConnectionString))
+            {
+                conn.Open();
+                using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@id", id);
+                    cmd.Parameters.AddWithValue("@points", points);
+                    cmd.Parameters.AddWithValue("@rank", rank);
+                    return cmd.ExecuteNonQuery() > 0;
+                }
+            }
+        }
+
+
     }
 }

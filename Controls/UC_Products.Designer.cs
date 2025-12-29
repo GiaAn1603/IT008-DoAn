@@ -29,19 +29,18 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_Products));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.flpMenuItems = new System.Windows.Forms.FlowLayoutPanel();
             this.tlpProduct = new System.Windows.Forms.TableLayoutPanel();
             this.pbProductPicture = new System.Windows.Forms.PictureBox();
-            this.lblProductName1 = new System.Windows.Forms.Label();
+            this.lblProductName = new System.Windows.Forms.Label();
             this.lblProductPrice = new System.Windows.Forms.Label();
             this.cmbFilterType = new System.Windows.Forms.TableLayoutPanel();
             this.tsCategory = new System.Windows.Forms.ToolStrip();
             this.tsbCoffee = new System.Windows.Forms.ToolStripButton();
             this.tsbTea = new System.Windows.Forms.ToolStripButton();
-            this.tsbCake = new System.Windows.Forms.ToolStripButton();
             this.tsbOther = new System.Windows.Forms.ToolStripButton();
             this.tsbAll = new System.Windows.Forms.ToolStripButton();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -49,7 +48,7 @@
             this.pbProductImage = new System.Windows.Forms.PictureBox();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnUploadImage = new System.Windows.Forms.Button();
-            this.lblProductName = new System.Windows.Forms.Label();
+            this.lblProductName2 = new System.Windows.Forms.Label();
             this.txtProductName = new System.Windows.Forms.TextBox();
             this.lblCategory = new System.Windows.Forms.Label();
             this.lblProductSize = new System.Windows.Forms.Label();
@@ -58,10 +57,6 @@
             this.lblPrice = new System.Windows.Forms.Label();
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.dgvIngredientsList = new System.Windows.Forms.DataGridView();
-            this.colIngredientName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colIngredientQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colIngredientUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDelete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
@@ -77,6 +72,11 @@
             this.cmbIngredientUnit = new System.Windows.Forms.ComboBox();
             this.cmbStatus = new System.Windows.Forms.ComboBox();
             this.cmbCategory = new System.Windows.Forms.ComboBox();
+            this.colIngredientName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colIngredientQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colIngredientUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IngredientId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDelete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.flpMenuItems.SuspendLayout();
@@ -143,7 +143,7 @@
             this.tlpProduct.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.78355F));
             this.tlpProduct.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.21645F));
             this.tlpProduct.Controls.Add(this.pbProductPicture, 0, 0);
-            this.tlpProduct.Controls.Add(this.lblProductName1, 0, 1);
+            this.tlpProduct.Controls.Add(this.lblProductName, 0, 1);
             this.tlpProduct.Controls.Add(this.lblProductPrice, 1, 1);
             this.tlpProduct.Location = new System.Drawing.Point(3, 3);
             this.tlpProduct.Name = "tlpProduct";
@@ -167,17 +167,17 @@
             this.pbProductPicture.TabIndex = 0;
             this.pbProductPicture.TabStop = false;
             // 
-            // lblProductName1
+            // lblProductName
             // 
-            this.lblProductName1.AutoSize = true;
-            this.lblProductName1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblProductName1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProductName1.Location = new System.Drawing.Point(4, 139);
-            this.lblProductName1.Name = "lblProductName1";
-            this.lblProductName1.Size = new System.Drawing.Size(107, 40);
-            this.lblProductName1.TabIndex = 1;
-            this.lblProductName1.Text = "Tên món";
-            this.lblProductName1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblProductName.AutoSize = true;
+            this.lblProductName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblProductName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProductName.Location = new System.Drawing.Point(4, 139);
+            this.lblProductName.Name = "lblProductName";
+            this.lblProductName.Size = new System.Drawing.Size(107, 40);
+            this.lblProductName.TabIndex = 1;
+            this.lblProductName.Text = "Tên món";
+            this.lblProductName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblProductPrice
             // 
@@ -217,7 +217,6 @@
             this.tsCategory.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsbCoffee,
             this.tsbTea,
-            this.tsbCake,
             this.tsbOther,
             this.tsbAll});
             this.tsCategory.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
@@ -239,6 +238,7 @@
             this.tsbCoffee.Margin = new System.Windows.Forms.Padding(0);
             this.tsbCoffee.Name = "tsbCoffee";
             this.tsbCoffee.Size = new System.Drawing.Size(90, 40);
+            this.tsbCoffee.Tag = "Cà phê";
             this.tsbCoffee.Text = "Cà phê";
             this.tsbCoffee.Click += new System.EventHandler(this.tsbCoffee_Click);
             // 
@@ -252,21 +252,9 @@
             this.tsbTea.Margin = new System.Windows.Forms.Padding(0);
             this.tsbTea.Name = "tsbTea";
             this.tsbTea.Size = new System.Drawing.Size(90, 40);
+            this.tsbTea.Tag = "Trà";
             this.tsbTea.Text = "Trà";
             this.tsbTea.Click += new System.EventHandler(this.tsbTea_Click);
-            // 
-            // tsbCake
-            // 
-            this.tsbCake.AutoSize = false;
-            this.tsbCake.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.tsbCake.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
-            this.tsbCake.Image = ((System.Drawing.Image)(resources.GetObject("tsbCake.Image")));
-            this.tsbCake.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbCake.Margin = new System.Windows.Forms.Padding(0);
-            this.tsbCake.Name = "tsbCake";
-            this.tsbCake.Size = new System.Drawing.Size(90, 40);
-            this.tsbCake.Text = "Bánh";
-            this.tsbCake.Click += new System.EventHandler(this.tsbCake_Click);
             // 
             // tsbOther
             // 
@@ -278,6 +266,7 @@
             this.tsbOther.Margin = new System.Windows.Forms.Padding(0);
             this.tsbOther.Name = "tsbOther";
             this.tsbOther.Size = new System.Drawing.Size(90, 40);
+            this.tsbOther.Tag = "Khác";
             this.tsbOther.Text = "Khác";
             this.tsbOther.Click += new System.EventHandler(this.tsbOther_Click);
             // 
@@ -321,7 +310,7 @@
             this.tableLayoutPanel2.Controls.Add(this.pbProductImage, 7, 3);
             this.tableLayoutPanel2.Controls.Add(this.txtSearch, 3, 1);
             this.tableLayoutPanel2.Controls.Add(this.btnUploadImage, 9, 4);
-            this.tableLayoutPanel2.Controls.Add(this.lblProductName, 1, 5);
+            this.tableLayoutPanel2.Controls.Add(this.lblProductName2, 1, 5);
             this.tableLayoutPanel2.Controls.Add(this.txtProductName, 3, 5);
             this.tableLayoutPanel2.Controls.Add(this.lblCategory, 1, 6);
             this.tableLayoutPanel2.Controls.Add(this.lblProductSize, 1, 7);
@@ -423,19 +412,20 @@
             this.btnUploadImage.TabIndex = 2;
             this.btnUploadImage.Text = "Nhập";
             this.btnUploadImage.UseVisualStyleBackColor = false;
+            this.btnUploadImage.Click += new System.EventHandler(this.btnUploadImage_Click);
             // 
-            // lblProductName
+            // lblProductName2
             // 
-            this.lblProductName.AutoSize = true;
-            this.tableLayoutPanel2.SetColumnSpan(this.lblProductName, 2);
-            this.lblProductName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblProductName.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
-            this.lblProductName.Location = new System.Drawing.Point(8, 194);
-            this.lblProductName.Name = "lblProductName";
-            this.lblProductName.Size = new System.Drawing.Size(92, 29);
-            this.lblProductName.TabIndex = 4;
-            this.lblProductName.Text = "Tên món";
-            this.lblProductName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblProductName2.AutoSize = true;
+            this.tableLayoutPanel2.SetColumnSpan(this.lblProductName2, 2);
+            this.lblProductName2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblProductName2.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
+            this.lblProductName2.Location = new System.Drawing.Point(8, 194);
+            this.lblProductName2.Name = "lblProductName2";
+            this.lblProductName2.Size = new System.Drawing.Size(92, 29);
+            this.lblProductName2.TabIndex = 4;
+            this.lblProductName2.Text = "Tên món";
+            this.lblProductName2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // txtProductName
             // 
@@ -461,23 +451,6 @@
             this.lblCategory.TabIndex = 5;
             this.lblCategory.Text = "Loại";
             this.lblCategory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // cmbCategory
-            // 
-            this.cmbCategory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbCategory.BackColor = System.Drawing.SystemColors.Window;
-            this.tableLayoutPanel2.SetColumnSpan(this.cmbCategory, 6);
-            this.cmbCategory.DisplayMember = "Name";
-            this.cmbCategory.Font = new System.Drawing.Font("Bahnschrift Light", 12F);
-            this.cmbCategory.ForeColor = System.Drawing.Color.Black;
-            this.cmbCategory.FormattingEnabled = true;
-            this.cmbCategory.Location = new System.Drawing.Point(103, 226);
-            this.cmbCategory.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
-            this.cmbCategory.Name = "cmbCategory";
-            this.cmbCategory.Size = new System.Drawing.Size(162, 27);
-            this.cmbCategory.TabIndex = 15;
-            this.cmbCategory.ValueMember = "Id";
-            this.cmbCategory.SelectedIndexChanged += new System.EventHandler(this.cmbCategory_SelectedIndexChanged);
             // 
             // lblProductSize
             // 
@@ -556,6 +529,7 @@
             this.colIngredientName,
             this.colIngredientQuantity,
             this.colIngredientUnit,
+            this.IngredientId,
             this.colDelete});
             this.tableLayoutPanel2.SetColumnSpan(this.dgvIngredientsList, 18);
             this.dgvIngredientsList.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -565,37 +539,6 @@
             this.dgvIngredientsList.Size = new System.Drawing.Size(528, 237);
             this.dgvIngredientsList.TabIndex = 27;
             this.dgvIngredientsList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvIngredientsList_CellClick);
-            // 
-            // colIngredientName
-            // 
-            this.colIngredientName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colIngredientName.HeaderText = "Tên NVL";
-            this.colIngredientName.Name = "colIngredientName";
-            this.colIngredientName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // colIngredientQuantity
-            // 
-            this.colIngredientQuantity.HeaderText = "SL";
-            this.colIngredientQuantity.Name = "colIngredientQuantity";
-            this.colIngredientQuantity.Width = 40;
-            // 
-            // colIngredientUnit
-            // 
-            this.colIngredientUnit.HeaderText = "Đơn vị";
-            this.colIngredientUnit.Name = "colIngredientUnit";
-            this.colIngredientUnit.Width = 60;
-            // 
-            // colDelete
-            // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.colDelete.DefaultCellStyle = dataGridViewCellStyle1;
-            this.colDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.colDelete.HeaderText = "Xóa";
-            this.colDelete.Name = "colDelete";
-            this.colDelete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colDelete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.colDelete.Width = 40;
             // 
             // tableLayoutPanel6
             // 
@@ -824,21 +767,61 @@
             // 
             // cmbCategory
             // 
+            this.cmbCategory.AllowDrop = true;
             this.cmbCategory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbCategory.BackColor = System.Drawing.SystemColors.Window;
             this.tableLayoutPanel2.SetColumnSpan(this.cmbCategory, 6);
-            this.cmbCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCategory.DisplayMember = "Name";
             this.cmbCategory.Font = new System.Drawing.Font("Bahnschrift Light", 12F);
+            this.cmbCategory.ForeColor = System.Drawing.Color.Black;
             this.cmbCategory.FormattingEnabled = true;
-            this.cmbCategory.Items.AddRange(new object[] {
-            "Cà phê",
-            "Trà - trà sữa",
-            "Bánh",
-            "Khác"});
             this.cmbCategory.Location = new System.Drawing.Point(103, 226);
             this.cmbCategory.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.cmbCategory.Name = "cmbCategory";
             this.cmbCategory.Size = new System.Drawing.Size(162, 27);
             this.cmbCategory.TabIndex = 47;
+            this.cmbCategory.ValueMember = "Id";
+            this.cmbCategory.SelectedIndexChanged += new System.EventHandler(this.cmbCategory_SelectedIndexChanged);
+            // 
+            // colIngredientName
+            // 
+            this.colIngredientName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colIngredientName.DataPropertyName = "IngredientName";
+            this.colIngredientName.HeaderText = "Tên NVL";
+            this.colIngredientName.Name = "colIngredientName";
+            this.colIngredientName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // colIngredientQuantity
+            // 
+            this.colIngredientQuantity.DataPropertyName = "Quantity";
+            this.colIngredientQuantity.HeaderText = "SL";
+            this.colIngredientQuantity.Name = "colIngredientQuantity";
+            this.colIngredientQuantity.Width = 40;
+            // 
+            // colIngredientUnit
+            // 
+            this.colIngredientUnit.DataPropertyName = "Unit";
+            this.colIngredientUnit.HeaderText = "Đơn vị";
+            this.colIngredientUnit.Name = "colIngredientUnit";
+            this.colIngredientUnit.Width = 60;
+            // 
+            // IngredientId
+            // 
+            this.IngredientId.HeaderText = "Mã NVL";
+            this.IngredientId.Name = "IngredientId";
+            this.IngredientId.Visible = false;
+            // 
+            // colDelete
+            // 
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.colDelete.DefaultCellStyle = dataGridViewCellStyle8;
+            this.colDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.colDelete.HeaderText = "Xóa";
+            this.colDelete.Name = "colDelete";
+            this.colDelete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colDelete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.colDelete.Width = 40;
             // 
             // UC_Products
             // 
@@ -874,7 +857,7 @@
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.PictureBox pbProductImage;
         private System.Windows.Forms.Button btnUploadImage;
-        private System.Windows.Forms.Label lblProductName;
+        private System.Windows.Forms.Label lblProductName2;
         private System.Windows.Forms.Label lblCategory;
         private System.Windows.Forms.Label lblPrice;
         private System.Windows.Forms.TextBox txtSearch;
@@ -883,20 +866,13 @@
         private System.Windows.Forms.FlowLayoutPanel flpMenuItems;
         private System.Windows.Forms.TableLayoutPanel tlpProduct;
         private System.Windows.Forms.PictureBox pbProductPicture;
-        private System.Windows.Forms.Label lblProductName1;
+        private System.Windows.Forms.Label lblProductName;
         private System.Windows.Forms.Label lblProductPrice;
         private System.Windows.Forms.Label lblIngredientsList;
         private System.Windows.Forms.ComboBox cmbProductSize;
         private System.Windows.Forms.DataGridView dgvIngredientsList;
         private System.Windows.Forms.Label lblProductSize;
         private System.Windows.Forms.TextBox txtPrice;
-        private System.Windows.Forms.TableLayoutPanel cmbFilterType;
-        private System.Windows.Forms.ToolStrip tsCategory;
-        private System.Windows.Forms.ToolStripButton tsbCoffee;
-        private System.Windows.Forms.ToolStripButton tsbTea;
-        private System.Windows.Forms.ToolStripButton tsbCake;
-        private System.Windows.Forms.ToolStripButton tsbOther;
-        private System.Windows.Forms.ToolStripButton tsbAll;
         private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.ComboBox cmbIngredientUnit;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
@@ -910,11 +886,18 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtIngredientQuantity;
         private System.Windows.Forms.ComboBox cmbIngredientName;
+        private System.Windows.Forms.ComboBox cmbStatus;
+        private System.Windows.Forms.ComboBox cmbCategory;
+        private System.Windows.Forms.TableLayoutPanel cmbFilterType;
+        private System.Windows.Forms.ToolStrip tsCategory;
+        private System.Windows.Forms.ToolStripButton tsbCoffee;
+        private System.Windows.Forms.ToolStripButton tsbTea;
+        private System.Windows.Forms.ToolStripButton tsbOther;
+        private System.Windows.Forms.ToolStripButton tsbAll;
         private System.Windows.Forms.DataGridViewTextBoxColumn colIngredientName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colIngredientQuantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn colIngredientUnit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IngredientId;
         private System.Windows.Forms.DataGridViewButtonColumn colDelete;
-        private System.Windows.Forms.ComboBox cmbStatus;
-        private System.Windows.Forms.ComboBox cmbCategory;
     }
 }

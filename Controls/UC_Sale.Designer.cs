@@ -78,6 +78,10 @@
             this.lblInvoiceTitle = new System.Windows.Forms.Label();
             this.lblTableStatus = new System.Windows.Forms.Label();
             this.DGVInvoiceSummary = new System.Windows.Forms.DataGridView();
+            this.colTenMon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -88,10 +92,6 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label10 = new System.Windows.Forms.Label();
             this.btnAddNewOrder = new System.Windows.Forms.Button();
-            this.colSL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTenMon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
@@ -186,7 +186,7 @@
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
             this.button6.Location = new System.Drawing.Point(10, 10);
-            this.button6.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.button6.Margin = new System.Windows.Forms.Padding(10);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(100, 100);
             this.button6.TabIndex = 0;
@@ -201,7 +201,7 @@
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
             this.button7.Location = new System.Drawing.Point(130, 10);
-            this.button7.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.button7.Margin = new System.Windows.Forms.Padding(10);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(100, 100);
             this.button7.TabIndex = 1;
@@ -216,7 +216,7 @@
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
             this.button8.Location = new System.Drawing.Point(250, 10);
-            this.button8.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.button8.Margin = new System.Windows.Forms.Padding(10);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(100, 100);
             this.button8.TabIndex = 2;
@@ -231,7 +231,7 @@
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button9.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
             this.button9.Location = new System.Drawing.Point(370, 10);
-            this.button9.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.button9.Margin = new System.Windows.Forms.Padding(10);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(100, 100);
             this.button9.TabIndex = 3;
@@ -553,7 +553,7 @@
             this.btnTable1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTable1.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
             this.btnTable1.Location = new System.Drawing.Point(10, 16);
-            this.btnTable1.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.btnTable1.Margin = new System.Windows.Forms.Padding(10);
             this.btnTable1.Name = "btnTable1";
             this.btnTable1.Size = new System.Drawing.Size(100, 100);
             this.btnTable1.TabIndex = 8;
@@ -568,7 +568,7 @@
             this.btnTable2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTable2.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
             this.btnTable2.Location = new System.Drawing.Point(130, 16);
-            this.btnTable2.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.btnTable2.Margin = new System.Windows.Forms.Padding(10);
             this.btnTable2.Name = "btnTable2";
             this.btnTable2.Size = new System.Drawing.Size(100, 100);
             this.btnTable2.TabIndex = 9;
@@ -583,7 +583,7 @@
             this.btnTable3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTable3.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
             this.btnTable3.Location = new System.Drawing.Point(250, 16);
-            this.btnTable3.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.btnTable3.Margin = new System.Windows.Forms.Padding(10);
             this.btnTable3.Name = "btnTable3";
             this.btnTable3.Size = new System.Drawing.Size(100, 100);
             this.btnTable3.TabIndex = 10;
@@ -598,7 +598,7 @@
             this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button10.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
             this.button10.Location = new System.Drawing.Point(370, 16);
-            this.button10.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.button10.Margin = new System.Windows.Forms.Padding(10);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(100, 100);
             this.button10.TabIndex = 11;
@@ -613,7 +613,7 @@
             this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button11.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
             this.button11.Location = new System.Drawing.Point(490, 16);
-            this.button11.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.button11.Margin = new System.Windows.Forms.Padding(10);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(100, 100);
             this.button11.TabIndex = 12;
@@ -628,7 +628,7 @@
             this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button12.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
             this.button12.Location = new System.Drawing.Point(610, 16);
-            this.button12.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.button12.Margin = new System.Windows.Forms.Padding(10);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(100, 100);
             this.button12.TabIndex = 13;
@@ -643,7 +643,7 @@
             this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button13.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
             this.button13.Location = new System.Drawing.Point(10, 136);
-            this.button13.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.button13.Margin = new System.Windows.Forms.Padding(10);
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(100, 100);
             this.button13.TabIndex = 14;
@@ -658,7 +658,7 @@
             this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button14.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
             this.button14.Location = new System.Drawing.Point(130, 136);
-            this.button14.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.button14.Margin = new System.Windows.Forms.Padding(10);
             this.button14.Name = "button14";
             this.button14.Size = new System.Drawing.Size(100, 100);
             this.button14.TabIndex = 15;
@@ -673,7 +673,7 @@
             this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button15.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
             this.button15.Location = new System.Drawing.Point(250, 136);
-            this.button15.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.button15.Margin = new System.Windows.Forms.Padding(10);
             this.button15.Name = "button15";
             this.button15.Size = new System.Drawing.Size(100, 100);
             this.button15.TabIndex = 16;
@@ -688,7 +688,7 @@
             this.button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button16.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Bold);
             this.button16.Location = new System.Drawing.Point(370, 136);
-            this.button16.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.button16.Margin = new System.Windows.Forms.Padding(10);
             this.button16.Name = "button16";
             this.button16.Size = new System.Drawing.Size(100, 100);
             this.button16.TabIndex = 17;
@@ -908,6 +908,38 @@
             this.DGVInvoiceSummary.Size = new System.Drawing.Size(276, 274);
             this.DGVInvoiceSummary.TabIndex = 7;
             // 
+            // colTenMon
+            // 
+            this.colTenMon.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colTenMon.DataPropertyName = "colTenMon";
+            this.colTenMon.HeaderText = "Tên món";
+            this.colTenMon.MinimumWidth = 6;
+            this.colTenMon.Name = "colTenMon";
+            // 
+            // colSize
+            // 
+            this.colSize.DataPropertyName = "colSize";
+            this.colSize.HeaderText = "Size";
+            this.colSize.MinimumWidth = 6;
+            this.colSize.Name = "colSize";
+            this.colSize.Width = 30;
+            // 
+            // colDonGia
+            // 
+            this.colDonGia.DataPropertyName = "colDonGia";
+            this.colDonGia.HeaderText = "Đơn giá";
+            this.colDonGia.MinimumWidth = 6;
+            this.colDonGia.Name = "colDonGia";
+            this.colDonGia.Width = 50;
+            // 
+            // colSL
+            // 
+            this.colSL.DataPropertyName = "colSL";
+            this.colSL.HeaderText = "SL";
+            this.colSL.MinimumWidth = 6;
+            this.colSL.Name = "colSL";
+            this.colSL.Width = 30;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -1082,38 +1114,6 @@
             this.btnAddNewOrder.TabIndex = 1;
             this.btnAddNewOrder.UseVisualStyleBackColor = false;
             this.btnAddNewOrder.Click += new System.EventHandler(this.btnAddNewOrder_Click);
-            // 
-            // colSL
-            // 
-            this.colSL.DataPropertyName = "colSL";
-            this.colSL.HeaderText = "SL";
-            this.colSL.MinimumWidth = 6;
-            this.colSL.Name = "colSL";
-            this.colSL.Width = 30;
-            // 
-            // colDonGia
-            // 
-            this.colDonGia.DataPropertyName = "colDonGia";
-            this.colDonGia.HeaderText = "Đơn giá";
-            this.colDonGia.MinimumWidth = 6;
-            this.colDonGia.Name = "colDonGia";
-            this.colDonGia.Width = 50;
-            // 
-            // colSize
-            // 
-            this.colSize.DataPropertyName = "colSize";
-            this.colSize.HeaderText = "Size";
-            this.colSize.MinimumWidth = 6;
-            this.colSize.Name = "colSize";
-            this.colSize.Width = 30;
-            // 
-            // colTenMon
-            // 
-            this.colTenMon.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colTenMon.DataPropertyName = "colTenMon";
-            this.colTenMon.HeaderText = "Tên món";
-            this.colTenMon.MinimumWidth = 6;
-            this.colTenMon.Name = "colTenMon";
             // 
             // UC_Sale
             // 

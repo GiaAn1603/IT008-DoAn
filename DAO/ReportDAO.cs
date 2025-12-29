@@ -48,7 +48,7 @@ namespace OHIOCF.DAO
                             {
                                 OrderId = reader["id"].ToString(),
                                 OrderDate = Convert.ToDateTime(reader["orderDate"]),
-                                CustomerName = reader["customerName"]?.ToString() ?? "Khách lẻ",
+                                CustomerName = reader["customerName"]?.ToString() ?? "Take away",
                                 StaffName = reader["staffName"]?.ToString() ?? "(N/A)",
                                 TotalAmount = Convert.ToDecimal(reader["totalAmount"])
                             });

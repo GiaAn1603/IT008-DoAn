@@ -1,21 +1,24 @@
-﻿using DocumentFormat.OpenXml.Drawing.Diagrams;
-using OHIOCF.BUS;
-using OHIOCF.DTO;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using OHIOCF.BUS;
+using OHIOCF.DTO;
 
 namespace OHIOCF.Controls
 {
     public partial class UC_Products : UserControl
     {
-        private List<ProductDTO> productList;
+        private string currentProductId = null;
+        private string currentProductSizeId = null;
+        private string currentImagePath = null;
+
         private List<CategoryDTO> categoryList;
         private List<IngredientDTO> ingredientList;
-        private ProductDTO selectedProduct;
-        private string selectedSize = "S";
+        private CultureInfo culture = new CultureInfo("vi-VN");
 
         public UC_Products()
         {
@@ -24,368 +27,723 @@ namespace OHIOCF.Controls
 
         private void UC_Products_Load(object sender, EventArgs e)
         {
+            InitDataGridView();
             LoadCategories();
             LoadIngredients();
-            LoadProducts();
+            LoadProducts("All");
         }
 
-        void LoadCategories()
+        private void InitDataGridView()
+        {
+            dgvIngredientsList.AutoGenerateColumns = false;
+            dgvIngredientsList.AllowUserToAddRows = false;
+        }
+
+        // load data
+        private void LoadCategories()
         {
             categoryList = CategoryBUS.Instance.GetAllCategories();
-
-            cmbCategory.DataSource = null;
+            cmbCategory.DataSource = categoryList;
             cmbCategory.DisplayMember = "Name";
             cmbCategory.ValueMember = "Id";
-            cmbCategory.DataSource = categoryList;
-
         }
 
-
-        void LoadIngredients()
+        private void LoadIngredients()
         {
             ingredientList = IngredientBUS.Instance.GetAll();
             cmbIngredientName.DataSource = ingredientList;
             cmbIngredientName.DisplayMember = "Name";
             cmbIngredientName.ValueMember = "Id";
-            if (cmbIngredientName.Items.Count > 0)
-            {
-                cmbIngredientName.SelectedIndex = 0;
-            }
-        }
-        void LoadProducts(string categoryId = null)
-        {
-            productList = string.IsNullOrEmpty(categoryId)
-                ? ProductBUS.Instance.GetProductsByCategory("All")
-                : ProductBUS.Instance.GetProductsByCategory(categoryId);
-            DisplayProducts(productList);
         }
 
-        void DisplayProducts(List<ProductDTO> products)
+        // category button
+        private void tsbCoffee_Click(object sender, EventArgs e)
         {
-            flpMenuItems.Controls.Clear();
-
-            foreach (var product in products)
-            {
-                var sizes = ProductSizeBUS.Instance.GetSizesByProduct(product.Id);
-                var defaultSize = sizes.FirstOrDefault(s => s.SizeName == "S") ?? sizes.FirstOrDefault();
-                if (defaultSize == null) continue;
-
-                decimal displayPrice = product.BasePrice + defaultSize.PriceAdjustment;
-
-                TableLayoutPanel tlp = new TableLayoutPanel
-                {
-                    Width = 200,
-                    Height = 250,
-                    RowCount = 3,
-                    ColumnCount = 1,
-                    Tag = product,
-                    Cursor = Cursors.Hand
-                };
-
-                tlp.RowStyles.Add(new RowStyle(SizeType.Percent, 60F));
-                tlp.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
-                tlp.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
-
-                Label lblName = new Label
-                {
-                    Text = product.Name,
-                    Dock = DockStyle.Fill,
-                    TextAlign = ContentAlignment.MiddleCenter,
-                    Font = new Font("Segoe UI", 10F, FontStyle.Bold),
-                    Tag = product
-                };
-                lblName.Click += tlpProduct_Click;
-                tlp.Controls.Add(lblName, 0, 1);
-
-                Label lblPrice = new Label
-                {
-                    Text = $"{displayPrice:N0} VNĐ",
-                    Dock = DockStyle.Fill,
-                    TextAlign = ContentAlignment.MiddleCenter,
-                    Font = new Font("Segoe UI", 9F),
-                    Tag = product
-                };
-                lblPrice.Click += tlpProduct_Click;
-                tlp.Controls.Add(lblPrice, 0, 2);
-
-                tlp.Click += tlpProduct_Click;
-                flpMenuItems.Controls.Add(tlp);
-            }
-        }
-        void tlpProduct_Click(object sender, EventArgs e)
-        {
-            Control ctrl = sender as Control;
-            selectedProduct = ctrl.Tag as ProductDTO;
-            if (selectedProduct == null) return;
-
-            txtProductName.Text = selectedProduct.Name;
-            cmbCategory.SelectedValue = selectedProduct.CategoryId;
-            cmbStatus.SelectedIndex = selectedProduct.IsAvailable ? 0 : 1;
-            cmbProductSize.SelectedIndex = 0;
-            selectedSize = "S";
-            LoadSizeData(selectedProduct.Id, selectedSize);
+            LoadProducts("Cà Phê");
         }
 
-        void LoadSizeData(string productId, string sizeName)
+        private void tsbTea_Click(object sender, EventArgs e)
         {
-            var sizes = ProductSizeBUS.Instance.GetSizesByProduct(productId);
-            var size = sizes.FirstOrDefault(s => s.SizeName == sizeName);
-
-            if (size != null)
-            {
-                var product = productList.FirstOrDefault(p => p.Id == productId);
-                txtPrice.Text = (product.BasePrice + size.PriceAdjustment).ToString("N0");
-
-                var ingredients = ProductIngredientBUS.Instance.GetRecipe(size.Id);
-                dgvIngredientsList.Rows.Clear();
-
-                foreach (var ing in ingredients)
-                {
-                    var ingredientInfo = ingredientList.FirstOrDefault(i => i.Id == ing.IngredientId);
-                    if (ingredientInfo != null)
-                        dgvIngredientsList.Rows.Add(ingredientInfo.Name, ing.RequiredQuantity, ingredientInfo.Unit, "Xóa");
-                }
-            }
-            else
-            {
-                txtPrice.Clear();
-                dgvIngredientsList.Rows.Clear();
-            }
-        }
-        private void cmbProductSize_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (selectedProduct != null)
-            {
-                selectedSize = cmbProductSize.Text;
-                LoadSizeData(selectedProduct.Id, selectedSize);
-            }
+            LoadProducts("Trà");
         }
 
-
-        private void cmbIngredientName_SelectedIndexChanged(object sender, EventArgs e)
+        private void tsbOther_Click(object sender, EventArgs e)
         {
-            if (cmbIngredientName.SelectedValue != null)
-            {
-                var ingredient = ingredientList.FirstOrDefault(i => i.Id == cmbIngredientName.SelectedValue.ToString());
-                if (ingredient != null)
-                    cmbIngredientUnit.Text = ingredient.Unit;
-            }
-        }
-        
-
-        //btn
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(txtProductName.Text) || !decimal.TryParse(txtPrice.Text.Replace(",", ""), out decimal price))
-                return;
-
-            ProductDTO newProduct = new ProductDTO
-            {
-                Name = txtProductName.Text.Trim(),
-                CategoryId = cmbCategory.SelectedValue?.ToString(),
-                BasePrice = price,
-                IsAvailable = cmbStatus.SelectedIndex == 0
-            };
-
-            if (ProductBUS.Instance.AddProduct(newProduct))
-            {
-                var createdProduct = ProductBUS.Instance.SearchProduct(newProduct.Name).FirstOrDefault();
-                if (createdProduct != null)
-                {
-                    ProductSizeDTO newSize = new ProductSizeDTO
-                    {
-                        ProductId = createdProduct.Id,
-                        SizeName = selectedSize,
-                        PriceAdjustment = 0
-                    };
-
-                    if (ProductSizeBUS.Instance.AddSize(newSize))
-                    {
-                        var createdSize = ProductSizeBUS.Instance.GetSizesByProduct(createdProduct.Id)
-                            .FirstOrDefault(s => s.SizeName == selectedSize);
-
-                        if (createdSize != null)
-                        {
-                            foreach (DataGridViewRow row in dgvIngredientsList.Rows)
-                            {
-                                if (row.IsNewRow) continue;
-
-                                var ingredient = ingredientList.FirstOrDefault(i => i.Name == row.Cells["colIngredientName"].Value?.ToString());
-                                if (ingredient != null)
-                                {
-                                    ProductIngredientBUS.Instance.AddIngredientToRecipe(new ProductIngredientDTO
-                                    {
-                                        ProductSizeId = createdSize.Id,
-                                        IngredientId = ingredient.Id,
-                                        RequiredQuantity = Convert.ToDouble(row.Cells["colIngredientQuantity"].Value)
-                                    });
-                                }
-                            }
-                        }
-                    }
-                }
-                LoadProducts();
-                ClearForm();
-            }
+            LoadProducts("Khác");
         }
 
-        private void btnUpdate_Click(object sender, EventArgs e)
+        private void tsbAll_Click(object sender, EventArgs e)
         {
-            if (selectedProduct == null || !decimal.TryParse(txtPrice.Text.Replace(",", ""), out decimal price))
-                return;
-
-            selectedProduct.Name = txtProductName.Text.Trim();
-            selectedProduct.CategoryId = cmbCategory.SelectedValue?.ToString();
-            selectedProduct.IsAvailable = cmbStatus.SelectedIndex == 0;
-
-            if (ProductBUS.Instance.EditProduct(selectedProduct))
-            {
-                var size = ProductSizeBUS.Instance.GetSizesByProduct(selectedProduct.Id)
-                    .FirstOrDefault(s => s.SizeName == selectedSize);
-
-                if (size != null)
-                {
-                    foreach (var ing in ProductIngredientBUS.Instance.GetRecipe(size.Id))
-                        ProductIngredientBUS.Instance.RemoveIngredientFromRecipe(ing.Id);
-
-                    foreach (DataGridViewRow row in dgvIngredientsList.Rows)
-                    {
-                        if (row.IsNewRow) continue;
-
-                        var ingredient = ingredientList.FirstOrDefault(i => i.Name == row.Cells["colIngredientName"].Value?.ToString());
-                        if (ingredient != null)
-                        {
-                            ProductIngredientBUS.Instance.AddIngredientToRecipe(new ProductIngredientDTO
-                            {
-                                ProductSizeId = size.Id,
-                                IngredientId = ingredient.Id,
-                                RequiredQuantity = Convert.ToDouble(row.Cells["colIngredientQuantity"].Value)
-                            });
-                        }
-                    }
-                }
-                LoadProducts();
-            }
-        }
-
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            if (selectedProduct != null && MessageBox.Show("Xóa món?", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                if (ProductBUS.Instance.RemoveProduct(selectedProduct.Id))
-                {
-                    LoadProducts();
-                    ClearForm();
-                }
-            }
-        }
-
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            DisplayProducts(string.IsNullOrEmpty(txtSearch.Text.Trim())
-                ? productList
-                : ProductBUS.Instance.SearchProduct(txtSearch.Text.Trim()));
-        }
-
-        //toolstrip
-        private void tsbCoffee_Click(object sender, EventArgs e) =>
-            LoadProducts(categoryList.FirstOrDefault(c => c.Name == "Cà phê")?.Id);
-
-        private void tsbTea_Click(object sender, EventArgs e) =>
-            LoadProducts(categoryList.FirstOrDefault(c => c.Name == "Trà")?.Id);
-
-        private void tsbCake_Click(object sender, EventArgs e) =>
-            LoadProducts(categoryList.FirstOrDefault(c => c.Name == "Bánh")?.Id);
-
-        private void tsbOther_Click(object sender, EventArgs e) =>
-            LoadProducts(categoryList.FirstOrDefault(c => c.Name == "Khác")?.Id);
-
-        private void tsbAll_Click(object sender, EventArgs e) => LoadProducts();
-
-        private void ClearForm()
-        {
-            txtProductName.Clear();
-            txtPrice.Clear();
-            cmbCategory.SelectedIndex = 0;
-            cmbProductSize.SelectedIndex = 0;
-            cmbStatus.SelectedIndex = 0;
-            dgvIngredientsList.Rows.Clear();
-            selectedProduct = null;
+            LoadProducts("All");
         }
 
         private void tsCategory_Resize(object sender, EventArgs e)
         {
-            int buttonCount = 0;
-            foreach (ToolStripItem item in tsCategory.Items)
+            int count = tsCategory.Items.OfType<ToolStripButton>().Count();
+            if (count > 0)
             {
-                if (item is ToolStripButton) buttonCount++;
-            }
-
-            if (buttonCount > 0)
-            {
-                int totalWidth = tsCategory.DisplayRectangle.Width - 2;
-                int eachWidth = totalWidth / buttonCount;
-
+                int width = (tsCategory.DisplayRectangle.Width - 5) / count;
                 foreach (ToolStripItem item in tsCategory.Items)
                 {
                     if (item is ToolStripButton btn)
                     {
                         btn.AutoSize = false;
-                        btn.Width = eachWidth;
-                        btn.TextAlign = ContentAlignment.MiddleCenter;
+                        btn.Width = width;
                     }
                 }
             }
         }
 
-        private void btnAddIngredient_Click(object sender, EventArgs e)
+        // products
+        private void LoadProducts(string categoryFilter)
         {
-            if (cmbIngredientName.SelectedValue == null || !double.TryParse(txtIngredientQuantity.Text, out double qty) || qty <= 0)
-                return;
+            List<ProductDTO> products;
 
-            var ingredient = ingredientList.FirstOrDefault(i => i.Id == cmbIngredientName.SelectedValue.ToString());
-
-            for (int i = 0; i < dgvIngredientsList.Rows.Count; i++)
+            if (categoryFilter == "All")
             {
-                if (dgvIngredientsList.Rows[i].Cells["colIngredientName"].Value?.ToString() == ingredient.Name)
+                products = ProductBUS.Instance.SearchProduct("");
+            }
+            else
+            {
+                // Map tên category sang ID
+                var cat = categoryList.FirstOrDefault(c => c.Name == categoryFilter);
+                string categoryId = cat != null ? cat.Id : null;
+
+                if (categoryId != null)
+                    products = ProductBUS.Instance.GetProductsByCategory(categoryId);
+                else
+                    products = new List<ProductDTO>();
+            }
+
+            RenderMenuItems(products);
+        }
+
+        private void RenderMenuItems(List<ProductDTO> products)
+        {
+            flpMenuItems.Controls.Clear();
+            flpMenuItems.SuspendLayout();
+
+            foreach (var product in products)
+            {
+                var panel = CreateProductPanel(product);
+                flpMenuItems.Controls.Add(panel);
+            }
+
+            flpMenuItems.ResumeLayout();
+        }
+
+        private TableLayoutPanel CreateProductPanel(ProductDTO product)
+        {
+            TableLayoutPanel tlp = new TableLayoutPanel
+            {
+                Tag = product
+            };
+
+            // Copy style từ tlpProduct trong Designer
+            tlp.Size = tlpProduct.Size;
+            tlp.BackColor = tlpProduct.BackColor;
+            tlp.CellBorderStyle = tlpProduct.CellBorderStyle;
+            tlp.ColumnCount = tlpProduct.ColumnCount;
+            tlp.RowCount = tlpProduct.RowCount;
+
+            foreach (ColumnStyle cs in tlpProduct.ColumnStyles)
+                tlp.ColumnStyles.Add(new ColumnStyle(cs.SizeType, cs.Width));
+
+            foreach (RowStyle rs in tlpProduct.RowStyles)
+                tlp.RowStyles.Add(new RowStyle(rs.SizeType, rs.Height));
+
+            // PictureBox
+            PictureBox pb = new PictureBox
+            {
+                Dock = DockStyle.Fill,
+                SizeMode = PictureBoxSizeMode.Zoom,
+                Tag = product
+            };
+
+            try
+            {
+                if (!string.IsNullOrEmpty(product.Image) && File.Exists(product.Image))
+                    pb.Image = Image.FromFile(product.Image);
+                else
+                    pb.BackColor = Color.LightGray;
+            }
+            catch
+            {
+                pb.BackColor = Color.LightGray;
+            }
+
+            pb.Click += ProductPanel_Click;
+            tlp.Controls.Add(pb, 0, 0);
+            tlp.SetColumnSpan(pb, 2);
+
+            // Label Name (copy từ lblProductName)
+            Label lblName = new Label
+            {
+                Text = product.Name,
+                Dock = DockStyle.Fill,
+                Font = lblProductName.Font,
+                TextAlign = lblProductName.TextAlign,
+                Tag = product
+            };
+            lblName.Click += ProductPanel_Click;
+            tlp.Controls.Add(lblName, 0, 1);
+
+            // Label Price (copy từ lblProductPrice)
+            decimal displayPrice = ProductBUS.Instance.GetDisplayPrice(product.Id);
+            Label lblPrice = new Label
+            {
+                Text = displayPrice.ToString("N0", culture) + " đ",
+                Dock = DockStyle.Fill,
+                Font = lblProductPrice.Font,
+                TextAlign = lblProductPrice.TextAlign,
+                Tag = product
+            };
+            lblPrice.Click += ProductPanel_Click;
+            tlp.Controls.Add(lblPrice, 1, 1);
+
+            tlp.Click += ProductPanel_Click;
+
+            return tlp;
+        }
+
+        private void ProductPanel_Click(object sender, EventArgs e)
+        {
+            Control ctrl = sender as Control;
+            ProductDTO product = ctrl.Tag as ProductDTO;
+
+            if (product == null) return;
+
+            // Tìm size ưu tiên: M → S → L
+            var sizes = ProductSizeBUS.Instance.GetSizesByProduct(product.Id);
+            ProductSizeDTO prioritySize = sizes.FirstOrDefault(s => s.SizeName == "M")
+                ?? sizes.FirstOrDefault(s => s.SizeName == "S")
+                ?? sizes.FirstOrDefault(s => s.SizeName == "L");
+
+            LoadProductToForm(product, prioritySize?.Id);
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            string keyword = txtSearch.Text.Trim();
+            var products = ProductBUS.Instance.SearchProduct(keyword);
+            RenderMenuItems(products);
+        }
+
+        private void btnUploadImage_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog ofd = new OpenFileDialog())
+            {
+                ofd.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp";
+                if (ofd.ShowDialog() == DialogResult.OK)
                 {
-                    dgvIngredientsList.Rows[i].Cells["colIngredientQuantity"].Value = qty;
-                    return;
+                    currentImagePath = ofd.FileName;
+                    pbProductImage.Image = Image.FromFile(currentImagePath);
+                }
+            }
+        }
+
+        public class IngredientViewModel
+        {
+            public string IngredientId { get; set; }
+            public string IngredientName { get; set; }
+            public double Quantity { get; set; }
+            public string Unit { get; set; }
+        }
+
+        private void LoadRecipeToGrid(string productSizeId)
+        {
+            if (string.IsNullOrEmpty(productSizeId))
+            {
+                dgvIngredientsList.DataSource = null;
+                return;
+            }
+
+            var recipe = ProductIngredientBUS.Instance.GetRecipe(productSizeId);
+            var viewModels = new List<IngredientViewModel>();
+
+            foreach (var item in recipe)
+            {
+                var ingredient = ingredientList.FirstOrDefault(i => i.Id == item.IngredientId);
+                if (ingredient != null)
+                {
+                    viewModels.Add(new IngredientViewModel
+                    {
+                        IngredientId = ingredient.Id,
+                        IngredientName = ingredient.Name,
+                        Quantity = item.RequiredQuantity,
+                        Unit = ingredient.Unit
+                    });
                 }
             }
 
-            dgvIngredientsList.Rows.Add(ingredient.Name, qty, ingredient.Unit, "Xóa");
+            dgvIngredientsList.DataSource = viewModels;
+        }
+
+        private void btnAddIngredient_Click(object sender, EventArgs e)
+        {
+            if (cmbIngredientName.SelectedValue == null) return;
+            if (string.IsNullOrWhiteSpace(txtIngredientQuantity.Text)) return;
+            if (cmbIngredientUnit.SelectedItem == null) return;
+
+            double quantity;
+            if (!double.TryParse(txtIngredientQuantity.Text, out quantity) || quantity <= 0)
+            {
+                MessageBox.Show("Số lượng không hợp lệ");
+                return;
+            }
+
+            string ingredientId = cmbIngredientName.SelectedValue.ToString();
+            var ingredient = ingredientList.FirstOrDefault(i => i.Id == ingredientId);
+
+            var currentList = (dgvIngredientsList.DataSource as List<IngredientViewModel>) ?? new List<IngredientViewModel>();
+
+            // Check trùng
+            if (currentList.Any(x => x.IngredientId == ingredientId))
+            {
+                MessageBox.Show("Nguyên liệu đã có trong danh sách");
+                return;
+            }
+
+            currentList.Add(new IngredientViewModel
+            {
+                IngredientId = ingredientId,
+                IngredientName = ingredient.Name,
+                Quantity = quantity,
+                Unit = cmbIngredientUnit.SelectedItem.ToString()
+            });
+
+            dgvIngredientsList.DataSource = null;
+            dgvIngredientsList.DataSource = currentList;
+
+            txtIngredientQuantity.Clear();
         }
 
         private void dgvIngredientsList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0) return;
-
-            if (e.ColumnIndex == dgvIngredientsList.Columns["colDelete"].Index)
+            if (dgvIngredientsList.Columns[e.ColumnIndex].Name == "colDelete")
             {
-                dgvIngredientsList.Rows.RemoveAt(e.RowIndex);
+                var currentList = dgvIngredientsList.DataSource as List<IngredientViewModel>;
+                if (currentList != null)
+                {
+                    currentList.RemoveAt(e.RowIndex);
+                    dgvIngredientsList.DataSource = null;
+                    dgvIngredientsList.DataSource = currentList;
+                }
+            }
+        }
+
+        private void cmbIngredientName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbIngredientName.SelectedValue == null) return;
+            var ingredient = ingredientList.FirstOrDefault(i => i.Id == cmbIngredientName.SelectedValue.ToString());
+            if (ingredient != null)
+            {
+                cmbIngredientUnit.SelectedItem = ingredient.Unit;
+            }
+        }
+        private void cmbCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void cmbProductSize_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (currentProductId == null) return;
+            if (cmbProductSize.SelectedItem == null) return;
+
+            string sizeName = cmbProductSize.SelectedItem.ToString();
+            var sizes = ProductSizeBUS.Instance.GetSizesByProduct(currentProductId);
+            var selectedSize = sizes.FirstOrDefault(s => s.SizeName == sizeName);
+
+            if (selectedSize != null)
+            {
+                currentProductSizeId = selectedSize.Id;
+                decimal price = ProductBUS.Instance.GetProductById(currentProductId).BasePrice + selectedSize.PriceAdjustment;
+                txtPrice.Text = price.ToString();
+                LoadRecipeToGrid(selectedSize.Id);
+            }
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtProductName.Text))
+            {
+                MessageBox.Show("Nhập tên món");
                 return;
             }
 
-            var row = dgvIngredientsList.Rows[e.RowIndex];
-            var ingredient = ingredientList.FirstOrDefault(i => i.Name == row.Cells["colIngredientName"].Value?.ToString());
-            if (ingredient != null)
+            if (string.IsNullOrWhiteSpace(cmbCategory.Text))
             {
-                cmbIngredientName.SelectedValue = ingredient.Id;
-                txtIngredientQuantity.Text = row.Cells["colIngredientQuantity"].Value?.ToString();
+                MessageBox.Show("Chọn hoặc nhập danh mục");
+                return;
             }
+
+            if (cmbProductSize.SelectedItem == null)
+            {
+                MessageBox.Show("Chọn size");
+                return;
+            }
+
+            decimal price;
+            if (!decimal.TryParse(txtPrice.Text, out price) || price < 0)
+            {
+                MessageBox.Show("Giá không hợp lệ");
+                return;
+            }
+
+            var ingredientList = dgvIngredientsList.DataSource as List<IngredientViewModel>;
+            if (ingredientList == null || ingredientList.Count == 0)
+            {
+                MessageBox.Show("Thêm ít nhất 1 nguyên liệu");
+                return;
+            }
+
+            string sizeName = cmbProductSize.SelectedItem.ToString();
+            string inputName = txtProductName.Text.Trim();
+
+            // THÊM MÓN HAY THÊM SIZE
+            bool isAddingNewProduct = true;
+            ProductDTO oldProduct = null;
+
+            if (currentProductId != null)
+            {
+                oldProduct = ProductBUS.Instance.GetProductById(currentProductId);
+
+                if (oldProduct != null &&
+                    oldProduct.Name.Trim().Equals(inputName, StringComparison.OrdinalIgnoreCase))
+                {
+                    isAddingNewProduct = false; // cùng tên → thêm size
+                }
+            }
+
+            //LẤY / TẠO CATEGORY
+            string categoryId = CategoryBUS.Instance.NormalizeAndGetOrCreate(cmbCategory.Text);
+
+            //THÊM MÓN MỚI
+            if (isAddingNewProduct)
+            {
+                // Món mới BẮT BUỘC bắt đầu từ size S
+                if (sizeName != "S")
+                {
+                    MessageBox.Show("Món mới phải bắt đầu từ size S");
+                    return;
+                }
+
+                // Không cho trùng tên món
+                if (ProductBUS.Instance.ExistsByName(inputName))
+                {
+                    MessageBox.Show("Tên món đã tồn tại");
+                    return;
+                }
+
+                // Lưu ảnh
+                string imagePath = "";
+                if (!string.IsNullOrEmpty(currentImagePath))
+                {
+                    string folder = Path.Combine(Application.StartupPath, "Images");
+                    if (!Directory.Exists(folder))
+                        Directory.CreateDirectory(folder);
+
+                    string fileName = Guid.NewGuid().ToString() + Path.GetExtension(currentImagePath);
+                    string destPath = Path.Combine(folder, fileName);
+                    File.Copy(currentImagePath, destPath, true);
+                    imagePath = destPath;
+                }
+
+                // INSERT Product
+                string productId = Guid.NewGuid().ToString();
+                ProductDTO product = new ProductDTO
+                {
+                    Id = productId,
+                    CategoryId = categoryId,
+                    Name = inputName,
+                    BasePrice = price,
+                    Image = imagePath,
+                    IsAvailable = cmbStatus.SelectedIndex == 0
+                };
+
+                if (!ProductBUS.Instance.AddProduct(product))
+                {
+                    MessageBox.Show("Lỗi thêm món");
+                    return;
+                }
+
+                currentProductId = productId;
+
+                // INSERT ProductSize (S)
+                string sizeId = Guid.NewGuid().ToString();
+                ProductSizeDTO size = new ProductSizeDTO
+                {
+                    Id = sizeId,
+                    ProductId = productId,
+                    SizeName = "S",
+                    PriceAdjustment = 0
+                };
+
+                ProductSizeBUS.Instance.AddSize(size);
+                currentProductSizeId = sizeId;
+
+                // INSERT ProductIngredient
+                foreach (var item in ingredientList)
+                {
+                    ProductIngredientDTO pi = new ProductIngredientDTO
+                    {
+                        ProductSizeId = sizeId,
+                        IngredientId = item.IngredientId,
+                        RequiredQuantity = item.Quantity
+                    };
+                    ProductIngredientBUS.Instance.AddIngredientToRecipe(pi);
+                }
+
+                MessageBox.Show("Thêm món mới thành công");
+            }
+            //THÊM SIZE
+            else
+            {
+                if (sizeName == "S")
+                {
+                    MessageBox.Show("Size S đã tồn tại cho món này");
+                    return;
+                }
+
+                var sizes = ProductSizeBUS.Instance.GetSizesByProduct(currentProductId);
+                if (sizes.Any(s => s.SizeName == sizeName))
+                {
+                    MessageBox.Show("Size này đã tồn tại");
+                    return;
+                }
+
+                decimal priceAdjustment = price - oldProduct.BasePrice;
+
+                string sizeId = Guid.NewGuid().ToString();
+                ProductSizeDTO size = new ProductSizeDTO
+                {
+                    Id = sizeId,
+                    ProductId = currentProductId,
+                    SizeName = sizeName,
+                    PriceAdjustment = priceAdjustment
+                };
+
+                ProductSizeBUS.Instance.AddSize(size);
+                currentProductSizeId = sizeId;
+
+                foreach (var item in ingredientList)
+                {
+                    ProductIngredientDTO pi = new ProductIngredientDTO
+                    {
+                        ProductSizeId = sizeId,
+                        IngredientId = item.IngredientId,
+                        RequiredQuantity = item.Quantity
+                    };
+                    ProductIngredientBUS.Instance.AddIngredientToRecipe(pi);
+                }
+
+                MessageBox.Show("Thêm size thành công");
+            }
+
+            LoadProducts("All");
+            LoadCategories();
         }
 
-        private void cmbCategory_SelectedIndexChanged(object sender, EventArgs e)
+
+        // update
+        private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (cmbCategory.SelectedValue != null && cmbCategory.Focused)
+            if (currentProductId == null || currentProductSizeId == null)
             {
-                string selectedCategoryId = cmbCategory.SelectedValue.ToString();
-                LoadProducts(selectedCategoryId);
-                txtPrice.Clear();
-                dgvIngredientsList.Rows.Clear();
+                MessageBox.Show("Chọn món để cập nhật");
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtProductName.Text))
+            {
+                MessageBox.Show("Nhập tên món");
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(cmbCategory.Text))
+            {
+                MessageBox.Show("Chọn hoặc nhập danh mục");
+                return;
+            }
+
+            decimal price;
+            if (!decimal.TryParse(txtPrice.Text, out price) || price < 0)
+            {
+                MessageBox.Show("Giá không hợp lệ");
+                return;
+            }
+
+            var ingredientList = dgvIngredientsList.DataSource as List<IngredientViewModel>;
+            if (ingredientList == null || ingredientList.Count == 0)
+            {
+                MessageBox.Show("Thêm ít nhất 1 nguyên liệu");
+                return;
+            }
+
+            // LẤY / TẠO CATEGORY (KHÔNG DÙNG SelectedValue)
+            string categoryId = CategoryBUS.Instance
+                .NormalizeAndGetOrCreate(cmbCategory.Text);
+
+            // Lưu ảnh mới (nếu có)
+            string imagePath = currentImagePath;
+            var oldProduct = ProductBUS.Instance.GetProductById(currentProductId);
+
+            if (!string.IsNullOrEmpty(currentImagePath) &&
+                currentImagePath != oldProduct.Image)
+            {
+                string folder = Path.Combine(Application.StartupPath, "Images");
+                if (!Directory.Exists(folder))
+                    Directory.CreateDirectory(folder);
+
+                string fileName = Guid.NewGuid().ToString() + Path.GetExtension(currentImagePath);
+                string destPath = Path.Combine(folder, fileName);
+                File.Copy(currentImagePath, destPath, true);
+                imagePath = destPath;
+            }
+            else
+            {
+                imagePath = oldProduct.Image;
+            }
+
+            // UPDATE Product
+            ProductDTO product = new ProductDTO
+            {
+                Id = currentProductId,
+                CategoryId = categoryId,
+                Name = txtProductName.Text.Trim(),
+                BasePrice = oldProduct.BasePrice, // KHÔNG đổi base price
+                Image = imagePath,
+                IsAvailable = cmbStatus.SelectedIndex == 0
+            };
+
+            ProductBUS.Instance.EditProduct(product);
+
+            // UPDATE ProductSize
+            var currentSize = ProductSizeBUS.Instance
+                .GetSizesByProduct(currentProductId)
+                .FirstOrDefault(s => s.Id == currentProductSizeId);
+
+            if (currentSize != null)
+            {
+                decimal priceAdjustment = price - oldProduct.BasePrice;
+                currentSize.PriceAdjustment = priceAdjustment;
+                ProductSizeBUS.Instance.EditSize(currentSize);
+            }
+
+            // DELETE old ProductIngredient
+            var oldRecipe = ProductIngredientBUS.Instance
+                .GetRecipe(currentProductSizeId);
+
+            foreach (var item in oldRecipe)
+            {
+                ProductIngredientBUS.Instance.RemoveIngredientFromRecipe(item.Id);
+            }
+
+            // INSERT new ProductIngredient
+            foreach (var item in ingredientList)
+            {
+                ProductIngredientDTO pi = new ProductIngredientDTO
+                {
+                    ProductSizeId = currentProductSizeId,
+                    IngredientId = item.IngredientId,
+                    RequiredQuantity = item.Quantity
+                };
+                ProductIngredientBUS.Instance.AddIngredientToRecipe(pi);
+            }
+
+            MessageBox.Show("Cập nhật thành công");
+
+            LoadProducts("All");
+
+            // REFRESH category list (phòng trường hợp vừa tạo category mới)
+            string catText = cmbCategory.Text;
+            LoadCategories();
+            cmbCategory.Text = catText;
+        }
+
+
+        // delete
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (currentProductId == null)
+            {
+                MessageBox.Show("Chọn món để xóa");
+                return;
+            }
+
+            if (MessageBox.Show("Xóa món này?", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                if (ProductBUS.Instance.DeleteProductComplete(currentProductId))
+                {
+                    MessageBox.Show("Xóa thành công");
+                    ResetForm();
+                    LoadProducts("All");
+                }
+                else
+                {
+                    MessageBox.Show("Lỗi xóa món");
+                }
             }
         }
 
+        private void ResetForm()
+        {
+            currentProductId = null;
+            currentProductSizeId = null;
+            currentImagePath = null;
+
+            txtProductName.Clear();
+            txtPrice.Clear();
+            pbProductImage.Image = null;
+            cmbCategory.SelectedIndex = -1;
+            cmbProductSize.SelectedIndex = -1;
+            cmbStatus.SelectedIndex = 0;
+            dgvIngredientsList.DataSource = null;
+        }
+
+        private void LoadProductToForm(ProductDTO product, string prioritySizeId)
+        {
+            currentProductId = product.Id;
+            currentProductSizeId = prioritySizeId;
+            currentImagePath = product.Image;
+
+            txtProductName.Text = product.Name;
+
+            try
+            {
+                if (!string.IsNullOrEmpty(product.Image) && File.Exists(product.Image))
+                    pbProductImage.Image = Image.FromFile(product.Image);
+                else
+                    pbProductImage.Image = null;
+            }
+            catch
+            {
+                pbProductImage.Image = null;
+            }
+
+            // Set category
+            var cat = categoryList.FirstOrDefault(c => c.Id == product.CategoryId);
+            if (cat != null)
+                cmbCategory.Text = cat.Name;
+
+            cmbStatus.SelectedIndex = product.IsAvailable ? 0 : 1;
+
+            // Load size
+            if (!string.IsNullOrEmpty(prioritySizeId))
+            {
+                var size = ProductSizeBUS.Instance.GetSizesByProduct(product.Id)
+                    .FirstOrDefault(s => s.Id == prioritySizeId);
+
+                if (size != null)
+                {
+                    cmbProductSize.SelectedItem = size.SizeName;
+                    decimal price = product.BasePrice + size.PriceAdjustment;
+                    txtPrice.Text = price.ToString();
+                    LoadRecipeToGrid(size.Id);
+                }
+            }
+        }
     }
+    
 }

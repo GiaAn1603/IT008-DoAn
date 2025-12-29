@@ -81,6 +81,9 @@ namespace OHIOCF.Controls.Staff
                     ClockOutTime = clockOut?.LogTime // NULL nếu chưa clockout
                 });
             }
+            dgvClockIn.AutoGenerateColumns = false;
+            dgvClockIn.DataSource = result;
+
 
         }
 

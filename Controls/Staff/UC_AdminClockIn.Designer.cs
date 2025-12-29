@@ -188,7 +188,6 @@
             // 
             this.dgvClockIn.BackgroundColor = System.Drawing.Color.White;
             this.dgvClockIn.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgvClockIn.AutoGenerateColumns = false;
             this.dgvClockIn.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvClockIn.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
@@ -213,7 +212,7 @@
             // Staffname
             // 
             this.Staffname.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Staffname.DataPropertyName = "Fullname";
+            this.Staffname.DataPropertyName = "FullName";
             this.Staffname.HeaderText = "Tên NV";
             this.Staffname.Name = "Staffname";
             this.Staffname.ReadOnly = true;

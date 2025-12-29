@@ -142,7 +142,7 @@
             this.picLogo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.picLogo.Image = ((System.Drawing.Image)(resources.GetObject("picLogo.Image")));
             this.picLogo.Location = new System.Drawing.Point(2, 2);
-            this.picLogo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picLogo.Margin = new System.Windows.Forms.Padding(2);
             this.picLogo.Name = "picLogo";
             this.picLogo.Size = new System.Drawing.Size(265, 105);
             this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -249,7 +249,7 @@
             this.btnCustomers.Size = new System.Drawing.Size(236, 44);
             this.btnCustomers.TabIndex = 36;
             this.btnCustomers.Tag = "UC_Customers";
-            this.btnCustomers.Text = "Hóa đơn/Khách hàng";
+            this.btnCustomers.Text = "Khách hàng thân thiết";
             this.btnCustomers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCustomers.UseVisualStyleBackColor = false;
             this.btnCustomers.Click += new System.EventHandler(this.btnCustomers_Click);

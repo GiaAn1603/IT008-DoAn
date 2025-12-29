@@ -1,6 +1,8 @@
-﻿using System.Collections.Generic;
-using OHIOCF.DAO;
+﻿using OHIOCF.DAO;
 using OHIOCF.DTO;
+using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
 
 namespace OHIOCF.BUS
 {
@@ -46,6 +48,35 @@ namespace OHIOCF.BUS
             }
 
             return "Xóa thất bại (Lỗi hệ thống).";
+        }
+        public string NormalizeAndGetOrCreate(string categoryName)
+        {
+            if (string.IsNullOrWhiteSpace(categoryName)) return null;
+
+            // Normalize: "trà" → "Trà", "cà phê" → "Cà Phê"
+            categoryName = categoryName.Trim();
+            TextInfo textInfo = CultureInfo.CurrentCulture.TextInfo;
+            categoryName = textInfo.ToTitleCase(categoryName.ToLower());
+
+            // Tìm category (case-insensitive)
+            var categories = GetAllCategories();
+            var existing = categories.FirstOrDefault(c =>
+                string.Equals(c.Name, categoryName, System.StringComparison.OrdinalIgnoreCase)
+            );
+
+            if (existing != null)
+                return existing.Id;
+
+            // Tạo mới
+            AddCategory(categoryName);
+
+            // Lấy lại ID
+            categories = GetAllCategories();
+            var newCat = categories.FirstOrDefault(c =>
+                string.Equals(c.Name, categoryName, System.StringComparison.OrdinalIgnoreCase)
+            );
+
+            return newCat?.Id;
         }
     }
 }

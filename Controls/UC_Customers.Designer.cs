@@ -49,9 +49,9 @@
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.CustomerId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CustomerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CustomerPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Points = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Rank = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel2.SuspendLayout();
@@ -272,13 +272,12 @@
             // dgvCustomers
             // 
             this.dgvCustomers.BackgroundColor = System.Drawing.Color.White;
-            this.dgvCustomers.AutoGenerateColumns = false;
             this.dgvCustomers.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvCustomers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCustomers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.CustomerId,
-            this.CustomerName,
-            this.CustomerPhone,
+            this.Id,
+            this.FullName,
+            this.Phone,
             this.Points,
             this.Rank});
             this.dgvCustomers.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -420,25 +419,25 @@
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // CustomerId
+            // Id
             // 
-            this.CustomerId.DataPropertyName = "Id";
-            this.CustomerId.HeaderText = "Mã KH";
-            this.CustomerId.Name = "CustomerId";
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Mã KH";
+            this.Id.Name = "Id";
             // 
-            // CustomerName
+            // FullName
             // 
-            this.CustomerName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.CustomerName.DataPropertyName = "FullName";
-            this.CustomerName.HeaderText = "Tên khách hàng";
-            this.CustomerName.Name = "CustomerName";
+            this.FullName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.FullName.DataPropertyName = "FullName";
+            this.FullName.HeaderText = "Tên khách hàng";
+            this.FullName.Name = "FullName";
             // 
-            // CustomerPhone
+            // Phone
             // 
-            this.CustomerPhone.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.CustomerPhone.DataPropertyName = "Phone";
-            this.CustomerPhone.HeaderText = "Số điện thoại";
-            this.CustomerPhone.Name = "CustomerPhone";
+            this.Phone.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Phone.DataPropertyName = "Phone";
+            this.Phone.HeaderText = "Số điện thoại";
+            this.Phone.Name = "Phone";
             // 
             // Points
             // 
@@ -498,9 +497,9 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CustomerId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CustomerName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CustomerPhone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FullName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Phone;
         private System.Windows.Forms.DataGridViewTextBoxColumn Points;
         private System.Windows.Forms.DataGridViewTextBoxColumn Rank;
     }

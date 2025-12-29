@@ -39,19 +39,54 @@ namespace OHIOCF.BUS
             return null;
         }
 
-        public bool UpdateOrderInfo(string orderId, decimal totalAmount, string promotionId)
-        {
-            return OrderDAO.Instance.UpdateOrderInfo(orderId, totalAmount, promotionId);
-        }
+        public void UpdateOrderInfo(string orderId,decimal total,string promoId,string customerId)
+             {
+               OrderDAO.Instance.UpdateOrderInfo(
+                orderId,
+                total,
+                promoId,
+                customerId
+              );
+              }
+
 
         public bool PayOrder(string orderId, decimal finalAmount, string customerId, string promotionId)
         {
-            return OrderDAO.Instance.CheckoutOrder(orderId, finalAmount, customerId, promotionId);
+            bool result = OrderDAO.Instance.CheckoutOrder(
+                orderId,
+                finalAmount,
+                customerId,
+                promotionId
+            );
+
+            if (result && !string.IsNullOrEmpty(customerId))
+            {
+                CustomerBUS.Instance.AddPointsAndUpdateRank(customerId, finalAmount);
+            }
+
+            return result;
         }
+
+
 
         public bool UpdatePromotion(string orderId, string promotionId)
         {
             return OrderDAO.Instance.UpdateOrderPromotion(orderId, promotionId);
         }
+        public int GetInvoiceCount()
+        {
+            return OrderDAO.Instance.GetInvoiceCount();
+        }
+
+        public decimal GetTotalRevenue()
+        {
+            return OrderDAO.Instance.GetTotalRevenue();
+        }
+        public decimal GetTodayRevenue()
+        {
+            return OrderDAO.Instance.GetTodayRevenue();
+        }
+
+
     }
 }

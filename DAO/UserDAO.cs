@@ -149,5 +149,26 @@ namespace OHIOCF.DAO
                 }
             }
         }
+        public int GetStaffCount()
+        {
+            string query = @"
+        SELECT COUNT(*)
+        FROM User u
+        JOIN Role r ON u.roleId = r.id
+        WHERE r.roleName != 'Customer'
+          AND u.isActive = 1
+    ";
+
+            using (SQLiteConnection conn = new SQLiteConnection(Database.ConnectionString))
+            {
+                conn.Open();
+                using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
+                {
+                    return Convert.ToInt32(cmd.ExecuteScalar());
+                }
+            }
+        }
+
+
     }
 }

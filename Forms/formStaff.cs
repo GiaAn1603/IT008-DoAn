@@ -45,10 +45,6 @@ namespace OHIOCF.Forms
         {
             panel3.Controls.Clear();
             UserControl uc = (UserControl)Activator.CreateInstance(ucType);
-            if (uc is UC_Sale ucSale)
-            {
-                ucSale.LoadUserControlRequested += (s, type) => LoadUserControl(type);
-            }
             uc.Dock = DockStyle.Fill;
             panel3.Controls.Add(uc);
         }

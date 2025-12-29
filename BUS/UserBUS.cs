@@ -71,5 +71,10 @@ namespace OHIOCF.BUS
             if (currentUserId == targetUserId) return false;
             return UserDAO.Instance.DeleteUser(targetUserId);
         }
+        public int GetStaffCount()
+        {
+            return UserDAO.Instance.GetStaffCount();
+        }
+
     }
 }

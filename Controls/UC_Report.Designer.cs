@@ -212,6 +212,7 @@
             this.btnExport.TabIndex = 7;
             this.btnExport.Text = "Xuất file";
             this.btnExport.UseVisualStyleBackColor = false;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
             // txtSearchKeyword
             // 
@@ -275,7 +276,6 @@
             // dgvReport
             // 
             this.dgvReport.BackgroundColor = System.Drawing.Color.White;
-            this.dgvReport.AutoGenerateColumns = false;
             this.dgvReport.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvReport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvReport.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {

@@ -1,6 +1,7 @@
-﻿using System.Collections.Generic;
-using OHIOCF.DAO;
+﻿using OHIOCF.DAO;
 using OHIOCF.DTO;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace OHIOCF.BUS
 {
@@ -46,5 +47,62 @@ namespace OHIOCF.BUS
         {
             return ProductDAO.Instance.DeleteProduct(id);
         }
+        public decimal GetDisplayPrice(string productId)
+        {
+            var product = ProductDAO.Instance.GetProductById(productId);
+            if (product == null) return 0;
+
+            var sizes = ProductSizeBUS.Instance.GetSizesByProduct(productId);
+            if (sizes == null || sizes.Count == 0) return product.BasePrice;
+
+            decimal basePrice = product.BasePrice;
+
+            // Ưu tiên M
+            var sizeM = sizes.FirstOrDefault(s => s.SizeName == "M");
+            if (sizeM != null)
+                return basePrice + sizeM.PriceAdjustment;
+
+            // Nếu không có M → S
+            var sizeS = sizes.FirstOrDefault(s => s.SizeName == "S");
+            if (sizeS != null)
+                return basePrice + sizeS.PriceAdjustment;
+
+            // Cuối cùng → L
+            var sizeL = sizes.FirstOrDefault(s => s.SizeName == "L");
+            if (sizeL != null)
+                return basePrice + sizeL.PriceAdjustment;
+
+            return basePrice;
+        }
+
+        public bool DeleteProductComplete(string productId)
+        {
+            // Lấy tất cả ProductSize
+            var sizes = ProductSizeBUS.Instance.GetSizesByProduct(productId);
+
+            // Xóa ProductIngredient của từng size
+            foreach (var size in sizes)
+            {
+                var ingredients = ProductIngredientBUS.Instance.GetRecipe(size.Id);
+                foreach (var ing in ingredients)
+                {
+                    ProductIngredientBUS.Instance.RemoveIngredientFromRecipe(ing.Id);
+                }
+            }
+
+            // Xóa ProductSize
+            foreach (var size in sizes)
+            {
+                ProductSizeBUS.Instance.RemoveSize(size.Id);
+            }
+
+            // Xóa Product
+            return RemoveProduct(productId);
+        }
+        public bool ExistsByName(string productName)
+        {
+            return ProductDAO.Instance.ExistsByName(productName);
+        }
+
     }
 }

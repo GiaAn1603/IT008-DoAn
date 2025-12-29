@@ -20,6 +20,11 @@ namespace OHIOCF.BUS
             if (string.IsNullOrEmpty(phone)) return null;
             return CustomerDAO.Instance.GetCustomerByPhone(phone);
         }
+        public CustomerDTO GetCustomerById(string id)
+        {
+            if (string.IsNullOrEmpty(id)) return null;
+            return CustomerDAO.Instance.GetCustomerById(id);
+        }
 
         public bool AddCustomer(CustomerDTO c)
         {
@@ -41,5 +46,33 @@ namespace OHIOCF.BUS
         {
             return CustomerDAO.Instance.DeleteCustomer(id);
         }
+
+        public void AddPointsAndUpdateRank(string customerId, decimal totalMoney)
+        {
+            var customer = CustomerDAO.Instance.GetCustomerById(customerId);
+            if (customer == null) return;
+
+            int earnedPoints = (int)(totalMoney / 10000) * 10;
+            if (earnedPoints <= 0) return;
+
+            int newTotalPoints = customer.Points + earnedPoints;
+
+            string newRank;
+            if (newTotalPoints >= 3000)
+                newRank = "Kim cương";
+            else if (newTotalPoints >= 1500)
+                newRank = "Vàng";
+            else if (newTotalPoints >= 500)
+                newRank = "Bạc";
+            else
+                newRank = "Đồng";
+
+            customer.Points = newTotalPoints;
+            customer.Rank = newRank;
+
+            CustomerDAO.Instance.UpdateCustomer(customer);
+        }
+
+
     }
 }

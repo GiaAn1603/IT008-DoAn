@@ -15,7 +15,6 @@ namespace OHIOCF.Controls
 {
     public partial class UC_Sale : UserControl
     {
-        public event EventHandler<Type> LoadUserControlRequested;
         private CafeTableDTO currentSelectedTable;
         private CultureInfo culture = new CultureInfo("vi-VN");
 
@@ -27,7 +26,21 @@ namespace OHIOCF.Controls
 
         private void btnAddNewOrder_Click(object sender, EventArgs e)
         {
-            LoadUserControlRequested?.Invoke(this, typeof(UC_Sale1));
+            CafeTableDTO takeAway = new CafeTableDTO
+            {
+                Id = "0",
+                TableName = "Take Away",
+                Status = 0
+            };
+
+            UC_Sale1 uc = new UC_Sale1();
+            uc.SetCurrentTable(takeAway);
+            uc.Tag = this;
+
+            this.Parent.Controls.Add(uc);
+            uc.Dock = DockStyle.Fill;
+            uc.BringToFront();
+            this.Visible = false;
         }
 
         private void UC_Sale_Load(object sender, EventArgs e)
@@ -287,5 +300,6 @@ namespace OHIOCF.Controls
                 }
             }
         }
+
     }
 }

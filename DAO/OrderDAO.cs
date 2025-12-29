@@ -79,9 +79,14 @@ namespace OHIOCF.DAO
             }
         }
 
-        public bool UpdateOrderInfo(string orderId, decimal totalAmount, string promotionId)
+        public bool UpdateOrderInfo(string orderId, decimal totalAmount, string promotionId, string customerId)
         {
-            string query = "UPDATE [Order] SET totalAmount = @total, promotionId = @promo WHERE id = @id";
+            string query = @"UPDATE [Order] 
+                     SET totalAmount = @total,
+                         promotionId = @promo,
+                         customerId = @cid
+                     WHERE id = @id";
+
             using (SQLiteConnection conn = new SQLiteConnection(Database.ConnectionString))
             {
                 conn.Open();
@@ -89,16 +94,14 @@ namespace OHIOCF.DAO
                 {
                     cmd.Parameters.AddWithValue("@id", orderId);
                     cmd.Parameters.AddWithValue("@total", totalAmount);
-
-                    if (string.IsNullOrEmpty(promotionId))
-                        cmd.Parameters.AddWithValue("@promo", DBNull.Value);
-                    else
-                        cmd.Parameters.AddWithValue("@promo", promotionId);
+                    cmd.Parameters.AddWithValue("@promo", (object)promotionId ?? DBNull.Value);
+                    cmd.Parameters.AddWithValue("@cid", (object)customerId ?? DBNull.Value);
 
                     return cmd.ExecuteNonQuery() > 0;
                 }
             }
         }
+
 
         public bool CheckoutOrder(string id, decimal finalTotal, string customerId = null, string promotionId = null)
         {
@@ -151,5 +154,84 @@ namespace OHIOCF.DAO
                 }
             }
         }
+
+        public OrderDTO GetOrderById(string orderId)
+        {
+            string query = "SELECT * FROM [Order] WHERE id = @id";
+
+            using (SQLiteConnection conn = new SQLiteConnection(Database.ConnectionString))
+            {
+                conn.Open();
+                using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@id", orderId);
+                    using (SQLiteDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            return new OrderDTO
+                            {
+                                Id = reader["id"].ToString(),
+                                TableId = reader["tableId"].ToString(),
+                                UserId = reader["userId"].ToString(),
+                                CustomerId = reader["customerId"] != DBNull.Value ? reader["customerId"].ToString() : null,
+                                PromotionId = reader["promotionId"] != DBNull.Value ? reader["promotionId"].ToString() : null,
+                                OrderDate = DateTime.Parse(reader["orderDate"].ToString()),
+                                TotalAmount = Convert.ToDecimal(reader["totalAmount"]),
+                                Status = Convert.ToInt32(reader["status"])
+                            };
+                        }
+                    }
+                }
+            }
+            return null;
+        }
+        public int GetInvoiceCount()
+        {
+            string query = "SELECT COUNT(*) FROM [Order] WHERE status = 1";
+            using (SQLiteConnection conn = new SQLiteConnection(Database.ConnectionString))
+            {
+                conn.Open();
+                using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
+                {
+                    return Convert.ToInt32(cmd.ExecuteScalar());
+                }
+            }
+        }
+
+
+        public decimal GetTotalRevenue()
+        {
+            string query = "SELECT IFNULL(SUM(totalAmount), 0) FROM [Order] WHERE status = 1";
+            using (SQLiteConnection conn = new SQLiteConnection(Database.ConnectionString))
+            {
+                conn.Open();
+                using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
+                {
+                    return Convert.ToDecimal(cmd.ExecuteScalar());
+                }
+            }
+        }
+
+        public decimal GetTodayRevenue()
+        {
+            string query = @"
+        SELECT IFNULL(SUM(totalAmount), 0)
+        FROM [Order]
+        WHERE status = 1
+          AND DATE(orderDate) = DATE('now')
+    ";
+
+            using (SQLiteConnection conn = new SQLiteConnection(Database.ConnectionString))
+            {
+                conn.Open();
+                using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
+                {
+                    return Convert.ToDecimal(cmd.ExecuteScalar());
+                }
+            }
+        }
+
+
     }
 }

@@ -163,5 +163,21 @@ namespace OHIOCF.DAO
                 }
             }
         }
+        public bool ExistsByName(string productName)
+        {
+            string query = "SELECT COUNT(*) FROM Product WHERE name = @name";
+
+            using (SQLiteConnection conn = new SQLiteConnection(Database.ConnectionString))
+            {
+                conn.Open();
+                using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@name", productName.Trim());
+                    long count = (long)cmd.ExecuteScalar();
+                    return count > 0;
+                }
+            }
+        }
+
     }
 }
